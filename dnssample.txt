@@ -1,0 +1,14 @@
+$TTL 10800
+@		IN SOA	( black-x. ; Primary DNS server
+			  nobody.invalid. ; Responsible person
+			  2010032001   ; Serial number
+			  10800        ; Refresh
+			  3600         ; Retry
+			  777600       ; Expire
+			  3600       ) ; Minimum TTL
+		A	192.168.128.1
+		NS	black-x.
+		MX	10 mail.djangodb.net.
+ftp		A	192.168.128.1
+mail		A	192.168.128.1
+www		CNAME	@

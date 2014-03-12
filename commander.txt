@@ -1,0 +1,35 @@
+Nesssus File(nf)	=  Night Black File Commander
+
+xPlore2(xplore2)	=  a tabbed dual-pane file manager 
+			   that maintains the familiar look 
+			   and feel of the standard windows 
+			   explorer while offering tons of 
+			   advanced features. 
+
+Q-Dir(qdir)		=  Q-Dir makes your files and folder
+			   easy to manage.Fast and easy access,
+			   with an amazing Quadro-View technique.
+			   it's can make many panel in one window
+
+Free Commander(freecom)	=  A Free Commander With Simple Function
+
+JExplorer(je) 		=  provides advanced features such as 
+
+			   * File manager
+			   * Web browser
+			   * File compress/decompress
+			   * Folder comparator
+			   * FTP clent
+			   * POP3 email check
+			   * Image capture
+
+Cubic-Explorer(cubic)	=  Simple File Commander / Manager With 
+			   Tab Function
+
+SE-Explorer(se)		=  Simple Dual Pane File Commander
+
+Size-Me(sizeme)		=  Not File Commander but it's can
+			   calculate youre file or folder
+			   based on How many size youre want
+
+

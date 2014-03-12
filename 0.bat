@@ -1,0 +1,7 @@
+@echo off
+set me=%CD%
+title %CD%
+cd \
+title %cd%
+cls
+echo.

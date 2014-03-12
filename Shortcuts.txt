@@ -1,0 +1,1360 @@
+Address Book	C:\Program Files\Outlook Express\wab.exe	6.0.2900.2180
+Calculator	C:\WINDOWS\system32\calc.exe	5.1.2600.0
+Command Prompt	C:\WINDOWS\system32\cmd.exe	5.1.2600.2180
+Notepad	C:\WINDOWS\system32\notepad.exe	5.1.2600.2180
+Paint	C:\WINDOWS\system32\mspaint.exe	5.1.2600.2180
+Synchronize	C:\WINDOWS\system32\mobsync.exe	5.1.2600.2180
+Tour Windows XP	C:\WINDOWS\system32\tourstart.exe	6.0.2900.2180
+Windows Explorer	C:\WINDOWS\explorer.exe	6.0.2900.2180
+WordPad	C:\Program Files\Windows NT\Accessories\wordpad.exe	5.1.2600.2180
+Accessibility Wizard	C:\WINDOWS\system32\accwiz.exe	5.1.2600.2180
+Magnifier	C:\WINDOWS\system32\magnify.exe	5.1.2600.2180
+Narrator	C:\WINDOWS\system32\narrator.exe	5.1.2600.2180
+On-Screen Keyboard	C:\WINDOWS\system32\osk.exe	5.1.2600.2180
+Utility Manager	C:\WINDOWS\system32\utilman.exe	5.1.2600.2180
+HyperTerminal	C:\Program Files\Windows NT\hypertrm.exe	5.1.2600.0
+Network Connections	C:\WINDOWS\explorer.exe	6.0.2900.2180
+Network Setup Wizard	C:\WINDOWS\system32\rundll32.exe	5.1.2600.2180
+New Connection Wizard	C:\WINDOWS\system32\rundll32.exe	5.1.2600.2180
+Remote Desktop Connection	C:\WINDOWS\system32\mstsc.exe	5.1.2600.2180
+Wireless Network Setup Wizard	C:\WINDOWS\system32\rundll32.exe	5.1.2600.2180
+Sound Recorder	C:\WINDOWS\system32\sndrec32.exe	5.1.2600.2180
+Volume Control	C:\WINDOWS\system32\sndvol32.exe	5.1.2600.0
+Windows Media Player	C:\Program Files\Windows Media Player\wmplayer.exe	9.0.0.3250
+Backup	C:\WINDOWS\system32\ntbackup.exe	5.1.2600.2180
+Character Map	C:\WINDOWS\system32\charmap.exe	5.1.2600.0
+Disk Cleanup	C:\WINDOWS\system32\cleanmgr.exe	6.0.2900.2180
+Files and Settings Transfer Wizard	C:\WINDOWS\system32\usmt\migwiz.exe	5.1.2600.2180
+Scheduled Tasks	C:\WINDOWS\explorer.exe	6.0.2900.2180
+System Information	C:\Program Files\Common Files\Microsoft Shared\MSInfo\msinfo32.exe	5.1.2600.0
+System Restore	C:\WINDOWS\system32\Restore\rstrui.exe	5.1.2600.2180
+Data Sources (ODBC)	C:\WINDOWS\system32\odbcad32.exe	3.525.1117.0
+Microsoft .NET Framework 1.1 Wizards	C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\ConfigWizards.exe	1.0.5000.0
+ESET NOD32 Antivirus	C:\Program Files\ESET\ESET Smart Security\egui.exe	3.0.672.0
+Start AntiVir	C:\Program Files\Avira\AntiVir Desktop\avcenter.exe	10.0.12.29
+ZeroSpyware Limited Edition	C:\Program Files\FBM Software\ZeroSpyware Limited Edition\ZeroSpyware LE.exe	2.1.29.4
+Start AntiVir	C:\Program Files\Avira\AntiVir Desktop\avcenter.exe	10.0.12.29
+ESET NOD32 Antivirus	C:\Program Files\ESET\ESET Smart Security\egui.exe	3.0.672.0
+ESET Smart Security	C:\Program Files\ESET\ESET Smart Security\egui.exe	3.0.672.0
+ZeroSpyware Limited Edition	C:\Program Files\FBM Software\ZeroSpyware Limited Edition\ZeroSpyware LE.exe	2.1.29.4
+ZeroSpyware Limited Edition Live Help	C:\Program Files\FBM Software\ZeroSpyware Limited Edition\Live Help.exe	1.0.3.4
+ZeroSpyware Limited Edition System Diagnostics	C:\Program Files\FBM Software\ZeroSpyware Limited Edition\Diagnostics\SysCon.exe	3.1.6.4
+AltDesk	C:\Program Files\AltDesk\AltDesk.exe	1.8.0.0
+Atomic Alarm Clock	C:\Program Files\Atomic Alarm Clock\AtomicAlarmClock.exe	
+Desktop Icon Toy	C:\Program Files\Desktop Icon Toy\DesktopIconToy.exe	2.0.0.0
+Google Desktop	C:\Program Files\Google\Google Desktop Search\GoogleDesktop.exe	5.9.1005.12335
+Iconoid	C:\Program Files\Iconoid\Iconoid.exe	3.8.6.0
+Logon Loader	C:\Program Files\Logon Loader\LogonLoader.exe	1.0.1887.17536
+LogonStudio	C:\Program Files\WinCustomize\LogonStudio\LogonStudio.exe	1.7.0.12
+LogonStudio2	C:\Program Files\WinCustomize\LogonStudio2\LogonStudio.exe	1.0.0.64
+PowerMenu	C:\Program Files\PowerMenu\PowerMenu.exe	1.5.1.0
+Rainmeter	C:\Program Files\Rainmeter\Rainmeter.exe	1.3.0.560
+RocketDock	C:\Program Files\RocketDock\RocketDock.exe	
+AltDesk	C:\Program Files\AltDesk\AltDesk.exe	1.8.0.0
+Atomic Alarm Clock	C:\Program Files\Atomic Alarm Clock\AtomicAlarmClock.exe	
+Desktop Icon Toy	C:\Program Files\Desktop Icon Toy\DesktopIconToy.exe	2.0.0.0
+Google Desktop Options	C:\Program Files\Google\Google Desktop Search\GoogleDesktop.exe	5.9.1005.12335
+Google Desktop Sidebar	C:\Program Files\Google\Google Desktop Search\GoogleDesktop.exe	5.9.1005.12335
+Google Desktop	C:\Program Files\Google\Google Desktop Search\GoogleDesktop.exe	5.9.1005.12335
+Iconoid	C:\Program Files\Iconoid\Iconoid.exe	3.8.6.0
+Logon Loader	C:\Program Files\Logon Loader\LogonLoader.exe	1.0.1887.17536
+PowerMenu	C:\Program Files\PowerMenu\PowerMenu.exe	1.5.1.0
+RainBackup	C:\Program Files\Rainmeter\Addons\RainBackup\RainBackup.exe	3.3.6.1
+RainBrowser	C:\Program Files\Rainmeter\Addons\RainBrowser\RainBrowser.exe	3.3.6.1
+Rainmeter	C:\Program Files\Rainmeter\Rainmeter.exe	1.3.0.560
+Rainstaller	C:\Program Files\Rainmeter\Addons\Rainstaller\Rainstaller.exe	2.1.0.0
+RainThemes	C:\Program Files\Rainmeter\Addons\RainThemes\RainThemes.exe	3.3.6.1
+RocketDock	C:\Program Files\RocketDock\RocketDock.exe	
+LogonStudio	C:\Program Files\WinCustomize\LogonStudio\LogonStudio.exe	1.7.0.12
+LogonStudio	C:\Program Files\WinCustomize\LogonStudio2\LogonStudio.exe	1.0.0.64
+SysMetrix	C:\Program Files\SysMetrix\SysMetrix.exe	3.4.0.4
+Shutter	C:\Program Files\Shutter\Shutter.exe	
+Shutter	C:\Program Files\Shutter\Shutter.exe	
+Arora	C:\Program Files\Arora\arora.exe	
+Internet Explorer	C:\Program Files\Internet Explorer\IEXPLORE.EXE	6.0.2900.2180
+iPhone Drift	C:\TOOLS\iPhone Drift\iPhone Drift.exe	2.3.0.0
+Klondike WAP Browser	C:\Program Files\Klondike WAP Browser\klondike.exe	1.5.0.0
+Mozilla Firefox	C:\Program Files\Mozilla Firefox\firefox.exe	1.9.2.3951
+Safari	C:\Program Files\Safari\Safari.exe	3.525.13.0
+Mozilla Firefox (Safe Mode)	C:\Program Files\Mozilla Firefox\firefox.exe	1.9.2.3951
+Mozilla Firefox	C:\Program Files\Mozilla Firefox\firefox.exe	1.9.2.3951
+K-Meleon	C:\Program Files\K-Meleon\k-meleon.exe	1.6.0.0
+Nero StartSmart	C:\Program Files\Nero\Nero StartSmart\NeroStartSmart.exe	2.1.0.11
+Oront Burning Kit 2 Premium	C:\Program Files\Oront Burning Kit 2\BurningKit.exe	2.6.2.0
+Nero StartSmart	C:\Program Files\Nero\Nero StartSmart\NeroStartSmart.exe	2.1.0.11
+Nero BackItUp	C:\Program Files\Nero\Nero BackItUp\BackItUp.exe	1.2.0.65
+Nero Burning ROM	C:\Program Files\Nero\Nero\nero.exe	6.6.1.15
+Nero Cover Designer	C:\Program Files\Nero\CoverDesigner\CoverDes.exe	2.3.7.0
+Nero Express	C:\Program Files\Nero\Nero\nero.exe	6.6.1.15
+Nero ImageDrive	C:\Program Files\Nero\ImageDrive\ImageDrive.exe	2.27.0.7
+Nero SoundTrax	C:\Program Files\Nero\Nero SoundTrax\SoundTrax.exe	1.0.0.57
+Nero Wave Editor	C:\Program Files\Nero\Nero Wave Editor\WaveEdit.exe	2.0.0.63
+Nero CD-DVD Speed	C:\Program Files\Nero\Nero Toolkit\CDSpeed.exe	4.5.1.1
+Nero DriveSpeed	C:\Program Files\Nero\Nero Toolkit\DriveSpeed.exe	3.0.6.0
+Nero InfoTool	C:\Program Files\Nero\Nero Toolkit\InfoTool.exe	4.0.3.0
+Oront Burning Kit 2 Premium	C:\Program Files\Oront Burning Kit 2\BurningKit.exe	2.6.2.0
+FastStone Capture	C:\Program Files\FastStone Capture\FSCapture.exe	6.5.0.0
+TextCatch	C:\Program Files\Text Catch\TextCatch.exe	2.6.0.1
+FastStone Capture	C:\Program Files\FastStone Capture\FSCapture.exe	6.5.0.0
+TextCatch	C:\Program Files\Text Catch\TextCatch.exe	2.6.0.1
+AnyReader	C:\Program Files\Essential Data Tools\AnyReader\Launcher.exe	
+CDCheck	C:\Program Files\CDCheck\CDCheck.exe	3.1.14.0
+EasyBoot	C:\Program Files\UltraISO\EasyBoot\EasyBoot.exe	5.1.2.586
+UltraISO	C:\Program Files\UltraISO\UltraISO.exe	9.3.6.2750
+CDCheck	C:\Program Files\CDCheck\CDCheck.exe	3.1.14.0
+EasyBoot	C:\Program Files\UltraISO\EasyBoot\EasyBoot.exe	5.1.2.586
+AnyReader	C:\Program Files\Essential Data Tools\AnyReader\Launcher.exe	
+UltraISO	C:\Program Files\UltraISO\UltraISO.exe	9.3.6.2750
+Chit Chat For Facebook	C:\Program Files\Chit Chat For Facebook\CCFFacebook.exe	1.4.2.0
+PPidgin	F:\Pidgin\pidgin.exe	2.5.3.0
+Yahoo! Messenger	C:\Program Files\Yahoo!\Messenger\YahooMessenger.exe	10.0.0.331
+Chit Chat For Facebook	C:\Program Files\Chit Chat For Facebook\CCFFacebook.exe	1.4.2.0
+Yahoo! Messenger	C:\Program Files\Yahoo!\Messenger\YahooMessenger.exe	10.0.0.331
+CHM Editor	C:\Program Files\GridinSoft\CHMEditor\chmEditor.exe	1.3.3.2
+CHM Editor	C:\Program Files\GridinSoft\CHMEditor\chmEditor.exe	1.3.3.2
+CDisplay	C:\Program Files\CDisplay\CDisplay.exe	1.8.1.0
+CDisplay	C:\Program Files\CDisplay\CDisplay.exe	1.8.1.0
+7-Zip File Manager	C:\Program Files\7-Zip\7zFM.exe	4.57.0.0
+ARAR	C:\Program Files\ARAR\ARAR.exe	1.2.0.0
+AZR	C:\Program Files\AZR\AZR.exe	1.6.2.0
+RAR Repair Tool	C:\Program Files\Rar Repair Tool\RarRepair.exe	4.0.1.0
+WinRAR	C:\Program Files\WinRAR\WinRAR.exe	3.93.0.0
+7-Zip File Manager	C:\Program Files\7-Zip\7zFM.exe	4.57.0.0
+ARAR	C:\Program Files\ARAR\ARAR.exe	1.2.0.0
+AZR	C:\Program Files\AZR\AZR.exe	1.6.2.0
+RAR Repair Tool	C:\Program Files\Rar Repair Tool\RarRepair.exe	4.0.1.0
+WinRAR	C:\Program Files\WinRAR\WinRAR.exe	3.93.0.0
+Graham Process Mapping	C:\Program Files\Graham 7\graham.exe	
+Graham Process Mapping	C:\Program Files\Graham 7\graham.exe	
+4shared Desktop	C:\Program Files\4shared Desktop\desktop.exe	3.3.0.1
+Easy MP3 Downloader	C:\Program Files\EasyMP3Downloader\EasyMP3Downloader.exe	4.2.3.8
+eDonkey Acceleration Patch	C:\Program Files\eDonkey Acceleration Patch\eDonkey Acceleration Patch.exe	5.8.8.0
+eDonkey2000	C:\Program Files\eDonkey2000\gdonkey.exe	1.0.0.1
+eMule Plus	C:\Program Files\eMule\eMule.exe	0.50.0.4
+eMule	C:\Program Files\eMule\eMule.exe	0.50.0.4
+Mediafire Download	D:\pyx\Mediafire.exe	1.1.0.0
+Mega Manager	C:\Program Files\Megaupload\Mega Manager\MegaManager.exe	3.4.0.8
+Megaupload Downloader	C:\Program Files\Megaupload Downloader\Megaupload Downloader.exe	0.2.1.28
+Orbit	C:\Program Files\Orbitdownloader\orbitdm.exe	2.8.0.19
+Rapid Hacker v4.5	C:\Program Files\xyr0x Security\Rapid Hacker\Rapid Hacker v4.5 by xyr0x.exe	4.5.0.0
+RapidCheck	C:\Program Files\RapidCheck\RapidCheck.exe	1.0.0.0
+µTorrent	C:\Program Files\uTorrent\uTorrent.exe	2.0.4.22450
+eMule Acceleration Patch	C:\Program Files\eMule Acceleration Patch\eMule Acceleration Patch.exe	5.3.9.0
+4shared Desktop	C:\Program Files\4shared Desktop\desktop.exe	3.3.0.1
+Easy MP3 Downloader	C:\Program Files\EasyMP3Downloader\EasyMP3Downloader.exe	4.2.3.8
+eDonkey Acceleration Patch	C:\Program Files\eDonkey Acceleration Patch\eDonkey Acceleration Patch.exe	5.8.8.0
+eDonkey2000	C:\Program Files\eDonkey2000\gdonkey.exe	1.0.0.1
+eMule Plus	C:\Program Files\eMule\eMule.exe	0.50.0.4
+eMule	C:\Program Files\eMule\eMule.exe	0.50.0.4
+LinkCreator	C:\Program Files\eMule\LinkCreator.exe	0.7.0.0
+Mega Manager	C:\Program Files\Megaupload\Mega Manager\MegaManager.exe	3.4.0.8
+Megaupload Downloader	C:\Program Files\Megaupload Downloader\Megaupload Downloader.exe	0.2.1.28
+Orbit	C:\Program Files\Orbitdownloader\orbitdm.exe	2.8.0.19
+Rapid Hacker v4.5 by xyr0x.exe	C:\Program Files\xyr0x Security\Rapid Hacker\Rapid Hacker v4.5 by xyr0x.exe	4.5.0.0
+RapidCheck	C:\Program Files\RapidCheck\RapidCheck.exe	1.0.0.0
+YADA	C:\Program Files\YADA\Yada.exe	1.0.0.1
+Driver Checker	C:\Program Files\Driver Checker\DriverChecker.exe	
+Driver Checker	C:\Program Files\Driver Checker\DriverChecker.exe	
+Configure FileMenu Tools	C:\Program Files\LopeSoft\FileMenu Tools\FileMenuTools.exe	5.7.0.0
+CubicExplorer	C:\Program Files\CubicExplorer\CubicExplorer.exe	0.80.0.890
+Drive Manager	D:\pyx\dm.exe	4.6.0.14
+ExtraRenamer	C:\Program Files\ExtraRename30\ExtraRename.exe	3.0.0.0
+Far Manager 2	C:\Program Files\Far2\Far.exe	2.0.0.1420
+FolderSizes 4	C:\Program Files\Key Metric Software\FolderSizes 4\FolderSizes.exe	4.8.1.72
+JExplorer	C:\Program Files\JExplorer\JExplorer.exe	1.8.0.1
+NexusFile	C:\Program Files\NexusFile\NexusFile.exe	5.1.3.3652
+Q-Dir	C:\Program Files\Q-Dir\Q-Dir.exe	4.1.8.0
+SE-Explorer	C:\Program Files\SE-SOFT.COM\SE-Explorer\SE-Explorer.exe	0.0.30.600
+SizeMe	C:\Program Files\SizeMe\SizeMe.exe	2.0.0.1926
+Total Commander	C:\totalcmd\TOTALCMD.EXE	7.5.0.1
+ViceVersa Pro	C:\Program Files\ViceVersa Pro 2\ViceVersa.exe	2.0.1.2
+xplorer2	C:\Program Files\zabkat\xplorer2\xplorer2_UC.exe	1.8.0.13
+CubicExplorer	C:\Program Files\CubicExplorer\CubicExplorer.exe	0.80.0.890
+ExtraRenamer	C:\Program Files\ExtraRename30\ExtraRename.exe	3.0.0.0
+Far Manager 2	C:\Program Files\Far2\Far.exe	2.0.0.1420
+FolderSizes 4	C:\Program Files\Key Metric Software\FolderSizes 4\FolderSizes.exe	4.8.1.72
+JCalculator	C:\Program Files\JExplorer\JCalculator.exe	1.0.0.0
+JExplorer	C:\Program Files\JExplorer\JExplorer.exe	1.8.0.1
+JMounter	C:\Program Files\JExplorer\JMounter.exe	1.0.0.0
+JOCR	C:\Program Files\JExplorer\JOCR.exe	1.0.0.0
+Configure FileMenu Tools	C:\Program Files\LopeSoft\FileMenu Tools\FileMenuTools.exe	5.7.0.0
+NexusFile	C:\Program Files\NexusFile\NexusFile.exe	5.1.3.3652
+Q-Dir help	C:\Program Files\Q-Dir\Q-Dir.exe	4.1.8.0
+Q-Dir	C:\Program Files\Q-Dir\Q-Dir.exe	4.1.8.0
+SE-Explorer	C:\Program Files\SE-SOFT.COM\SE-Explorer\SE-Explorer.exe	0.0.30.600
+SE-MediaPlayer	C:\Program Files\SE-SOFT.COM\SE-Explorer\SE-MediaPlayer.exe	0.0.5.50
+SizeMe	C:\Program Files\SizeMe\SizeMe.exe	2.0.0.1926
+Total Commander	C:\totalcmd\TOTALCMD.EXE	7.5.0.1
+ViceVersa Pro	C:\Program Files\ViceVersa Pro 2\ViceVersa.exe	2.0.1.2
+VVLauncher	C:\Program Files\ViceVersa Pro 2\VVLauncher\VVLauncher.exe	2.0.0.2
+VVLogViewer	C:\Program Files\ViceVersa Pro 2\VVLogViewer.exe	2.0.0.0
+VVScheduler	C:\Program Files\ViceVersa Pro 2\VVScheduler.exe	2.0.0.2
+InstServ	C:\Program Files\ViceVersa Pro 2\VVLauncher\Service\InstServ.exe	2.0.0.2
+advanced settings	C:\Program Files\zabkat\xplorer2\x2SettingsEditor.exe	1.3.0.3
+editor2	C:\Program Files\zabkat\xplorer2\editor2_UC.exe	2.9.1.3
+xplorer2	C:\Program Files\zabkat\xplorer2\xplorer2_UC.exe	1.8.0.13
+Aero SWF.max Flash Player	C:\Program Files\SWF.max\SWF.max.exe	1.5.0.800
+Free FLASH Player 5.0	C:\Program Files\Free FLASH Player\FreeFlashPlayer.exe	
+SWF Opener	C:\Program Files\UnH Solutions\SWF Opener\SWFOpener.exe	1.3.0.0
+SWF Cache Viewer	C:\Program Files\UnH Solutions\SWF Opener\SWFCacheViewer.exe	1.5.0.0
+SWF Opener	C:\Program Files\UnH Solutions\SWF Opener\SWFOpener.exe	1.3.0.0
+CuteFTP 8 Professional	C:\Program Files\GlobalSCAPE\CuteFTP 8 Professional\cuteftppro.exe	8.0.0.0
+Ipswitch WS_FTP Professional 2006	C:\Program Files\Ipswitch\WS_FTP Professional\wsftpgui.exe	2006.0.1.0
+CuteFTP 8 Professional	C:\Program Files\GlobalSCAPE\CuteFTP 8 Professional\cuteftppro.exe	8.0.0.0
+Ipswitch WS_FTP Professional 2006	C:\Program Files\Ipswitch\WS_FTP Professional\wsftpgui.exe	2006.0.1.0
+View WS_FTP Server EULA	C:\WINDOWS\system32\notepad.exe	5.1.2600.2180
+WS_FTP Find Utility	C:\Program Files\Ipswitch\WS_FTP Professional\ftpfind.exe	2006.0.1.0
+WS_FTP Scheduler	C:\Program Files\Ipswitch\WS_FTP Professional\ftpsched.exe	2006.0.1.0
+WS_FTP Scripting Utility	C:\Program Files\Ipswitch\WS_FTP Professional\ftpscrpt.exe	1.0.0.1
+WS_FTP Synchronize Utility	C:\Program Files\Ipswitch\WS_FTP Professional\ftpsync.exe	2006.0.1.0
+WS_FTP Upload Wizard	C:\Program Files\Ipswitch\WS_FTP Professional\UpWiz.exe	2006.0.1.0
+Platypus II	C:\Program Files\Platypus II\Platypus2.exe	
+Platypus II	C:\Program Files\Platypus II\Platypus2.exe	
+i.Disk	C:\Program Files\i.Disk\i.Disk.exe	
+Imagine	C:\Program Files\Imagine\Imagine.exe	1.0.7.0
+Paint.NET	C:\Program Files\Paint.NET\PaintDotNet.exe	3.54.3708.31979
+Picasa 3	C:\Program Files\Google\Picasa3\Picasa3.exe	3.5.79.67
+Imagine	C:\Program Files\Imagine\Imagine.exe	1.0.7.0
+Configure Picasa Photo Viewer	C:\Program Files\Google\Picasa3\PicasaPhotoViewer.exe	3.5.79.67
+Picasa 3	C:\Program Files\Google\Picasa3\Picasa3.exe	3.5.79.67
+Bionic CPU Peeker	C:\Program Files\Bionic CPU Peeker\Bionic CPU Peeker.exe	2.7.1.0
+Cool Beans System Info	C:\Program Files\Cool Beans System Info\Cool Beans System Info.exe	2.0.0.4
+Drive Manager	D:\pyx\dm.exe	4.6.0.14
+Hard Disk Sentinel	C:\Program Files\Hard Disk Sentinel\HDSentinel.exe	3.3.0.0
+Hardware sensors monitor	C:\Program Files\Hmonitor\hmonitor.exe	4.4.3.2
+Iarsn TaskInfo	C:\Program Files\Iarsn\TaskInfo 9.x\TaskInfo.exe	9.2.0.320
+logview4net	C:\Program Files\logview4net\logview4net.exe	9.38.0.0
+Process Lasso	C:\Program Files\Process Lasso\ProcessLasso.exe	3.7.0.7
+RAMMon	C:\Program Files\RAMMon\RAMMon.exe	
+Speccy	C:\Program Files\Speccy\Speccy.exe	1.6.0.191
+SpeedFan	C:\Program Files\SpeedFan\speedfan.exe	4.42.0.294
+Bionic CPU Peeker	C:\Program Files\Bionic CPU Peeker\Bionic CPU Peeker.exe	2.7.1.0
+Cool Beans System Info	C:\Program Files\Cool Beans System Info\Cool Beans System Info.exe	2.0.0.4
+Hard Disk Sentinel	C:\Program Files\Hard Disk Sentinel\HDSentinel.exe	3.3.0.0
+Start Service	C:\Program Files\Hard Disk Sentinel\HDSCtrl.exe	3.3.0.0
+Stop Service	C:\Program Files\Hard Disk Sentinel\HDSCtrl.exe	3.3.0.0
+Hardware sensors monitor	C:\Program Files\Hmonitor\hmonitor.exe	4.4.3.2
+logview4net	C:\Program Files\logview4net\logview4net.exe	9.38.0.0
+Process Lasso	C:\Program Files\Process Lasso\ProcessLasso.exe	3.7.0.7
+Run CPU eater for 60 seconds	C:\Program Files\Process Lasso\CPUEater.exe	
+Test Process Lasso	C:\Program Files\Process Lasso\TestLasso.exe	
+Tweak Scheduler	C:\Program Files\Process Lasso\TweakScheduler.exe	
+Vista Multimedia Scheduler Configuration	C:\Program Files\Process Lasso\vistammsc.exe	
+RAMMon	C:\Program Files\RAMMon\RAMMon.exe	
+Speccy	C:\Program Files\Speccy\Speccy.exe	1.6.0.191
+SpeedFan	C:\Program Files\SpeedFan\speedfan.exe	4.42.0.294
+Iarsn TaskInfo	C:\Program Files\Iarsn\TaskInfo 9.x\TaskInfo.exe	9.2.0.320
+Quran Auto Reciter	C:\Program Files\Quran_AR\Quran_AR.exe	2.0.0.0
+Quran Auto Reciter	C:\Program Files\Quran_AR\Quran_AR.exe	2.0.0.0
+Kamus2	C:\Program Files\Kamus2\Kamus2.exe	2.0.3.36
+Kamus2	C:\Program Files\Kamus2\Kamus2.exe	2.0.3.36
+DreamMail	C:\Program Files\DreamMail4\DM2005.exe	4.6.8.2
+GMail Backup	C:\Program Files\GmailBackup\gmail-backup-gui.exe	
+Gmail Herald	C:\Program Files\Gmail Herald\gherald.exe	
+Outlook Express	C:\Program Files\Outlook Express\msimn.exe	6.0.2900.2180
+POP Peeper	C:\Program Files\POP Peeper\POPPeeper.exe	3.7.0.0
+Scott's Gmail Alert	C:\Program Files\Scott's Gmail Alert\ScottsGmailAlert.exe	4.7.8.15
+DreamMail	C:\Program Files\DreamMail4\DM2005.exe	4.6.8.2
+GMail Backup	C:\Program Files\GmailBackup\gmail-backup-gui.exe	
+Gmail Herald	C:\Program Files\Gmail Herald\gherald.exe	
+POP Peeper	C:\Program Files\POP Peeper\POPPeeper.exe	3.7.0.0
+Scott's Gmail Alert	C:\Program Files\Scott's Gmail Alert\ScottsGmailAlert.exe	4.7.8.15
+Advanced SystemCare	C:\Program Files\IObit\Advanced SystemCare 3\AWC.exe	3.7.2.732
+Ashampoo Core Tuner	C:\Program Files\Ashampoo\Ashampoo Core Tuner\ct.exe	1.2.0.0
+Ashampoo Internet Accelerator 3	C:\Program Files\Ashampoo\Ashampoo Internet Accelerator 3\iac3.exe	3.2.0.0
+CCleaner	C:\Program Files\CCleaner\CCleaner.exe	3.0.0.1303
+CpuIdle	C:\Program Files\CpuIdle\cpuidle.exe	7.5.0.10
+FCleaner	C:\Program Files\FCleaner\FCleaner.exe	1.3.1.621
+jv16 PowerTools 2010	C:\Program Files\jv16 PowerTools 2010\jv16PT.exe	2.0.0.964
+Max Registry Cleaner	C:\Program Files\Max Registry Cleaner\MaxRegistryCleaner.exe	1.0.2.69
+MemMonster 4	C:\Program Files\Magellass\MemMonster\memmnstr.exe	4.70.0.0
+RamDisk Plus	C:\Program Files\SuperSpeed\RamDisk\SscRdCpa.exe	10.0.1.0
+RAMRush	C:\Program Files\RAMRush\RAMRush.exe	1.0.6.917
+RegClean Pro	C:\Program Files\RegClean Pro\RegCleanPro.exe	6.1.65.892
+TuneUp Utilities	C:\Program Files\TuneUp Utilities 2010\Integrator.exe	9.0.3000.136
+UltimateDefrag	C:\Program Files\Disktrix\UltimateDefrag\Udefrag.exe	3.0.100.10
+Window Washer	C:\Program Files\Webroot\Washer\wwDisp.exe	6.5.5.155
+Advanced SystemCare	C:\Program Files\IObit\Advanced SystemCare 3\AWC.exe	3.7.2.732
+Auto Shutdown	C:\Program Files\IObit\Advanced SystemCare 3\Sut_AutoShutDown.exe	1.0.0.17
+Cloned Files Finder	C:\Program Files\IObit\Advanced SystemCare 3\Sut_ClonedFilesFinder.exe	1.0.0.6
+Context Manager	C:\Program Files\IObit\Advanced SystemCare 3\Sut_ContextManager.exe	1.0.0.5
+Disk Cleaner	C:\Program Files\IObit\Advanced SystemCare 3\Sup_DiskCleaner.exe	2.0.2.6
+Disk Doctor	C:\Program Files\IObit\Advanced SystemCare 3\Sup_DiskDoctor.exe	1.0.0.0
+Disk Explorer	C:\Program Files\IObit\Advanced SystemCare 3\Sut_DiskExplorer.exe	1.0.0.4
+Driver Backup	C:\Program Files\IObit\Advanced SystemCare 3\Sus_DriverBackUp.exe	1.1.0.116
+File Shredder	C:\Program Files\IObit\Advanced SystemCare 3\Sup_FileShredder.exe	1.0.0.0
+Game Booster	C:\Program Files\IObit\Advanced SystemCare 3\Sup_GameBooster.exe	1.0.0.34
+IE Helper	C:\Program Files\IObit\Advanced SystemCare 3\Sus_PIeHelp.exe	1.0.0.17
+Internet Booster	C:\Program Files\IObit\Advanced SystemCare 3\Sup_InternetBooster.exe	1.0.1.3
+Registry Defrag	C:\Program Files\IObit\Advanced SystemCare 3\Sup_RegistryDefrag.exe	1.0.0.18
+Shortcuts Fixer	C:\Program Files\IObit\Advanced SystemCare 3\Sup_ShortcutsFixer.exe	1.0.1.10
+Smart RAM	C:\Program Files\IObit\Advanced SystemCare 3\Sup_SmartRAM.exe	2.0.5.12
+Startup Manager	C:\Program Files\IObit\Advanced SystemCare 3\Sut_StartUpManager.exe	1.0.0.23
+System Backup	C:\Program Files\IObit\Advanced SystemCare 3\Sus_SystemBackup.exe	1.0.0.3
+System File Scan	C:\Program Files\IObit\Advanced SystemCare 3\Sus_SystemFileScan.exe	1.0.0.1
+System Information	C:\Program Files\IObit\Advanced SystemCare 3\Sut_SysInfo.exe	1.0.0.10
+Windows Manager	C:\Program Files\IObit\Advanced SystemCare 3\Sut_WinManager.exe	1.0.0.63
+Ashampoo Core Tuner	C:\Program Files\Ashampoo\Ashampoo Core Tuner\ct.exe	1.2.0.0
+Ashampoo Internet Accelerator 3	C:\Program Files\Ashampoo\Ashampoo Internet Accelerator 3\iac3.exe	3.2.0.0
+CCleaner	C:\Program Files\CCleaner\CCleaner.exe	3.0.0.1303
+CpuIdle	C:\Program Files\CpuIdle\cpuidle.exe	7.5.0.10
+UltimateDefrag	C:\Program Files\Disktrix\UltimateDefrag\Udefrag.exe	3.0.100.10
+FCleaner	C:\Program Files\FCleaner\FCleaner.exe	1.3.1.621
+jv16 PowerTools 2010	C:\Program Files\jv16 PowerTools 2010\jv16PT.exe	2.0.0.964
+Get Free Extended Code!!	C:\Program Files\Internet Explorer\IEXPLORE.EXE	6.0.2900.2180
+MemMonster 4	C:\Program Files\Magellass\MemMonster\memmnstr.exe	4.70.0.0
+Order MemMonster 4	C:\Program Files\Internet Explorer\IEXPLORE.EXE	6.0.2900.2180
+Max Registry Cleaner	C:\Program Files\Max Registry Cleaner\MaxRegistryCleaner.exe	1.0.2.69
+RAMRush	C:\Program Files\RAMRush\RAMRush.exe	1.0.6.917
+RegClean Pro	C:\Program Files\RegClean Pro\RegCleanPro.exe	6.1.65.892
+RamDisk Plus	C:\Program Files\SuperSpeed\RamDisk\SscRdCpa.exe	10.0.1.0
+TuneUp Utilities	C:\Program Files\TuneUp Utilities 2010\Integrator.exe	9.0.3000.136
+TuneUp 1-Click Maintenance	C:\Program Files\TuneUp Utilities 2010\OneClick.exe	9.0.3000.136
+TuneUp Disk Doctor	C:\Program Files\TuneUp Utilities 2010\DiskDoctor.exe	9.0.3000.136
+TuneUp Disk Space Explorer	C:\Program Files\TuneUp Utilities 2010\DiskExplorer.exe	9.0.3000.136
+TuneUp Drive Defrag	C:\Program Files\TuneUp Utilities 2010\DriveDefrag.exe	9.0.3000.136
+TuneUp Gain Disk Space	C:\Program Files\TuneUp Utilities 2010\GainDiskSpace.exe	9.0.3000.136
+TuneUp Live Optimization	C:\Program Files\TuneUp Utilities 2010\LiveOptimizer.exe	9.0.3000.136
+TuneUp Optimization Report	C:\Program Files\TuneUp Utilities 2010\Report.exe	9.0.3000.136
+TuneUp Process Manager	C:\Program Files\TuneUp Utilities 2010\ProcessManager.exe	9.0.3000.136
+TuneUp Registry Cleaner	C:\Program Files\TuneUp Utilities 2010\RegistryCleaner.exe	9.0.3000.136
+TuneUp Registry Defrag	C:\Program Files\TuneUp Utilities 2010\RegistryDefrag.exe	9.0.3000.136
+TuneUp Registry Editor	C:\Program Files\TuneUp Utilities 2010\RegistryEditor.exe	9.0.3000.136
+TuneUp Repair Wizard	C:\Program Files\TuneUp Utilities 2010\RepairWizard.exe	9.0.3000.136
+TuneUp Rescue Center	C:\Program Files\TuneUp Utilities 2010\RescueCenter.exe	9.0.3000.136
+TuneUp Shortcut Cleaner	C:\Program Files\TuneUp Utilities 2010\ShortcutCleaner.exe	9.0.3000.136
+TuneUp Shredder	C:\Program Files\TuneUp Utilities 2010\Shredder.exe	9.0.3000.136
+TuneUp StartUp Manager	C:\Program Files\TuneUp Utilities 2010\StartUpManager.exe	9.0.3000.136
+TuneUp StartUp Optimizer	C:\Program Files\TuneUp Utilities 2010\StartupOptimizer.exe	9.0.3000.136
+TuneUp Styler	C:\Program Files\TuneUp Utilities 2010\WinStyler.exe	9.0.3000.136
+TuneUp System Control	C:\Program Files\TuneUp Utilities 2010\SystemControl.exe	9.0.3000.136
+TuneUp System Information	C:\Program Files\TuneUp Utilities 2010\SystemInformation.exe	9.0.3000.136
+TuneUp Undelete	C:\Program Files\TuneUp Utilities 2010\Undelete.exe	9.0.3000.136
+TuneUp Update Wizard	C:\Program Files\TuneUp Utilities 2010\UpdateWizard.exe	9.0.3000.136
+Window Washer	C:\Program Files\Webroot\Washer\wwDisp.exe	6.5.5.155
+Internet Accelerator	C:\Program Files\Pointstone\Internet Accelerator\InternetAccelerator.exe	1.4.0.50
+MBM 5 Config Wizard	C:\Program Files\Motherboard Monitor 5\MBMWiz.exe	5.3.5.0
+MBM 5 Debug mode	C:\Program Files\Motherboard Monitor 5\MBM5.exe	5.3.7.0
+MBM 5	C:\Program Files\Motherboard Monitor 5\MBM5.exe	5.3.7.0
+CD Art Display	C:\Program Files\CD Art Display\CAD.exe	2.0.0.0
+Desktop Album Display	C:\Program Files\Desktop Album Display\Desktop Album Display.exe	2.0.0.0
+foobar2000	C:\Program Files\foobar2000\foobar2000.exe	1.1.1.0
+iTunesControl	C:\Program Files\iTunesControl\itc.exe	0.53.15.0
+Launch Xion	C:\Program Files\r2 Studios\Xion\Xion.exe	1.0.0.127
+MarkelSoft iPlayAnywhere for iTunes	C:\Program Files\StreamTunes\iPlayAnywhere.exe	
+MarkelSoft StreamTunes for iTunes	C:\Program Files\StreamTunes\StreamTunes.exe	
+MarkelSoft Visualizer for iTunes	C:\Program Files\Visualizer\Visualizer.exe	
+Media Player Classic	C:\Program Files\K-Lite Codec Pack\Media Player Classic\mpc-hc.exe	1.3.1405.0
+MediaMonkey	C:\Program Files\MediaMonkey\MediaMonkey.exe	3.2.1.1297
+MyTunesRSS	C:\TOOLS\MyTunesRSS v2.3.5\MyTunesRSS.exe	
+Playlist Creator 3	C:\Program Files\Playlist Creator 3\pc3.exe	3.5.0.0
+Quintessential Media Player	C:\Program Files\Quintessential Media Player\QMPlayer.exe	5.0.0.121
+Quintessential Player	C:\Program Files\Quintessential Player\QCDPlayer.exe	4.50.1.82
+CD Art Display	C:\Program Files\CD Art Display\CAD.exe	2.0.0.0
+Desktop Album Display	C:\Program Files\Desktop Album Display\Desktop Album Display.exe	2.0.0.0
+Exact Audio Copy	C:\Program Files\Exact Audio Copy\EAC.exe	
+Configuration	C:\Program Files\iTunesControl\config.exe	0.53.15.0
+iTunesControl	C:\Program Files\iTunesControl\itc.exe	0.53.15.0
+Localizer	C:\Program Files\iTunesControl\localizer.exe	0.0.0.4
+Media Player Classic	C:\Program Files\K-Lite Codec Pack\Media Player Classic\mpc-hc.exe	1.3.1405.0
+Codec Tweak Tool	C:\Program Files\K-Lite Codec Pack\Tools\CodecTweakTool.exe	51.1050.0.0
+CoreVorbis	C:\Program Files\K-Lite Codec Pack\Tools\dsconfig.exe	1.0.0.1
+Cyberlink MPEG-2 decoder	C:\Program Files\K-Lite Codec Pack\Tools\dsconfig.exe	1.0.0.1
+DirectVobSub	C:\WINDOWS\system32\rundll32.exe	5.1.2600.2180
+ffdshow audio decoder	C:\WINDOWS\system32\rundll32.exe	5.1.2600.2180
+ffdshow VFW interface	C:\WINDOWS\system32\rundll32.exe	5.1.2600.2180
+ffdshow video decoder	C:\WINDOWS\system32\rundll32.exe	5.1.2600.2180
+Generate log with system information	C:\Program Files\K-Lite Codec Pack\Tools\CodecTweakTool.exe	51.1050.0.0
+Haali Media Splitter	C:\WINDOWS\system32\rundll32.exe	5.1.2600.2180
+Haali video renderer	C:\Program Files\K-Lite Codec Pack\Tools\dsconfig.exe	1.0.0.1
+madFLAC	C:\Program Files\K-Lite Codec Pack\Tools\dsconfig.exe	1.0.0.1
+Manage installed codecs and filters	C:\Program Files\K-Lite Codec Pack\Tools\CodecTweakTool.exe	51.1050.0.0
+Manage preferred source filters	C:\Program Files\K-Lite Codec Pack\Tools\CodecTweakTool.exe	51.1050.0.0
+RealMedia	C:\Program Files\K-Lite Codec Pack\Real\settings.exe	51.1050.0.0
+Reset to recommended settings	C:\Program Files\K-Lite Codec Pack\Tools\CodecTweakTool.exe	51.1050.0.0
+VP7 decoder	C:\Program Files\K-Lite Codec Pack\Tools\dsconfig.exe	1.0.0.1
+Xvid encoder	C:\WINDOWS\system32\rundll32.exe	5.1.2600.2180
+Codec Tweak Tool	C:\Program Files\K-Lite Codec Pack\Tools\CodecTweakTool.exe	51.1050.0.0
+GraphStudio	C:\Program Files\K-Lite Codec Pack\Tools\graphstudio.exe	0.3.2.0
+GSpot Codec Information	C:\Program Files\K-Lite Codec Pack\Tools\gspot\gspot.exe	2.7.0.1
+Haali Muxer	C:\Program Files\K-Lite Codec Pack\Filters\Haali\gdsmux.exe	
+MediaInfo	C:\Program Files\K-Lite Codec Pack\Tools\mediainfo.exe	
+VobSubStrip	C:\Program Files\K-Lite Codec Pack\Tools\VobSubStrip.exe	
+Xvid StatsReader	C:\Program Files\K-Lite Codec Pack\Tools\StatsReader.exe	2.1.0.0
+MarkelSoft iPlayAnywhere for iTunes Tray	C:\Program Files\StreamTunes\iPlayAnywhereTray.exe	
+MarkelSoft iPlayAnywhere for iTunes	C:\Program Files\StreamTunes\iPlayAnywhere.exe	
+MarkelSoft StreamTunes for iTunes Tray	C:\Program Files\StreamTunes\StreamTunesTray.exe	
+MarkelSoft StreamTunes for iTunes	C:\Program Files\StreamTunes\StreamTunes.exe	
+MarkelSoft Visualizer for iTunes	C:\Program Files\Visualizer\Visualizer.exe	
+MediaMonkey	C:\Program Files\MediaMonkey\MediaMonkey.exe	3.2.1.1297
+Playlist Creator 3	C:\Program Files\Playlist Creator 3\pc3.exe	3.5.0.0
+Quintessential Media Player	C:\Program Files\Quintessential Media Player\QMPlayer.exe	5.0.0.121
+Quintessential Player	C:\Program Files\Quintessential Player\QCDPlayer.exe	4.50.1.82
+Launch Xion	C:\Program Files\r2 Studios\Xion\Xion.exe	1.0.0.127
+Volumouse	C:\Program Files\NirSoft\Volumouse\volumouse.exe	1.7.2.157
+ViPlay3	C:\Program Files\URUSoft\ViPlay3\ViPlay3.exe	3.0.0.0
+AvRack	C:\Program Files\AvRack\rtlrack.exe	1.10.0.0
+dBpoweramp Music Converter	C:\Program Files\Illustrate\dBpoweramp\MusicConverter.exe	13.3.0.2
+Exact Audio Copy	C:\Program Files\Exact Audio Copy\EAC.exe	
+FairStars Audio Converter Pro	C:\Program Files\FairStars Audio Converter Pro\AudioConverterPro.exe	1.4.0.1
+iWOW for PC	C:\Program Files\SRS Labs\SRS iWOW for PC\SRS_iWOW_PC.exe	3.2.0.0
+MP3GainGUI	C:\TOOLS\mp3gain-win-full-1_2_5\MP3GainGUI.exe	1.2.0.5
+Mp3tag v2.46a	C:\Program Files\Mp3tag\Mp3tag.exe	2.46.1.0
+MP3Test	C:\Program Files\MAF-Soft\MP3Test\MP3Test.exe	1.6.0.157
+SRS Audio Sandbox	C:\Program Files\SRS Labs\Audio Sandbox\SRSSSC.exe	2.3.6.0
+Tagscan	D:\Tagscan\Tagscan.exe	5.0.2.5
+Vol Control	C:\WINDOWS\system32\sndvol32.exe	5.1.2600.0
+CD Art Display	C:\Program Files\CD Art Display\CAD.exe	2.0.0.0
+dBpoweramp Batch Converter	C:\Program Files\Illustrate\dBpoweramp\DMCFileSelector.exe	13.3.0.2
+dBpoweramp CD Ripper	C:\Program Files\Illustrate\dBpoweramp\CDGrab.exe	13.3.0.2
+dBpoweramp Music Converter	C:\Program Files\Illustrate\dBpoweramp\MusicConverter.exe	13.3.0.2
+dBpoweramp Configuration	C:\Program Files\Illustrate\dBpoweramp\dBConfig.exe	13.3.0.2
+FairStars Audio Converter Pro	C:\Program Files\FairStars Audio Converter Pro\AudioConverterPro.exe	1.4.0.1
+Mp3tag v2.46a	C:\Program Files\Mp3tag\Mp3tag.exe	2.46.1.0
+MP3Test	C:\Program Files\MAF-Soft\MP3Test\MP3Test.exe	1.6.0.157
+AvRack	C:\Program Files\AvRack\rtlrack.exe	1.10.0.0
+SRS Audio Sandbox	C:\Program Files\SRS Labs\Audio Sandbox\SRSSSC.exe	2.3.6.0
+iWOW for PC	C:\Program Files\SRS Labs\SRS iWOW for PC\SRS_iWOW_PC.exe	3.2.0.0
+BySoft InternetPal	C:\Program Files\BySoft InternetPal\InternetPal.exe	3.1.0.0
+Commander	C:\Program Files\OPENXTRA\Common\openxtra_agent.exe	4.0.0.54
+Full Speed	C:\Program Files\'Full Speed' Internet Booster + Performance Tests\FullSpeed.exe	3.3.0.0
+Gbridge	C:\Program Files\Gbridge LLC\Gbridge\pstartw.exe	
+LogMeIn Hamachi	C:\Program Files\LogMeIn Hamachi\hamachi-2-ui.exe	2.0.2.85
+LogMeIn	C:\Program Files\LogMeIn\x86\raabout.exe	4.0.0.680
+Modem Logger	C:\Program Files\KirysTech2k\Modem Logger\modemlog.exe	1.0.0.561
+ModemGPH	C:\Program Files\ModemGPH\modemgph.exe	
+NeoTracePro	C:\Program Files\NeoTracePro\NeoTrace.exe	3.1.9.0
+Nmap - Zenmap GUI	C:\Program Files\Nmap\zenmap.exe	
+PeerBlock	C:\Program Files\PeerBlock\peerblock.exe	1.0.0.404
+Pop-Up Stopper Professional	C:\Program Files\Panicware\Pop-Up Stopper Professional\UNWISE.EXE	
+ProxySwitcher Standard	C:\Program Files\Proxy Switcher Standard\ProxySwitcher.exe	4.2.0.5101
+TeamViewer 4	C:\Program Files\TeamViewer\Version4\TeamViewer.exe	4.1.6320.0
+Virtual Modem Pro	C:\Program Files\Eltima Software\Virtual Modem Pro\vmodem.exe	3.0.3.129
+Full Speed	C:\Program Files\'Full Speed' Internet Booster + Performance Tests\FullSpeed.exe	3.3.0.0
+BySoft InternetPal	C:\Program Files\BySoft InternetPal\InternetPal.exe	3.1.0.0
+Statistics	C:\Program Files\BySoft InternetPal\Statistics.exe	1.0.5.0
+Virtual Modem Pro	C:\Program Files\Eltima Software\Virtual Modem Pro\vmodem.exe	3.0.3.129
+Gbridge (no UPNP)	C:\Program Files\Gbridge LLC\Gbridge\pstartw.exe	
+Gbridge	C:\Program Files\Gbridge LLC\Gbridge\pstartw.exe	
+Lower Gbridge Interface Binding Order	C:\Program Files\Gbridge LLC\Gbridge\GbridgeInstallHelper.exe	
+Raise Gbridge Interface Binding Order	C:\Program Files\Gbridge LLC\Gbridge\GbridgeInstallHelper.exe	
+Modem Logger	C:\Program Files\KirysTech2k\Modem Logger\modemlog.exe	1.0.0.561
+LogMeIn Hamachi	C:\Program Files\LogMeIn Hamachi\hamachi-2-ui.exe	2.0.2.85
+ModemGPH	C:\Program Files\ModemGPH\modemgph.exe	
+NeoTracePro	C:\Program Files\NeoTracePro\NeoTrace.exe	3.1.9.0
+Nmap - Zenmap GUI	C:\Program Files\Nmap\zenmap.exe	
+Commander	C:\Program Files\OPENXTRA\Common\openxtra_agent.exe	4.0.0.54
+Start MRTG Service	C:\Program Files\OPENXTRA\Common\Tools\WinRun.exe	
+Stop MRTG Service	C:\Program Files\OPENXTRA\Common\Tools\WinRun.exe	
+Panicware Resource Center	C:\Program Files\Panicware\Pop-Up Stopper Professional\UNWISE.EXE	
+Pop-Up Stopper Professional	C:\Program Files\Panicware\Pop-Up Stopper Professional\UNWISE.EXE	
+PeerBlock	C:\Program Files\PeerBlock\peerblock.exe	1.0.0.404
+Anonymous Surfing Tutorial	C:\Program Files\Proxy Switcher Standard\AnSurf.exe	
+Basic Usage Tutorial	C:\Program Files\Proxy Switcher Standard\Basics.exe	
+ProxySwitcher Standard	C:\Program Files\Proxy Switcher Standard\ProxySwitcher.exe	4.2.0.5101
+Setting Up Mozilla FireFox Tutorial	C:\Program Files\Proxy Switcher Standard\FireFox.exe	
+ProxySwitcher Standard (Safe mode)	C:\Program Files\Proxy Switcher Standard\ProxySwitcher.exe	4.2.0.5101
+TeamViewer 4	C:\Program Files\TeamViewer\Version4\TeamViewer.exe	4.1.6320.0
+cFosSpeed console	C:\WINDOWS\system32\cmd.exe	5.1.2600.2180
+Net Meter	C:\Program Files\HooTech\NetMeter\HooNetMeter.exe	3.6.0.437
+kchmviewer	C:\Program Files\Ulduzsoft\KchmViewer\kchmviewer.exe	
+NXPowerLite 4	C:\Program Files\NXPowerLite\NXPowerLite.exe	4.2.3.4520
+PortableOpenOffice	F:\PortableOpenOffice\PortableOpenOffice.exe	1.1.3.1
+PortableOpenOfficeBase	F:\PortableOpenOffice\PortableOpenOfficeBase.exe	1.1.3.0
+PortableOpenOfficeCalc	F:\PortableOpenOffice\PortableOpenOfficeCalc.exe	1.1.3.0
+PortableOpenOfficeDraw	F:\PortableOpenOffice\PortableOpenOfficeDraw.exe	1.1.3.0
+PortableOpenOfficeImpress	F:\PortableOpenOffice\PortableOpenOfficeImpress.exe	1.1.3.0
+PortableOpenOfficeMath	F:\PortableOpenOffice\PortableOpenOfficeMath.exe	1.1.3.0
+PortableOpenOfficeWriter	F:\PortableOpenOffice\PortableOpenOfficeWriter.exe	1.1.3.0
+kchmviewer	C:\Program Files\Ulduzsoft\KchmViewer\kchmviewer.exe	
+PortableOpenOffice	F:\PortableOpenOffice\PortableOpenOffice.exe	1.1.3.1
+PortableOpenOfficeBase	F:\PortableOpenOffice\PortableOpenOfficeBase.exe	1.1.3.0
+PortableOpenOfficeCalc	F:\PortableOpenOffice\PortableOpenOfficeCalc.exe	1.1.3.0
+PortableOpenOfficeDraw	F:\PortableOpenOffice\PortableOpenOfficeDraw.exe	1.1.3.0
+PortableOpenOfficeImpress	F:\PortableOpenOffice\PortableOpenOfficeImpress.exe	1.1.3.0
+PortableOpenOfficeMath	F:\PortableOpenOffice\PortableOpenOfficeMath.exe	1.1.3.0
+PortableOpenOfficeWriter	F:\PortableOpenOffice\PortableOpenOfficeWriter.exe	1.1.3.0
+Foxit Software	C:\Program Files\Foxit Software\Foxit Phantom\Foxit Phantom.exe	2.2.0.926
+InkSaver	C:\Program Files\InkSaver\InkSaver.exe	2.0.0.127
+PDF Explorer	C:\Program Files\PDF Explorer\PDFExplorer.exe	1.5.0.59
+PDFZilla	C:\Program Files\PDFZilla\PDFZilla.exe	1.2.0.4
+priPrinter	C:\Program Files\priPrinter\priPrinter.exe	3.3.0.1057
+My Program	C:\Program Files\Foxit Software\Foxit Phantom\Foxit Phantom.exe	2.2.0.926
+Add or Remove Printers	C:\Program Files\Common Files\InstallShield\Driver\8\Intel 32\IDriver.exe	8.1.0.293
+InkSaver	C:\Program Files\InkSaver\InkSaver.exe	2.0.0.127
+PDF Explorer	C:\Program Files\PDF Explorer\PDFExplorer.exe	1.5.0.59
+Explore saved PDF files	C:\WINDOWS\system32\spool\drivers\w32x86\3\fppdis3a.exe	3.41.0.0
+PDFZilla	C:\Program Files\PDFZilla\PDFZilla.exe	1.2.0.4
+priPrinter	C:\Program Files\priPrinter\priPrinter.exe	3.3.0.1057
+e - texteditor	C:\Program Files\e\e.exe	
+Ezdit	C:\TOOLS\qyx\ezdit.exe	8.6.1.1
+JTPad	C:\TOOLS\qyx\JTPad.exe	1.0.0.0
+Metapad	C:\TOOLS\qyx\metapad.exe	
+Notepad GNU	C:\Program Files\Notepad GNU\Notepad GNU.exe	
+Notepad++	C:\Program Files\Notepad++\notepad++.exe	5.8.2.0
+Pascal Analyzer 4	C:\Program Files\Peganza\Pascal Analyzer 4 Eval\PAL.exe	4.6.4.0
+Perl Package Manager	C:\Perl\bin\wperl.exe	5.8.9.825
+PyQt4 Assistant	C:\Python25\Lib\site-packages\PyQt4\bin\assistant.exe	1.0.0.0
+PyQt4 Designer	C:\Python25\Lib\site-packages\PyQt4\bin\designer.exe	1.0.0.0
+PyQt4 Linguist	C:\Python25\Lib\site-packages\PyQt4\bin\linguist.exe	1.0.0.0
+Python Interactive Shell	C:\Python25\python.exe	
+Start Command Prompt with Ruby	C:\WINDOWS\system32\cmd.exe	5.1.2600.2180
+Tinyedit	C:\TOOLS\qyx\tinyedit.exe	
+Visustin v3	C:\Program Files\Visustin\visustin.exe	1.21.0.0
+Wing IDE 3.2	C:\Program Files\Wing IDE 3.2\bin\wing.exe	
+Perl Package Manager	C:\Perl\bin\wperl.exe	5.8.9.825
+bitmap	C:\cygwin\bin\run.exe	1.1.10.0
+oclock	C:\cygwin\bin\run.exe	1.1.10.0
+rxvt	C:\cygwin\bin\run.exe	1.1.10.0
+xbiff	C:\cygwin\bin\run.exe	1.1.10.0
+xcalc	C:\cygwin\bin\run.exe	1.1.10.0
+xclock	C:\cygwin\bin\run.exe	1.1.10.0
+xditview	C:\cygwin\bin\run.exe	1.1.10.0
+xdvi	C:\cygwin\bin\run.exe	1.1.10.0
+xman	C:\cygwin\bin\run.exe	1.1.10.0
+xmh	C:\cygwin\bin\run.exe	1.1.10.0
+xterm	C:\cygwin\bin\run.exe	1.1.10.0
+emacs	C:\cygwin\bin\run.exe	1.1.10.0
+gvim	C:\cygwin\bin\run.exe	1.1.10.0
+xedit	C:\cygwin\bin\run.exe	1.1.10.0
+xemacs	C:\cygwin\bin\run.exe	1.1.10.0
+fc-list	C:\cygwin\bin\run.exe	1.1.10.0
+glxinfo	C:\cygwin\bin\run.exe	1.1.10.0
+showrgb	C:\cygwin\bin\run.exe	1.1.10.0
+xdpyinfo	C:\cygwin\bin\run.exe	1.1.10.0
+xfsinfo	C:\cygwin\bin\run.exe	1.1.10.0
+xlsatoms	C:\cygwin\bin\run.exe	1.1.10.0
+xlsclients	C:\cygwin\bin\run.exe	1.1.10.0
+xlsfonts	C:\cygwin\bin\run.exe	1.1.10.0
+xprop	C:\cygwin\bin\run.exe	1.1.10.0
+xtrapinfo	C:\cygwin\bin\run.exe	1.1.10.0
+xwininfo	C:\cygwin\bin\run.exe	1.1.10.0
+editres	C:\cygwin\bin\run.exe	1.1.10.0
+idle	C:\cygwin\bin\run.exe	1.1.10.0
+viewres	C:\cygwin\bin\run.exe	1.1.10.0
+wmagnify	C:\cygwin\bin\run.exe	1.1.10.0
+xconsole	C:\cygwin\bin\run.exe	1.1.10.0
+xcutsel	C:\cygwin\bin\run.exe	1.1.10.0
+xev	C:\cygwin\bin\run.exe	1.1.10.0
+xfontsel	C:\cygwin\bin\run.exe	1.1.10.0
+xkill	C:\cygwin\bin\run.exe	1.1.10.0
+xmag	C:\cygwin\bin\run.exe	1.1.10.0
+xrefresh	C:\cygwin\bin\run.exe	1.1.10.0
+xwd	C:\cygwin\bin\run.exe	1.1.10.0
+glxgears	C:\cygwin\bin\run.exe	1.1.10.0
+ico	C:\cygwin\bin\run.exe	1.1.10.0
+xeyes	C:\cygwin\bin\run.exe	1.1.10.0
+xgc	C:\cygwin\bin\run.exe	1.1.10.0
+xlogo	C:\cygwin\bin\run.exe	1.1.10.0
+Notepad GNU	C:\Program Files\Notepad GNU\Notepad GNU.exe	
+Notepad++	C:\Program Files\Notepad++\notepad++.exe	5.8.2.0
+Pascal Analyzer 4	C:\Program Files\Peganza\Pascal Analyzer 4 Eval\PAL.exe	4.6.4.0
+Python Interactive Shell	C:\Python25\python.exe	
+PythonWin Editor	C:\Python25\Lib\site-packages\pythonwin\Pythonwin.exe	
+Assistant	C:\Python25\Lib\site-packages\PyQt4\bin\assistant.exe	1.0.0.0
+Designer	C:\Python25\Lib\site-packages\PyQt4\bin\designer.exe	1.0.0.0
+Linguist	C:\Python25\Lib\site-packages\PyQt4\bin\linguist.exe	1.0.0.0
+Wing IDE 3.2	C:\Program Files\Wing IDE 3.2\bin\wing.exe	
+Start Command Prompt with Ruby	C:\WINDOWS\system32\cmd.exe	5.1.2600.2180
+Singular (Emacs and X-Server) (experimental)	C:\cygwin\usr\X11R6\bin\run.exe	1.1.10.0
+Singular (Emacs)	C:\cygwin\usr\X11R6\bin\run.exe	1.1.10.0
+Singular (rxvt)	C:\cygwin\bin\rxvt.exe	2.7.10.7
+Singular (Terminal)	C:\cygwin\bin\bash.exe	
+Rxvt - Terminal	C:\cygwin\bin\rxvt.exe	2.7.10.7
+Setup (Cygwin)	C:\cygwin\lib\Singular\cygwin-setup.exe	
+Check installation	C:\Program Files\Visustin\Checklib.exe	1.0.0.0
+Visustin v3	C:\Program Files\Visustin\visustin.exe	1.21.0.0
+Recuva	C:\Program Files\Recuva\Recuva.exe	1.38.0.504
+Recuva	C:\Program Files\Recuva\Recuva.exe	1.38.0.504
+Help	C:\Program Files\TortoiseSVN\bin\TortoiseProc.exe	1.6.10.19898
+Settings	C:\Program Files\TortoiseSVN\bin\TortoiseProc.exe	1.6.10.19898
+TortoiseIDiff	C:\Program Files\TortoiseSVN\bin\TortoiseIDiff.exe	1.6.10.19898
+TortoiseMerge	C:\Program Files\TortoiseSVN\bin\TortoiseMerge.exe	1.6.10.19898
+TortoiseSVN	C:\Program Files\TortoiseSVN\bin\TortoiseProc.exe	1.6.10.19898
+Launch RK Launcher	C:\Program Files\RK Launcher\RK Launcher 0.41 Beta Nightly\RKLauncher.exe	0.41.0.0
+Awasu	C:\Program Files\Awasu\awasu.exe	2.1.0.0
+Feed Notifier	C:\Program Files\Feed Notifier\notifier.exe	
+Feedreader	C:\TOOLS\FeedReader\feedreader.exe	
+MediaTicker	C:\Program Files\Roxio\MediaTicker\MediaTicker\MediaTicker.exe	3.0.0.0
+News Watch	C:\Program Files\XemiComputers\News Watch\NewsWatch.exe	1.0.0.21
+Newzie	C:\Program Files\Newzie\Newzie.exe	0.9.9.9
+RSS Captor	C:\Program Files\ArendiX\RSS Captor\rsscptr.exe	3.0.4.0
+RSS News Grabber	C:\Program Files\RSS News Grabber\RSS News Grabber.exe	1.2.13.0
+RSSAlert	C:\TOOLS\RSSAlerter\AnAppADay.RSSAlerter.WinApp.exe	1.0.0.0
+RSScrawler	C:\Program Files\mirabyte\RSScrawler 2.0\RSScrawler.exe	2.0.10.316
+RSSOwl	C:\Program Files\RSSOwl\RSSOwl.exe	
+VxpRssReader	C:\Program Files\VXP RSS Reader\VxpRssReader.exe	1.0.0.30
+Ziepod	C:\Program Files\Ziepod\Ziepod.exe	1.0.0.0
+Awasu	C:\Program Files\Awasu\awasu.exe	2.1.0.0
+Feed Notifier	C:\Program Files\Feed Notifier\notifier.exe	
+News Watch	C:\Program Files\XemiComputers\News Watch\NewsWatch.exe	1.0.0.21
+Newzie	C:\Program Files\Newzie\Newzie.exe	0.9.9.9
+MediaTicker	C:\Program Files\Roxio\MediaTicker\MediaTicker\MediaTicker.exe	3.0.0.0
+RSS Captor	C:\Program Files\ArendiX\RSS Captor\rsscptr.exe	3.0.4.0
+RSS News Grabber	C:\Program Files\RSS News Grabber\RSS News Grabber.exe	1.2.13.0
+Onlinehelp	C:\Program Files\mirabyte\RSScrawler 2.0\ShellExecute.exe	
+RSScrawler	C:\Program Files\mirabyte\RSScrawler 2.0\RSScrawler.exe	2.0.10.316
+RSSOwl	C:\Program Files\RSSOwl\RSSOwl.exe	
+VxpRssReader	C:\Program Files\VXP RSS Reader\VxpRssReader.exe	1.0.0.30
+Ziepod	C:\Program Files\Ziepod\Ziepod.exe	1.0.0.0
+FireDaemon Trinity	C:\Program Files\FireDaemon\FdManager.exe	2.4.2669.3986
+System Scheduler	C:\Program Files\SystemScheduler\Scheduler.exe	4.1.0.0
+WinScheduler	C:\Program Files\WinScheduler\StartWinScheduler.exe	1.0.0.1
+FireDaemon Trinity	C:\Program Files\FireDaemon\FdManager.exe	2.4.2669.3986
+System Scheduler	C:\Program Files\SystemScheduler\Scheduler.exe	4.1.0.0
+WinScheduler	C:\Program Files\WinScheduler\StartWinScheduler.exe	1.0.0.1
+Effective File Search	C:\Program Files\efs\search.exe	
+PowerGREP	C:\Program Files\JGsoft\PowerGREP4\PowerGREP4.exe	4.1.0.0
+Effective File Search	C:\Program Files\efs\search.exe	
+PowerGREP	C:\Program Files\JGsoft\PowerGREP4\PowerGREP4.exe	4.1.0.0
+Remove PowerGREP 4	C:\WINDOWS\UnDeploy.exe	3.3.0.0
+ACLView	C:\Program Files\NCS Z-tools.he\ACLView v1.4\ACLView.exe	1.4.104.17
+HideWindowPlus	C:\Program Files\HideWindowPlus\HWinPlus.exe	2.0.0.0
+HotKeyz	C:\Program Files\Skynergy\HotKeyz\HotKeyz.exe	2.8.3.0
+ProcX	D:\pyx\ProcX.exe	
+Sandboxie Control	C:\Program Files\Sandboxie\SbieCtrl.exe	3.46.0.0
+Shadow Defender	C:\Program Files\Shadow Defender\Defender.exe	1.1.0.325
+Start Unlocker	C:\Program Files\Unlocker\Unlocker.exe	
+HideWindowPlus	C:\Program Files\HideWindowPlus\HWinPlus.exe	2.0.0.0
+HotKeyz	C:\Program Files\Skynergy\HotKeyz\HotKeyz.exe	2.8.3.0
+ACLView	C:\Program Files\NCS Z-tools.he\ACLView v1.4\ACLView.exe	1.4.104.17
+Run any program sandboxed	C:\Program Files\Sandboxie\Start.exe	3.46.0.0
+Run Web browser sandboxed	C:\Program Files\Sandboxie\Start.exe	3.46.0.0
+Run Windows Explorer sandboxed	C:\Program Files\Sandboxie\Start.exe	3.46.0.0
+Sandboxie Control	C:\Program Files\Sandboxie\SbieCtrl.exe	3.46.0.0
+Sandboxie Start Menu	C:\Program Files\Sandboxie\Start.exe	3.46.0.0
+Shadow Defender	C:\Program Files\Shadow Defender\Defender.exe	1.1.0.325
+Start Unlocker Assistant	C:\Program Files\Unlocker\UnlockerAssistant.exe	
+Start Unlocker	C:\Program Files\Unlocker\Unlocker.exe	
+ActiveFax Client	C:\Program Files\ActiveFax\Client\ActFaxClient.exe	3.0.0.150
+ActiveFax Server	C:\Program Files\ActiveFax\Server\ActFax.exe	3.0.0.150
+Administration	C:\Program Files\Merak\loader.exe	
+CCProxy	C:\Program Files\CCProxy\CCProxy.exe	6.6.4.0
+EventSentry Management	C:\Program Files\EventSentryLight\eventsentry_gui.exe	2.91.0.95
+FireDaemon Trinity	C:\Program Files\FireDaemon\FdManager.exe	2.4.2669.3986
+PostgreSQL 8 - Start	C:\WINDOWS\system32\cscript.exe	5.6.0.8820
+Privoxy	C:\Program Files\Privoxy\privoxy.exe	3.0.16.0
+pulpTunes	C:\Program Files\pulpTunes\pulpTunes.exe	1.3.1.0
+Simple DNS Plus	C:\Program Files\Simple DNS Plus\sdnsplus.exe	5.1.101.0
+Snappy Fax Version 4	C:\Program Files\Snappy Fax Version 4\sf4.exe	4.35.2.3
+Syslog Watcher Personal Edition	C:\Program Files\Syslog Watcher 2\SyslogWatcherPers.exe	2.8.0.975
+XAMPP Control Panel	D:\xampp\xampp-control.exe	2.5.8.1
+ActiveFax Client	C:\Program Files\ActiveFax\Client\ActFaxClient.exe	3.0.0.150
+ActiveFax Server	C:\Program Files\ActiveFax\Server\ActFax.exe	3.0.0.150
+Start ActiveFax Service	C:\Program Files\ActiveFax\Server\StartSrv.exe	3.0.0.150
+Stop ActiveFax Service	C:\Program Files\ActiveFax\Server\StopSrv.exe	3.0.0.150
+Administration	C:\Program Files\Merak\loader.exe	
+DNS Query Tool	C:\Program Files\Merak\dnsquery.exe	
+WebAdmin	C:\Program Files\Merak\setup.exe	
+WebMail Basic	C:\Program Files\Merak\setup.exe	
+WebMail Pro	C:\Program Files\Merak\setup.exe	
+View WS_FTP Server EULA	C:\WINDOWS\system32\notepad.exe	5.1.2600.2180
+Application Stack Builder	C:\Program Files\PostgreSQL\8.4\bin\stackbuilder.exe	3.0.0.0
+pgAdmin III	C:\Program Files\PostgreSQL\8.4\bin\pgAdmin3.exe	1.10.5.0
+Reload Configuration	C:\WINDOWS\system32\cscript.exe	5.6.0.8820
+Restart Server	C:\WINDOWS\system32\cscript.exe	5.6.0.8820
+Start Server	C:\WINDOWS\system32\cscript.exe	5.6.0.8820
+Stop Server	C:\WINDOWS\system32\cscript.exe	5.6.0.8820
+CCProxy	C:\Program Files\CCProxy\CCProxy.exe	6.6.4.0
+Privoxy	C:\Program Files\Privoxy\privoxy.exe	3.0.16.0
+Credits	C:\WINDOWS\system32\Notepad.exe	5.1.2600.2180
+License	C:\WINDOWS\system32\Notepad.exe	5.1.2600.2180
+ReadMe file	C:\WINDOWS\system32\Notepad.exe	5.1.2600.2180
+Default Actions	C:\WINDOWS\system32\Notepad.exe	5.1.2600.2180
+Filters	C:\WINDOWS\system32\Notepad.exe	5.1.2600.2180
+Main Configuration	C:\WINDOWS\system32\Notepad.exe	5.1.2600.2180
+Trust list	C:\WINDOWS\system32\Notepad.exe	5.1.2600.2180
+User Actions	C:\WINDOWS\system32\Notepad.exe	5.1.2600.2180
+Check for updates	C:\Program Files\pulpTunes\updater.exe	1.9.7.0
+pulpTunes	C:\Program Files\pulpTunes\pulpTunes.exe	1.3.1.0
+Simple DNS Plus	C:\Program Files\Simple DNS Plus\sdnsplus.exe	5.1.101.0
+Snappy Fax Version 4	C:\Program Files\Snappy Fax Version 4\sf4.exe	4.35.2.3
+Start Subsonic Service	C:\Program Files\Subsonic\subsonic-service.exe	
+Stop Subsonic Service	C:\Program Files\Subsonic\subsonic-service.exe	
+Subsonic Tray Icon	C:\Program Files\Subsonic\subsonic-agent.exe	
+EventSentry Management	C:\Program Files\EventSentryLight\eventsentry_gui.exe	2.91.0.95
+Reconfigure EventSentry	C:\WINDOWS\system32\msiexec.exe	3.1.4000.1823
+Syslog Watcher Personal Edition	C:\Program Files\Syslog Watcher 2\SyslogWatcherPers.exe	2.8.0.975
+XAMPP Control Panel	D:\xampp\xampp-control.exe	2.5.8.1
+Change Password	C:\WINDOWS\system32\cmd.exe	5.1.2600.2180
+Support Tool	C:\Program Files\Zend\ZendServer\bin\SupportTool.exe	1.0.0.1
+SQLyog Enterprise	C:\Program Files\SQLyog Enterprise\SQLyogEnt.exe	1.0.0.1
+SQLyog Enterprise	C:\Program Files\SQLyog Enterprise\SQLyogEnt.exe	1.0.0.1
+DreamMail	C:\Program Files\DreamMail4\DM2005.exe	4.6.8.2
+iReflector	C:\TOOLS\iReflector\iReflector.exe	
+Privoxy	C:\Program Files\Privoxy\privoxy.exe	3.0.16.0
+Rainmeter	C:\Program Files\Rainmeter\Rainmeter.exe	1.3.0.560
+RSSNotifier	C:\Program Files\Feed Notifier\notifier.exe	
+eMule Acceleration Patch	C:\Program Files\eMule Acceleration Patch\eMule Acceleration Patch.exe	5.3.9.0
+EventSentry Tray Icon	C:\Program Files\EventSentryLight\eventsentry_gui.exe	2.91.0.95
+FeedReader	C:\TOOLS\FeedReader\feedreader.exe	
+PowerMenu	C:\Program Files\PowerMenu\PowerMenu.exe	1.5.1.0
+USBDeview	D:\pyx\USBDeview.exe	1.2.5.0
+GOM Player	C:\Program Files\GRETECH\GomPlayer\GOM.exe	2.1.27.5031
+Windows Media Player	C:\Program Files\Windows Media Player\wmplayer.exe	9.0.0.3250
+WMMP4	C:\Program Files\WMMP4\WMMP4.exe	1.0.0.0
+GOM Player	C:\Program Files\GRETECH\GomPlayer\GOM.exe	2.1.27.5031
+GOM Wizard	C:\Program Files\GRETECH\GomPlayer\GomWiz.exe	
+WMMP4	C:\Program Files\WMMP4\WMMP4.exe	1.0.0.0
+Windows Movie Maker	C:\Program Files\Movie Maker\moviemk.exe	2.1.4026.0
+Anim-FX	C:\Program Files\Anim-FX\Anim-FX.exe	5.0.30.0
+DreamweaverPortable	D:\PORTABLE_SOFT\Portable Adobe Dreamweaver CS4 10.0 Final\DreamweaverPortable.exe	1.2.0.1
+Flash Menu Labs Pro v2	C:\Program Files\Flash Menu Labs Pro v2\FlashMenuLabs.exe	1.0.0.1
+PhotoshopPortableCS3	E:\PhotoshopPortable\PhotoshopPortable.exe	1.3.0.1
+Anim-FX	C:\Program Files\Anim-FX\Anim-FX.exe	5.0.30.0
+Flash Menu Labs Pro v2	C:\Program Files\Flash Menu Labs Pro v2\FlashMenuLabs.exe	1.0.0.1
+Set Program Access and Defaults	C:\WINDOWS\system32\control.exe	5.1.2600.0
+Windows Update	C:\WINDOWS\system32\wupdmgr.exe	5.4.2600.0
+WinRAR	C:\Program Files\WinRAR\WinRAR.exe	3.93.0.0
+Foxit Reader Setup	C:\Program Files\Your Product\FoxitReader311_enu_Setup.exe	3.1.1.901
+Setup Factory 8.0 Runtime	C:\Program Files\Your Product\updates.exe	8.1.1006.0
+GetDataBack for FAT	C:\Program Files\Runtime Software\GetDataBack\gdb.exe	4.0.1.0
+Set Program Access and Defaults	C:\WINDOWS\system32\control.exe	5.1.2600.0
+Opera 11.00 1111	C:\Program Files\Opera 11.00 beta\opera.exe	11.0.1111.0
+Address Book	C:\Program Files\Outlook Express\wab.exe	6.0.2900.2180
+Calculator	C:\WINDOWS\system32\calc.exe	5.1.2600.0
+Command Prompt	C:\WINDOWS\system32\cmd.exe	5.1.2600.2180
+Notepad	C:\WINDOWS\system32\notepad.exe	5.1.2600.2180
+Paint	C:\WINDOWS\system32\mspaint.exe	5.1.2600.2180
+Synchronize	C:\WINDOWS\system32\mobsync.exe	5.1.2600.2180
+Tour Windows XP	C:\WINDOWS\system32\tourstart.exe	6.0.2900.2180
+Windows Explorer	C:\WINDOWS\explorer.exe	6.0.2900.2180
+WordPad	C:\Program Files\Windows NT\Accessories\wordpad.exe	5.1.2600.2180
+Accessibility Wizard	C:\WINDOWS\system32\accwiz.exe	5.1.2600.2180
+Magnifier	C:\WINDOWS\system32\magnify.exe	5.1.2600.2180
+Narrator	C:\WINDOWS\system32\narrator.exe	5.1.2600.2180
+On-Screen Keyboard	C:\WINDOWS\system32\osk.exe	5.1.2600.2180
+Utility Manager	C:\WINDOWS\system32\utilman.exe	5.1.2600.2180
+HyperTerminal	C:\Program Files\Windows NT\hypertrm.exe	5.1.2600.0
+Network Connections	C:\WINDOWS\explorer.exe	6.0.2900.2180
+Network Setup Wizard	C:\WINDOWS\system32\rundll32.exe	5.1.2600.2180
+New Connection Wizard	C:\WINDOWS\system32\rundll32.exe	5.1.2600.2180
+Remote Desktop Connection	C:\WINDOWS\system32\mstsc.exe	5.1.2600.2180
+Wireless Network Setup Wizard	C:\WINDOWS\system32\rundll32.exe	5.1.2600.2180
+Sound Recorder	C:\WINDOWS\system32\sndrec32.exe	5.1.2600.2180
+Volume Control	C:\WINDOWS\system32\sndvol32.exe	5.1.2600.0
+Backup	C:\WINDOWS\system32\ntbackup.exe	5.1.2600.2180
+Character Map	C:\WINDOWS\system32\charmap.exe	5.1.2600.0
+Disk Cleanup	C:\WINDOWS\system32\cleanmgr.exe	6.0.2900.2180
+Files and Settings Transfer Wizard	C:\WINDOWS\system32\usmt\migwiz.exe	5.1.2600.2180
+Scheduled Tasks	C:\WINDOWS\explorer.exe	6.0.2900.2180
+System Information	C:\Program Files\Common Files\Microsoft Shared\MSInfo\msinfo32.exe	5.1.2600.0
+System Restore	C:\WINDOWS\system32\Restore\rstrui.exe	5.1.2600.2180
+Data Sources (ODBC)	C:\WINDOWS\system32\odbcad32.exe	3.525.1117.0
+Microsoft .NET Framework 1.1 Wizards	C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\ConfigWizards.exe	1.0.5000.0
+ESET NOD32 Antivirus	C:\Program Files\ESET\ESET Smart Security\egui.exe	3.0.672.0
+Start AntiVir	C:\Program Files\Avira\AntiVir Desktop\avcenter.exe	10.0.12.29
+ZeroSpyware Limited Edition	C:\Program Files\FBM Software\ZeroSpyware Limited Edition\ZeroSpyware LE.exe	2.1.29.4
+Start AntiVir	C:\Program Files\Avira\AntiVir Desktop\avcenter.exe	10.0.12.29
+ESET NOD32 Antivirus	C:\Program Files\ESET\ESET Smart Security\egui.exe	3.0.672.0
+ESET Smart Security	C:\Program Files\ESET\ESET Smart Security\egui.exe	3.0.672.0
+ZeroSpyware Limited Edition	C:\Program Files\FBM Software\ZeroSpyware Limited Edition\ZeroSpyware LE.exe	2.1.29.4
+ZeroSpyware Limited Edition Live Help	C:\Program Files\FBM Software\ZeroSpyware Limited Edition\Live Help.exe	1.0.3.4
+ZeroSpyware Limited Edition System Diagnostics	C:\Program Files\FBM Software\ZeroSpyware Limited Edition\Diagnostics\SysCon.exe	3.1.6.4
+Personal Antispy	C:\Program Files\Personal Antispy\antispy.exe	1.2.0.1
+Advanced Wallpaper Manager	C:\Program Files\Advanced Wallpaper Manager\AWM.exe	
+AltDesk	C:\Program Files\AltDesk\AltDesk.exe	1.8.0.0
+Atomic Alarm Clock	C:\Program Files\Atomic Alarm Clock\AtomicAlarmClock.exe	
+Desktop Icon Toy	C:\Program Files\Desktop Icon Toy\DesktopIconToy.exe	2.0.0.0
+Google Desktop	C:\Program Files\Google\Google Desktop Search\GoogleDesktop.exe	5.9.1005.12335
+Iconoid	C:\Program Files\Iconoid\Iconoid.exe	3.8.6.0
+Logon Loader	C:\Program Files\Logon Loader\LogonLoader.exe	1.0.1887.17536
+LogonStudio	C:\Program Files\WinCustomize\LogonStudio\LogonStudio.exe	1.7.0.12
+LogonStudio2	C:\Program Files\WinCustomize\LogonStudio2\LogonStudio.exe	1.0.0.64
+Magnifier	C:\Program Files\Magnifier 2.4\Magnifier.exe	3.0.0.0
+PowerMenu	C:\Program Files\PowerMenu\PowerMenu.exe	1.5.1.0
+Rainmeter	C:\Program Files\Rainmeter\Rainmeter.exe	1.3.0.560
+RocketDock	C:\Program Files\RocketDock\RocketDock.exe	
+Advanced Wallpaper Manager	C:\Program Files\Advanced Wallpaper Manager\AWM.exe	
+AltDesk	C:\Program Files\AltDesk\AltDesk.exe	1.8.0.0
+Atomic Alarm Clock	C:\Program Files\Atomic Alarm Clock\AtomicAlarmClock.exe	
+Desktop Icon Toy	C:\Program Files\Desktop Icon Toy\DesktopIconToy.exe	2.0.0.0
+Google Desktop Options	C:\Program Files\Google\Google Desktop Search\GoogleDesktop.exe	5.9.1005.12335
+Google Desktop Sidebar	C:\Program Files\Google\Google Desktop Search\GoogleDesktop.exe	5.9.1005.12335
+Google Desktop	C:\Program Files\Google\Google Desktop Search\GoogleDesktop.exe	5.9.1005.12335
+Iconoid	C:\Program Files\Iconoid\Iconoid.exe	3.8.6.0
+Logon Loader	C:\Program Files\Logon Loader\LogonLoader.exe	1.0.1887.17536
+Magnifier	C:\Program Files\Magnifier 2.4\Magnifier.exe	3.0.0.0
+PowerMenu	C:\Program Files\PowerMenu\PowerMenu.exe	1.5.1.0
+RainBackup	C:\Program Files\Rainmeter\Addons\RainBackup\RainBackup.exe	3.3.6.1
+RainBrowser	C:\Program Files\Rainmeter\Addons\RainBrowser\RainBrowser.exe	3.3.6.1
+Rainmeter	C:\Program Files\Rainmeter\Rainmeter.exe	1.3.0.560
+Rainstaller	C:\Program Files\Rainmeter\Addons\Rainstaller\Rainstaller.exe	2.1.0.0
+RainThemes	C:\Program Files\Rainmeter\Addons\RainThemes\RainThemes.exe	3.3.6.1
+RocketDock	C:\Program Files\RocketDock\RocketDock.exe	
+LogonStudio	C:\Program Files\WinCustomize\LogonStudio\LogonStudio.exe	1.7.0.12
+LogonStudio	C:\Program Files\WinCustomize\LogonStudio2\LogonStudio.exe	1.0.0.64
+Shutter	C:\Program Files\Shutter\Shutter.exe	
+Shutter	C:\Program Files\Shutter\Shutter.exe	
+Arora	C:\Program Files\Arora\arora.exe	
+Internet Explorer	C:\Program Files\Internet Explorer\IEXPLORE.EXE	6.0.2900.2180
+iPhone Drift	C:\TOOLS\iPhone Drift\iPhone Drift.exe	2.3.0.0
+Klondike WAP Browser	C:\Program Files\Klondike WAP Browser\klondike.exe	1.5.0.0
+Mozilla Firefox	C:\Program Files\Mozilla Firefox\firefox.exe	1.9.2.3951
+Netscape Navigator	C:\Program Files\Netscape\Navigator 9\navigator.exe	0.0.0.0
+Safari	C:\Program Files\Safari\Safari.exe	3.525.13.0
+Mozilla Firefox (Safe Mode)	C:\Program Files\Mozilla Firefox\firefox.exe	1.9.2.3951
+Mozilla Firefox	C:\Program Files\Mozilla Firefox\firefox.exe	1.9.2.3951
+Netscape Navigator (Safe Mode)	C:\Program Files\Netscape\Navigator 9\navigator.exe	0.0.0.0
+Netscape Navigator	C:\Program Files\Netscape\Navigator 9\navigator.exe	0.0.0.0
+Nero StartSmart	C:\Program Files\Nero\Nero StartSmart\NeroStartSmart.exe	2.1.0.11
+Oront Burning Kit 2 Premium	C:\Program Files\Oront Burning Kit 2\BurningKit.exe	2.6.2.0
+Nero StartSmart	C:\Program Files\Nero\Nero StartSmart\NeroStartSmart.exe	2.1.0.11
+Nero BackItUp	C:\Program Files\Nero\Nero BackItUp\BackItUp.exe	1.2.0.65
+Nero Burning ROM	C:\Program Files\Nero\Nero\nero.exe	6.6.1.15
+Nero Cover Designer	C:\Program Files\Nero\CoverDesigner\CoverDes.exe	2.3.7.0
+Nero Express	C:\Program Files\Nero\Nero\nero.exe	6.6.1.15
+Nero ImageDrive	C:\Program Files\Nero\ImageDrive\ImageDrive.exe	2.27.0.7
+Nero SoundTrax	C:\Program Files\Nero\Nero SoundTrax\SoundTrax.exe	1.0.0.57
+Nero Wave Editor	C:\Program Files\Nero\Nero Wave Editor\WaveEdit.exe	2.0.0.63
+Nero CD-DVD Speed	C:\Program Files\Nero\Nero Toolkit\CDSpeed.exe	4.5.1.1
+Nero DriveSpeed	C:\Program Files\Nero\Nero Toolkit\DriveSpeed.exe	3.0.6.0
+Nero InfoTool	C:\Program Files\Nero\Nero Toolkit\InfoTool.exe	4.0.3.0
+Oront Burning Kit 2 Premium	C:\Program Files\Oront Burning Kit 2\BurningKit.exe	2.6.2.0
+FastStone Capture	C:\Program Files\FastStone Capture\FSCapture.exe	6.5.0.0
+TextCatch	C:\Program Files\Text Catch\TextCatch.exe	2.6.0.1
+FastStone Capture	C:\Program Files\FastStone Capture\FSCapture.exe	6.5.0.0
+TextCatch	C:\Program Files\Text Catch\TextCatch.exe	2.6.0.1
+AnyReader	C:\Program Files\Essential Data Tools\AnyReader\Launcher.exe	
+CDCheck	C:\Program Files\CDCheck\CDCheck.exe	3.1.14.0
+CDRoller	C:\Program Files\CDRoller\CDRoller.exe	8.0.0.90
+EasyBoot	C:\Program Files\UltraISO\EasyBoot\EasyBoot.exe	5.1.2.586
+UltraISO	C:\Program Files\UltraISO\UltraISO.exe	9.3.6.2750
+CDCheck	C:\Program Files\CDCheck\CDCheck.exe	3.1.14.0
+CDRoller	C:\Program Files\CDRoller\CDRoller.exe	8.0.0.90
+EasyBoot	C:\Program Files\UltraISO\EasyBoot\EasyBoot.exe	5.1.2.586
+AnyReader	C:\Program Files\Essential Data Tools\AnyReader\Launcher.exe	
+UltraISO	C:\Program Files\UltraISO\UltraISO.exe	9.3.6.2750
+Chit Chat For Facebook	C:\Program Files\Chit Chat For Facebook\CCFFacebook.exe	1.4.2.0
+PPidgin	F:\Pidgin\pidgin.exe	2.5.3.0
+Yahoo! Messenger	C:\Program Files\Yahoo!\Messenger\YahooMessenger.exe	10.0.0.331
+Chit Chat For Facebook	C:\Program Files\Chit Chat For Facebook\CCFFacebook.exe	1.4.2.0
+Yahoo! Messenger	C:\Program Files\Yahoo!\Messenger\YahooMessenger.exe	10.0.0.331
+CDisplay	C:\Program Files\CDisplay\CDisplay.exe	1.8.1.0
+CDisplay	C:\Program Files\CDisplay\CDisplay.exe	1.8.1.0
+7-Zip File Manager	C:\Program Files\7-Zip\7zFM.exe	4.57.0.0
+ARAR	C:\Program Files\ARAR\ARAR.exe	1.2.0.0
+AZR	C:\Program Files\AZR\AZR.exe	1.6.2.0
+PowerArchiver	C:\Program Files\PowerArchiver\POWERARC.EXE	11.6.4.1
+RAR Repair Tool	C:\Program Files\Rar Repair Tool\RarRepair.exe	4.0.1.0
+WinRAR	C:\Program Files\WinRAR\WinRAR.exe	3.93.0.0
+7-Zip File Manager	C:\Program Files\7-Zip\7zFM.exe	4.57.0.0
+ARAR	C:\Program Files\ARAR\ARAR.exe	1.2.0.0
+AZR	C:\Program Files\AZR\AZR.exe	1.6.2.0
+PowerArchiver	C:\Program Files\PowerArchiver\POWERARC.EXE	11.6.4.1
+RAR Repair Tool	C:\Program Files\Rar Repair Tool\RarRepair.exe	4.0.1.0
+WinRAR	C:\Program Files\WinRAR\WinRAR.exe	3.93.0.0
+Enterprise Architect	C:\Program Files\Sparx Systems\EA\EA.exe	7.5.0.850
+Graham Process Mapping	C:\Program Files\Graham 7\graham.exe	
+Enterprise Architect	C:\Program Files\Sparx Systems\EA\EA.exe	7.5.0.850
+Graham Process Mapping	C:\Program Files\Graham 7\graham.exe	
+DnsEye	C:\Program Files\Nsasoft\DnsEye\DnsEye.exe	1.3.0.0
+4shared Desktop	C:\Program Files\4shared Desktop\desktop.exe	3.3.0.1
+Easy MP3 Downloader	C:\Program Files\EasyMP3Downloader\EasyMP3Downloader.exe	4.2.3.8
+eDonkey Acceleration Patch	C:\Program Files\eDonkey Acceleration Patch\eDonkey Acceleration Patch.exe	5.8.8.0
+eDonkey2000	C:\Program Files\eDonkey2000\gdonkey.exe	1.0.0.1
+eMule Plus	C:\Program Files\eMule\eMule.exe	0.50.0.4
+eMule	C:\Program Files\eMule\eMule.exe	0.50.0.4
+HiDownload Platinum	C:\Program Files\StreamingStar\HiDownload_Platinum\HiDownloadPlatinum.exe	7.9.0.0
+iGetter	C:\Program Files\iGetter\iGetter.exe	2.6.0.0
+Mediafire Download	D:\pyx\Mediafire.exe	1.1.0.0
+Mega Manager	C:\Program Files\Megaupload\Mega Manager\MegaManager.exe	3.4.0.8
+Megaupload Downloader	C:\Program Files\Megaupload Downloader\Megaupload Downloader.exe	0.2.1.28
+Orbit	C:\Program Files\Orbitdownloader\orbitdm.exe	2.8.0.19
+Rapid Hacker v4.5	C:\Program Files\xyr0x Security\Rapid Hacker\Rapid Hacker v4.5 by xyr0x.exe	4.5.0.0
+RapidCheck	C:\Program Files\RapidCheck\RapidCheck.exe	1.0.0.0
+uTorrent Acceleration Tool	C:\Program Files\uTorrent Acceleration Tool\uTorrent Acceleration Tool.exe	2.4.6.0
+uTorrent Turbo Accelerator	C:\Program Files\uTorrent Turbo Accelerator\uTorrent Turbo Accelerator.exe	1.5.8.0
+µTorrent	C:\Program Files\uTorrent\uTorrent.exe	2.0.4.22450
+4shared Desktop	C:\Program Files\4shared Desktop\desktop.exe	3.3.0.1
+Easy MP3 Downloader	C:\Program Files\EasyMP3Downloader\EasyMP3Downloader.exe	4.2.3.8
+eDonkey Acceleration Patch	C:\Program Files\eDonkey Acceleration Patch\eDonkey Acceleration Patch.exe	5.8.8.0
+eDonkey2000	C:\Program Files\eDonkey2000\gdonkey.exe	1.0.0.1
+eMule Plus	C:\Program Files\eMule\eMule.exe	0.50.0.4
+eMule	C:\Program Files\eMule\eMule.exe	0.50.0.4
+LinkCreator	C:\Program Files\eMule\LinkCreator.exe	0.7.0.0
+iGetter	C:\Program Files\iGetter\iGetter.exe	2.6.0.0
+Mega Manager	C:\Program Files\Megaupload\Mega Manager\MegaManager.exe	3.4.0.8
+Megaupload Downloader	C:\Program Files\Megaupload Downloader\Megaupload Downloader.exe	0.2.1.28
+Orbit	C:\Program Files\Orbitdownloader\orbitdm.exe	2.8.0.19
+Rapid Hacker v4.5 by xyr0x.exe	C:\Program Files\xyr0x Security\Rapid Hacker\Rapid Hacker v4.5 by xyr0x.exe	4.5.0.0
+RapidCheck	C:\Program Files\RapidCheck\RapidCheck.exe	1.0.0.0
+HiDownload Platinum	C:\Program Files\StreamingStar\HiDownload_Platinum\HiDownloadPlatinum.exe	7.9.0.0
+uTorrent Acceleration Tool	C:\Program Files\uTorrent Acceleration Tool\uTorrent Acceleration Tool.exe	2.4.6.0
+uTorrent Turbo Accelerator	C:\Program Files\uTorrent Turbo Accelerator\uTorrent Turbo Accelerator.exe	1.5.8.0
+Driver Checker	C:\Program Files\Driver Checker\DriverChecker.exe	
+Driver Checker	C:\Program Files\Driver Checker\DriverChecker.exe	
+Configure FileMenu Tools	C:\Program Files\LopeSoft\FileMenu Tools\FileMenuTools.exe	5.7.0.0
+CubicExplorer	C:\Program Files\CubicExplorer\CubicExplorer.exe	0.80.0.890
+ExtraRenamer	C:\Program Files\ExtraRename30\ExtraRename.exe	3.0.0.0
+Far Manager 2	C:\Program Files\Far2\Far.exe	2.0.0.1420
+FileCenter	C:\Program Files\FileCenter\Main\FileCenter.exe	6.6.0.7525
+Folder Size	C:\Program Files\Folder Size\FolderSize.exe	1.4.0.0
+FolderSizes 4	C:\Program Files\Key Metric Software\FolderSizes 4\FolderSizes.exe	4.8.1.72
+JExplorer	C:\Program Files\JExplorer\JExplorer.exe	1.8.0.1
+NexusFile	C:\Program Files\NexusFile\NexusFile.exe	5.1.3.3652
+Q-Dir	C:\Program Files\Q-Dir\Q-Dir.exe	4.1.8.0
+SE-Explorer	C:\Program Files\SE-SOFT.COM\SE-Explorer\SE-Explorer.exe	0.0.30.600
+SizeMe	C:\Program Files\SizeMe\SizeMe.exe	2.0.0.1926
+Total Commander	C:\totalcmd\TOTALCMD.EXE	7.5.0.1
+ViceVersa Pro	C:\Program Files\ViceVersa Pro 2\ViceVersa.exe	2.0.1.2
+Windows Grep	C:\Program Files\Windows Grep\grep32.exe	2.3.0.2403
+xplorer2	C:\Program Files\zabkat\xplorer2\xplorer2_UC.exe	1.8.0.13
+CubicExplorer	C:\Program Files\CubicExplorer\CubicExplorer.exe	0.80.0.890
+ExtraRenamer	C:\Program Files\ExtraRename30\ExtraRename.exe	3.0.0.0
+Far Manager 2	C:\Program Files\Far2\Far.exe	2.0.0.1420
+FileCenter	C:\Program Files\FileCenter\Main\FileCenter.exe	6.6.0.7525
+Folder Size	C:\Program Files\Folder Size\FolderSize.exe	1.4.0.0
+FolderSizes 4	C:\Program Files\Key Metric Software\FolderSizes 4\FolderSizes.exe	4.8.1.72
+JCalculator	C:\Program Files\JExplorer\JCalculator.exe	1.0.0.0
+JExplorer	C:\Program Files\JExplorer\JExplorer.exe	1.8.0.1
+JMounter	C:\Program Files\JExplorer\JMounter.exe	1.0.0.0
+JOCR	C:\Program Files\JExplorer\JOCR.exe	1.0.0.0
+Configure FileMenu Tools	C:\Program Files\LopeSoft\FileMenu Tools\FileMenuTools.exe	5.7.0.0
+NexusFile	C:\Program Files\NexusFile\NexusFile.exe	5.1.3.3652
+Q-Dir help	C:\Program Files\Q-Dir\Q-Dir.exe	4.1.8.0
+Q-Dir	C:\Program Files\Q-Dir\Q-Dir.exe	4.1.8.0
+SE-Explorer	C:\Program Files\SE-SOFT.COM\SE-Explorer\SE-Explorer.exe	0.0.30.600
+SE-MediaPlayer	C:\Program Files\SE-SOFT.COM\SE-Explorer\SE-MediaPlayer.exe	0.0.5.50
+SizeMe	C:\Program Files\SizeMe\SizeMe.exe	2.0.0.1926
+Total Commander	C:\totalcmd\TOTALCMD.EXE	7.5.0.1
+ViceVersa Pro	C:\Program Files\ViceVersa Pro 2\ViceVersa.exe	2.0.1.2
+VVLauncher	C:\Program Files\ViceVersa Pro 2\VVLauncher\VVLauncher.exe	2.0.0.2
+VVLogViewer	C:\Program Files\ViceVersa Pro 2\VVLogViewer.exe	2.0.0.0
+VVScheduler	C:\Program Files\ViceVersa Pro 2\VVScheduler.exe	2.0.0.2
+InstServ	C:\Program Files\ViceVersa Pro 2\VVLauncher\Service\InstServ.exe	2.0.0.2
+Windows Grep	C:\Program Files\Windows Grep\grep32.exe	2.3.0.2403
+advanced settings	C:\Program Files\zabkat\xplorer2\x2SettingsEditor.exe	1.3.0.3
+editor2	C:\Program Files\zabkat\xplorer2\editor2_UC.exe	2.9.1.3
+xplorer2	C:\Program Files\zabkat\xplorer2\xplorer2_UC.exe	1.8.0.13
+Flash Player Pro	C:\Program Files\Flash Player Pro\Flash Player Pro.exe	4.2.0.0
+SWF & FLV Player	C:\Program Files\Eltima Software\SWF & FLV Player\swf_player.exe	3.0.33.5106
+SWF & FLV Player	C:\Program Files\Eltima Software\SWF & FLV Player\swf_player.exe	3.0.33.5106
+Flash Player Pro	C:\Program Files\Flash Player Pro\Flash Player Pro.exe	4.2.0.0
+Flobo Hard Disk Repair	C:\Program Files\Flobo Hard Disk Repair\FloboHardDiskRepair.exe	1.0.0.1
+CuteFTP 8 Professional	C:\Program Files\GlobalSCAPE\CuteFTP 8 Professional\cuteftppro.exe	8.0.0.0
+Ipswitch WS_FTP Professional 2006	C:\Program Files\Ipswitch\WS_FTP Professional\wsftpgui.exe	2006.0.1.0
+CuteFTP 8 Professional	C:\Program Files\GlobalSCAPE\CuteFTP 8 Professional\cuteftppro.exe	8.0.0.0
+Ipswitch WS_FTP Professional 2006	C:\Program Files\Ipswitch\WS_FTP Professional\wsftpgui.exe	2006.0.1.0
+View WS_FTP Server EULA	C:\WINDOWS\system32\notepad.exe	5.1.2600.2180
+WS_FTP Find Utility	C:\Program Files\Ipswitch\WS_FTP Professional\ftpfind.exe	2006.0.1.0
+WS_FTP Scheduler	C:\Program Files\Ipswitch\WS_FTP Professional\ftpsched.exe	2006.0.1.0
+WS_FTP Scripting Utility	C:\Program Files\Ipswitch\WS_FTP Professional\ftpscrpt.exe	1.0.0.1
+WS_FTP Synchronize Utility	C:\Program Files\Ipswitch\WS_FTP Professional\ftpsync.exe	2006.0.1.0
+WS_FTP Upload Wizard	C:\Program Files\Ipswitch\WS_FTP Professional\UpWiz.exe	2006.0.1.0
+Platypus II	C:\Program Files\Platypus II\Platypus2.exe	
+Platypus II	C:\Program Files\Platypus II\Platypus2.exe	
+HDD Regenerator	C:\Program Files\HDD Regenerator\HDD Regenerator.exe	
+Advanced JPEG Compressor	C:\Program Files\Advanced JPEG Compressor\ajc.exe	2010.8.1.96
+Imagine	C:\Program Files\Imagine\Imagine.exe	1.0.7.0
+Paint.NET	C:\Program Files\Paint.NET\PaintDotNet.exe	3.54.3708.31979
+Picasa 3	C:\Program Files\Google\Picasa3\Picasa3.exe	3.5.79.67
+Imagine	C:\Program Files\Imagine\Imagine.exe	1.0.7.0
+Configure Picasa Photo Viewer	C:\Program Files\Google\Picasa3\PicasaPhotoViewer.exe	3.5.79.67
+Picasa 3	C:\Program Files\Google\Picasa3\Picasa3.exe	3.5.79.67
+Bionic CPU Peeker	C:\Program Files\Bionic CPU Peeker\Bionic CPU Peeker.exe	2.7.1.0
+Cool Beans System Info	C:\Program Files\Cool Beans System Info\Cool Beans System Info.exe	2.0.0.4
+Drive Manager	D:\pyx\dm.exe	4.6.0.14
+Hard Disk Sentinel	C:\Program Files\Hard Disk Sentinel\HDSentinel.exe	3.3.0.0
+Hardware sensors monitor	C:\Program Files\Hmonitor\hmonitor.exe	4.4.3.2
+Iarsn TaskInfo	C:\Program Files\Iarsn\TaskInfo 9.x\TaskInfo.exe	9.2.0.320
+logview4net	C:\Program Files\logview4net\logview4net.exe	9.38.0.0
+Process Lasso	C:\Program Files\Process Lasso\ProcessLasso.exe	3.7.0.7
+RAMMon	C:\Program Files\RAMMon\RAMMon.exe	
+Speccy	C:\Program Files\Speccy\Speccy.exe	1.6.0.191
+SpeedFan	C:\Program Files\SpeedFan\speedfan.exe	4.42.0.294
+Bionic CPU Peeker	C:\Program Files\Bionic CPU Peeker\Bionic CPU Peeker.exe	2.7.1.0
+Cool Beans System Info	C:\Program Files\Cool Beans System Info\Cool Beans System Info.exe	2.0.0.4
+Hard Disk Sentinel	C:\Program Files\Hard Disk Sentinel\HDSentinel.exe	3.3.0.0
+Start Service	C:\Program Files\Hard Disk Sentinel\HDSCtrl.exe	3.3.0.0
+Stop Service	C:\Program Files\Hard Disk Sentinel\HDSCtrl.exe	3.3.0.0
+Hardware sensors monitor	C:\Program Files\Hmonitor\hmonitor.exe	4.4.3.2
+logview4net	C:\Program Files\logview4net\logview4net.exe	9.38.0.0
+Process Lasso	C:\Program Files\Process Lasso\ProcessLasso.exe	3.7.0.7
+Run CPU eater for 60 seconds	C:\Program Files\Process Lasso\CPUEater.exe	
+Test Process Lasso	C:\Program Files\Process Lasso\TestLasso.exe	
+Tweak Scheduler	C:\Program Files\Process Lasso\TweakScheduler.exe	
+Vista Multimedia Scheduler Configuration	C:\Program Files\Process Lasso\vistammsc.exe	
+RAMMon	C:\Program Files\RAMMon\RAMMon.exe	
+Speccy	C:\Program Files\Speccy\Speccy.exe	1.6.0.191
+SpeedFan	C:\Program Files\SpeedFan\speedfan.exe	4.42.0.294
+Iarsn TaskInfo	C:\Program Files\Iarsn\TaskInfo 9.x\TaskInfo.exe	9.2.0.320
+Internet Cyclone	C:\Program Files\Internet Cyclone\Internet Cyclone.exe	2.0.1.0
+Quran Auto Reciter	C:\Program Files\Quran_AR\Quran_AR.exe	2.0.0.0
+Quran Auto Reciter	C:\Program Files\Quran_AR\Quran_AR.exe	2.0.0.0
+Kamus2	C:\Program Files\Kamus2\Kamus2.exe	2.0.3.36
+Kamus2	C:\Program Files\Kamus2\Kamus2.exe	2.0.3.36
+AU3_Spy	C:\Program Files\Finderbar 1.5\AU3_Spy.exe	1.0.3.0
+Finderbar_Engine	C:\Program Files\Finderbar 1.5\Finderbar_Engine.exe	1.0.46.8
+menu_editor	C:\Program Files\Finderbar 1.5\menu_editor.exe	1.0.46.8
+Microsoft® Windows® Operating System	C:\Program Files\Finderbar 1.5\mspaint.exe	5.1.2600.0
+Thsysinf	C:\Program Files\Finderbar 1.5\Thsysinf.exe	
+Transparent_Menus	C:\Program Files\Finderbar 1.5\Transparent_Menus.exe	1.0.25.0
+DreamMail	C:\Program Files\DreamMail4\DM2005.exe	4.6.8.2
+GMail Backup	C:\Program Files\GmailBackup\gmail-backup-gui.exe	
+Gmail Herald	C:\Program Files\Gmail Herald\gherald.exe	
+Outlook Express	C:\Program Files\Outlook Express\msimn.exe	6.0.2900.2180
+POP Peeper	C:\Program Files\POP Peeper\POPPeeper.exe	3.7.0.0
+Scott's Gmail Alert	C:\Program Files\Scott's Gmail Alert\ScottsGmailAlert.exe	4.7.8.15
+DreamMail	C:\Program Files\DreamMail4\DM2005.exe	4.6.8.2
+GMail Backup	C:\Program Files\GmailBackup\gmail-backup-gui.exe	
+Gmail Herald	C:\Program Files\Gmail Herald\gherald.exe	
+POP Peeper	C:\Program Files\POP Peeper\POPPeeper.exe	3.7.0.0
+Scott's Gmail Alert	C:\Program Files\Scott's Gmail Alert\ScottsGmailAlert.exe	4.7.8.15
+Advanced SystemCare	C:\Program Files\IObit\Advanced SystemCare 3\AWC.exe	3.7.2.732
+Ashampoo Core Tuner	C:\Program Files\Ashampoo\Ashampoo Core Tuner\ct.exe	1.2.0.0
+Ashampoo Internet Accelerator 3	C:\Program Files\Ashampoo\Ashampoo Internet Accelerator 3\iac3.exe	3.2.0.0
+CCleaner	C:\Program Files\CCleaner\CCleaner.exe	3.0.0.1303
+CpuIdle	C:\Program Files\CpuIdle\cpuidle.exe	7.5.0.10
+FCleaner	C:\Program Files\FCleaner\FCleaner.exe	1.3.1.621
+jv16 PowerTools 2010	C:\Program Files\jv16 PowerTools 2010\jv16PT.exe	2.0.0.964
+Max Registry Cleaner	C:\Program Files\Max Registry Cleaner\MaxRegistryCleaner.exe	1.0.2.69
+MemMonster 4	C:\Program Files\Magellass\MemMonster\memmnstr.exe	4.70.0.0
+PcMedik	C:\Program Files\PcMedik\PcMedik.exe	6.0.0.1
+Quicksys RegDefrag	C:\Program Files\Quicksys\RegDefrag\QRegDefrag.exe	2.9.0.0
+RamDisk Plus	C:\Program Files\SuperSpeed\RamDisk\SscRdCpa.exe	10.0.1.0
+RAMRush	C:\Program Files\RAMRush\RAMRush.exe	1.0.6.917
+RegClean Pro	C:\Program Files\RegClean Pro\RegCleanPro.exe	6.1.65.892
+Registry Fast	C:\Program Files\Registry Fast\RegFast.exe	4.0.0.0
+TuneUp Utilities	C:\Program Files\TuneUp Utilities 2010\Integrator.exe	9.0.3000.136
+Window Washer	C:\Program Files\Webroot\Washer\wwDisp.exe	6.5.5.155
+Yeahbit SystemKeep pro	C:\Program Files\YeahbitSystemKeeppro\YSK.exe	1.0.0.0
+Advanced SystemCare	C:\Program Files\IObit\Advanced SystemCare 3\AWC.exe	3.7.2.732
+Auto Shutdown	C:\Program Files\IObit\Advanced SystemCare 3\Sut_AutoShutDown.exe	1.0.0.17
+Cloned Files Finder	C:\Program Files\IObit\Advanced SystemCare 3\Sut_ClonedFilesFinder.exe	1.0.0.6
+Context Manager	C:\Program Files\IObit\Advanced SystemCare 3\Sut_ContextManager.exe	1.0.0.5
+Disk Cleaner	C:\Program Files\IObit\Advanced SystemCare 3\Sup_DiskCleaner.exe	2.0.2.6
+Disk Doctor	C:\Program Files\IObit\Advanced SystemCare 3\Sup_DiskDoctor.exe	1.0.0.0
+Disk Explorer	C:\Program Files\IObit\Advanced SystemCare 3\Sut_DiskExplorer.exe	1.0.0.4
+Driver Backup	C:\Program Files\IObit\Advanced SystemCare 3\Sus_DriverBackUp.exe	1.1.0.116
+File Shredder	C:\Program Files\IObit\Advanced SystemCare 3\Sup_FileShredder.exe	1.0.0.0
+Game Booster	C:\Program Files\IObit\Advanced SystemCare 3\Sup_GameBooster.exe	1.0.0.34
+IE Helper	C:\Program Files\IObit\Advanced SystemCare 3\Sus_PIeHelp.exe	1.0.0.17
+Internet Booster	C:\Program Files\IObit\Advanced SystemCare 3\Sup_InternetBooster.exe	1.0.1.3
+Registry Defrag	C:\Program Files\IObit\Advanced SystemCare 3\Sup_RegistryDefrag.exe	1.0.0.18
+Shortcuts Fixer	C:\Program Files\IObit\Advanced SystemCare 3\Sup_ShortcutsFixer.exe	1.0.1.10
+Smart RAM	C:\Program Files\IObit\Advanced SystemCare 3\Sup_SmartRAM.exe	2.0.5.12
+Startup Manager	C:\Program Files\IObit\Advanced SystemCare 3\Sut_StartUpManager.exe	1.0.0.23
+System Backup	C:\Program Files\IObit\Advanced SystemCare 3\Sus_SystemBackup.exe	1.0.0.3
+System File Scan	C:\Program Files\IObit\Advanced SystemCare 3\Sus_SystemFileScan.exe	1.0.0.1
+System Information	C:\Program Files\IObit\Advanced SystemCare 3\Sut_SysInfo.exe	1.0.0.10
+Windows Manager	C:\Program Files\IObit\Advanced SystemCare 3\Sut_WinManager.exe	1.0.0.63
+Ashampoo Core Tuner	C:\Program Files\Ashampoo\Ashampoo Core Tuner\ct.exe	1.2.0.0
+Ashampoo Internet Accelerator 3	C:\Program Files\Ashampoo\Ashampoo Internet Accelerator 3\iac3.exe	3.2.0.0
+CCleaner	C:\Program Files\CCleaner\CCleaner.exe	3.0.0.1303
+CpuIdle	C:\Program Files\CpuIdle\cpuidle.exe	7.5.0.10
+FCleaner	C:\Program Files\FCleaner\FCleaner.exe	1.3.1.621
+jv16 PowerTools 2010	C:\Program Files\jv16 PowerTools 2010\jv16PT.exe	2.0.0.964
+Get Free Extended Code!!	C:\Program Files\Internet Explorer\IEXPLORE.EXE	6.0.2900.2180
+MemMonster 4	C:\Program Files\Magellass\MemMonster\memmnstr.exe	4.70.0.0
+Order MemMonster 4	C:\Program Files\Internet Explorer\IEXPLORE.EXE	6.0.2900.2180
+Max Registry Cleaner	C:\Program Files\Max Registry Cleaner\MaxRegistryCleaner.exe	1.0.2.69
+PcMedik	C:\Program Files\PcMedik\PcMedik.exe	6.0.0.1
+Quicksys RegDefrag	C:\Program Files\Quicksys\RegDefrag\QRegDefrag.exe	2.9.0.0
+RAMRush	C:\Program Files\RAMRush\RAMRush.exe	1.0.6.917
+RegClean Pro	C:\Program Files\RegClean Pro\RegCleanPro.exe	6.1.65.892
+Registry Fast	C:\Program Files\Registry Fast\RegFast.exe	4.0.0.0
+RamDisk Plus	C:\Program Files\SuperSpeed\RamDisk\SscRdCpa.exe	10.0.1.0
+TuneUp Utilities	C:\Program Files\TuneUp Utilities 2010\Integrator.exe	9.0.3000.136
+TuneUp 1-Click Maintenance	C:\Program Files\TuneUp Utilities 2010\OneClick.exe	9.0.3000.136
+TuneUp Disk Doctor	C:\Program Files\TuneUp Utilities 2010\DiskDoctor.exe	9.0.3000.136
+TuneUp Disk Space Explorer	C:\Program Files\TuneUp Utilities 2010\DiskExplorer.exe	9.0.3000.136
+TuneUp Drive Defrag	C:\Program Files\TuneUp Utilities 2010\DriveDefrag.exe	9.0.3000.136
+TuneUp Gain Disk Space	C:\Program Files\TuneUp Utilities 2010\GainDiskSpace.exe	9.0.3000.136
+TuneUp Live Optimization	C:\Program Files\TuneUp Utilities 2010\LiveOptimizer.exe	9.0.3000.136
+TuneUp Optimization Report	C:\Program Files\TuneUp Utilities 2010\Report.exe	9.0.3000.136
+TuneUp Process Manager	C:\Program Files\TuneUp Utilities 2010\ProcessManager.exe	9.0.3000.136
+TuneUp Registry Cleaner	C:\Program Files\TuneUp Utilities 2010\RegistryCleaner.exe	9.0.3000.136
+TuneUp Registry Defrag	C:\Program Files\TuneUp Utilities 2010\RegistryDefrag.exe	9.0.3000.136
+TuneUp Registry Editor	C:\Program Files\TuneUp Utilities 2010\RegistryEditor.exe	9.0.3000.136
+TuneUp Repair Wizard	C:\Program Files\TuneUp Utilities 2010\RepairWizard.exe	9.0.3000.136
+TuneUp Rescue Center	C:\Program Files\TuneUp Utilities 2010\RescueCenter.exe	9.0.3000.136
+TuneUp Shortcut Cleaner	C:\Program Files\TuneUp Utilities 2010\ShortcutCleaner.exe	9.0.3000.136
+TuneUp Shredder	C:\Program Files\TuneUp Utilities 2010\Shredder.exe	9.0.3000.136
+TuneUp StartUp Manager	C:\Program Files\TuneUp Utilities 2010\StartUpManager.exe	9.0.3000.136
+TuneUp StartUp Optimizer	C:\Program Files\TuneUp Utilities 2010\StartupOptimizer.exe	9.0.3000.136
+TuneUp Styler	C:\Program Files\TuneUp Utilities 2010\WinStyler.exe	9.0.3000.136
+TuneUp System Control	C:\Program Files\TuneUp Utilities 2010\SystemControl.exe	9.0.3000.136
+TuneUp System Information	C:\Program Files\TuneUp Utilities 2010\SystemInformation.exe	9.0.3000.136
+TuneUp Undelete	C:\Program Files\TuneUp Utilities 2010\Undelete.exe	9.0.3000.136
+TuneUp Update Wizard	C:\Program Files\TuneUp Utilities 2010\UpdateWizard.exe	9.0.3000.136
+Window Washer	C:\Program Files\Webroot\Washer\wwDisp.exe	6.5.5.155
+Yeahbit SystemKeep pro	C:\Program Files\YeahbitSystemKeeppro\YSK.exe	1.0.0.0
+MBM 5 Config Wizard	C:\Program Files\Motherboard Monitor 5\MBMWiz.exe	5.3.5.0
+MBM 5 Debug mode	C:\Program Files\Motherboard Monitor 5\MBM5.exe	5.3.7.0
+MBM 5	C:\Program Files\Motherboard Monitor 5\MBM5.exe	5.3.7.0
+Modem Booster	C:\Program Files\inKline Global\Modem Booster\modembtr.exe	5.0.0.0
+CD Art Display	C:\Program Files\CD Art Display\CAD.exe	2.0.0.0
+Desktop Album Display	C:\Program Files\Desktop Album Display\Desktop Album Display.exe	2.0.0.0
+foobar2000	C:\Program Files\foobar2000\foobar2000.exe	1.1.1.0
+iTunesControl	C:\Program Files\iTunesControl\itc.exe	0.53.15.0
+Launch Xion	C:\Program Files\r2 Studios\Xion\Xion.exe	1.0.0.127
+MarkelSoft iPlayAnywhere for iTunes	C:\Program Files\StreamTunes\iPlayAnywhere.exe	
+MarkelSoft StreamTunes for iTunes	C:\Program Files\StreamTunes\StreamTunes.exe	
+MarkelSoft Visualizer for iTunes	C:\Program Files\Visualizer\Visualizer.exe	
+Media Player Classic	C:\Program Files\K-Lite Codec Pack\Media Player Classic\mpc-hc.exe	1.3.1405.0
+MediaMonkey	C:\Program Files\MediaMonkey\MediaMonkey.exe	3.2.1.1297
+MyTunesRSS	C:\TOOLS\MyTunesRSS v2.3.5\MyTunesRSS.exe	
+Playlist Creator 3	C:\Program Files\Playlist Creator 3\pc3.exe	3.5.0.0
+Quintessential Media Player	C:\Program Files\Quintessential Media Player\QMPlayer.exe	5.0.0.121
+Quintessential Player	C:\Program Files\Quintessential Player\QCDPlayer.exe	4.50.1.82
+CD Art Display	C:\Program Files\CD Art Display\CAD.exe	2.0.0.0
+Desktop Album Display	C:\Program Files\Desktop Album Display\Desktop Album Display.exe	2.0.0.0
+Exact Audio Copy	C:\Program Files\Exact Audio Copy\EAC.exe	
+Configuration	C:\Program Files\iTunesControl\config.exe	0.53.15.0
+iTunesControl	C:\Program Files\iTunesControl\itc.exe	0.53.15.0
+Localizer	C:\Program Files\iTunesControl\localizer.exe	0.0.0.4
+Media Player Classic	C:\Program Files\K-Lite Codec Pack\Media Player Classic\mpc-hc.exe	1.3.1405.0
+Codec Tweak Tool	C:\Program Files\K-Lite Codec Pack\Tools\CodecTweakTool.exe	51.1050.0.0
+CoreVorbis	C:\Program Files\K-Lite Codec Pack\Tools\dsconfig.exe	1.0.0.1
+Cyberlink MPEG-2 decoder	C:\Program Files\K-Lite Codec Pack\Tools\dsconfig.exe	1.0.0.1
+DirectVobSub	C:\WINDOWS\system32\rundll32.exe	5.1.2600.2180
+ffdshow audio decoder	C:\WINDOWS\system32\rundll32.exe	5.1.2600.2180
+ffdshow VFW interface	C:\WINDOWS\system32\rundll32.exe	5.1.2600.2180
+ffdshow video decoder	C:\WINDOWS\system32\rundll32.exe	5.1.2600.2180
+Generate log with system information	C:\Program Files\K-Lite Codec Pack\Tools\CodecTweakTool.exe	51.1050.0.0
+Haali Media Splitter	C:\WINDOWS\system32\rundll32.exe	5.1.2600.2180
+Haali video renderer	C:\Program Files\K-Lite Codec Pack\Tools\dsconfig.exe	1.0.0.1
+madFLAC	C:\Program Files\K-Lite Codec Pack\Tools\dsconfig.exe	1.0.0.1
+Manage installed codecs and filters	C:\Program Files\K-Lite Codec Pack\Tools\CodecTweakTool.exe	51.1050.0.0
+Manage preferred source filters	C:\Program Files\K-Lite Codec Pack\Tools\CodecTweakTool.exe	51.1050.0.0
+RealMedia	C:\Program Files\K-Lite Codec Pack\Real\settings.exe	51.1050.0.0
+Reset to recommended settings	C:\Program Files\K-Lite Codec Pack\Tools\CodecTweakTool.exe	51.1050.0.0
+VP7 decoder	C:\Program Files\K-Lite Codec Pack\Tools\dsconfig.exe	1.0.0.1
+Xvid encoder	C:\WINDOWS\system32\rundll32.exe	5.1.2600.2180
+Codec Tweak Tool	C:\Program Files\K-Lite Codec Pack\Tools\CodecTweakTool.exe	51.1050.0.0
+GraphStudio	C:\Program Files\K-Lite Codec Pack\Tools\graphstudio.exe	0.3.2.0
+GSpot Codec Information	C:\Program Files\K-Lite Codec Pack\Tools\gspot\gspot.exe	2.7.0.1
+Haali Muxer	C:\Program Files\K-Lite Codec Pack\Filters\Haali\gdsmux.exe	
+MediaInfo	C:\Program Files\K-Lite Codec Pack\Tools\mediainfo.exe	
+VobSubStrip	C:\Program Files\K-Lite Codec Pack\Tools\VobSubStrip.exe	
+Xvid StatsReader	C:\Program Files\K-Lite Codec Pack\Tools\StatsReader.exe	2.1.0.0
+MarkelSoft iPlayAnywhere for iTunes Tray	C:\Program Files\StreamTunes\iPlayAnywhereTray.exe	
+MarkelSoft iPlayAnywhere for iTunes	C:\Program Files\StreamTunes\iPlayAnywhere.exe	
+MarkelSoft StreamTunes for iTunes Tray	C:\Program Files\StreamTunes\StreamTunesTray.exe	
+MarkelSoft StreamTunes for iTunes	C:\Program Files\StreamTunes\StreamTunes.exe	
+MarkelSoft Visualizer for iTunes	C:\Program Files\Visualizer\Visualizer.exe	
+MediaMonkey	C:\Program Files\MediaMonkey\MediaMonkey.exe	3.2.1.1297
+Playlist Creator 3	C:\Program Files\Playlist Creator 3\pc3.exe	3.5.0.0
+Quintessential Media Player	C:\Program Files\Quintessential Media Player\QMPlayer.exe	5.0.0.121
+Quintessential Player	C:\Program Files\Quintessential Player\QCDPlayer.exe	4.50.1.82
+Launch Xion	C:\Program Files\r2 Studios\Xion\Xion.exe	1.0.0.127
+AvRack	C:\Program Files\AvRack\rtlrack.exe	1.10.0.0
+dBpoweramp Music Converter	C:\Program Files\Illustrate\dBpoweramp\MusicConverter.exe	13.3.0.2
+Exact Audio Copy	C:\Program Files\Exact Audio Copy\EAC.exe	
+FairStars Audio Converter Pro	C:\Program Files\FairStars Audio Converter Pro\AudioConverterPro.exe	1.4.0.1
+iWOW for PC	C:\Program Files\SRS Labs\SRS iWOW for PC\SRS_iWOW_PC.exe	3.2.0.0
+MP3GainGUI	C:\TOOLS\mp3gain-win-full-1_2_5\MP3GainGUI.exe	1.2.0.5
+Mp3tag v2.46a	C:\Program Files\Mp3tag\Mp3tag.exe	2.46.1.0
+MP3Test	C:\Program Files\MAF-Soft\MP3Test\MP3Test.exe	1.6.0.157
+SRS Audio Sandbox	C:\Program Files\SRS Labs\Audio Sandbox\SRSSSC.exe	2.3.6.0
+Tagscan	D:\Tagscan\Tagscan.exe	5.0.2.5
+Tunebite	C:\Program Files\RapidSolution\Tunebite\Tunebite.exe	5.1.169.6900
+Vol Control	C:\WINDOWS\system32\sndvol32.exe	5.1.2600.0
+CD Art Display	C:\Program Files\CD Art Display\CAD.exe	2.0.0.0
+dBpoweramp Batch Converter	C:\Program Files\Illustrate\dBpoweramp\DMCFileSelector.exe	13.3.0.2
+dBpoweramp CD Ripper	C:\Program Files\Illustrate\dBpoweramp\CDGrab.exe	13.3.0.2
+dBpoweramp Music Converter	C:\Program Files\Illustrate\dBpoweramp\MusicConverter.exe	13.3.0.2
+dBpoweramp Configuration	C:\Program Files\Illustrate\dBpoweramp\dBConfig.exe	13.3.0.2
+FairStars Audio Converter Pro	C:\Program Files\FairStars Audio Converter Pro\AudioConverterPro.exe	1.4.0.1
+Mp3tag v2.46a	C:\Program Files\Mp3tag\Mp3tag.exe	2.46.1.0
+MP3Test	C:\Program Files\MAF-Soft\MP3Test\MP3Test.exe	1.6.0.157
+AvRack	C:\Program Files\AvRack\rtlrack.exe	1.10.0.0
+SRS Audio Sandbox	C:\Program Files\SRS Labs\Audio Sandbox\SRSSSC.exe	2.3.6.0
+iWOW for PC	C:\Program Files\SRS Labs\SRS iWOW for PC\SRS_iWOW_PC.exe	3.2.0.0
+Tunebite	C:\Program Files\RapidSolution\Tunebite\Tunebite.exe	5.1.169.6900
+Express Burn Disc Burning Software	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Switch Sound File Converter	C:\Program Files\NCH Swift Sound\Switch\switch.exe	0.0.0.0
+Verbose Text to Speech	C:\Program Files\NCH Swift Sound\Verbose\verbose.exe	0.0.0.0
+CD Audio Burn Recorder	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+CD Audio Rip Extractor	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Crescendo Music Notation	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Dictation Recorder	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+DJ Mixing Software	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Multichannel Recorder	C:\Program Files\NCH Swift Sound\Switch\switch.exe	0.0.0.0
+Multitrack Mixer	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Record to CD or Mp3 Wizard	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Sound File Converter	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Sound File Editor	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Sound File Recorder	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Streaming Audio Recorder	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Streaming Audio Server	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Text-to-Speech Reader	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Accounting Software	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Classic FTP Software	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Doxillion Document Converter	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Express Burn CD, DVD or Blu-Ray	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Express Dictate Recorder	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Express Rip CD Ripper	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Express Talk Softphone	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Golden Records LP Converter	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Graphics File Converter	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Invoicing Software	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+IVM Telephone Answering Attendant	C:\Program Files\NCH Swift Sound\Switch\switch.exe	0.0.0.0
+MixPad MultiTrack Mixer	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Prism Video File Format Converter	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+RecordPad Sound Recorder	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+SoundTap Streaming Recorder	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Switch Sound File Converter	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+Video Capture Software	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+VideoPad Video Editor	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+VRS Sound Recorder	C:\Program Files\NCH Swift Sound\Switch\switch.exe	0.0.0.0
+WavePad Sound Editor	C:\Program Files\NCH Swift Sound\ExpressBurn\expressburn.exe	0.0.0.0
+AHA Dialer	C:\Program Files\AHA Dialer\ICard.exe	
+BySoft InternetPal	C:\Program Files\BySoft InternetPal\InternetPal.exe	3.1.0.0
+cFosSpeed menu	C:\Program Files\cFosSpeed\cfosspeed.exe	5.0.1560.0
+Commander	C:\Program Files\OPENXTRA\Common\openxtra_agent.exe	4.0.0.54
+Full Speed	C:\Program Files\'Full Speed' Internet Booster + Performance Tests\FullSpeed.exe	3.3.0.0
+Gbridge	C:\Program Files\Gbridge LLC\Gbridge\pstartw.exe	
+Hide IP Platinum	C:\Program Files\Hide IP Platinum\hideippla.exe	3.5.0.0
+LogMeIn Hamachi	C:\Program Files\LogMeIn Hamachi\hamachi-2-ui.exe	2.0.2.85
+LogMeIn	C:\Program Files\LogMeIn\x86\raabout.exe	4.0.0.680
+Modem Logger	C:\Program Files\KirysTech2k\Modem Logger\modemlog.exe	1.0.0.561
+ModemGPH	C:\Program Files\ModemGPH\modemgph.exe	
+Nmap - Zenmap GUI	C:\Program Files\Nmap\zenmap.exe	
+PeerBlock	C:\Program Files\PeerBlock\peerblock.exe	1.0.0.404
+ProxySwitcher Standard	C:\Program Files\Proxy Switcher Standard\ProxySwitcher.exe	4.2.0.5101
+TeamViewer 4	C:\Program Files\TeamViewer\Version4\TeamViewer.exe	4.1.6320.0
+Virtual Modem Pro	C:\Program Files\Eltima Software\Virtual Modem Pro\vmodem.exe	3.0.3.129
+VisualRoute 2010	C:\Program Files\VisualRoute\Loader.exe	3.3.0.0
+Full Speed	C:\Program Files\'Full Speed' Internet Booster + Performance Tests\FullSpeed.exe	3.3.0.0
+AHA Dialer	C:\Program Files\AHA Dialer\ICard.exe	
+BySoft InternetPal	C:\Program Files\BySoft InternetPal\InternetPal.exe	3.1.0.0
+Statistics	C:\Program Files\BySoft InternetPal\Statistics.exe	1.0.5.0
+Virtual Modem Pro	C:\Program Files\Eltima Software\Virtual Modem Pro\vmodem.exe	3.0.3.129
+Gbridge (no UPNP)	C:\Program Files\Gbridge LLC\Gbridge\pstartw.exe	
+Gbridge	C:\Program Files\Gbridge LLC\Gbridge\pstartw.exe	
+Lower Gbridge Interface Binding Order	C:\Program Files\Gbridge LLC\Gbridge\GbridgeInstallHelper.exe	
+Raise Gbridge Interface Binding Order	C:\Program Files\Gbridge LLC\Gbridge\GbridgeInstallHelper.exe	
+Hide IP Platinum	C:\Program Files\Hide IP Platinum\hideippla.exe	3.5.0.0
+Modem Logger	C:\Program Files\KirysTech2k\Modem Logger\modemlog.exe	1.0.0.561
+LogMeIn Hamachi	C:\Program Files\LogMeIn Hamachi\hamachi-2-ui.exe	2.0.2.85
+ModemGPH	C:\Program Files\ModemGPH\modemgph.exe	
+Nmap - Zenmap GUI	C:\Program Files\Nmap\zenmap.exe	
+Commander	C:\Program Files\OPENXTRA\Common\openxtra_agent.exe	4.0.0.54
+Start MRTG Service	C:\Program Files\OPENXTRA\Common\Tools\WinRun.exe	
+Stop MRTG Service	C:\Program Files\OPENXTRA\Common\Tools\WinRun.exe	
+PeerBlock	C:\Program Files\PeerBlock\peerblock.exe	1.0.0.404
+Anonymous Surfing Tutorial	C:\Program Files\Proxy Switcher Standard\AnSurf.exe	
+Basic Usage Tutorial	C:\Program Files\Proxy Switcher Standard\Basics.exe	
+ProxySwitcher Standard	C:\Program Files\Proxy Switcher Standard\ProxySwitcher.exe	4.2.0.5101
+Setting Up Mozilla FireFox Tutorial	C:\Program Files\Proxy Switcher Standard\FireFox.exe	
+ProxySwitcher Standard (Safe mode)	C:\Program Files\Proxy Switcher Standard\ProxySwitcher.exe	4.2.0.5101
+TeamViewer 4	C:\Program Files\TeamViewer\Version4\TeamViewer.exe	4.1.6320.0
+cFosSpeed console	C:\WINDOWS\system32\cmd.exe	5.1.2600.2180
+cFosSpeed menu	C:\Program Files\cFosSpeed\cfosspeed.exe	5.0.1560.0
+VisualRoute 2010	C:\Program Files\VisualRoute\Loader.exe	3.3.0.0
+kchmviewer	C:\Program Files\Ulduzsoft\KchmViewer\kchmviewer.exe	
+NXPowerLite 4	C:\Program Files\NXPowerLite\NXPowerLite.exe	4.2.3.4520
+PortableOpenOffice	F:\PortableOpenOffice\PortableOpenOffice.exe	1.1.3.1
+PortableOpenOfficeBase	F:\PortableOpenOffice\PortableOpenOfficeBase.exe	1.1.3.0
+PortableOpenOfficeCalc	F:\PortableOpenOffice\PortableOpenOfficeCalc.exe	1.1.3.0
+PortableOpenOfficeDraw	F:\PortableOpenOffice\PortableOpenOfficeDraw.exe	1.1.3.0
+PortableOpenOfficeImpress	F:\PortableOpenOffice\PortableOpenOfficeImpress.exe	1.1.3.0
+PortableOpenOfficeMath	F:\PortableOpenOffice\PortableOpenOfficeMath.exe	1.1.3.0
+PortableOpenOfficeWriter	F:\PortableOpenOffice\PortableOpenOfficeWriter.exe	1.1.3.0
+kchmviewer	C:\Program Files\Ulduzsoft\KchmViewer\kchmviewer.exe	
+PortableOpenOffice	F:\PortableOpenOffice\PortableOpenOffice.exe	1.1.3.1
+PortableOpenOfficeBase	F:\PortableOpenOffice\PortableOpenOfficeBase.exe	1.1.3.0
+PortableOpenOfficeCalc	F:\PortableOpenOffice\PortableOpenOfficeCalc.exe	1.1.3.0
+PortableOpenOfficeDraw	F:\PortableOpenOffice\PortableOpenOfficeDraw.exe	1.1.3.0
+PortableOpenOfficeImpress	F:\PortableOpenOffice\PortableOpenOfficeImpress.exe	1.1.3.0
+PortableOpenOfficeMath	F:\PortableOpenOffice\PortableOpenOfficeMath.exe	1.1.3.0
+PortableOpenOfficeWriter	F:\PortableOpenOffice\PortableOpenOfficeWriter.exe	1.1.3.0
+Foxit Reader	C:\Program Files\Foxit Software\Foxit Reader\Foxit Reader.exe	3.1.1.901
+Foxit Software	C:\Program Files\Foxit Software\Foxit Phantom\Foxit Phantom.exe	2.2.0.926
+InkSaver	C:\Program Files\InkSaver\InkSaver.exe	2.0.0.127
+PDF Explorer	C:\Program Files\PDF Explorer\PDFExplorer.exe	1.5.0.59
+PDFZilla	C:\Program Files\PDFZilla\PDFZilla.exe	1.2.0.4
+priPrinter	C:\Program Files\priPrinter\priPrinter.exe	3.3.0.1057
+Foxit Reader	C:\Program Files\Foxit Software\Foxit Reader\Foxit Reader.exe	3.1.1.901
+My Program	C:\Program Files\Foxit Software\Foxit Phantom\Foxit Phantom.exe	2.2.0.926
+Add or Remove Printers	C:\Program Files\Common Files\InstallShield\Driver\8\Intel 32\IDriver.exe	8.1.0.293
+InkSaver	C:\Program Files\InkSaver\InkSaver.exe	2.0.0.127
+PDF Explorer	C:\Program Files\PDF Explorer\PDFExplorer.exe	1.5.0.59
+Explore saved PDF files	C:\WINDOWS\system32\spool\drivers\w32x86\3\fppdis3a.exe	3.41.0.0
+PDFZilla	C:\Program Files\PDFZilla\PDFZilla.exe	1.2.0.4
+priPrinter	C:\Program Files\priPrinter\priPrinter.exe	3.3.0.1057
+e - texteditor	C:\Program Files\e\e.exe	
+Ezdit	C:\TOOLS\qyx\ezdit.exe	8.6.1.1
+JTPad	C:\TOOLS\qyx\JTPad.exe	1.0.0.0
+Metapad	C:\TOOLS\qyx\metapad.exe	
+Notepad GNU	C:\Program Files\Notepad GNU\Notepad GNU.exe	
+Notepad++	C:\Program Files\Notepad++\notepad++.exe	5.8.2.0
+Pascal Analyzer 4	C:\Program Files\Peganza\Pascal Analyzer 4 Eval\PAL.exe	4.6.4.0
+Perl Package Manager	C:\Perl\bin\wperl.exe	5.8.9.825
+PowerCmd	C:\Program Files\PowerCmd\PowerCmd.exe	2.1.120.0
+PyQt4 Assistant	C:\Python25\Lib\site-packages\PyQt4\bin\assistant.exe	1.0.0.0
+PyQt4 Designer	C:\Python25\Lib\site-packages\PyQt4\bin\designer.exe	1.0.0.0
+PyQt4 Linguist	C:\Python25\Lib\site-packages\PyQt4\bin\linguist.exe	1.0.0.0
+Python Interactive Shell	C:\Python25\python.exe	
+Tinyedit	C:\TOOLS\qyx\tinyedit.exe	
+Visustin v3	C:\Program Files\Visustin\visustin.exe	1.21.0.0
+Wing IDE 3.2	C:\Program Files\Wing IDE 3.2\bin\wing.exe	
+BlueJ	C:\BlueJ\bluej.exe	3.0.4.0
+Select VM	C:\BlueJ\bluej.exe	3.0.4.0
+Perl Package Manager	C:\Perl\bin\wperl.exe	5.8.9.825
+bitmap	C:\cygwin\bin\run.exe	1.1.10.0
+oclock	C:\cygwin\bin\run.exe	1.1.10.0
+rxvt	C:\cygwin\bin\run.exe	1.1.10.0
+xbiff	C:\cygwin\bin\run.exe	1.1.10.0
+xcalc	C:\cygwin\bin\run.exe	1.1.10.0
+xclock	C:\cygwin\bin\run.exe	1.1.10.0
+xditview	C:\cygwin\bin\run.exe	1.1.10.0
+xdvi	C:\cygwin\bin\run.exe	1.1.10.0
+xman	C:\cygwin\bin\run.exe	1.1.10.0
+xmh	C:\cygwin\bin\run.exe	1.1.10.0
+xterm	C:\cygwin\bin\run.exe	1.1.10.0
+emacs	C:\cygwin\bin\run.exe	1.1.10.0
+gvim	C:\cygwin\bin\run.exe	1.1.10.0
+xedit	C:\cygwin\bin\run.exe	1.1.10.0
+xemacs	C:\cygwin\bin\run.exe	1.1.10.0
+fc-list	C:\cygwin\bin\run.exe	1.1.10.0
+glxinfo	C:\cygwin\bin\run.exe	1.1.10.0
+showrgb	C:\cygwin\bin\run.exe	1.1.10.0
+xdpyinfo	C:\cygwin\bin\run.exe	1.1.10.0
+xfsinfo	C:\cygwin\bin\run.exe	1.1.10.0
+xlsatoms	C:\cygwin\bin\run.exe	1.1.10.0
+xlsclients	C:\cygwin\bin\run.exe	1.1.10.0
+xlsfonts	C:\cygwin\bin\run.exe	1.1.10.0
+xprop	C:\cygwin\bin\run.exe	1.1.10.0
+xtrapinfo	C:\cygwin\bin\run.exe	1.1.10.0
+xwininfo	C:\cygwin\bin\run.exe	1.1.10.0
+editres	C:\cygwin\bin\run.exe	1.1.10.0
+idle	C:\cygwin\bin\run.exe	1.1.10.0
+viewres	C:\cygwin\bin\run.exe	1.1.10.0
+wmagnify	C:\cygwin\bin\run.exe	1.1.10.0
+xconsole	C:\cygwin\bin\run.exe	1.1.10.0
+xcutsel	C:\cygwin\bin\run.exe	1.1.10.0
+xev	C:\cygwin\bin\run.exe	1.1.10.0
+xfontsel	C:\cygwin\bin\run.exe	1.1.10.0
+xkill	C:\cygwin\bin\run.exe	1.1.10.0
+xmag	C:\cygwin\bin\run.exe	1.1.10.0
+xrefresh	C:\cygwin\bin\run.exe	1.1.10.0
+xwd	C:\cygwin\bin\run.exe	1.1.10.0
+glxgears	C:\cygwin\bin\run.exe	1.1.10.0
+ico	C:\cygwin\bin\run.exe	1.1.10.0
+xeyes	C:\cygwin\bin\run.exe	1.1.10.0
+xgc	C:\cygwin\bin\run.exe	1.1.10.0
+xlogo	C:\cygwin\bin\run.exe	1.1.10.0
+Notepad GNU	C:\Program Files\Notepad GNU\Notepad GNU.exe	
+Notepad++	C:\Program Files\Notepad++\notepad++.exe	5.8.2.0
+Pascal Analyzer 4	C:\Program Files\Peganza\Pascal Analyzer 4 Eval\PAL.exe	4.6.4.0
+PowerCmd	C:\Program Files\PowerCmd\PowerCmd.exe	2.1.120.0
+Python Interactive Shell	C:\Python25\python.exe	
+PythonWin Editor	C:\Python25\Lib\site-packages\pythonwin\Pythonwin.exe	
+Assistant	C:\Python25\Lib\site-packages\PyQt4\bin\assistant.exe	1.0.0.0
+Designer	C:\Python25\Lib\site-packages\PyQt4\bin\designer.exe	1.0.0.0
+Linguist	C:\Python25\Lib\site-packages\PyQt4\bin\linguist.exe	1.0.0.0
+Wing IDE 3.2	C:\Program Files\Wing IDE 3.2\bin\wing.exe	
+Singular (Emacs and X-Server) (experimental)	C:\cygwin\usr\X11R6\bin\run.exe	1.1.10.0
+Singular (Emacs)	C:\cygwin\usr\X11R6\bin\run.exe	1.1.10.0
+Singular (rxvt)	C:\cygwin\bin\rxvt.exe	2.7.10.7
+Singular (Terminal)	C:\cygwin\bin\bash.exe	
+Rxvt - Terminal	C:\cygwin\bin\rxvt.exe	2.7.10.7
+Setup (Cygwin)	C:\cygwin\lib\Singular\cygwin-setup.exe	
+Check installation	C:\Program Files\Visustin\Checklib.exe	1.0.0.0
+Visustin v3	C:\Program Files\Visustin\visustin.exe	1.21.0.0
+Recuva	C:\Program Files\Recuva\Recuva.exe	1.38.0.504
+Recuva	C:\Program Files\Recuva\Recuva.exe	1.38.0.504
+RegAuditor	C:\Program Files\Nsasoft\RegAuditor\RegAuditor.exe	2.2.0.0

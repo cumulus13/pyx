@@ -1,0 +1,145 @@
+<?xml version="1.0" ?>
+<XML_DIZ_INFO>
+<MASTER_PAD_VERSION_INFO>
+ <MASTER_PAD_VERSION>2.20</MASTER_PAD_VERSION>
+<MASTER_PAD_EDITOR>PAD Creator version: 2.2.0 available for FREE at http://www.padcreator.com </MASTER_PAD_EDITOR>
+ <MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+</MASTER_PAD_VERSION_INFO>
+
+<Company_Info>
+ <Company_Name>Suzuki</Company_Name>
+ <Address_1 />
+ <Address_2 />
+ <City_Town>Tokyo</City_Town>
+ <State_Province />
+ <Zip_Postal_Code />
+ <Country>Japan</Country>
+ <Company_WebSite_URL>http://www.geocities.jp/keynes77jp</Company_WebSite_URL>
+  <Contact_Info>
+  <Author_First_Name>Suzuki</Author_First_Name>
+  <Author_Last_Name>Keem</Author_Last_Name>
+  <Author_Email>amk_usa2000@fastmail.fm</Author_Email>
+  <Contact_First_Name>Suzuki</Contact_First_Name>
+  <Contact_Last_Name>Keem</Contact_Last_Name>
+  <Contact_Email>amk_usa2000@fastmail.fm</Contact_Email>
+ </Contact_Info>
+ <Support_Info>
+  <Sales_Email>amk_usa2000@fastmail.fm</Sales_Email>
+  <Support_Email>amk_usa2000@fastmail.fm</Support_Email>
+  <General_Email>amk_usa2000@fastmail.fm</General_Email>
+  <Sales_Phone />
+  <Support_Phone />
+  <General_Phone />
+  <Fax_Phone />
+ </Support_Info>
+</Company_Info>
+
+<Program_Info>
+ <Program_Name>Kudaz MDI</Program_Name>
+ <Program_Version>2.2.0.1</Program_Version>
+ <Program_Release_Month>07</Program_Release_Month>
+ <Program_Release_Day>10</Program_Release_Day>
+ <Program_Release_Year>2010</Program_Release_Year>
+ <Program_Cost_Dollars>0</Program_Cost_Dollars>
+ <Program_Cost_Other_Code />
+ <Program_Cost_Other />
+ <Program_Type>Freeware</Program_Type>
+ <Program_Release_Status>Initial MDI version release</Program_Release_Status>
+ <Program_Install_Support>None</Program_Install_Support>
+ <Program_OS_Support>WinNT 4.x,WinXP,Windows2000,Windows2003, WindowsVista, Windows7</Program_OS_Support>
+ <Program_Language>English</Program_Language>
+ <Program_Change_Info>type change from SDI to MDI</Program_Change_Info>
+ <Program_Specific_Category>Development Tools</Program_Specific_Category>
+ <Program_Category_Class>Development::Source Editors</Program_Category_Class>
+ <Program_Categories>Editors</Program_Categories>
+ <Program_System_Requirements>WinNT or later, 16MB RAM, 386SX or higher</Program_System_Requirements>
+ <Includes_JAVA_VM>N</Includes_JAVA_VM>
+ <Includes_VB_Runtime>N</Includes_VB_Runtime>
+ <Includes_DirectX>N</Includes_DirectX>
+ <File_Info>
+  <Filename_Versioned>kdzm2201.zip</Filename_Versioned>
+  <Filename_Previous></Filename_Previous>
+  <Filename_Generic>kudazm.zip</Filename_Generic>
+  <Filename_Long>kdzm2201.zip</Filename_Long>
+  <File_Size_Bytes>1161734</File_Size_Bytes>
+  <File_Size_K>1135</File_Size_K>
+  <File_Size_MB>1.10</File_Size_MB>
+ </File_Info>
+ <Expire_Info>
+  <Has_Expire_Info>N</Has_Expire_Info>
+  <Expire_Count />
+  <Expire_Based_On>Days</Expire_Based_On>
+  <Expire_Other_Info />
+ </Expire_Info>
+</Program_Info>
+
+<Program_Descriptions>
+ <English>
+  <Keywords>text, editor, source, programming, authoring, syntax, highlighter, export, free, syntax-highlighting, suzuki, muraki, casio, notepad</Keywords>
+  <Char_Desc_45>Programmer's syntax-highlight source editor</Char_Desc_45>
+  <Char_Desc_80>User-friendly programmer's source editor with syntax-highlighting capabilities</Char_Desc_80>
+  <Char_Desc_250>Kudaz is a programmer's source/text/HTML editor with syntax-highlighting capabilities that currently supports 53 languages/scripts all told. Includes handy features for HTML/web document editing. Word-wrap, bookmarks, auto-completion/-correction...</Char_Desc_250>
+  <Char_Desc_450>Kudaz is a programmer's editor with syntax-highlighting capabilities having support for 53 languages/scripts: User-defined text snips. Useful HTML-related commands. Column/line selection mode. Document templates. Unix/Mac format support. Various and unique line-manipulation operations: prefix/suffix, sorting, specific line removal/replacement. Advanced file filter, Advanced MRU manager, Export in RTF/HTML/TeX. Multiple undo/redo. Bookmarks and...</Char_Desc_450>
+  <Char_Desc_2000>Kudaz has various features to help users edit text/programming source files and to serve as web-authoring editor with its rich syntax-highlighting feature: Users can create/modify/remove/add/insert text snips as many and as many times as he or she wants via Sniptxt panel. They can be classified and categorized as a group for easy identification and re-use. Folders panel saves users a lot of  task switching. Users can pre-define templates for creating initial source code structures for programming modules or any other context. Prefix/suffix is another handy feature. Line sorting feature is for sorting lines in ascending/descending order with or without case-sensitivity. Kudaz's filters are user-configurable too(remove/add/change order). Various start-up options(can start with a user-defined template).
+Key features:
+Advanced Project Panel.
+Auto-correction.
+Auto-completion.
+Advanced MRU manager.
+Bookmarks.
+Auto-indent.
+Backup creation.
+Block-indent/-outdent(+ optional tab-indent).
+Exporting syntax source as HTML/RTF/TeX.
+Few but handy HTML-related functions.
+Advanced find/replace.
+Flexible user-configurable file filters.
+HTML Color palette.
+HTML Quick Table wizard.
+Line spacing.
+Line-sorting.
+Find In Files.
+Multiple Undo/Redo.
+Sniptext panel that accommodates user-defined text snips.
+Prefixing/suffixing lines.
+Removing empty lines only.
+Removing lines containing/missing certain text.
+Shows opened file attributes on the status bar.
+Space Compression.
+Tab/space conversion.
+Trimming leading/trailing blanks on the spot(trim trailing spaces on save).
+Column selection support.
+Useful and handy Folders panel for quick access to files and folders
+User-configurable programming source template support.
+User-definable file types for View In Browser operation.
+Automatic file change detection.
+Visible right edge indicator line.
+Opening files from user-specified Favorite Folders.
+Duplicate line removal.
+And more...</Char_Desc_2000>
+ </English>
+</Program_Descriptions>
+
+<Web_Info>
+ <Application_URLs>
+  <Application_Info_URL>http://www.geocities.jp/keynes77jp/kudaz.htm</Application_Info_URL>
+  <Application_Order_URL />
+  <Application_Screenshot_URL>http://www.geocities.jp/keynes77jp/images/kdzshot.gif</Application_Screenshot_URL>
+  <Application_Icon_URL>http://www.geocities.jp/keynes77jp/images/kdzico32.gif</Application_Icon_URL>
+  <Application_XML_File_URL>http://www.geocities.jp/keynes77jp/down/kudaz.xml</Application_XML_File_URL>
+ </Application_URLs>
+ <Download_URLs>
+  <Primary_Download_URL>http://www.geocities.jp/keynes77jp/down/kdzm2201.zip</Primary_Download_URL>
+  <Secondary_Download_URL />
+  <Additional_Download_URL_1 />
+  <Additional_Download_URL_2 />
+ </Download_URLs>
+</Web_Info>
+
+<Permissions>
+ <Distribution_Permissions>Kudaz MDI(Multiple Document Interface) any version may be copied or be distributed freely with the condition that no modifications should be made to the original files of the software and no amount of price for this software may be charged to the users of this application without the author's express permission to do so.
+</Distribution_Permissions>
+ <EULA>The software Kudaz and its accompanying documentation are provided &quot;AS IS&quot; without warranties of any kind, either express or implied, including but not limited to the warranties of merchantability and fitness for a particular purpose. Though if they have been tested and inspected in every detail, the author does not guarantee that the software and the accompanying documentation are one hundred percent correct, accurate, reliable as the author is not a perfect God. The entire risk arising from the execution and performance of the program is assumed by the user. Neither the author nor anyone else who has been involved in the creation, production or distribution of this software shall be liable for any direct, indirect, consequential or incidental damages arising from the use of the program or the inability to use such program, even if the parties or individuals concerned have been advised of the possibility of such defects or damages.
+</EULA>
+</Permissions>
+</XML_DIZ_INFO>

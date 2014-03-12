@@ -1,0 +1,196 @@
+import clr
+import sys
+import os
+import traceback
+clr.AddReference("SDNSAPI")
+#import JHSoftware.SimpleDNSPlus as api
+from JHSoftware.SimpleDNSPlus import *
+
+filename = os.path.split(sys.argv[0])[1]
+usage = "\t use : " + filename + " example.com 192.168.190.1 root@example.com ([[host,default=127.0.0.1] [port,default=8053]] [password])"
+
+ipA = "192.168.190.1"
+ipNS = "192.168.190.1"
+ipWWW = "192.168.190.1"
+ipMX = "192.168.190.1"
+
+def add(data):	
+	try:
+		if sys.argv[4] == None or sys.argv[4] == "":
+			host = "127.0.0.1"	
+		else:
+			host = sys.argv[4]
+		if sys.argv[5] == None or sys.argv[5] == "":
+			passwd = "blackid"
+		else:
+			passwd = sys.argv[5]
+		if sys.argv[6] == None or sys.argv[6] == "":
+			port = 8053
+		else:
+			port = int(sys.argv[6])
+	
+		conn = Connection(host, port, passwd)
+	
+		#if sys.argv[1] == None:
+		if data == None or data == "":
+			print usage
+		else:
+			#if "www." in sys.argv[1]:
+			if "www." in data:	
+				print "\t Sorry !, you can't add zone with preffix \"www.\", please remove \"www.\"\n"
+				print usage
+			else:
+				#data = str(sys.argv[1])
+				#if sys.argv[2] == "":
+				if len(data) > 3 or data != None:
+					try:
+						if "@" in str(data[2]):
+							#Zone = conn.CreateZone(data, "black-x", str("root@") + str(data))
+							Zone = conn.CreateZone(data[0], "black-x", str(data[2]))
+							#Zone.Records.Add("ftp."+data, "A", ipA)
+							#Zone.Records.Add("ftp."+data, "A", str(sys.argv[2]))
+							Zone.Records.Add("ftp."+data[0], "A", str(data[1]))
+							#Zone.Records.Add("mail."+data, "A", ipMX)
+							#Zone.Records.Add("mail."+data, "A", str(sys.argv[2]))
+							Zone.Records.Add("mail."+data[0], "A", str(data[1]))
+							Zone.Records.Add("www."+data[0], "CNAME", data[1])
+							#Zone.Records.Add(data, "A", ipA)
+							#Zone.Records.Add(data, "A", str(sys.argv[2]))
+							Zone.Records.Add(data[0], "A", str(data[1]))
+							#Zone.Records.Add(data, "NS", "black-x")
+							Zone.Records.Add(data[0], "MX", "10", "mail."+ data[0])
+							conn.UpdateZone(Zone, True)
+						else:
+							excp_mail = raw_input("\t Youre not input admin mail address !, default in root@"+str(data[0])+", Do you want to set before ?[Y[y]es/N[n]o]")
+							if excp_mail == "Y" or excp_mail == "Yes" or excp_mail == "y" or excp_mail == "yes" :
+								set_mail = raw_input("\t Please input youre mail address : ")
+								#Zone = conn.CreateZone(data, "black-x", str("root@") + str(data))
+								Zone = conn.CreateZone(data[0], "black-x", str(set_mail))
+								#Zone.Records.Add("ftp."+data, "A", ipA)
+								#Zone.Records.Add("ftp."+data, "A", str(sys.argv[2]))
+								Zone.Records.Add("ftp."+data[0], "A", str(data[1]))
+								#Zone.Records.Add("mail."+data, "A", ipMX)
+								#Zone.Records.Add("mail."+data, "A", str(sys.argv[2]))
+								Zone.Records.Add("mail."+data[0], "A", str(data[1]))
+								Zone.Records.Add("www."+data[0], "CNAME", data[1])
+								#Zone.Records.Add(data, "A", ipA)
+								#Zone.Records.Add(data, "A", str(sys.argv[2]))
+								Zone.Records.Add(data[0], "A", str(data[1]))
+								#Zone.Records.Add(data, "NS", "black-x")
+								Zone.Records.Add(data[0], "MX", "10", "mail."+ data[0])
+								conn.UpdateZone(Zone, True)
+							elif excp_mail == "N" or excp_mail == "No" or excp_mail == "n" or excp_mail == "no" :
+								#Zone = conn.CreateZone(data, "black-x", str("root@") + str(data))
+								Zone = conn.CreateZone(data[0], "black-x", str(data[0]))
+								#Zone.Records.Add("ftp."+data, "A", ipA)
+								#Zone.Records.Add("ftp."+data, "A", str(sys.argv[2]))
+								Zone.Records.Add("ftp."+data[0], "A", str(data[1]))
+								#Zone.Records.Add("mail."+data, "A", ipMX)
+								#Zone.Records.Add("mail."+data, "A", str(sys.argv[2]))
+								Zone.Records.Add("mail."+data[0], "A", str(data[1]))
+								Zone.Records.Add("www."+data[0], "CNAME", data[1])
+								#Zone.Records.Add(data, "A", ipA)
+								#Zone.Records.Add(data, "A", str(sys.argv[2]))
+								Zone.Records.Add(data[0], "A", str(data[1]))
+								#Zone.Records.Add(data, "NS", "black-x")
+								Zone.Records.Add(data[0], "MX", "10", "mail."+ data[0])
+								conn.UpdateZone(Zone, True)
+							else:
+								print "\n"
+								print usage
+								print "\n"
+								print "\t ------------------- script by : licface --------------------"
+								sys.exit(0)
+					except:
+						data_e = traceback.format_exc()
+						print "ERROR : \n"
+						print "\t" + str(data_e)
+						print "-"*85
+						print "\n"
+						print usage
+						print "\n"
+						print "\t ------------------- script by : licface --------------------"
+						sys.exit()
+				else:
+					if "." in data:
+						if len(sys.argv) < 2:
+							print "\t Please input an IP Address ! \n"
+							print "\n"
+							print usage
+							print "\n"
+							print "\t ------------------- script by : licface --------------------"
+							sys.exit()
+						else:
+							Zone = conn.CreateZone(data[0], "black-x", str("root@") + str(data[0]))
+							#Zone.Records.Add("ftp."+data[0], "A", ipA)
+							#Zone.Records.Add("ftp."+data[0], "A", str(sys.argv[2]))
+							Zone.Records.Add("ftp."+data[0], "A", str(ip))
+							#Zone.Records.Add("mail."+data[0], "A", ipMX)
+							#Zone.Records.Add("mail."+data[0], "A", str(sys.argv[2]))
+							Zone.Records.Add("mail."+data[0], "A", str(ip))
+							Zone.Records.Add("www."+data[0], "CNAME", data[0])
+							#Zone.Records.Add(data[0], "A", ipA)
+							#Zone.Records.Add(data[0], "A", str(sys.argv[2]))
+							Zone.Records.Add(data[0], "A", str(ip))
+							#Zone.Records.Add(data[0], "NS", "black-x")
+							Zone.Records.Add(data[0], "MX", "10", "mail."+data[0])
+							conn.UpdateZone(Zone, True)
+					else:
+						print "\n"
+						print usage
+						print "\n"
+						print "\t ------------------- script by : licface --------------------"
+	except:
+		data_e = traceback.format_exc()
+		print "ERROR : \n"
+		print "\t" + str(data_e)
+		print "-"*85
+		print "\n"
+		print usage
+		print "\n"
+		print "\t ------------------- script by : licface --------------------"
+def importfromdb(username, password, host, db, port=None):
+	try:
+		db = MySQLdb.connect(host,username,password,db)
+		cursor = db.cursor()
+
+		sql = "SELECT * FROM " + str(db)
+		cursor.execute(sql)
+		#db.commit()
+		results = cursor.fetchall()
+		for row in results:
+			print row
+
+	except IndexError, e:
+		os.system('cls')
+		data_e = traceback.format_exc()
+		#print "ERROR : \n"
+		#print "\t" + str(data_e)
+		#print "-"*85
+		print "\n"
+		print usage
+		print "\n"
+		print "\t ------------------- script by : licface --------------------"
+
+	except MySQLdb.DatabaseError, e:
+		if "Duplicate" in e[1]:
+			print "\n"
+			print "\t Vhost has been added ! \n"
+		else:
+			pass
+
+if __name__ == '__main__':
+	try:
+		if sys.argv[1] == "import":
+			importfromdb("root","blackid","localhost","site")
+		else:
+			data = [sys.argv[1],sys.argv[2],sys.argv[3]]
+			add(data)
+		
+	except:
+		data_e = traceback.format_exc()
+		print "ERROR : \n"
+		print "\t" + str(data_e)
+		print "-"*85
+		print "\n"
+		print usage

@@ -1,0 +1,1 @@
+openssl crl2pkcs7 -nocrl -certfile cacert.pem | openssl pkcs7 -print_certs -text | pcregrep "^\s+(?:Not (?:Before|After)|Issuer|Subject)\s*:"

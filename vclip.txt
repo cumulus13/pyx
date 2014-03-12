@@ -1,0 +1,176 @@
+Variable Command Line Processor (VCLiP)
+Version 2.0 
+Copyright 1999-2001 J. Douglas Good (dgood@mail.psea.org)
+Outside The Box Software
+http://kickme.to/otbsoft
+
+
+What is this thing?
+~~~~~~~~~~~~~~~~~~~
+
+The Variable Command Line Processor (VCLiP from now on) is a VERY handy tool for
+calling a command-line program with variable arguements.  If you've ever had a need to run
+a command line utility a bunch of times with slightly different parameters each time then
+you know what a tedious, time-consuming procedure this can be.
+
+VCLiP takes all the work (and most of the time) out of issuing repetitive command lines.
+
+Features
+~~~~~~~~
+
+- Simple to use.  Doesn't need to be "installed", you can carry it around on a floppy. :)
+- Once you've hacked out a working configuration, you can save it for use later on.
+- Can be completely automated - just pass a config file on the command line, and VCLiP will
+  load it, process it, then exit with no user interaction.
+- Test function lets you verify that commands will be called correctly _before_ you actually
+  issue them for real.  None of that "pray you get it right the first time or you're screwed"
+  stuff.
+- Did I mention it's free?
+
+
+What exactly does this program do?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+First, VCLiP reads a list of variables from a text file.  Then it uses each item on the 
+list in turn to run an application or command line utility.  The current variable from the 
+list is passed on the command line.  Once the application is done, the next variable is 
+used to call the application again.  This is repeated for every variable in the list.
+
+VCLiP takes a redundant procedure that would otherwise have to be done manually many, many
+times and automates it.  Just think if you had to run a utility from inside each of 1000
+user folders on a server.  It would take you hours!  Using VCLiP, you can automate the
+procedure in a matter of minutes, and it does the work while you do something else.
+
+What are some real-world uses for VCLiP?
+
+* Change permissions on a group of directories so that each user can only see and have
+access to his specified user directory.  Under NT, use the VCLiP and the XCACLS.EXE 
+program from the NT resource kit.  For Novell, use VCLiP along with the FLAG.EXE utility.
+
+* Need to execute a command line utility in each of 1500 different directories?  No, you
+won't need to work late, or hire a temp to do the dirty work.  Use VCLiP and the DIR command
+to complete the task in 5 minutes.  Just do a DIR /ON /B /AD > Variable.txt to make a
+file that lists all the directories, then use VCLiP to issue the command in each directory.
+
+* You have 3000 files on a server that you need renamed from 001.TXT, 002.TXT etc to
+ABC001.TXT, ABC002.TXT and so on.  Need you spend days renaming files?  Nope.  Try about
+10 minutes, with VCLiP and a simple batch file.
+
+* You need to process a few hundred text files each day by executing GREP or a similar
+utility on each one.  Unfortunately, the names of the files are always changing, so you
+can't even write a batch file to process them.  Use VCLiP to solve the problem!
+
+
+Enough BS!  Give me the down and dirty on using this little gem!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+OK.  Run VCLIP.EXE and follow along.  From top to bottom, here's the scoop:
+
+ - First is the Executable Path text box.  put in the full path to the EXE file you'll be
+calling.  In our lengthy example above, this was XCACLS.EXE.  It can be anything - an
+EXE program, a COM program, or a BAT file.  If the path contains long file names, make
+sure you enclose it in QUOTES!  (i.e. it's "C:\My Utils\PROG.EXE" and not 
+C:\My Utils\PROG.EXE)  If you don't use the quotes with a long filename, the app won't
+run.  This is a required field.
+
+ - Next is the COMMAND LINE.  This specifies the parameters that will be passed to the
+Executable we discussed in step 1.  This contains any number of command line switches, and
+can contain the Replacement Variable text as well.  (See below for more info on that).
+This is NOT a required field.
+
+ - Working Directory - specifies the directory that will become the current directory
+before the application mentioned in step 1 is executed.  You can use the Replacement
+Variable here as well, in order to specify different directories.  This is a required
+field.
+
+ - Replacement Variable.  This can essentially be anything; it's a token
+that can be used in the Command line as well as Working directory.  The actual token text
+is replaced with the current variable read from the Variables text file (see below). The
+Replacement Variable is the key to how VCLiP works.  Anywhere the Replacement Variable
+token text appears in the Command Line or Working directory, it will be replaced with the
+current variable read from the Variables file.  The Replacement Variable token is NOT
+case sensitive, and can be used as often in the command line or working directory as
+required.  All instances of the token will be replaced.  This is a required field.
+
+ - Variables File - this is a text file containing a list of variables, one per line.
+This file will be read line by line, and the executable specified in Step 1 will be called
+once for each line in this file.  The Replacement Variable token text is replaced by the
+current variable read from this file before the executable is called.  This is a required
+field, and the Variables file MUST exist!  
+ 
+ - Wait for Termination check box - When checked (default) VRBP will wait for the current
+instance of the executable application to terminate before running it again.  In other words,
+no more than one instance of the executable will run at once.  If this box is NOT checked,
+VRBP will call the executable as fast as it can, and multiple copies of the executable
+program will be running at the same time.  Checked is slower, but doesn't consume as much 
+CPU time and is less error prone.  Unchecked is faster, but can hog the CPU and is more
+suceptible to errors. (Like sharing violations, out of memory errors, etc)  Use what works
+for you.  If you're working on a production server, you're better of checking this box, just
+to be safe.
+
+ - Hide Executing Program checkbox - This is checked by default.  Normally, you wouldn't want
+to see all the command prompt windows open and close each time a command line is executed, so 
+this option attempts to hide that window, or the window of whatever executable you're using.
+If you do want to watch what's going on (or you need to interact with the window for
+some reason) you can un-check this box.  Some applications refuse to run in a hidden state, so
+this option might not work all the time.
+
+ - Progress bar - this bar shows the overall progress of the variable processing.  It's
+only active when testing or processing.
+
+ - The Status Bar - this is split into 2 parts.  The first gives general info, and
+reports the progress of the processing, the second part shows the total number of variables
+to process, or, if the process was aborted by clicking stop, the number of the last variable
+processed.
+
+
+ - START Button - starts the processing
+
+ - STOP button - aborts a running batch process.  If you Stop a process, then click start, 
+the entire process will begin over starting with the first variable.  Use PAUSE if you want
+to temporarily stop processing then resume where you left off.
+
+ - PAUSE - temporarily pauses processing, click this button again to resume where you left off.
+
+ - CLEAR - clears out all the edit boxes on the VCLiP window.
+
+ - LOAD - loads a previously saved configuration file. 
+
+ - SAVE - saves the current configuration so it can be loaded later. (Configurations are
+NOT saved automatically!)
+
+ - On the Processing menu is a Test option.  This was included so you could review the actual
+command lines that will be executed without actually doing them.  This is used to verify that
+you've set the options correctly.  You don't have to use the Test option, but it is a good idea
+to run it and review it's output before you use a new configuration the first time.
+ 
+REVISION HISTORY
+~~~~~~~~~~~~~~~~
+
+Apr 4, 2001 - Version 2.0 released
+  - Changed the name of the program to Variable Command Line Processor (VCLiP for short)
+    VRBP was difficult to remember and even harder to pronounce.
+  - Added a Hide Executable Program Window checkbox
+  - Removed the Test button from the toolbar.  You can still use the Test menu option on the
+    Processing menu.
+  - Added a Pause button to the toolbar and on the Processing menu.
+  - Added a link to the OTB Software home page in the about box.
+  - Fixed the tab order of the controls, now easier to use without a mouse.
+
+Feb 23, 2001 - Version 2.0 Beta
+  - Load and Save buttons now use standard dialog boxes.  Not sure why I didn't do this in 
+    the first place...   This allows you to have different config files for different tasks
+    and open/save them like every other Windows program out there.   The last-used config 
+    file is no longer automatically loaded, so you'll need to open it yourself.
+  - Added a Windows-standard menu system to the program
+  - New Feature: You can now specify a config file on the command line when calling VRBP,
+    and the file will be loaded and run automatically.  VRBP will exit after the processing
+    is done.  This allows VRBP to be used in automated batch mode.  
+    Example:  VRBP c:\config.cfg
+  - Added an About box.  Whoopee.
+  - Changed the way the Test output works.  Rather than going to a file which you then had
+    to manually open, it now outputs to a window so you can see it immediately.
+  - Various enhancements and optimizations to the code no one but me will ever notice 
+	
+
+July 1999 - Version 1.0, first public release 

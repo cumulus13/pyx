@@ -1,0 +1,12 @@
+Several people have expressed confusion about what color codes to use in
+ndir.ini, since I don't support symbolic names.  Apparently the once-
+common knowledge of the DOS color mapping is becoming a lost art!!
+
+To aid people in choosing colors in ndir.ini, I am including the
+colors.exe utility.  It will display the first 128 DOS colors
+on the console.  The four-digit number, beginning with 0x , is the
+value that you can enter in the INI file.
+
+This utility, like everything in this package, is freeware.
+
+	Dan Miller

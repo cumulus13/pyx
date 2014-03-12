@@ -1,0 +1,7 @@
+Finder	explorer.exe	6.0.2800.1659
+Internet Explorer	iexplore.exe	6.0.2800.1106	Copyright © Microsoft Corporation.
+Notepad	notepad.exe	1.0.12.0
+<Title>	hh.exe	5.2.3790.315
+AppleScript	rundll32.exe	5.1.2600.0
+Finderbar	AutoHotkey.exe	1.3	Copyright © 2006 Sven Karsten
+Finderbar	Finderbar_Engine.exe	1.3	Copyright © 2006 Sven Karsten

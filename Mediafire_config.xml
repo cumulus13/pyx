@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <formState>
+    <C>numericSpeedEditor</C>
+    <V>3200</V>
+  </formState>
+  <formState>
+    <C>textEditor1</C>
+    <V>C:\DOWNLOAD</V>
+  </formState>
+  <formState>
+    <C>numericEditor</C>
+    <V>10</V>
+  </formState>
+  <formState>
+    <C>textEditor3</C>
+    <V>descargas-metal.blogspot.com</V>
+  </formState>
+  <formState>
+    <C>checkEditor</C>
+    <V>False</V>
+  </formState>
+  <formState>
+    <C>textEditor2</C>
+    <V>C:\Program Files\Internet Download Manager\IDMan.exe</V>
+  </formState>
+  <formState>
+    <C>checkEditor2</C>
+    <V>False</V>
+  </formState>
+</DocumentElement>

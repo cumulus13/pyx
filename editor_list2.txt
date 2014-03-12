@@ -1,0 +1,72 @@
+1.  Boxer Text Editor(boxer)      	  = (All Language)
+
+2.  AptEdit Pro(aptedit)            	  = HEX, HTML, PHP, Java, Perl, 
+                             		     Ruby, Scala, Python, Javascript,
+			     		     VBScript, SQL, 
+                              
+3.  ConTEXT Editor(context)          	  = (c, cpp, h, hpp, css, chl, lng)
+					     for, prg, htm, html, asp,shtml
+					     iss, java, jav, js, pas, pp, dpr
+					     dpk, inc, pl, pm, cgi, php, py
+					     sql ,tcl, vb, bas, asm, pl, vb, 
+					     bas)
+                              
+4.  Syn Editor(syn)             	  = (All Language)
+                              
+5.  Total Edit(teditstd)                  = (xml, xsl, sql, php ,java, html,
+			     		     cs, bat, c, cpp, h, vbs)
+
+6.  Zion Editor(zion)                     = (All Language)
+                              
+7.  CopyWriter(copywriter)                = txt, rft, doc)
+
+8.  EditPad Lite(editpadlite)   	  = (html)
+
+9.  NaviCoder Editor(navicoder_editor)    = HTML, C/C++, Perl, Python,
+					     Java, PHP, ASP, VBScript 
+					     and more, up to 46 types.
+
+10. RJ TextEd(texted)              	  = (nfo, diz, syx, ini, asp,
+			     		     aspx, cf, cfscript,
+                             		     cpp, c, h, cs, css, html,
+			     		     java, js, jsp, pas, perl, 
+			     		     php, reg, vb, vbs, wsf,
+                             		     xml, xsl)
+                              
+11. nPad2(npad2)                  	  = (All Language)
+
+12. SuperEdi(superedi)              	  = (bat, C#, C/C++, CSS, HHP, 
+                             		     HTML, IDL, INI, InnoSetup, 
+			     		     Java, JScript, Makefile, 
+			     		     perl, php, reg,rc, sql, 
+			     		     syn, vbs, xml, xsl
+
+13. DocPad(docpad)                 	  = (.ini, .log, .bat, .txt)
+
+14. Metapad(metapad)                	  = Other Notepad (No Installer)
+
+15. TinyEdit(tinyedit)               	  = (All Language)
+
+16. Ezdit(ezdit)                  	  = (Tcl/Tk)
+
+17. JTPad(jtpad)                  	  = (Java)
+
+18. BatEdit(batedit)                	  = (Bat)
+
+19. ProgEdit(Progedit)               	  = (All Langauge)
+
+20. CA Editor(ca)              		  = (.class)
+
+21. ML(ml)                     		  = (Tcl/Tk)
+
+22. KEdit(kedit)                  	  = KDE Edit For Windows
+
+23. Notepad 2(notepad2)              	  = (All Language) 
+
+24. cPad(cpad)				  = (All Language)
+
+25. e Editor(e)				  = (All Language)
+
+26. Notepad++				  = (All Language)
+
+27. EditPlus				  = (All Language)

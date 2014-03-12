@@ -1,0 +1,46 @@
+Kudaz MDI(Multiple Document Interface) license agreement and disclaimer
+
+By using Kudaz MDI, you(the user) are bound by the terms and conditions
+of this agreement. If the user does not agree, the user should remove
+the software along with its accompanying/supplementary files/documents
+from his or her system.
+
+GRANT OF LICENSE:
+
+- Kudaz MDI is FREEWARE for life time. The software is licensed, not sold.
+- Nobody is allowed to ask or take price for Kudaz itself.
+  But taking price for distribution media like CD-ROMs or handling fees
+  for such distribution is upto those who are in charge of such distributions.
+
+- The user may use this software without charge at his or her own risk.
+- The user may use Kudaz either at home or at work.
+- For use at work that pays, the user is recommended to personalize his or her copy of Kudaz.
+  But it isn't obligatory.
+
+- The user is allowed to make as many copies of Kudaz as he or she wants
+  as long as they are used for personal purpose only on his or her own system
+  or if they are reserved for backup.
+
+- The user is not allowed to alter the program and the accompanying
+  documentation without the author`s express consent.
+
+NO WARRANTIES OR LIABILITIES AT ALL:
+
+The software and its accompanying documentation are provided "AS IS"
+without warranties of any kind, either express or implied,
+including but not limited to the warranties of merchantability
+and fitness for a particular purpose. Though they have been tested
+and inspected in every detail, the author does not guarantee
+that the software and the accompanying documentation
+are one hundred percent correct, accurate, reliable.
+
+The entire risk arising from the execution and performance
+of the program is assumed by the user.
+Neither the author nor anyone else who has been involved in the
+creation, production or distribution of this software shall be liable
+for any direct, indirect, consequential or incidental damages arising
+from the use of the program or the inability to use such program, even
+if the parties or individuals concerned have been advised of the
+possibility of such defects or damages.
+
+Copyright(C)2005-2010 by Suzuki.

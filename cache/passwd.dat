@@ -1,0 +1,45 @@
+(S'root@blackid.net'
+p0
+(dp1
+S'passwd'
+p2
+S'1f9faba27f6ba091de62ea62351d33f4'
+p3
+sS'feed'
+p4
+(dp5
+S'http://www.syslogcenter.com/theme/theme2/rss6.php'
+p6
+VNOD32 Threat EventLog
+p7
+sS'http://www.syslogcenter.com/theme/theme2/rss3.php'
+p8
+VSyslog2ODBC
+p9
+sS'http://www.syslogcenter.com/theme/theme2/rss.php'
+p10
+VKiwi Syslog
+p11
+sS'http://www.syslogcenter.com/theme/theme2/rss5.php'
+p12
+VUSB Log
+p13
+ssS'focus'
+p14
+(dp15
+stp16
+.(S'admin@rss.proxy'
+p0
+(dp1
+S'passwd'
+p2
+S'827ccb0eea8a706c4c34a16891f84e7b'
+p3
+sS'feed'
+p4
+(dp5
+sS'focus'
+p6
+(dp7
+stp8
+.

@@ -1,0 +1,61 @@
+Command Line SFV Checker v0.1 (Windows console / Prompt Ms-Dos)
+--------------------------------------------------------------------------------
+
+Generate or check the CRC32 of the files list present on the given '.SFV' file.
+It is very useful in case you must execute a fast CRC32 check of a set of files 
+and you don't have the Windows graphic interface (for example if you administrat
+e a remote PC using a telnet shell). To obtain software help, you must execute t
+he command 'Enfis_SFV.exe -h' at Ms-Dos prompt.
+
+
+Here is the output of the software help ('Enfis_SFV.exe -h') :
+--------------------------------------------------------------------------------
+
+Command Line SFV handler v0.1 - HELP INFO
+
+..::[ BUILD PARAM ]::..
+
+  -f="(file)"    Set SFV output filename (default = 'enfis.sfv').
+  -p="(path)"    Build SFV of a specified directory (default = current dir).
+  -r             Recursive directory. Build SFV of specified (or current) dir
+                 and all its sub-folders. Each directory has its own SFV file.
+  Pattern match  Standard DOS wildcard * and ? are allowed for search pattern.
+
+
+..::[ CHECK PARAM ]::..
+
+  -c="(file)"    Check CRC of the specified SFV file.
+
+
+..::[ MISC PARAM ]::..
+
+  -o             Redirect output text to the 'enfout.txt' file.
+  -h, -?         Show this help text.
+
+
+..::[ NOTES ]::..
+
+  All path and files name must be enclosed in " " if it contains spaces.
+  Both - and / are allowed like option parameters.
+
+
+..::[ EXAMPLES ]::..
+
+ Enfis_SFV.exe -f=check.sfv *.rar itz*.r?? *hiv*.zip
+  (Build SFV of all the matching files in the specified pattern inside cur dir)
+
+ Enfis_SFV.exe -r -p="c:\Program files\" -f="Check file.sfv" *.*
+  (Build SFV of all the files in "c:\Program files\", recursively)
+
+ Enfis_SFV.exe *.0??
+  (Build SFV of all the matching files of *.0?? pattern, in current dir)
+
+ Enfis_SFV.exe -c=check.sfv -o
+  (Check CRC of 'check.sfv' file in curret dir. Results are in 'enfout.txt')
+
+ Enfis_SFV.exe -c=d:\Files_Data\crc.sfv
+  (Check CRC of 'crc.sfv' file in 'd:\Files_Data')
+
+--------------------------------------------------------------------------------
+
+Enfis The Paladin @ 2004 - http://www.enfis.it/
