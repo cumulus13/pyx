@@ -5,20 +5,20 @@ if %1==-t goto total
 if %1==-s goto size
 if %1==-d goto detail
 
-c:\cygwin\bin\du -s -h %1
+d:\cygwin\bin\du -s -h %1
 goto end
 
 :size
-c:\cygwin\bin\du -h --max-depth=1 %2
+d:\cygwin\bin\du -h --max-depth=1 %2
 goto end
 
 :detail
-c:\cygwin\bin\du -h -a --max-depth=1 %2
+d:\cygwin\bin\du -h -a --max-depth=1 %2
 goto end
 
 
 :total
-c:\cygwin\bin\du -s -h %2
+d:\cygwin\bin\du -s -h %2
 goto end
 
 :usage
@@ -33,7 +33,7 @@ echo.
 echo.
 echo  please wait ..............
 echo.
-c:\cygwin\bin\du -s -h %CD%
+d:\cygwin\bin\du -s -h %CD%
 goto end
 
 :end
