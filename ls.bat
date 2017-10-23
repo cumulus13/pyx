@@ -468,8 +468,11 @@ echo			       -help	= This Option Help Of this file
 echo.
 
 :end
-echo.
-echo							"%cd%"
-echo.
-echo				For Help use option "-help"
-echo.
+rem echo.
+rem echo							"%cd%"
+rem echo.
+rem echo				For Help use option "-help"
+rem echo.
+
+:end2
+

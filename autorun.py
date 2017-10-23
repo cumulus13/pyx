@@ -166,12 +166,12 @@ def listlnk_todel():
     for d in  LISTFILELNK2:
         data =  readlnk_todel(d)
     
-def writereg(name, path):
+def writereg(name, value):
     keyval = r"SOFTWARE\Microsoft\Windows\CurrentVersion\Run"
     if not os.path.exists(keyval):
         key = CreateKey(HKEY_LOCAL_MACHINE,keyval)
     RegKey = OpenKey(HKEY_LOCAL_MACHINE,keyval,0,KEY_WRITE)
-    SetValueEx(RegKey,name,0,REG_SZ, path)
+    SetValueEx(RegKey,name,0,REG_SZ, value)
     CloseKey(RegKey)
     print "\n"
     print str("   Add Succesfull").upper()

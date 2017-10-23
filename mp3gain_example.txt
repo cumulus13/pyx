@@ -1,0 +1,32 @@
+"c:\Program Files\MP3Gain\mp3gain" /o /s s "Secret Hedges.mp3"
+
+"c:\Program Files\MP3Gain\mp3gain" /o /s s Prince Of Darkness.mp3"
+
+mp3gain  /s s /o "One Last Remark (Improvisation).mp3"
+
+"c:\Program Files\MP3Gain\mp3gain" /g -2 /t /s s "Fife And Drum.mp3"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

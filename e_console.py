@@ -1,6 +1,11 @@
 import sys
 import os
-from PyQt4 import QtGui, QtCore
+try:
+    from PyQt4 import QtGui, QtCore
+    inherit = QtGui.QDialog
+except ImportError:
+    from PyQt5 import QtGui, QtCore
+    inherit = QtGui.QWindow
 
 class econsole():
     def __init__(self, parent=None):
@@ -10,30 +15,36 @@ class econsole():
         print "\n"
         print "\t" + data
         
-class Dialog(QtGui.QDialog):
+class Dialog(inherit):
     def __init__(self, info, data, parent=None):
-        QtGui.QWidget.__init__(self, parent)
+        try:
+            QtGui.QWidget.__init__(self, parent)
+        except:
+            QtGui.QWindow.__init__(self, parent)
         self.info = info
         self.data = data
         
         if os.getcwd() == os.path.split(sys.argv[0])[0]:
             mypath = os.path.split(sys.argv[0])[0] + "/images/"
         else:
-            if "d:" in os.getcwd():
+            if "c:" in os.getcwd():
                 if "pyx" in os.getcwd():
                     #os.chdir("..\\")
                     mypath = os.getcwd() + '/images/' 
                 else:
-                    mypath = r'd:/pyx/images/' 
+                    mypath = r'c:/pyx/images/' 
             else:
-                mypath = mypath = r'd:/pyx/images/' 
+                mypath = mypath = r'c:/pyx/images/' 
 
         #print "mypath = ", mypath                #for test only
         #print "os.getcwd() = ", os.getcwd()      #for test only
         #print "sys.argv[0] = ", sys.argv[0]      #for test only
             
         self.setGeometry(300, 300, 550, 350)
-        self.setFixedSize(500, 350)
+        try:
+            self.setFixedSize(500, 350)
+        except:
+            self.setMaximumSize(QtGui.QSize(500, 350))
         self.setWindowTitle(str(self.info))
         self.setWindowIcon(QtGui.QIcon(mypath + str(self.info) + '2.png'))
 
@@ -69,10 +80,16 @@ class Dialog(QtGui.QDialog):
         self.move((screen.width()-size.width())/2, (screen.height()-size.height())/2)
 
 def main(info, data):
-    app = QtGui.QApplication(sys.argv)
+    try:
+        app = QtGui.QApplication(sys.argv)
+    except:
+        from PyQt5.QtWidgets import QApplication
+        app = QApplication(sys.argv)
     icon = Dialog(info,data)
     icon.show()
     app.exec_()
-    
+
+if __name__ == '__main__':
+    main('error', 'test error data')
 #main('error','just test')
 

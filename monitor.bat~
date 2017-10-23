@@ -1,0 +1,12 @@
+@echo off
+if %1== off goto off
+goto end
+
+
+
+:off
+nircmd monitor off
+goto end
+
+
+:end

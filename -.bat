@@ -2,6 +2,6 @@
 set me=%CD%
 title %CD%
 cd \
-title %cd% - Commnad Prompt
+title %cd%
 cls
 echo.

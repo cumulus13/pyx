@@ -1,0 +1,4 @@
+@echo off
+netsh interface ip show config %1
+echo.
+netsh interface show interface

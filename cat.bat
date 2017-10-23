@@ -2,7 +2,7 @@
 title %CD%
 echo.
 
-"c:\Git\bin\cat.exe" %1 | more
+"c:\msys2\usr\bin\cat.exe" %1 | more
 goto end
 
 

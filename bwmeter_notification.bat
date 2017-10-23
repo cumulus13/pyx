@@ -1,0 +1,1 @@
+"c:\Program Files\Growl for Windows\growlnotify.exe" /a:BWMeter /n:"OverBandwidth" /i:"d:\ICONS\BWMeter.png"  /t:BWMeter /s "Over"

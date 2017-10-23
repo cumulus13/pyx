@@ -1,24 +1,24 @@
 @echo off
 title %CD%
 
-if %1*==* goto help
-if %1==cd goto cd
-if %1==dvd goto dvd
+rem if %1*==* goto help
+rem if %1==cd goto cd
+rem if %1==dvd goto dvd
 
-:dvd
-start C:\EXE\tooler\Tooler.exe wysuntackecdromu H
-goto end
+rem :dvd
+start C:\exe\Tooler.exe wysuntackecdromu H
+rem goto end
 
-:cd
-start C:\EXE\tooler\Tooler.exe wysuntacLecdromu E
-goto end
+rem :cd
+rem start C:\exe\Tooler.exe wysuntacLecdromu H
+rem goto end
 
-:help
-echo.
-echo		use : %0 cd      for eject cdrom
-echo		      %0 dvd     for eject dvdrom
-echo.
+rem :help
+rem echo.
+rem echo		use : %0 cd      for eject cdrom
+rem echo		      %0 dvd     for eject dvdrom
+rem echo.
 
 
-:end
+rem :end
 

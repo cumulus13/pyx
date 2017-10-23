@@ -15,7 +15,8 @@ def search():
         print "  Search in",str(PATH2[i]).strip(),"..."
         dsearch = os.popen("dir /s /b \"" + str(PATH2[i]).strip() + "\\\"\"*" + sys.argv[1] + "*\"").readlines()
         d1 = str(sys.argv[1]).split('*')
-        if len(d1) > 1:
+        # print len(d1)
+        if len(d1) > 0:
             if d1[0] == None or d1[0] == '':
                 d = d1[1]
             else:

@@ -2,6 +2,7 @@ import sys
 import os
 import traceback
 import shutil
+import datetime
 
 __version__ = "2.2"
 __author__ = "licface"
@@ -23,6 +24,24 @@ class process:
         self.result_error = []
         self.result_overwrite = []
         self.publicTo = None
+        self.LOGS_PATH = r""
+
+    def logs(self, data):
+        if os.path.isfile(os.path.join(os.path.dirname(__file__), 'mva.log')):
+            self.LOGS_PATH = os.path.join(os.path.dirname(__file__), 'mva.log')
+        elif self.LOGS_PATH != r'':
+            if os.path.isdir(self.LOGS_PATH):
+                if os.path.isfile(os.path.join(self.LOGS_PATH, 'mva.log')):
+                    self.LOGS_PATH = os.path.join(self.LOGS_PATH, 'mva.log')
+            elif os.path.isfile(self.LOGS_PATH):
+                self.LOGS_PATH = self.LOGS_PATH
+        else:
+            self.LOGS_PATH = open(os.path.join(os.path.dirname(__file__), 'mva.log'), 'wb')
+            self.LOGS_PATH.close()
+            self.LOGS_PATH = os.path.join(os.path.dirname(__file__), 'mva.log')
+        f = open(self.LOGS_PATH, 'a')
+        f.write(datetime.datetime.strftime(datetime.datetime.now(), '%d-%m-%Y %H:%M:%S') + " " + str(data) + "\n")
+        f.close()
 
     def moveAll(self,listFrom=None,listTo=None):
         if listFrom != None:
@@ -110,9 +129,11 @@ class process:
                 try:
                     shutil.move(x, _to)
                     print " MOVED FILE: \"" + str(x) + "\" --> \"" + os.path.abspath(sys.argv[-1]) + "\""
+                    self.logs("MOVED FILE: \"" + str(x) + "\" --> \"" + os.path.abspath(sys.argv[-1]) + "\"")
                 except:
                     #return __error__
                     print " MOVED FILE [ERROR]: \"" + str(x) + "\" --> " + os.path.abspath(_to) + " [ERROR]"
+                    self.logs("MOVED FILE [ERROR]: \"" + str(x) + "\" --> " + os.path.abspath(_to) + " [ERROR]")
                     self.result_error.append(os.path.abspath(str(x)))
 
             elif os.path.isdir(x) == True:
@@ -120,9 +141,11 @@ class process:
                     #print "BBB"
                     shutil.move(x, _to)
                     print " MOVED DIRECTORY: \"" + str(x) + "\" --> " + os.path.abspath(sys.argv[-1])
+                    self.logs("MOVED DIRECTORY: \"" + str(x) + "\" --> " + os.path.abspath(sys.argv[-1]))
                 except:
                     #return __error__
                     print " MOVED DIRECTORY [ERROR]: \"" + str(x) + "\" --> \"" + os.path.abspath(_to) + "\" [ERROR]"
+                    self.logs("MOVED DIRECTORY [ERROR]: \"" + str(x) + "\" --> \"" + os.path.abspath(_to) + "\" [ERROR]")
                     self.result_error.append(os.path.abspath(str(x)))
             else:
                 print "\n"
@@ -136,6 +159,7 @@ class process:
                         if not shutil.Error:
                             shutil.move(x, _to)
                             print " MOVED FILE: \"" + str(x) + "\" --> \"" + os.path.abspath(_to) + "\""
+                            self.logs("MOVED FILE: \"" + str(x) + "\" --> \"" + os.path.abspath(_to) + "\"")
                         else:
                             if x != os.path.abspath(excp):
                                 self.result_overwrite.append(x)
@@ -151,6 +175,7 @@ class process:
                         if not shutil.Error:
                             shutil.move(x, _to)
                             print " MOVED DIRECTORY: \"" + str(x) + "\" --> \"" + os.path.abspath(_to) + "\""
+                            self.logs("MOVED DIRECTORY: \"" + str(x) + "\" --> \"" + os.path.abspath(_to) + "\"")
                         else:
                             if x != os.path.abspath(excp):
                                 self.result_overwrite.append(x)
@@ -160,6 +185,7 @@ class process:
                     except:
                         #return __error__
                         print " MOVED DIRECTORY [ERROR]: \"" + str(x) + "\" --> \"" + os.path.abspath(_to) + "\" [ERROR]"
+                        self.logs("MOVED DIRECTORY [ERROR]: \"" + str(x) + "\" --> \"" + os.path.abspath(_to) + "\" [ERROR]")
                         self.result_error.append(os.path.abspath(str(x)))
                 else:
                     print "\n"
@@ -215,18 +241,22 @@ class process:
                 try:
                     shutil.move(sys.argv[i], to_)
                     print " MOVED FILE: \"" + sys.argv[i] + "\" --> " + os.path.abspath(sys.argv[-1])
+                    self.logs("MOVED FILE: \"" + sys.argv[i] + "\" --> " + os.path.abspath(sys.argv[-1]))
                 except:
                     #return __error__
                     print " MOVED FILE [ERROR]: \"" + sys.argv[i] + "\" --> " + os.path.abspath(sys.argv[-1] + " [ERROR]")
+                    self.logs("MOVED FILE [ERROR]: \"" + sys.argv[i] + "\" --> " + os.path.abspath(sys.argv[-1] + " [ERROR]"))
                     self.result_error.append(os.path.abspath(sys.argv[i]))
 
             elif os.path.isdir(sys.argv[i]) == True:
                 try:
                     shutil.move(sys.argv[i], to_)
                     print " MOVED DIRECTORY: \"" + sys.argv[i] + "\" --> " + os.path.abspath(sys.argv[-1])
+                    self.logs("MOVED DIRECTORY: \"" + sys.argv[i] + "\" --> " + os.path.abspath(sys.argv[-1]))
                 except:
                     #return __error__
                     print " MOVED DIRECTORY [ERROR]: \"" + sys.argv[i] + "\" --> " + os.path.abspath(sys.argv[-1] + " [ERROR]")
+                    self.logs("MOVED DIRECTORY [ERROR]: \"" + sys.argv[i] + "\" --> " + os.path.abspath(sys.argv[-1] + " [ERROR]"))
                     self.result_error.append(os.path.abspath(sys.argv[i]))
             elif "*" in sys.argv[i]:
                 self.start_moved(sys.argv[i],to_)
@@ -246,9 +276,9 @@ class process:
             print "\n"
             moved(os.getcwd())
         else:
-            raise SyntaxError ("Check Your Syntax !")
             print "\n"
             print __help__
+            raise SyntaxError ("Check Your Syntax !")
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:

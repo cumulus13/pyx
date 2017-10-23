@@ -67,7 +67,7 @@ def main():
     global verbose, recurse, dryrun, makebackup
     try:
         opts, args = getopt.getopt(sys.argv[1:], "drnvh",
-                                   ["dryrun", "recurse", "nobackup", "verbose", "help"])
+                        ["dryrun", "recurse", "nobackup", "verbose", "help"])
     except getopt.error, msg:
         usage(msg)
         return
@@ -211,14 +211,14 @@ class Reindenter:
                                     want = jlevel * 4
                                 break
                     if want < 0:           # Maybe it's a hanging
-                                            # comment like this one,
+                                           # comment like this one,
                         # in which case we should shift it like its base
                         # line got shifted.
                         for j in xrange(i-1, -1, -1):
                             jline, jlevel = stats[j]
                             if jlevel >= 0:
                                 want = have + getlspace(after[jline-1]) - \
-                                    getlspace(lines[jline])
+                                       getlspace(lines[jline])
                                 break
                     if want < 0:
                         # Still no luck -- leave it alone.

@@ -1,0 +1,34 @@
+browse [path] [-filter=]
+about
+add [filename]
+addfiles [filename]
+apply [filename]
+applypatch [filename]
+blame filename
+branch
+checkout
+checkoutbranch
+checkoutrevision
+cherry
+cleanup
+clone [path]
+commit [--quiet]
+difftool filename
+filehistory filename
+fileeditor filename
+formatpatch
+gitbash
+gitignore
+help (shows this dialog)
+init [path]
+merge [--branch name]
+mergeconflicts [--quiet]
+mergetool [--quiet]
+openrepo [path] [-filter=]
+pull [--rebase] [--merge] [--fetch] [--quiet] [--remotebranch name]
+push [--quiet]
+rebase [--branch name]
+remotes
+reset
+revert filename
+searchfile

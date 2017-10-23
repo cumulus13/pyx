@@ -2,6 +2,7 @@ import os
 import sys
 import re
 import traceback
+import argparse
 
 __version__ = "1.0"
 __filename__ = os.path.basename(sys.argv[0])
@@ -12,9 +13,23 @@ __build__ = "2.7"
 
 
 def usage():
-    filename = os.path.split(sys.argv[0])[1] + " [file_from_rename] " + "[rename_to(Name Only, with extentsion if exist)]"
-    print "\n"
-    print "\t\tuse : " + str(filename) 
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-e','--with-extention', help='Rename File/Dirs with extention',action='store_true')
+    parser.add_argument('-n','--no-with-extention', help='No rename extention, name file/dirs only',action='store_true')
+    parser.add_argument('-c','--count', help='rename with add count (000-*) if file is exists',action='store_true')
+    parser.add_argument('-o', '--overwrite', help='rename file and overwrite file exists only',action='store_true')
+    parser.add_argument('-s',help='start count, with end unlimited',action='store')
+    parser.add_argument('-U','--upper', help='Rename file to UpperCase', action='store_true')
+    parser.add_argument('-l','--lower',help='Rename file to LowerCase', action='store_true')
+    parser.add_argument('-T','--tile',help='Rename file to upper for fist words Only each words', action='store_true')
+    parser.add_argument('-r','--recursive', help='Rename file with/and subdirectory', action='store_true')
+    parser.add_argument('-f','--find', help='Find and rename file with pattern', action='store_true')
+    parser.add_argument('-p','--pattern', help='Pattern for find and rename function', action='store')
+    if len(sys.argv) > 1:
+        pass
+    else:
+        parser.print_help()
+
 
 def usage2():
     print "\n"

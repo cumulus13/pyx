@@ -1,0 +1,1 @@
+"C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe" /command:settings /page:gitcredential /hwnd:00690B12

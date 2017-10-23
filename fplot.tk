@@ -1,0 +1,861 @@
+# the next line restarts using wish \
+exec wish "$0" "$@" -colormap new
+#
+# Tech-EDV Function plotter
+#   (c) Gerhard Reithofer, Techn. EDV Reithofer, 2004-2005
+#
+#   mailto:gerhard.reithofer@tech-edv.co.at
+#   http://www.tech-edv.co.at
+#
+# History:
+#  20052102: interpreter regexp [a-z] changed to [a-d,f-z] to allow
+#            scientific number syntax (eg. 1.2e-5x2) -ger
+#
+# Known bugs:
+#  "intgr" calculates the correct integration value only, if
+#          "scale x" and "scale y" ist set to 1.0.
+#  grid display is sometimes incorrect
+#  
+
+set product FPlot
+set version 0.31
+
+###
+### rotating list of demonstration functions
+### add or remove functions at your suits...
+###
+set ::demos {
+  "2" "1-x" "0.5x2" "x3/5" "sin x" "sin x2" "1/x" "sqrt(x)"
+  "tan x/5" "x+1/x" "x" "abs(x)" "exp x" "log x" "log x2"
+  "round(x)" "int x%2" "x-int x" "0.2tan x+1/tan x" "x*(rand()-0.5)"
+  "x2/5-1/(2x)" "atan x" "sqrt(1-x2)" "abs(x-int(x*2))" "(x-1)/(x+1)"
+  "sin x-tan x" "sin x-tan x2" "x-abs(int x)" "0.5x-1/x"
+  "-0.5x3+x2+x-1" "3*sin(2x)" "-0.05x4-0.2x3+1.5x2+2x-3" "9%int x"
+  "0.5x2/(x3-3x2+4)" "abs x2-3 int x" "int x%3" "3*exp(-x/2*x/2)"
+  "2*(sin(x)+sin(3x)/3+sin(5x)/5+sin(7x)/7+sin(9x)/9)"
+  "sin(x)+sin(2x)/2+sin(3x)/3+sin(4x)/4+sin(5x)/5+sin(7x)/7"
+  "cos(x)+cos(3x)/(3*3)+cos(5x)/(5*5)+cos(7x)/(7*7)"
+  "cos x3"
+}
+
+####################################################
+###
+### some "higher" level widgets
+
+###
+### input entry with label text
+###
+proc input {w lbl var len args} {
+  set f [frame $w]
+  label $f.l -text $lbl
+  entry $f.e -textvar $var -width $len
+  bind  $f.e <Return> {plotf $::function}
+  pack $f.l $f.e -side left
+  if [llength $args] { eval pack $f $args } else { pack $f -side left }
+}
+###
+### variable triggered output field
+###
+proc output {f var args} {
+  set res [label $f -textvar $var -just left]
+  if [llength $args] { eval pack $f $args } else { pack $f -side left }
+  return $res
+}
+###
+### a simple button with callback $cmd
+###
+proc pushb {w lbl cmd args} {
+  button $w -text " $lbl " -pady 0 -command $cmd
+  if [llength $args] {eval $args} else { pack $w -side left}
+}
+###
+### aux-function to center new dialog in old one
+###
+proc center_in { w in } {
+ 	update
+	set tx [winfo rootx $in]
+	set ty [winfo rooty $in]
+	set tw [winfo width $in]
+	set th [winfo heigh $in]
+  
+	set iw [winfo width $w]
+	set ih [winfo heigh $w]
+
+	set ix [expr {$tx+($tw/2-$iw/2)}]
+	set iy [expr {$ty+($th/2-$iw/2)}]
+	wm geometry $w "${iw}x${ih}+${ix}+${iy}"
+}
+
+####################################################
+###
+### coordinate transformation from real-world 
+### coordinates to canvas coordinates, if a
+### coordinate pair is given, the real-world
+### difference is calculated and returned
+###
+proc trans_c2w { cx cy args } {
+  if [llength $args] {
+	  set nx [lindex $args 0]
+		set ny [lindex $args 1]
+    set wx [expr {double($cx-$nx)/$::factor/$::scalx}]
+    set wy [expr {double($ny-$cy)/$::factor/$::scaly}]
+	} else {
+    set wx [expr {double( $cx-$::xoffs)/$::factor/$::scalx}]
+    set wy [expr {double(-$cy+$::yoffs)/$::factor/$::scaly}]
+  }
+  return [list $wx $wy]
+}
+
+###
+### coordinate transformation from canvas
+### coordinates to real-world coordinates
+###
+proc trans_w2c { x y } {
+  set cx [expr {int( $x*$::factor*$::scalx+$::xoffs)}]
+  set cy [expr {int(-$y*$::factor*$::scaly+$::yoffs)}]
+  return [list $cx $cy]
+}
+
+####################################################
+###
+### here we have all our callbacks
+
+###
+### general keyboard handler function
+###
+proc key { press code args } {
+# puts "press=$press code=$code $args"
+
+  if {$code == "Shift_L" || $code == "Shift_R"} {
+    set ::radians $press
+    return
+  }
+
+  if $press {
+    switch -- $code {
+      "KP_Right"    - "Right" {pan right 0}
+      "KP_Left"     - "Left"  {pan left  0}
+      "KP_Up"       - "Up"    {pan up    0}
+      "KP_Down"     - "Down"  {pan down  0}
+      "KP_Add"      - "plus"  {zoom 1.5}
+      "KP_Subtract" - "minus" {zoom 0.75}
+      "p"           - "P"     {print}
+      "r"           - "R"     {init;plotf $::function}
+      "a"           - "A"     {swaxes}
+      "i"           - "I"     {plotf $::function intgr}
+      "s"           - "S"     {storef}
+      "d"           - "D"     {demo}
+      "h"           - "H"     {help}
+			"l"           - "L"     {drwlb}
+      "1"                     {setcol 1}
+      "2"                     {setcol 2}
+      "3"                     {setcol 3}
+    }
+  }
+
+}
+###
+### mouse button1 callback - label positioning or
+### or "last" point definition for measurement mode
+###
+proc mb1_callback { x y } {
+  set ::lx $x
+  set ::ly $y
+  if [info exists ::lbltxt] {
+	  set p [trans_c2w $x $y]
+    lappend ::labels [lindex $p 0] [lindex $p 1] $::lbltxt $::font $::col(1) 
+    unset ::lbltxt
+    plotf $::function
+  }
+}
+###
+### mouse position  (dragging) callback - cursor
+### coordinates or measurment display
+###
+proc displayXY { cx cy } {
+  set c $::canvas
+
+### which cursor mode?
+  if {[info exists ::lx]} {
+### calculate measurement values from "last" values
+    set co [trans_c2w $cx $cy $::lx $::ly]
+    set dx [lindex $co 0]
+    set dy [lindex $co 1]
+    set r [expr sqrt($dx*$dx+$dy*$dy)]
+
+    if {$::radians} {
+### radians display 
+			set pih [expr 2*atan(1)] 
+			if {abs($dx)<0.000001} { 
+			  ### special case: pi/2 or 3*pi/2
+				if ($dy<0) { set a [expr $pih*3] } else { set a $pih }
+			} else {
+			  ### normalizy angle between 0..2*pi
+				set a [expr atan($dy/$dx)]
+				if ($dx<0) { set a [expr 2*$pih+$a] 
+				} elseif ($a<0) { set a [expr 4*$pih+$a] }
+			}
+			$c delete cur 
+			### draw new rubberband cursor
+			### display distance and angle (radian and degrees)
+			$c create line $cx $cy $::lx $::ly -fill $::col(3) -tags cur
+			set ::info [format "d=%.4f a=%.4f(%.2f°)" $r $a [expr $a/$pih*90]]
+    } else {
+### cartesian display
+      $c delete cur 
+			### draw new box cursor
+			### display distance, delta-x and delta-y
+      $c create line $cx $cy $::lx $cy $::lx $::ly $cx $::ly $cx $cy\
+                            -fill $::col(3) -tags cur
+      set ::info [format "d=%.4f dx=%.4f dy=%.4f" $r $dx $dy]
+    }
+  } else {
+### "normal" cursor mode or label position
+    set ::info [eval format "\"x=%.4f y=%.4f\"" [trans_c2w $cx $cy]]
+    $c delete cur 
+    if {[info exists ::lbltxt]} {
+### label postioning mode - cursor is label text
+      $c create text 0 0 -text $::lbltxt -tags cur -fill $::col(1) -font $::font
+      $c move cur $cx $cy
+    } else {
+### ... otherwise it's the cross-hair
+      cross $cx $cy -tags cur
+    }
+	} 
+}
+###
+### press a zoom button
+###
+proc zoom {howmuch} {
+  set w $::canvas 
+  set ::factor [expr $::factor*$howmuch]
+  plotf $::function
+}
+
+###
+### "pull" on a slider....
+### the pan function executes the slider "drag" event 
+###
+proc pan {dir offs} {
+  if {!$offs} {set offs $::poffs}
+  switch -- $dir {
+    up    {set ::yoffs [expr $::yoffs-$offs]}
+    down  {set ::yoffs [expr $::yoffs+$offs]}
+    left  {set ::xoffs [expr $::xoffs-$offs]}
+    right {set ::xoffs [expr $::xoffs+$offs]}
+  }
+  plotf $::function
+}
+
+###
+### axis display handler - "axis" button callback
+###
+proc swaxes {} {
+  set ::shwaxis [expr ($::shwaxis-1)%4]
+	plotf $::function
+}
+###
+### store the current function using the global 
+### array variables $sfun, $smin, $smax and $scol
+###
+proc storef {} {
+  set i 1
+  while {[info exists ::sfun($i)]} {incr i}
+  set ::sfun($i) $::function
+  set ::smin($i) $::fromx
+  set ::smax($i) $::tox
+  set ::scol($i) $::col(1)
+  set ::info "Function $i stored"
+}
+###
+### draw "next" demonstration function
+### 
+proc demo {} {
+  set ::function [lindex $::demos 0] ;# cycle through...
+  set ::demos [concat [lrange $::demos 1 end] [list $::function]]
+  plotf $::function
+}
+###
+### print canvas contents to postscript file
+### 
+proc print {} {
+  if ![info exists ::psfile] { set ::psfile fplot.ps }
+  set c $::canvas
+  set types {{"Postscript files" ".ps"} {"All files" "*"}}
+  set filename [tk_getSaveFile -filetypes $types -initialfile $::psfile]
+  if {$filename == ""} return
+# puts "Printin Kanvas $c to Fail $::psfile ..."
+  $c delete cur
+  $c postscript -file $filename
+  set ::info "Canvas printed to file '$::psfile'"
+} 
+###
+### callback for all color buttons
+### 
+proc setcol {which} {
+  if ![info exists ::col($which)] {set ::col($which) #808080}
+  set tmp [tk_chooseColor -initialcolor $::col($which)]
+  if {$tmp == ""} return
+  
+  $::cbt($which) configure -bg [set ::col($which) $tmp]
+  $::canvas configure -bg $::col(2) 
+  plotf $::function
+}
+
+###
+### label input dialog
+### it just sets the global var $lbltxt 
+### if label text is requested - positioning
+### is done in displayXY and mb1_callback
+###
+proc drwlb {} {
+  global product version
+  set lwin .lblentry
+  if [winfo exists $lwin] return  
+
+  set ::lbltxt ""
+  pack [set f [frame [toplevel $lwin].f ]] -expand 1 -fill both
+  input $f.label "label text:" ::value 20
+  pack [set b [frame $lwin.b]] -expand 1 -fill both
+  pushb $b.ok " ok "  {set ::lbltxt $::value} 
+	bind $lwin <Return> {set ::lbltxt $::value}
+  pushb $b.cb "cancel" {unset ::lbltxt} 
+	bind $lwin <Escape>  {unset ::lbltxt}
+	wm title $lwin "$product $version input dialog"
+	center_in $lwin .
+
+  tkwait variable ::lbltxt
+	destroy .lblentry
+}
+
+###
+### one big huge unhandy help function
+###
+proc help {} {
+  global product version
+
+  proc txt { w tag txt args } { 
+    if [llength $args] {
+      $w insert end "$txt " desc
+    $w insert end [lindex $args 0] text
+    } else {
+      $w insert end $txt $tag 
+    }
+  }
+
+  set hwin .help
+  if [winfo exists $hwin] return  
+
+  pack [set f [frame [toplevel $hwin].f ]] -expand 1 -fill both
+  set tx [text [set h $f.c] -bg white -wrap word\
+                            -yscrollcommand "$f.ysb set"]
+  set ysb [scrollbar $f.ysb -orient vertical -command "$h yview"]
+  pack $h -side left -expand 1 -fill both -anchor e
+  pack $f.ysb -fill y -side left -padx 1 -expand 0 -anchor e
+  pack [button $hwin.ok -text close -command "destroy $hwin"]
+  bind $hwin <KeyPress> "if {{%A}=={c}||{%A}=={C}} {destroy $hwin}"
+  bind $hwin <Escape>   "destroy $hwin"
+  
+  $h tag configure titl -font "Helvetica 18" -justify center
+  $h tag configure head -font "Helvetica 12 bold"
+  $h tag configure desc -font "Helvetica 12 bold" -lmargin1 20p
+  $h tag configure text -font "Helvetica 12" -lmargin1 40p -lmargin2 40p
+
+  txt $h titl "$product help window\n" 
+  txt $h head "\nCopyright information:\n" 
+  txt $h text "$product $version" "is a simple function" 
+  txt $h text " plotter for creating x/y plots for documentation and education"
+  txt $h text " purposes. It allows entering an abbreviated formula using the"
+  txt $h text " variable name 'x'.\nEg. 'sin(2x3)' means the mathematical expression:"
+  txt $h text " sin(2 * x ^ 3), ie.: the variable 'x' raised to power 3, multiplied by"
+  txt $h text " 2 and then calculating the sine value from this result. You may also"
+  txt $h text " use the contants PI and E (Euler constant). See the TCL" 
+  txt $h text " man pages for the list of available mathematical functions and"
+  txt $h text " operators.\nThis program is licensed using GNU Public License.\n"
+  txt $h text "see http://www.gnu.org/copyleft/gpl.html."
+  txt $h text [format "\n%c Gerhard Reithofer, Techn. EDV Reithofer 2004-11\n" 169]
+  txt $h head "\nAvailable program functions (buttons):\n" 
+  txt $h text "demo" "Call a rotating list of predefined functions for demonstration.\n" 
+  txt $h text "print" "Print current canvas contents into a postscript file.\n"
+  txt $h text "label" "Place a label text in the plotting area. A label input dialog"
+  txt $h text " is displayed for entering the desired label text.\n"
+  txt $h text "reset" "Clear canvas contents, stored functions, labels, reset current"
+  txt $h text " pan and zoom to standard values.\n"
+  txt $h text "store" "Store current drawn function and color. It will not be erased"
+	txt $h text "when entering a new function. Use 'reset' to clear all stored functions.\n"
+  txt $h text "intgr" "Experimental function: Integrates the current function."
+	txt $h text " The vertical position depends on various conditions, therefore the"
+	txt $h text " vertical position may vary.\n"
+  txt $h text "The integration result will vanish on any function update.\n" 
+  txt $h text "help" "This help window.\n"
+  txt $h text "color buttons" "The next three color selection buttons define "
+  txt $h text "\n1. the color of the currently drawn function."
+  txt $h text "\n2. the color of the function plotter background."
+  txt $h text "\n3. the color of axis lines and the measurement cursor.\n"
+  txt $h text "\[ + \]" "Increases the magnification of the function plot window"
+	txt $h text " by the zoom factor of 2.0.\n"
+  txt $h text "\[ - \]" "Decreases the magnification of the function plot window"
+	txt $h text " by the zoom factor of 0.5.\n"
+  txt $h text "axis" "Switch between axis modes (axis only, none, small ticks and grid).\n" 
+  txt $h head "\nUsing of the keyboard\n" 
+  txt $h text "Ctrl-Q or Escape" "closes the function plotter and help window or input dialog.\n"
+  txt $h text "Key 'a'" "activates the function 'axis'.\n"
+  txt $h text "Key 'c' or Escape" "closes the help window.\n"
+  txt $h text "Key 'd'" "activates the function 'demo'.\n"
+  txt $h text "Key 'h'" "activates the function 'help'.\n"
+  txt $h text "Key 'i'" "activates the function 'intgr'.\n"
+  txt $h text "Key 'l'" "activates the function 'label'.\n"
+  txt $h text "Key 'p' or Ctrl-P" "activates the function 'print'.\n"
+  txt $h text "Key 'r'" "activates the function 'reset'.\n"
+  txt $h text "Key 's'" "activates the function 'store'.\n"
+  txt $h text "Key '1'" "activates the 'set color 1' function.\n"
+  txt $h text "Key '2'" "activates the 'set color 2' function.\n"
+  txt $h text "Key '3'" "activates the 'set color 3' function.\n"
+  txt $h text "Key '+'" "increases the magnification of the function by a zoom factor 1.75.\n"
+  txt $h text "Key '-'" "decreases the magnification of the function by a zoom factor of 0.75.\n"
+  txt $h text "Enter" "refreshes the screen an redraws the function and"
+	txt $h text " possible stored functions or accept a dialog input value.\n"
+  txt $h text "Cursor keys" "activate the function panning horizontal or vertical."
+  txt $h text " The plotted function is panned in the desired direction by the value"
+  txt $h text " displayed in the 'pan:' entry field.\n"
+  txt $h head "\nInput entry fields:\n"
+  txt $h text "pan:" "The window pan step value defines the pan step when using"
+  txt $h text " the cursor keys for panning the function window horizontally or"
+  txt $h text " vartically. It also defines the highest speed value for the"
+  txt $h text " dynamic panning sliders.\n"
+  txt $h text "zoom:" "The current function window magnification is displayed in this field."
+  txt $h text " this field. By changing this value the function will be zoomed accordingly"
+	txt $h text " to the entered value.\n"
+  txt $h text "axis x:" "Specifiy the x-axis ticks distance.\n" 
+  txt $h text "axis y:" "Specifiy the y-axis ticks distance.\n" 
+  txt $h text " Only in axis modes 'small ticks' and 'grid' visible.\n"
+  txt $h text "scale x:" "Specify x-axis specific scale factor (x-stretching).\n"
+  txt $h text "scale y:" "Specify y-axis specific scale factor (y-stretching).\n"
+  txt $h text "f(x)=" "The function input window. Use the variable 'x' to define any"
+  txt $h text " function depending from a value 'x'. You may use abbreviated notation"
+  txt $h text " where numbers before 'x' are treated as multiplicators and numbers"
+  txt $h text " after 'x' are treated as exponents. Use the demo function to learn"
+  txt $h text " the syntax for defining new functions.\n"
+  txt $h text "from:" "Start value of the current function plot. Change this value to"
+  txt $h text " define a new function plot start value.\n"
+  txt $h text "to:" "End value of the current function plot. Change this value to"
+  txt $h text " define a new function plot end value.\n"
+  txt $h head "\nDynamic zoom sliders:\n"
+  txt $h text "On the bottom and to the right of the function plot window are 2"
+  txt $h text " sliders for using the dynamic pan function. When moving the sliders"
+  txt $h text " or pointing into the slider area besides the slider grips, the"
+  txt $h text " function plot window begins to pan by a small distance. With every"
+  txt $h text " slider value change, the pan distance increases until it reaches"
+  txt $h text " the maximum value defined in the 'pan:' input field.\n"
+  txt $h head "\nMouse functions and modes:\n"
+  txt $h text "cursor mode" "When moving the mouse, a cross-hair cursor is moved"
+  txt $h text " accordingly and the current x/y coordinates will be displayed in the"
+  txt $h text " status line (below the color buttons).\n"
+  txt $h text " label positioning mode" "This mode is similar to the "
+  txt $h text "label positioning mode" " as described above, except the entered label text"
+  txt $h text " is displayed instead of the corsshair cursor. Press mouse button 1"
+  txt $h text " to position the displayed label at the current cursor position, press"
+  txt $h text " mouse button 2 to cancel the this mode without placing the label text.\n"
+  txt $h text "cartesian measurement" "When pressing the mouse button, the"
+  txt $h text " cross-hair cursor becomes a box with the 1st corner at the"
+  txt $h text " location where the mouse button was pressed and the 2nd"
+  txt $h text " corner indicating the current curor position. The status line"
+  txt $h text " displays the distance from the 1st to the 2nd position and the"
+  txt $h text " delta-x and delta-y offsets.\n"
+  txt $h text "polar measurement" "If pressing the shift-key while in measurement"
+  txt $h text " mode, the status line changes to display distance from the 1st"
+  txt $h text " point to the 2nd point value and the angle in radians and degrees"
+  txt $h text " surrounded by brackets.\n"
+  txt $h text "\nHope you enjoy the program"
+  txt $h desc "\nGerhard Reithofer"
+  txt $h desc "\ngerhard.reithofer@tech-edv.co.at"
+  txt $h desc "\nhttp://www.tech-edv.co.at"
+	wm title $hwin "$product $version"
+  $h configure -state disabled
+	center_in $hwin .
+}
+
+
+####################################################
+###
+### fplot auxiliary functions
+###
+
+###
+### hor/vert line (unlimited if len=0) - in canvas ccordinates
+###
+proc hv_line { offs dir v1 v2 dash } {
+# puts "hv_line $offs $dir $len"
+  set w $::canvas
+  switch -glob $dir {
+    h* { 
+		  if $dash {
+        $w create line $v1  $offs $v2 $offs -fill $::col(3) -dash $::dashes
+			} else {
+        $w create line $v1 $offs $v2 $offs -fill $::col(3) 
+			}
+    }
+    v* {
+		  if $dash {
+        $w create line $offs $v1 $offs $v2 -fill $::col(3) -dash $::dashes
+			} else {
+        $w create line $offs $v1 $offs $v2 -fill $::col(3) 
+			}
+    }
+    default {
+      set ::info "invalid hv_line code '$dir'..."
+    }
+  }
+}
+
+###
+### draw a cross over the whole canvas
+### for axes or cursor
+###
+proc cross { x y args } {
+  set c $::canvas
+  set w [winfo width $c]
+  set h [winfo height $c]
+  eval $c create line  $x -$h $x $h -fill $::col(3) $args
+  eval $c create line -$w  $y $w $y -fill $::col(3) $args
+}
+
+###
+### draw axis specific axes 
+###
+proc draw_axes { } {
+  set c $::canvas
+
+	set ll [eval trans_w2c [trans_c2w 0 0]]
+	set ur [eval trans_w2c [trans_c2w [winfo width $c] [winfo height $c]]]
+  set fac [expr double($::factor)]
+  set fx -$::xoffs
+  set fy -$::yoffs
+	set tx [expr [winfo width $c]-$::xoffs]
+	set ty [expr [winfo width $c]+$::yoffs]
+  set dx [expr int($fac*$::tickx*$::scalx)]
+  set dy [expr int($fac*$::ticky*$::scaly)]
+
+  switch $::shwaxis {
+    0 { }
+    1 { cross 0 0 }
+    2 { cross 0 0
+      if {$dx<3} {
+        set ::info "grid x-density too high - grid not displayed"
+      } else {
+        set w [winfo width $c]
+        for {set x  $dx} {$x<=$tx} {incr x  $dx} { hv_line $x vert -$w $w 1 }
+        for {set x -$dx} {$x>=$fx} {incr x -$dx} { hv_line $x vert -$w $w 1 }
+      }
+      if {$dy<3} {
+        set ::info "grid y-density too high - grid not displayed"
+      } else {
+        set h [winfo height $c]
+        for {set y  $dy} {$y<=$ty} {incr y  $dy} { hv_line $y hori -$h $h 1 }
+        for {set y -$dy} {$y>=$fy} {incr y -$dy} { hv_line $y hori -$h $h 1 }
+      }
+    }
+    3 { cross 0 0
+      if {$dx<3} {
+        set ::info "grid x-density too high - grid not displayed"
+      } else {
+			  set w $::ticks
+        for {set x  $dx} {$x<=$tx} {incr x  $dx} { hv_line $x vert 0 -$w 0}
+        for {set x -$dx} {$x>=$fx} {incr x -$dx} { hv_line $x vert 0 -$w 0}
+      }
+      if {$dy<3} {
+        set ::info "grid y-density too high - grid not displayed"
+      } else {
+			  set h $::ticks
+        for {set y  $dy} {$y<=$ty} {incr y  $dy} { hv_line $y hori 0  $h 0}
+        for {set y -$dy} {$y>=$fy} {incr y -$dy} { hv_line $y hori 0  $h 0}
+      }
+    }
+  }
+}
+
+###
+### text draw function
+### the global label list is "redrawn" on 
+### any function update
+###
+proc draw_text { } {
+  set c $::canvas
+	$c delete labels
+  foreach {x y txt font col} $::labels {
+    $c create text $x $y -text $txt -fill $col -tags labels -font $::font
+  }
+}
+
+###
+### calculate the point list by eval'uating for a
+### preprocessed function within a specified x-area
+### optional after this the function integral is 
+### calculated and returned instead the function itself
+###
+proc fun2points {fun from till args} {
+  proc fact x {if {$x<=1} {return 1} {return [expr $x*[fact [expr $x-1]]]}}
+  set PI [expr double(atan(1.0)*4)]
+  set E  [expr double(exp(1.0))]
+  set intgr [lindex $args 0]
+  if {$till>$from} {
+    set ::to $from 
+    set ::from $till
+  }
+  set step [expr ($till-$from)/$::steps]
+  if {$step==0.0} {set step 0.000000001}
+  array set opt [list -from $from -to $till -step $step]
+  set res "{"
+  for {set x $opt(-from)} {$x<= $opt(-to)} {set x [expr {$x+$opt(-step)}]} {
+    if {![catch {expr $fun} y]} {
+      if {[info exists lasty] && abs($y-$lasty)>100} {
+        append res "\} \{" ;# incontinuity
+      }
+      append res " [expr $x*$::scalx] [expr $y*$::scaly]"
+      set lasty $y
+    } else {append res "\} \{"}
+  }
+  append res "}"
+  if {$intgr == "intgr"} {
+    set i 0
+    set sum 0
+    set nres {}
+    foreach part $res {
+      if {[llength $part]<4} continue
+      set ox [lindex $part 0]
+      set oy [lindex $part 1]
+      set sum 0
+      set part [lrange $part 2 end]
+      set crv [list $ox $sum]
+      foreach {x y} $part {
+        set nx [expr ($x+$ox)/2]
+        set ny [expr ($y+$oy)/2]
+        set dx [expr $nx-$ox]
+        set sum [expr $sum+($ny*$dx)]
+        lappend crv $nx $sum
+        set ox $nx
+        set oy $ny
+      }
+      lappend nres $crv
+    }
+    set res $nres
+  }
+  return $res
+}
+
+### the main function interpreter
+### study this function to understand the syntax of
+### the function input fully ;-)
+### originally "stolen" by an example program written
+### by the tcl/tk programmer:
+###  Richard Suchenwirth - http://wiki.tcl.tk/rs, 
+###
+proc fconv { function } {
+  foreach {re subst} {
+    {([a-z]) +(x[0-9]?)} {\1(\2)}
+    " "      ""
+    {([0-9])([a-d,f-z])} {\1*\2}
+    x2 x*x
+    x3 x*x*x
+    x4 x*x*x*x
+    x5 x*x*x*x*x
+    x6 x*x*x*x*x*x
+    x7 x*x*x*x*x*x*x
+    x8 x*x*x*x*x*x*x*x
+    x9 x*x*x*x*x*x*x*x*x
+    x \$x 
+    PI $PI
+    E  $E 
+    {e\$xp} exp
+  } {regsub -all $re $function $subst function}
+  set ::info "Tcl: expr $function"
+  return $function
+}
+
+###
+### main function plotter
+### draw "current" function and all 
+### stored functions
+###
+proc draw_plot { args } {
+  set w $::canvas
+  if [info exists ::sfun] {
+    foreach id [array names ::sfun] {
+		  set fun [fconv $::sfun($id)]
+			set pts [fun2points $fun $::smin($id) $::smax($id)]
+      foreach i $pts {
+        if {[llength $i]>2} {eval $w create line $i -fill $::scol($id) -tags f}
+      }
+    }
+  }
+	set pts [fun2points [fconv $::function] $::fromx $::tox $args]
+	foreach i $pts {
+     if {[llength $i]>2} {eval $w create line $i -fill $::col(1) -tags f}
+	}
+}
+
+###
+### FPlot executor
+### this function draws an repaints the
+### whole canvas area, incl. axes and labels
+### and all stored functions, all transformation
+### and scaling is done here
+###
+proc plotf {function args} {
+# puts "plotf $function $args"
+  set c $::canvas 
+
+  $::hscale configure -from -$::poffs
+  $::hscale configure -to    $::poffs
+  $::vscale configure -from -$::poffs
+  $::vscale configure -to    $::poffs
+
+  $::canvas delete all
+  draw_plot $args
+	draw_text 
+  set fac [expr double($::factor)]
+  $c scale all 0 0 $fac -$fac
+  draw_axes
+
+  $c move all $::xoffs $::yoffs
+  $c raise f
+}
+
+###
+### initialize global values,
+### we must distinguish between gui mode 
+### where canvas already exists and "real"
+### init - i.e. 1st call of before gui exists
+###
+proc init {} {
+  if [info exists ::canvas] {
+    set c $::canvas
+    set ::xoffs   [expr [winfo width $c]/2]
+    set ::yoffs   [expr [winfo height $c]/2]
+	} else {
+    set ::xoffs   300
+    set ::yoffs   200
+	}
+  set ::radians   0
+  set ::factor   32
+  set ::fromx -10.0
+  set ::tox    10.0
+  set ::poffs    50
+  set ::factor   32
+  set ::tickx   1.0
+  set ::ticky   1.0
+  set ::scalx   1.0
+  set ::scaly   1.0
+  set ::labels {}
+  catch {unset ::sfun}
+  catch {unset ::smin}
+  catch {unset ::smax}
+  catch {unset ::scol}
+}
+
+
+####################################################
+###
+### main window setup
+###
+proc main { w } {
+  global product version
+  set f [frame $w.c]
+  pack $f -fill both -side top -expand 1
+  set ::canvas [canvas $f.c -bg $::col(2) -borderwidth 0 \
+                       -cursor tcross -takefocus 1]
+  pack $::canvas  -fill both -expand 1 -side left
+
+  set ::vscale [scale $f.vs -showvalue 0 -command "pan down" \
+                            -orient vertical -variable ::vvalue \
+                            -from [expr -$::poffs] -to [expr $::poffs]]
+  pack $::vscale -fill y -expand 0 -side left
+
+  set ::hscale [scale $w.hs -showvalue 0 -command "pan right" \
+                            -orient horizontal -variable ::hvalue \
+                            -from [expr -$::poffs] -to [expr $::poffs]]
+  pack $::hscale -fill x -expand 0 -side top
+
+  set f [frame $w.f]
+  pushb $f.demo  "demo"  {demo}
+  pushb $f.print "print" {print} 
+  pushb $f.label "label" {drwlb} 
+  pushb $f.reset "reset" {init;plotf $::function}
+  pushb $f.store "store" {storef}
+  pushb $f.intgr "intgr" {plotf $::function intgr}
+  pushb $f.help  "help"  {help}
+  foreach i [list 1 2 3] {
+    set ::cbt($i) [button $f.col$i -bg $::col($i) -command "setcol $i"]
+    pack $::cbt($i) -side left
+  }
+  pack $f -fill both -side top 
+
+  set f [frame $w.m]
+  input $f.pan  " pan:"  ::poffs 4
+  pushb $f.out  + {zoom 2.0}
+  pushb $f.zin  - {zoom 0.5}
+  input $f.zoom " zoom:" ::factor 4 
+  pushb $f.axis  "axis"  {swaxes}
+  input $f.tickx " x:" ::tickx 5 
+  input $f.ticky " y:" ::ticky 5 
+  input $f.scalx " scale x:" ::scalx 5 
+  input $f.scaly " scale y:" ::scaly 5 
+  pack $f -fill x -side top
+
+  set f [frame $w.d]
+  input $f.fx " f(x)=" ::function 40 
+  input $f.fr " from:" ::fromx 6 
+  input $f.to " to:"   ::tox   6 
+  pack $f -fill x -side top
+
+  set f [frame $w.i -relief sunken -bd 1]
+  set info [output $f.info ::info -side right]
+  pack $f -fill both -side top 
+
+  wm title . "$product $version"
+
+  bind $::hscale <ButtonRelease-1> "set ::hvalue 0; set ::vvalue 0"
+  bind $::vscale <ButtonRelease-1> "set ::hvalue 0; set ::vvalue 0"
+
+  bind $::canvas <Motion> "displayXY %x %y"
+  bind $::canvas <ButtonPress-1> "mb1_callback %x %y"
+  bind $::canvas <ButtonPress-2> "catch {unset ::lbltxt}"
+  bind $::canvas <ButtonPress-3> {
+	  set x %x; set y %y
+		set wc [trans_c2w $x $y]
+		set cc [eval trans_w2c $wc]
+	  puts "debug: $x $y $wc->$cc"
+	}
+  bind $::canvas <ButtonRelease-1> "unset ::lx; unset ::ly"
+  bind $::canvas <Enter> "focus $::canvas"
+  bind $::canvas <KeyPress>   "key 1 %K %A %N %Y"
+  bind $::canvas <KeyRelease> "key 0 %K %A %N %Y"
+
+  bind . <Control-p> {print}
+  bind . <Control-q> {destroy .}
+  bind . <Escape>    {destroy .}
+
+  demo 
+}
+
+############################################
+###
+### set some global values
+###
+set ::col(1) #8c0000
+set ::col(2) white
+set ::col(3) black
+set ::steps 1000
+set ::dashes {1 8}
+set ::ticks 3    
+set ::shwaxis 1
+set ::font {Helvetica 12}
+set ::hvalue 0
+set ::vvalue 0
+
+############################################
+###
+### initialize and startup of main
+###
+init
+main ""

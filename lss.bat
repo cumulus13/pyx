@@ -1,25 +1,25 @@
 @echo off
 title %CD%
-set one=%1
+rem set one=%1
 cls
 title %cd%
 echo.
 echo.
-C:\Git\bin\ls -X -p %1
+"c:\DevKit\bin\ls.exe" -X -p %*
 echo.
 echo                    		Parent Directory : %cd%
 echo.
 rem echo                    		Child  Directory : %1
 goto end
 
-:awal
-echo.
-echo		Carefully !!!, Continue .....? Maybe Error Occure press any Key or Control + C for Abort
-echo.
-pause >> null
-echo.
-dir %1
-goto end
+rem :awal
+rem echo.
+rem echo		Carefully !!!, Continue .....? Maybe Error Occure press any Key or Control + C for Abort
+rem echo.
+rem pause >> null
+rem echo.
+rem dir %1
+rem goto end
 
 
 :end
