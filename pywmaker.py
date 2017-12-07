@@ -17,11 +17,11 @@ data = [r""" + "\"" + os.path.abspath(str(sys.argv[2])) + "\"" """]
 module002a.main(data)
 """
 		if ".py" in sys.argv[1]:
-			data = open(r"c:\pyx\\" + str(sys.argv[1]), "w")
+			data = open(r"c:\TOOLS\pyx\\" + str(sys.argv[1]), "w")
 			data.write(data_w)
 			data.close()
 		else:
-			data = open(r"c:\pyx\\" + str(sys.argv[1]) + ".pyw", "w")
+			data = open(r"c:\TOOLS\pyx\\" + str(sys.argv[1]) + ".pyw", "w")
 			data.write(data_w)
 			data.close()
 	else:

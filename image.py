@@ -7,6 +7,10 @@ import traceback
 filename = os.path.split(sys.argv[0])[1]
 usage = "\t use : " + filename + " option [image file]\n\n\t option : [resize]"
 
+def getSize(image):
+	ix = Image.open(str(image))	
+	return ix.size
+
 def resize(data, mode=None):
 	try:
 		if mode == None:
@@ -71,14 +75,18 @@ if __name__ == "__main__":
 		if len(sys.argv) > 1:
 			if sys.argv[1] == "resize":
 				resize(sys.argv[2])
-			else:
+			elif '-h' in sys.argv:
 				print "\n"
-				print "\t Not yet implementation !, sorry, it's still development :)"
+				if len(sys.argv) > 2:
+					print "\t Not yet implementation !, sorry, it's still development :)"
 				print "\n"
 				print usage
+			else:
+				print "Image Size:", getSize(sys.argv[1])[0], "x", getSize(sys.argv[1])[1], "Pixel"
 		else:
 			print "\n"
 			print usage
+			print "\n"
 	except:
 		data_e = traceback.format_exc()
 		print "\n"

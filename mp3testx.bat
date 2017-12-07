@@ -1,7 +1,6 @@
 @echo off
-"c:\EXE\mp3test.exe" -q -v -R %1
+"c:\EXE\mp3test.exe" %*
 goto end
 
 
 :end
-PAUSE

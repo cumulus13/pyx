@@ -10,9 +10,9 @@ c:\python25\python.exe %1
 goto end
 
 :one
-set path=c:\python27;c:\python27\Lib;c:\python27\Lib\site-packages\PyQt4\bin;%path%
-set PYTHONPATH="c:\Python27;c:\PythonApp\python-vcbrowser;c:\PythonApp\pyHed;c:\PythonApp"
-set PYTHON_PATH="c:\Python27;c:\PythonApp\python-vcbrowser;c:\PythonApp\pyHed;c:\PythonApp"
+set path=c:\SDK\Anaconda2;c:\SDK\Anaconda2\Lib;c:\SDK\Anaconda2\Lib\site-packages\PyQt4\bin;%path%
+set PYTHONPATH="c:\SDK\Anaconda2;c:\PythonApp\python-vcbrowser;c:\PythonApp\pyHed;c:\PythonApp"
+set PYTHON_PATH="c:\SDK\Anaconda2;c:\PythonApp\python-vcbrowser;c:\PythonApp\pyHed;c:\PythonApp"
 cls
 echo.
 echo.

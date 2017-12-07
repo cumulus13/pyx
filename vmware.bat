@@ -5,6 +5,11 @@ if %1==start goto start
 if %1==start goto enable
 if %1==stop goto stopx
 if %1==auto goto auto
+if %1==run goto run
+goto end
+
+:run
+"c:\Program Files\VMware\VMware Workstation\vmware.exe"
 goto end
 
 :auto
@@ -39,7 +44,7 @@ echo      VMAuthdService          =  Start
 echo      VMnetDHCP               =  Start
 echo      VMware NAT Service      =  Start
 echo.
-vmwarex.py
+rem vmwarex.py
 goto end
 
 :net1
@@ -97,10 +102,11 @@ echo.
 echo.
 echo			Usage : %0 Start [ to Start service and Vmware]
 echo		                %0 Stop  [ to Stop service and Vmware]
+echo		                %0 Run   [ to Stop service and Vmware]
 echo.
 echo.
 goto end
 
 
 :end
-vmwarex.py
+rem vmwarex.py

@@ -1,6 +1,6 @@
 import os
 import sys, errno
-import dplay2
+#import dplay2
 #import pyttsx
 #import time
 """
@@ -38,19 +38,23 @@ def status(service):
         if(data005[2] == "RUNNING"):
             #sound(datan02[0], "RUNNING")
             #dsound = r"d:\SOUND\Apache Start.wav"
-            dplay2.play(datan02[0], "RUNNING")
+            #dplay2.play(datan02[0], "RUNNING")
+            pass
         elif(data005[2] == "START_PENDING"):
+			pass
             #sound(datan02[0], "START PENDING")
             #dsound = r"d:\SOUND\Apache Pending.wav"
-            dplay2.play(datan02[0], "START PENDING")
+            #dplay2.play(datan02[0], "START PENDING")
         elif(data005[2] == "STOPPED"):
             #sound(datan02[0], "STOPPED")
             #dsound = r"d:\SOUND\Apache Stop.wav"
-            dplay2.play(datan02[0], "STOPPED")
+            #dplay2.play(datan02[0], "STOPPED")
+            pass
         else:
             #sound(datan02[0], "UNKNOW")
             #dsound = r"d:\SOUND\Apache Error.wav"
-            dplay2.play(datan02[0], "UNKNOW")
+            #dplay2.play(datan02[0], "UNKNOW")
+            pass
 
         print "\n"
         print "\t Service " + datan02[0] + " is : ", data005[2]

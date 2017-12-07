@@ -1,6 +1,7 @@
 import os
 import sys
 import msvcrt
+import shutil
 
 __version__ = "0.5"
 __filename__ = os.path.basename(sys.argv[0])
@@ -10,68 +11,37 @@ __target__ = "all"
 __build__ = "2.7"
 __test__ = "0.1"
 
-def getPutch(prompt="\t Are you want to delete the original source ? (y[[Y]es]/n[[N]o]) : "):
-    for x in prompt:
-        msvcrt.putch(x)
-        
-    z = msvcrt.getch()
-    msvcrt.putch("\n")
-    return z
-        
-def usage():
-    print "\n"
-    print "\t\tuse : " + os.path.split(sys.argv[0])[1] + " [file_to_rar] "
+class rarme(object):
+    def __init__(self):
+        super(rarme, self)
 
-def on_rm_error(func, path, exc_info):
-    os.chmod(path, stat.S_IWRITE)
-    os.unlink(path)
+    def getPutch(self, prompt="\t Are you want to delete the original source ? (y[[Y]es]/n[[N]o]) : "):
+        for x in prompt:
+            msvcrt.putch(x)
+            
+        z = msvcrt.getch()
+        msvcrt.putch("\n")
+        return z
+        
+    def on_rm_error(self, func, path, exc_info):
+        os.chmod(path, stat.S_IWRITE)
+        os.unlink(path)
 
-def multi_del(data):
-    #q = raw_input("\t Are you want to delete the original source ? (y[[Y]es]/n[[N]o]) : ")
-    q = getPutch()
-    if q == "y" or q == "Y" or q == "Yes" or q == "yes" or q == "y" or q == "Y" or q == "Yes" or q == "yes":
-        for i in data:
-            if os.path.isdir(os.path.abspath(i)):
-                shutil.rmtree(data_rar_02,onerror = on_rm_error)
-            else:
-                try:
-                    os.remove(os.path.abspath(i))
-                except:
+    def multi_del(self, data):
+        q = self.getPutch()
+        if q == "y" or q == "Y" or q == "Yes" or q == "yes" or q == "y" or q == "Y" or q == "Yes" or q == "yes":
+            for i in data:
+                if os.path.isdir(os.path.abspath(i)):
+                    shutil.rmtree(data_rar_02, onerror = on_rm_error)
+                else:
                     try:
-                        os.system("del " + str(os.path.abspath(i)))
+                        os.remove(os.path.abspath(i))
                     except:
-                        raise ScriptError("Can't use os.system !")
-    elif q == "n" or q == "N" or q == "no" or q == "No" or q == "n" or q == "N" or q == "no" or q == "No":
-        sys.exit()
-    else:
-        print "\n"
-        print "\t You no select \'Y\' or \'N\' "
-        print "\t Bye ... !"
-        sys.exit()
+                        try:
+                            os.system("del " + str(os.path.abspath(i)) + " > NUL")
+                        except:
+                            raise ScriptError("Can't use os.system !")
 
-def confr_del(data):
-    if isinstance(data, (list,tuple)):
-        multi_del(data)
-    elif os.path.isdir(data):
-        #q = raw_input("\t Are you want to delete the original source folder ? (y[[Y]es]/n[[N]o]) : ")
-        q = getPutch()
-        if q == "y" or q == "Y" or q == "Yes" or q == "yes" or q == "y" or q == "Y" or q == "Yes" or q == "yes" :
-            shutil.rmtree(data,onerror = on_rm_error)
-        elif q == "n" or q == "N" or q == "no" or q == "No":
-            sys.exit()
-        else:
-            print "\n"
-            print "\t You no select \'Y\' or \'N\' "
-            print "\t Bye ... !"
-            sys.exit()
-    else:
-        #q = raw_input("\t Are you want to delete the original source ? (y[[Y]es]/n[[N]o]) : ")
-        q = getPutch()
-        if q == "y" or q == "Y" or q == "Yes" or q == "yes" or q == "y" or q == "Y" or q == "Yes" or q == "yes" :
-            try:
-                os.system("del \"" + data + "\"")
-            except:
-                os.remove(data)
         elif q == "n" or q == "N" or q == "no" or q == "No" or q == "n" or q == "N" or q == "no" or q == "No":
             sys.exit()
         else:
@@ -80,64 +50,101 @@ def confr_del(data):
             print "\t Bye ... !"
             sys.exit()
 
-def multi_rar(name_rar):
-    for i in sys.argv:
-        if "*" in sys.argv:
-            data_rar_to = os.popen("dir /b \"" + os.path.abspath(sys.argv[int(sys.argv.index("*"))])).readlines()
-            for i in data_rar_to:
-                x = os.path.abspath(str(i).split("\n")[0])
-                os.system("rar a \"" + name_rar + ".rar\" \"" + x + "\"") 
+    def confr_del(self, data):
+        if isinstance(data, (list,tuple)):
+            self.multi_del(data)
 
-            #os.system("rar t \"" + name_rar + ".rar\" ") 
-
-
-def rarme(data):
-    try:
-        if(len(data) > 1):
-            data_rar_01 = sys.argv[1]
-            data_rar_02 = os.path.splitext(sys.argv[1])
-            if len(sys.argv) == 2:	
-                os.system("rar a \"" + data_rar_02[0] + ".rar\" \"" + sys.argv[1] + "\"") 
-                os.system("rar t \"" + data_rar_02[0] + ".rar\" ") 
+        elif os.path.isdir(data):
+            q = self.getPutch()
+            if q == "y" or q == "Y" or q == "Yes" or q == "yes" or q == "y" or q == "Y" or q == "Yes" or q == "yes" :
+                shutil.rmtree(data,onerror = on_rm_error)
+            elif q == "n" or q == "N" or q == "no" or q == "No":
+                sys.exit()
+            else:
                 print "\n"
-                confr_del(data_rar_01)
-            elif len(sys.argv) == 3:
-                if data_rar_02[1] == '.rar':
-                    os.system("rar a \"" + sys.argv[2] + "\" \"" + sys.argv[1] + "\"") 
-                    os.system("rar t \"" + sys.argv[2] + "\" ") 
-                else:
-                    os.system("rar a \"" + os.path.splitext(sys.argv[3])[0] + ".rar\" \"" + sys.argv[1] + "\"") 
-                    os.system("rar t \"" + os.path.splitext(sys.argv[3])[0] + ".rar\" ") 
-                    print "\n"
-                    confr_del(data_rar_01)
-            elif len(sys.argv) > 2:
-                data_rar_02 = os.path.splitext(sys.argv[-1])
-                data_file_rar = []
-                if data_rar_02[1] == '.rar':
-                    for i in range(1,len(sys.argv) - 1):
-                        os.system("rar a \"" + sys.argv[-1] + "\" \"" + sys.argv[i] + "\"") 
-                        data_file_rar.append(os.path.abspath(sys.argv[i]))
-                        data_file_rar.append(os.path.abspath(i))
-                    os.system("rar t \"" + sys.argv[-1] + "\" ") 
-                    confr_del(data_file_rar)
-                elif "*" in sys.argv:
-                    multi_rar(sys.argv[-1])
-                else:
-                    for i in range(1,len(sys.argv) - 1):
-                        os.system("rar a \"" + data_rar_02[0] + ".rar\" \"" + sys.argv[i] + "\"") 
-                        data_file_rar.append(os.path.abspath(sys.argv[i]))
-                        data_file_rar.append(os.path.abspath(i))
-                    os.system("rar t \"" + data_rar_02[0] + ".rar\" ") 
-                    confr_del(data_file_rar)
+                print "\t You no select \'Y\' or \'N\' "
+                print "\t Bye ... !"
+                sys.exit()
         else:
-            usage
-    except IndexError, e:
-        print "ERROR"
-        print e
+            q = self.getPutch()
+            if q == "y" or q == "Y" or q == "Yes" or q == "yes" or q == "y" or q == "Y" or q == "Yes" or q == "yes" :
+                try:
+                    os.remove(data)
+                except:
+                    os.system("del \"" + data + "\" > NUL")
+            elif q == "n" or q == "N" or q == "no" or q == "No" or q == "n" or q == "N" or q == "no" or q == "No":
+                sys.exit()
+            else:
+                print "\n"
+                print "\t You no select \'Y\' or \'N\' "
+                print "\t Bye ... !"
+                sys.exit()
+
+    def rarme(self, data, out=None, ext=None):
+        if(len(data) > 0):
+            if ext:
+                if not ext[0] == '.':
+                    ext = "." + ext
+                if not os.path.splitext(data)[1] == ext:
+                    return False
+
+            if out:
+                if os.path.splitext(out)[1] == ".rar\" \"":
+                    out = out
+                else:
+                    out = out + ".rar\" \""
+            else:
+                out = data + ".rar\" \""
+
+            os.system("rar a \"" + out + data + "\"") 
+            os.system("rar t \"" + out)
+            return True
+
+    def multi_rar(self, data, out=None, ext=None):
+        if isinstance(data, list):
+            for i in data:
+                self.rarme(i, out, ext)
+        elif "*" in data:
+            if os.path.dirname(data) == '':
+                data = os.getcwd()
+            else:
+                data = os.path.dirname(data)
+
+            data = os.listdir(data)
+            data1 = []
+            for i in data:
+                data1.append(os.path.join(data, i))
+            for i in data1:
+                self.rarme(i, out, ext)
+
+        else:
+            self.rarme(data, out)
+        self.confr_del(data)
+
+    def testme(self, data, out=None, ext=None):
+        if(len(data) > 0):
+            if ext:
+                if not ext[0] == '.':
+                    ext = "." + ext
+                print "Ext =", ext
+                if not os.path.splitext(data)[1] == ext:
+                    return False
+            print "data =", data
+
+    def usage(self):
+        import argparse
+        parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
+        parser.add_argument('PATH', help='File/Dir/*', action='store')
+        parser.add_argument('-o', '--out', help='Option Out name', action='store')
+        parser.add_argument('-e', '--ext', help='Rar with extention only', action='store')
+        if len(sys.argv) == 1:
+            parser.print_help()
+        else:
+            args = parser.parse_args()
+            self.multi_rar(args.PATH, args.out, args.ext)
 
 if __name__ == '__main__':
-    try:
-        data = sys.argv[1]
-        rarme(data)
-    except IndexError, e:
-        usage()
+    c = rarme()
+    c.usage()
+    # data = "bbbb.txt"
+    # c.testme(data, ext=".txt")

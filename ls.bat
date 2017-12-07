@@ -9,7 +9,7 @@ rem D:\cygwin\cin\ls -X -p %1
 
 
 if %1*==* goto one
-if %1==-d goto dir /o:e
+if %1==-d goto lsdir
 if %1==-f goto file
 if %1==-t goto timed
 if %1==-h goto hide
@@ -103,6 +103,10 @@ if %1==images goto images
 dir /o:e %1  | more
 goto end
 
+:lsdir
+dir /o:n /d /a:d %2
+goto end
+
 :images
 dir *.jpg;*.png;*.bmp;*.gif;*.jpeg
 goto end
@@ -172,7 +176,8 @@ dir /o:e *.class | more
 goto end
 
 :one
-dir /o:e %1 %2 | more
+rem dir /o:e %1 %2 | more
+dir /o:n /d %1 %2
 goto end
 
 :cyexe
@@ -468,8 +473,11 @@ echo			       -help	= This Option Help Of this file
 echo.
 
 :end
-echo.
-echo							"%cd%"
-echo.
-echo				For Help use option "-help"
-echo.
+rem echo.
+rem echo							"%cd%"
+rem echo.
+rem echo				For Help use option "-help"
+rem echo.
+
+:end2
+

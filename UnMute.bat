@@ -1,4 +1,3 @@
 @echo off
-title %CD%
-
-BatchMute.exe /unmute
+nircmd mutesysvolume 0
+nircmd setsysvolume 50000

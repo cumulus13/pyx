@@ -32,30 +32,38 @@ class Example(QtGui.QWidget):
 
 		self.label = QtGui.QLabel(self)
 		self.label.setText("Color name : ")
-		self.label.setGeometry(10, 50, 80, 20)
+		self.label.setGeometry(10, 43, 70, 8)
 		self.label.setFont(QtGui.QFont("Arial", 8, 600))
 		
 		self.labelcolor = QtGui.QLabel(self)
 		self.labelcolor.setText(str(color.name()).upper())
-		self.labelcolor.setGeometry(83, 50, 50, 20)
+		self.labelcolor.setGeometry(83, 43, 45, 8)
 		self.labelcolor.setFont(QtGui.QFont("Arial", 8, 600))
 		
 		self.setWindowTitle('Colorx')
-		self.setWindowIcon(QtGui.QIcon(r'd:\pyx\Paint.png'))
+		self.setWindowIcon(QtGui.QIcon(r'c:\pyx\Paint.png'))
 		self.button = QtGui.QPushButton('Chose Color', self)
 		self.button.setFocusPolicy(QtCore.Qt.NoFocus)
-		self.button.move(8, 20)
-
-		self.connect(self.button, QtCore.SIGNAL('clicked()'), self.showDialog)
-		self.setFocus()
+		self.button.move(8, 10)
+		self.button1 = QtGui.QPushButton('Set Color', self)
+		self.button1.setFocusPolicy(QtCore.Qt.NoFocus)
+		self.button1.move(8, 60)
+		
+		self.editline =QtGui.QLineEdit(self)
+		self.editline.setGeometry(9, 93, 120, 20)
+		self.editline.setText('#')
 
 		self.widget = QtGui.QWidget(self)
 		self.widget.setStyleSheet("QWidget { background-color: %s }" % color.name())
-		self.widget.setGeometry(140, 22, 105, 100)
+		self.widget.setGeometry(140, 12, 105, 100)
 		self.setWindowTitle('ColorDialog')
 		self.setGeometry(300, 300, 250, 180)
 		self.setFixedSize(250, 130)
 		self.center()
+
+		self.connect(self.button, QtCore.SIGNAL('clicked()'), self.showDialog)
+		self.connect(self.button1, QtCore.SIGNAL('clicked()'), self.setColor)
+		self.setFocus()
 
 	def showDialog(self):
 		col = QtGui.QColorDialog.getColor()
@@ -63,6 +71,11 @@ class Example(QtGui.QWidget):
 			self.widget.setStyleSheet("QWidget { background-color: %s }" % col.name())
 			setText(w.CF_TEXT, str(col.name()).upper())
 			self.labelcolor.setText(str(col.name()).upper())
+			
+	def setColor(self):
+		self.widget.setStyleSheet("QWidget { background-color: %s }" % str(self.editline.text()))
+		setText(w.CF_TEXT, str(self.editline.text()).upper())
+		self.labelcolor.setText(str(self.editline.text()).upper())
 				
 	def center(self):
 		screen = QtGui.QDesktopWidget().screenGeometry()

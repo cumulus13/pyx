@@ -9,8 +9,9 @@
 @echo off
 title %CD%
 
-%SystemRoot%\system32\control.exe %SystemRoot%\system32\desk.cpl,,1
+rem %SystemRoot%\system32\control.exe %SystemRoot%\system32\desk.cpl,,1
 goto end
+"C:\WINDOWS\system32\rundll32.exe" shell32.dll,Control_RunDLL desk.cpl,screensaver,@screensaver
 
 
 :end

@@ -1,0 +1,6 @@
+@echo off
+set next=%CD%
+cd /d %me%
+goto end
+
+:end

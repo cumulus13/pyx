@@ -7,7 +7,9 @@ if %1*==* goto usage
 if %1==xampp goto xampp
 if %1==far goto far
 if %1==ssh goto ssh
-
+type c:\pyx\%1.help
+rem PAUSE > NUL
+goto end
 
 :xampp
 type D:\xampp\readme_en.txt;xampp-changes.txt;passwords.txt;readme-addon-tomcat.txt | more
@@ -30,6 +32,6 @@ echo.
 goto end
 
 :end
-cls
+rem cls
 echo.
 echo.

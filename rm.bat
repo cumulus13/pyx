@@ -8,7 +8,7 @@ goto end
 
 
 :eraser
-rmdir /s /q %2
+rmdir /s /q %2 %3 %4 %5 %6 %7 %8 %9
 goto end
 
 :all

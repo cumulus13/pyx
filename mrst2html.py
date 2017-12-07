@@ -1,5 +1,5 @@
 
-#!C:\Python27\python.exe
+#!c:\SDK\Anaconda2\python.exe
 # EASY-INSTALL-SCRIPT: 'docutils==0.11','rst2html.py'
 import pkg_resources
 import os

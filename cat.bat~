@@ -1,0 +1,9 @@
+@echo off
+title %CD%
+echo.
+
+"c:\cygwin\bin\cat.exe" %1 | more
+goto end
+
+
+:end

@@ -1,237 +1,78 @@
 import os
 import sys
 import winsound
-import pyttsx
+import pyttsx3 as pyttsx
 import time
+import argparse
+from make_colors import make_colors
+import subprocess
 
-data_name = os.path.split(sys.argv[0])
-filename = data_name[1]
-result_cek = ["Sub items Errors", "Everything is Ok"]
-#print result_cek[0]
-rst_cek = "Wrong password"
-rst_cek2 = "Sub items Errors"
-rst_cek3 =  "Everything is Ok"
-
-usage = "\t\tUsage : " + filename + " rar_file  wordlist[*.*] \n\n" + "\t\t#################################################################\n" + "\t\t#\t\t\t\t\t\t\t\t#\n" + "\t\t#       This Only For Archieve With Containt A Password !       #\n" + "\t\t#\t\t\t\t\t\t\t\t#\n" +"\t\t#     Please make sure youre Archieve Containt A Password !     #\n" + "\t\t#\t\t\t\t\t\t\t\t#\n" + "\t\t#################################################################\n"
-
+#usage = "\t\tUsage : " + filename + " rar_file  wordlist[*.*] \n\n" + "\t\t#################################################################\n" + "\t\t#\t\t\t\t\t\t\t\t#\n" + "\t\t#       This Only For Archieve With Containt A Password !       #\n" + "\t\t#\t\t\t\t\t\t\t\t#\n" +"\t\t#     Please make sure youre Archieve Containt A Password !     #\n" + "\t\t#\t\t\t\t\t\t\t\t#\n" + "\t\t#################################################################\n"
+ZIP7_PATH = r''
+if not ZIP7_PATH:
+	ZIP7_PATH = '7z'
+	
 try:
-	if (sys.argv[1] == "help"):
-		os.system("cls")
-		print "\n"
-		print usage
-	elif (sys.argv[1] == "--help"):
-		os.system("cls")
-		print "\n"
-		print usage
-	elif (sys.argv[1] == "-?"):
-		os.system("cls")
-		print "\n"
-		print usage
-	elif (sys.argv[1] == "-h"):
-		os.system("cls")
-		print "\n"
-		print usage
-	else:	
-		#data = open(sys.argv[2]).readlines()
-		dataQ = open(sys.argv[2])
-		data = dataQ.readlines()
-		len_data = len(data)
-		#print "len_data = ", len_data, "\n"
-		dataQ.seek(len_data)
-		#print "dataQ.tell() = ", dataQ.tell()
-		
-		for x in range(1, len(data)):
-			#print str(data[-x])
-			
-			dataz = str(data[-x]).split("\n")
-			if (dataz[0] != ''):
-				dataxxx = str(dataz[0])
-				#print "dataxxx = ", dataxxx
-				break
-			else:
-				pass
-		os.system("cls")
-		print "\n"
-		print "\t File Rar   : " + sys.argv[1] + "\n"
-		print "\t Wordlist   : " + sys.argv[2] + "\n\n"
+	a = subprocess.check_call([ZIP7_PATH], stdout = subprocess.PIPE, stderr = subprocess.PIPE, shell = True)
+except:
+	print make_colors('PLEASE INSTALL OR DEFINITION 7Zip PATH BEFORE OR INSERT IT TO PATH ENVIRONMENT !', 'white', 'red', ['bold', 'blink'])
+	sys.exit(0)
 	
-		for i in range(0, len(data)):
-			data01 = data[i].split("\n")
-			dataQ.seek(i)
-			#print "dataQ.tell(i) = ", dataQ.tell(), "\n"
-			if (data01[0] != ''):
-				#print str(i) + ". " + str(data01)
-				try:
-					data_file = r"\"" + sys.argv[1] + "\""
-					cek_rar = os.popen("7z t \"" + sys.argv[1] + "\" -p\"" + str(data01[0]) + "\"").readlines()
-					#cek_rar = os.popen("7z t " + r"\"" + sys.argv[1] + "\" -p" + str(data01[0])).readlines()
-					#print cek_rar[-2]
-					#print cek_rar, "\n"
-					#print "cek_rar[-5] = ", cek_rar[-2]
-					#print "\n"
-					#print str(data01[0]), "\n"
-					#print "-----------------------------------------------------------\n"
-					
-					if (rst_cek in cek_rar[-5]):
-						print "\t\t Cek For Password : \"" + str(data01[0]) + "\" is FALSE"
-					elif (rst_cek in cek_rar[-4]):
-						print "\t\t Cek For Password : \"" + str(data01[0]) + "\" is FALSE"
-					elif (rst_cek in cek_rar[-2]):
-						print "\t\t Cek For Password : \"" + str(data01[0]) + "\" is FALSE"
-					elif (rst_cek2 in cek_rar[-2]):
-						print "\t\t Cek For Password : \"" + str(data01[0]) + "\" is FALSE"
-					#else:
-					#	if (rst_cek2 in cek_rar[-2]):
-					#		print "\n\n"
-					#		print "\t\t PASSWORD FOUND ! OR but, CONTAINT ERROR ? \n"
-					#		print "\t\t Cek For Password : \"" + str(data01[0]) + "\" is True"
-					#		print "\n"
-					#		print "\t\t Password file " + sys.argv[1] + ": \"" + str(data01[0]) + "\""
-					#		print "\n"
-					#		print "\t\t---- Sript By BL4CK1D ----"
-					#		break
-					#		sys.exit()
-					#	else:
-					#		print "\n\n"
-					#		print "\t\t PASSWORD FOUND ! \n"
-					#		print "\t\t Cek For Password : \"" + str(data01[0]) + "\" is True"
-					#		print "\n"
-					#		print "\t\t Password file " + sys.argv[1] + ": \"" + str(data01[0]) + "\""
-					#		print "\n"
-					#		print "\t\t---- Sript By BL4CK1D ----"
-					#		break
-					#		sys.exit()
-				
-					else:
-						#if (rst_cek2 in cek_rar[-2]):
-						#	#print "cek_rar[-2] = ", cek_rar[-2]
-						#	print "\n\n"
-						#	print "\t\t PASSWORD FOUND ! OR but, CONTAINT ERROR ? \n"
-						#	print "\t\t Cek For Password : \"" + str(data01[0]) + "\" is True"
-						#	print "\n"
-						#	print "\t\t Password file " + sys.argv[1] + ": \"" + str(data01[0]) + "\""
-						#	print "\n"
-						#	print "\t\t---- Sript By BL4CK1D ----"
-						#	break
-						#	sys.exit()
-						#else:
-						if False:
-							print "\n"
-							print "\t\tSorry, PASSWORD NOT FOUND ! \n\n"
-							dNotsound = r"d:\SOUND\Pass Not  Found.wav"
-							winsound.PlaySound(dNotsound, winsound.SND_ALIAS)
-							sys.exit()
-						else:
-							#print "cek_rar[-2] = ", cek_rar[-2], "\n"
-							#print "cek_rar[-4] = ", cek_rar[-4], "\n"
-							#print "cek_rar[-5] = ", cek_rar[-5], "\n"
-							print "\n\n"
-							print "\t\t PASSWORD FOUND ! \n"
-							print "\t\t Cek For Password : \"" + str(data01[0]) + "\" is True"
-							dNotsound = r"d:\SOUND\Pass Found.wav"
-							winsound.PlaySound(dNotsound, winsound.SND_ALIAS)
-							engine = pyttsx.init()
-							rate = engine.getProperty('rate')
-							engine.setProperty('rate', rate-30)
-							engine.say("The password is " + str(data01[0]))
-							engine.runAndWait()
-							print "\n"
-							print "\t\t Password file " + sys.argv[1] + ": \"" + str(data01[0]) + "\""
-							print "\n"
-							
-							if (rst_cek2 in cek_rar[-2]):
-								#print "cek_rar[-2] = ", cek_rar[-2]
-								print "\n\n"
-								print "\t\t PASSWORD FOUND ! OR but, CONTAINT ERROR ? \n"
-								print "\t\t Cek For Password : \"" + str(data01[0]) + "\" is True"
-								print "\n"
-								#print "\t\t Password file " + sys.argv[1] + ": \"" + str(data01[0]) + "\""
-								#print "\n"
-								#print "\t\t---- Sript By BL4CK1D ----"
-								#break
-								#sys.exit()
-							else:
-								print "\t\t----- RarCracker V2 -----\n"
-								print "\t\t---- Sript By BL4CK1D ----"
-								os.system("PAUSE > c:\\temp\None")
-								#break
-								sys.exit()
-							
-					
-					#for z in range(0, len(cek_rar)):
-					#	datacl01 = str(cek_rar[z]).split("\n")
-					#	print str(z) + ". " + datacl01[0]
-				
-						
-					#	if (rst_cek in datacl01):
-					#		pass
-					#	else:
-					#		if (rst_cek2 in datacl01):
-					#			print "\n\n"
-					#			print "\t\t PASSWORD FOUND ! OR is NOT CONTAINT PASSWORD ? \n"
-					#			print "\t\t Cek For Password : \"" + str(data01[0]) + "\" is True"
-					#			print "\n"
-					#			print "\t\t Password file " + sys.argv[1] + ": \"" + str(data01[0]) + "\""
-					#			break
-						#	sys.exit()
-						#else:
-						#	pass
-							#print "\n\n"
-						#print "\t\t Cek For Password : \"" + str(data01[0]) + "\" is FALSE"
-						
-				except IndexError, e:
-					os.system("cls")
-					print "\n"
-					print usage
-			
-			else:
-				pass
-			
-			if (dataQ.tell() == len_data - 1):	
-				print "\n\n"
-				print "\t\tSorry, PASSWORD NOT FOUND ! \n\n"
-				dNotsound = r"d:\SOUND\Pass Not  Found.wav"
-				winsound.PlaySound(dNotsound, winsound.SND_ALIAS)
-				print "\t\t----- RarCracker V2 -----\n"
-				print "\t\t---- Sript By BL4CK1D ----"
-				#os.system("PAUSE >> ")
-				sys.exit()
-			else:
-				pass
-				
-		#cek_rar2 = os.popen("7z t \"" + sys.argv[1] + "\" -p" + str(dataxxx)).readlines()
-		#if (rst_cek in cek_rar2[5]):
-		#	print "\n\n"
-		#	print "\t\tSorry, PASSWORD NOT FOUND ! \n\n"
-		#	print "\t\t---- Sript By BL4CK1D ----"
-		#else:
-		#	print "\n"
-		#	print "\t\t---- Sript By BL4CK1D ----"
-		if False:
-			print "\n"
-			print "\t\t----- RarCracker V2 -----\n"
-			print "\t\t---- Sript By BL4CK1D ----"
-		else:
-			None
-	
-except IndexError, e:
-	#os.system("cls")
-	print "\n"
-	print "\t\tPlease fill for correct Option !!!!! \n"
-	print usage
-
-except KeyboardInterrupt, q:
+def usage():
 	os.system("cls")
-	print "\n"
-	print "\t\t You Cancel Operation !!!\n"
-	print "\n"
-	print "\t\t----- RarCracker V2 -----\n"
-	print "\t\t---- Sript By BL4CK1D ----"
-
-
-
-
-
-
-
-
+	parser = argparse.ArgumentParser(formatter_class= argparse.RawTextHelpFormatter, version= '2.0')
+	parser.add_argument('PACKFILE', help = 'Compression file', action = 'store')
+	parser.add_argument('PASSFILE', help = 'Wordlist Password file', action = 'store')
+	if len(sys.argv) == 1:
+		parser.print_help()
+	else:
+		args = parser.parse_args()
+		#rst_cek = ["Wrong password", "Sub items Errors", "Can't open as archive"]
+		
+		print "\n"
+		print make_colors("\t File Pack  : ", 'cyan') + make_colors(args.PACKFILE, 'green')
+		print make_colors("\t Wordlist   : ", 'green') + make_colors(args.PASSFILE, 'cyan')
+		print "\n"
+		if os.path.isfile(args.PASSFILE):
+			cek_pass = open(args.PASSFILE).readlines()
+			#print "cek_pass =", cek_pass
+		else:
+			print make_colors("PASSFILE NOT FOUND", 'white', 'red', ['bold', 'blink'])
+			parser.print_help()
+			sys.exit()
+		for i in cek_pass:
+			if not str(i).strip() == "":
+				pass1 = str(i).strip()
+				break
+		cek_rar = os.popen("7z t \"" + args.PACKFILE + "\" -p\"" + pass1 + "\"").readlines()
+		if "Everything is Ok" in cek_rar:
+			print "\t " + make_colors("This file is Not have Password :)", 'white', 'blue')
+			sys.exit("\t NOT PASSWORED :)")
+		for i in cek_pass:
+			cek_rar = os.popen("7z t \"" + args.PACKFILE + "\" -p\"" + str(i).strip() + "\"").readlines()
+			#print "cek_rar =", cek_rar
+			if "Everything is Ok\n" in cek_rar:
+				print "\t " + make_colors("PASSWORD FOUND !", 'white', 'yellow', ['bold', 'blink'])
+				print "\t " + make_colors("Cek For Password : ", 'green') + ' "' + make_colors(str(i).strip(), 'yellow') + '" ' + make_colors("is True", 'white', 'yellow')
+				dNotsound = r"f:\SOUNDS\Pass Found.wav"
+				winsound.PlaySound(dNotsound, winsound.SND_ALIAS)
+				engine = pyttsx.init()
+				rate = engine.getProperty('rate')
+				engine.setProperty('rate', rate-30)
+				engine.say("The password is " + str(i).strip())
+				engine.runAndWait()
+				print "\n"
+				print "\t " + make_colors("Password file ", 'white', 'green') + make_colors(args.PACKFILE, 'red') + make_colors(": ", 'green') + '"' + make_colors(str(i).strip(), 'white', 'yellow') + '"'
+				print "\n"
+				sys.exit("\t PASSWORD FOUND :)")
+			else:
+				print "\t " + make_colors("Cek For Password : ", 'green') + ' "' + make_colors(str(i).strip(), 'white') + '" is ' + make_colors("FALSE", 'white', 'red')
+					
+		print "\n"
+		print "\t "+ make_colors("Sorry, PASSWORD NOT FOUND ! ", 'white', 'red', ['bold', 'blink']) + "\n\n"
+		dNotsound = r"f:\SOUNDS\Pass Not  Found.wav"
+		winsound.PlaySound(dNotsound, winsound.SND_ALIAS)
+		sys.exit("\t PASSWORD NOT FOUND (:\n\n\t\t----- RarCracker V2 -----\n\t\t---- Sript By BL4CK1D ----")
+		
+if __name__ == '__main__':
+	usage()

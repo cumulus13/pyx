@@ -1,39 +1,29 @@
 @echo off
-title %CD%
-
-if %1==--help goto usage
-if %1==--h goto usage
-if %1==-h goto usage
-if %1==/? goto usage
-if %1==? goto usage
-if %1==help goto usage
-if %1*==* goto one
-if %1==reset goto reset
-
-
-:one
-set pathbefore=%path%
-set pathone = %1
-set PATH=%1;%PATH%
-"c:\exe\addpathx.exe" post %1
-
+set PATH1=%PATH%
+if %1*==* goto usage
+if %1==-r goto remove
+if %1==--remove goto remove
+set path=%1;%PATH%
+echo PATH 0 = %PATH%
 goto end
 
-:reset
-PATH ;
-set PATH=%pathbefore%;%PATH%
-"c:\exe\winpath.exe" -r %1
-goto end
+:remove
+set INPUT=
+set INPUT=%2
+set CLR=""
+echo INPUT = %INPUT%
+rem SET "PATH=!PATH:c:\SDK\Anaconda2=%VIRTUAL_ENV%!"
+echo PATH 1 = %PATH%
+goto end1
 
 :usage
 echo.
-echo.
-echo		use %0 [Want To Path]
-echo		    %0 reset	=	Reset Path Before The First
-echo.
+echo USAGE: %~n0 [dir path to add]
+echo              -r, --remove [dir path to remove]
 echo.
 goto end
 
-
+:end1
+set PATH=%PATH1%
 
 :end

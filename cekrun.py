@@ -1,6 +1,6 @@
 import os
 import sys
-import dplay2
+#import #dplay2
 
 filename = os.path.split(sys.argv[0])[1]
 usage = """use : """ + filename + """[name of application]"""
@@ -48,7 +48,7 @@ def cek2(cek):
 				pass
 				
 		if len(datacek) > 1:
-			dplay2.play2(str(cek).split(".exe")[0], ", is RUNNING")
+			#dplay2.play2(str(cek).split(".exe")[0], ", is RUNNING")
 			print "\n"
 			print "\t Aplication " + str(cek).split(".exe")[0] + " is : RUNNING"
 			print "\t May your application name is : \n"
@@ -59,11 +59,11 @@ def cek2(cek):
 			
 		else:
 			if len(datacek) > 0:
-				dplay2.play2(str(cek).split(".exe")[0], ", is RUNNING")
+				#dplay2.play2(str(cek).split(".exe")[0], ", is RUNNING")
 				print "\n"
 				print "\t Aplication " + str(cek).split(".exe")[0] + " is : RUNNING"
 			else:
-				dplay2.play2(str(cek).split(".exe")[0], ", is NOT RUNNING")
+				#dplay2.play2(str(cek).split(".exe")[0], ", is NOT RUNNING")
 				print "\n"
 				print "\t Aplication " + str(cek) + " is : NOT RUNNING"
 				#print datafinal		

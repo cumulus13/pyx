@@ -1,0 +1,9 @@
+@echo off
+title %CD%
+del *~
+goto end
+
+:end
+cls
+ls
+

@@ -39,12 +39,12 @@ def rarme():
                 except IndexError, e:
                     data2b = data3
 
-                if (os.path.isdir(r'%temp%\\' + dataxx)):
-                    os.system("mkdir " + r"%temp%\\" + '"' + dataxx + '"')
-                    os.system("7z x " + "\"" + sys.argv[2] + "\"" + " -o" + "\"" + r"%temp%\\" + dataxx + "\\\"" + name_dir_001 + "\"" )
+                if (os.path.isdir(r'%tmp%\\' + dataxx)):
+                    os.system("mkdir " + r"%tmp%\\" + '"' + dataxx + '"')
+                    os.system("7z x " + "\"" + sys.argv[2] + "\"" + " -o" + "\"" + r"%tmp%\\" + dataxx + "\\\"" + name_dir_001 + "\""  + ' & c:\Apps\Snarl_CMD_1.0\Snarl_CMD.exe snShowMessage 20 "7zx [7z x]" "DONES" "f:\ICONS\7z.png"')
                     print "\n"
                 else:
-                    os.system("7z x " + "\"" + sys.argv[2] + "\"" + " -o" + "\"" + r"%temp%\\Me" + "\"" + "\\\"" + name_dir_001 + "\"" )
+                    os.system("7z x " + "\"" + sys.argv[2] + "\"" + " -o" + "\"" + r"%tmp%\\Me" + "\"" + "\\\"" + name_dir_001 + "\""  + ' & c:\Apps\Snarl_CMD_1.0\Snarl_CMD.exe snShowMessage 20 "7zx [7z x]" "DONES" "f:\ICONS\7z.png"')
                     print "\n"
 
             elif data2 == "usage":
@@ -53,12 +53,12 @@ def rarme():
                 print usage	
 
             else:             
-                if (os.path.isdir(r'%temp%\\' + dataxx)):
-                    os.system("mkdir " + r"%temp%\\" + '"' + dataxx + '"')
-                    os.system("7z x " + '"' + sys.argv[1] + '"' + " -o" + "\"" + r"%temp%\\" + dataxx + "\"")
+                if (os.path.isdir(r'%tmp%\\' + dataxx)):
+                    os.system("mkdir " + r"%tmp%\\" + '"' + dataxx + '"')
+                    os.system("7z x " + '"' + sys.argv[1] + '"' + " -o" + "\"" + r"%tmp%\\" + dataxx + "\"" + ' & c:\Apps\Snarl_CMD_1.0\Snarl_CMD.exe snShowMessage 20 "7zx [7z x]" "DONES" "f:\ICONS\7z.png"')
                     print "\n"
                 else:
-                    os.system("7z x " + '"' + sys.argv[1] + '"' + " -o" + "\"" + r"%temp%\\Me" + "\"")
+                    os.system("7z x " + '"' + sys.argv[1] + '"' + " -o" + "\"" + r"%tmp%\\Me" + "\"" + ' & c:\Apps\Snarl_CMD_1.0\Snarl_CMD.exe snShowMessage 20 "7zx [7z x]" "DONES" "f:\ICONS\7z.png"')
                     print "\n"
 
         else:
