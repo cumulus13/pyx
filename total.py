@@ -485,7 +485,7 @@ def main(skip_network_drive=True, exception=[]):
         exception = total_conf.exception
     except:
         print "ERROR: import module total_conf"
-	print "exc =", exception
+        print "exc =", exception
     drive_name = str(string.ascii_lowercase).upper()
     print "\n"
     print "-" * 52

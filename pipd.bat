@@ -6,9 +6,9 @@ if %1==justinstall goto justinstall
 echo process download ...
 rem c:\SDK\Anaconda2\Scripts\pip.exe install -d F:\PYTHON_MODULES --no-use-wheel %*
 rem c:\SDK\Anaconda2\Scripts\pip.exe install -d F:\PYTHON_MODULES --use-wheel %*
-c:\SDK\Anaconda2\Scripts\pip.exe install -d F:\PYTHON_MODULES --no-binary :all: %*
-c:\SDK\Anaconda2\Scripts\pip.exe install -d F:\PYTHON_MODULES --only-binary :all: %*
-c:\SDK\Anaconda2\Scripts\pip.exe install -d F:\PYTHON_MODULES --only-binary :all:   --no-binary :none: %*
+c:\SDK\Anaconda2\Scripts\pip.exe install -i https://pypi.python.org/simple -d F:\PYTHON_MODULES --no-binary :all: %*
+c:\SDK\Anaconda2\Scripts\pip.exe install -i https://pypi.python.org/simple -d F:\PYTHON_MODULES --only-binary :all: %*
+c:\SDK\Anaconda2\Scripts\pip.exe install -i https://pypi.python.org/simple -d F:\PYTHON_MODULES --only-binary :all:   --no-binary :none: %*
 rem c:\SDK\Anaconda2\Scripts\pip.exe download -d F:\PYTHON_MODULES %*
 rem c:\SDK\Anaconda2\Scripts\pip.exe install -d F:\PYTHON_MODULES --use-wheel %*
  
@@ -18,12 +18,12 @@ goto end
 rem mkdir F:\PYTHON_MODULES\%2
 echo install process ...
 echo download no-binary
-c:\SDK\Anaconda2\Scripts\pip.exe install -d F:\PYTHON_MODULES --no-binary :all:  %2
+c:\SDK\Anaconda2\Scripts\pip.exe install -i https://pypi.python.org/simple -d F:\PYTHON_MODULES --no-binary :all:  %2
 echo download only-binary
-c:\SDK\Anaconda2\Scripts\pip.exe install  -d F:\PYTHON_MODULES --only-binary :all: %2
+c:\SDK\Anaconda2\Scripts\pip.exe install -i https://pypi.python.org/simple -d F:\PYTHON_MODULES --only-binary :all: %2
 echo download only-binary and no-binary
 rem c:\SDK\Anaconda2\Scripts\pip.exe download -d F:\PYTHON_MODULES  %2
-c:\SDK\Anaconda2\Scripts\pip.exe install -d F:\PYTHON_MODULES --only-binary :all:   --no-binary :none: %2
+c:\SDK\Anaconda2\Scripts\pip.exe install -i https://pypi.python.org/simple -d F:\PYTHON_MODULES --only-binary :all:   --no-binary :none: %2
 c:\SDK\Anaconda2\Scripts\pip.exe install %2 -i http://127.0.0.1:7777/simple
 c:\Anaconda2\Scripts\pip.exe install %2 -i http://127.0.0.1:7777/simple
 goto end

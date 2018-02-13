@@ -1,11 +1,17 @@
-import win32clipboard as w 
-import win32con
+#!/usr/bin/python
+
 import sys
 import os
-import pywintypes
+if sys.platform == 'win32':
+    import win32clipboard as w 
+    import win32con
+    import pywintypes
+    import winsound
+else:
+    import clipboard
 import traceback
-import sendgrow
-import winsound
+import tracert  
+import sendgrowl
 
 __version__ = "2.0"
 __test__ = "0.3"
@@ -107,21 +113,23 @@ def winpath(session=None):
         print __usage__
     data_clip = getText()
     sendnotify(data_clip)
-    print "\n"
-    print "\t Sucessfully set clipboard ! \n"
-    print "\t now clipboard fill with = \"" + str(data_clip) + add_slash
+    if os.path.basename(sys.executable).lower() == 'python.exe':
+        print "\n"
+        print "\t Sucessfully set clipboard ! \n"
+        print "\t now clipboard fill with = \"" + str(data_clip) + add_slash
 
 def winpath2():
     data_ex = os.getcwd()
     #data_argv = data_ex + "\\" + sys.argv[2]
     data_argv = os.path.join(data_ex, os.path.abspath('\\'.join(sys.argv[2:])))
-    print "data_argv =", data_argv
     data_clip_set = setText(w.CF_TEXT, data_argv)
     data_clip = getText()
     sendnotify(str(data_argv))
-    print "\n"
-    print "\t Sucessfully set clipboard ! \n"
-    print "\t now clipboard fill with = \"" + str(data_argv) + "\""
+    if os.path.basename(sys.executable).lower() == 'python.exe':
+        print "data_argv =", data_argv
+        print "\n"
+        print "\t Sucessfully set clipboard ! \n"
+        print "\t now clipboard fill with = \"" + str(data_argv) + "\""
 
 try:
     if (len(sys.argv) > 1):
@@ -154,72 +162,78 @@ try:
                     data_clip_set = setText(w.CF_TEXT, data_ex)
                     data_clip = getText()
                     sendnotify(data_clip)
-                    print "\n"
-                    print "\t Sucessfully set clipboard ! \n"
-                    #messages = (("Info", "Sucessfully set clipboard ! \n now clipboard fill with = \"" + data_clip))
-                    #img = images_path + images['info']
-                    print "\t now clipboard fill with = \"" + data_clip + '\\'
+                    if os.path.basename(sys.executable).lower() == 'python.exe':
+                        print "\n"
+                        print "\t Sucessfully set clipboard ! \n"
+                        #messages = (("Info", "Sucessfully set clipboard ! \n now clipboard fill with = \"" + data_clip))
+                        #img = images_path + images['info']
+                        print "\t now clipboard fill with = \"" + data_clip + '\\'
             except IndexError, e:
                 data_ex = os.getcwd().replace('/','\\')
                 data_clip_set = setText(w.CF_TEXT, data_ex)
                 data_clip = getText()
                 sendnotify(data_clip)
-                print "\n"
-                print "\t Sucessfully set clipboard ! \n"
-                #messages = (("Info", "Sucessfully set clipboard ! \n now clipboard fill with = \"" + data_clip))
-                #img = images_path + images['info']
-                print "\t now clipboard fill with = \"" + data_clip 
+                if os.path.basename(sys.executable).lower() == 'python.exe':
+                    print "\n"
+                    print "\t Sucessfully set clipboard ! \n"
+                    #messages = (("Info", "Sucessfully set clipboard ! \n now clipboard fill with = \"" + data_clip))
+                    #img = images_path + images['info']
+                    print "\t now clipboard fill with = \"" + data_clip 
         else:
             if (sys.argv[-1] == 'linux'):
                 data_argv = sys.argv[1].replace('\\','/') 
                 data_clip_set = setText(w.CF_TEXT, data_argv)
                 data_clip = getText()
                 sendnotify(data_clip)
-                print "\n"
-                print "\t Sucessfully set clipboard ! \n"
-                #messages = (("Info", "Sucessfully set clipboard ! \n now clipboard fill with = \"" + data_clip))
-                #img = images_path + images['info']
-                print "\t now clipboard fill with = \"" + data_clip
+                if os.path.basename(sys.executable).lower() == 'python.exe':
+                    print "\n"
+                    print "\t Sucessfully set clipboard ! \n"
+                    #messages = (("Info", "Sucessfully set clipboard ! \n now clipboard fill with = \"" + data_clip))
+                    #img = images_path + images['info']
+                    print "\t now clipboard fill with = \"" + data_clip
             elif (sys.argv[-1] == '/'):
                 data_argv = sys.argv[1].replace('\\','/') + '/'
                 data_clip_set = setText(w.CF_TEXT, data_argv)
                 data_clip = getText()
                 sendnotify(data_clip)
-                print "\n"
-                print "\t Sucessfully set clipboard ! \n"
-                #messages = (("Info", "Sucessfully set clipboard ! \n now clipboard fill with = \"" + data_clip))
-                #img = images_path + images['info']
-                print "\t now clipboard fill with = \"" + data_clip 
+                if os.path.basename(sys.executable).lower() == 'python.exe':
+                    print "\n"
+                    print "\t Sucessfully set clipboard ! \n"
+                    #messages = (("Info", "Sucessfully set clipboard ! \n now clipboard fill with = \"" + data_clip))
+                    #img = images_path + images['info']
+                    print "\t now clipboard fill with = \"" + data_clip 
             elif (sys.argv[-1] == '\\'):
                 data_argv = sys.argv[1].replace('/','\\') + '\\'
                 data_clip_set = setText(w.CF_TEXT, data_argv)
                 data_clip = getText()
                 sendnotify(data_clip)
-                print "\n"
-                print "\t Sucessfully set clipboard ! \n"
-                #messages = (("Info", "Sucessfully set clipboard ! \n now clipboard fill with = \"" + data_clip))
-                #img = images_path + images['info']
-                print "\t now clipboard fill with = \"" + data_clip 
+                if os.path.basename(sys.executable).lower() == 'python.exe':
+                    print "\n"
+                    print "\t Sucessfully set clipboard ! \n"
+                    #messages = (("Info", "Sucessfully set clipboard ! \n now clipboard fill with = \"" + data_clip))
+                    #img = images_path + images['info']
+                    print "\t now clipboard fill with = \"" + data_clip 
             else:   
                 data_argv = sys.argv[1]
                 data_clip_set = setText(w.CF_TEXT, data_argv)
                 data_clip = getText()
                 sendnotify(data_argv)
-                print "\n"
-                print "\t Sucessfully set clipboard ! \n"
-                #messages = (("Info", "Sucessfully set clipboard ! \n now clipboard fill with = \"" + data_clip))
-                #img = images_path + images['info']
-                print "\t now clipboard fill with = \"" + data_clip + "\""
+                if os.path.basename(sys.executable).lower() == 'python.exe':
+                    print "\n"
+                    print "\t Sucessfully set clipboard ! \n"
+                    #messages = (("Info", "Sucessfully set clipboard ! \n now clipboard fill with = \"" + data_clip))
+                    #img = images_path + images['info']
+                    print "\t now clipboard fill with = \"" + data_clip + "\""
     else:
         data_ex = os.getcwd()
         data_argv = data_ex + "\\" 
         data_clip_set = setText(w.CF_TEXT, data_argv)
         data_clip = getText()
         sendnotify(data_clip)
-
-        print "\n\n"
-        print "\t Please insert a Word want to be Copy ! \n"
-        print "\t Default data is this path = ", data_argv
+        if os.path.basename(sys.executable).lower() == 'python.exe':
+            print "\n\n"
+            print "\t Please insert a Word want to be Copy ! \n"
+            print "\t Default data is this path = ", data_argv
 except IndexError as e:
     traceback.format_exc()
     print "\n\n"

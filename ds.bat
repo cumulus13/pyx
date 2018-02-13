@@ -11,7 +11,7 @@ goto end
 
 :one
 rem echo one
-"c:\Program Files\Disk Savvy Ultimate\bin\disksavvy.exe" -analyze -dir %CD%\
+"c:\Program Files\Disk Savvy Ultimate\bin\disksavvy.exe" -analyze -dir "%CD%"\
 goto end
 
 :end

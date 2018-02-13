@@ -1,2 +1,2 @@
 @echo off
-nircmd rasdial TSEL-TIMEBASED
+nircmd rasdial "TSEL-TIMEBASED"

@@ -103,10 +103,10 @@ class process:
                 pass
 
 
-    def __moved(self,x,_to=sys.argv[-1],excp=None):
+    def __moved(self,x,_to,excp=None):
         if excp == None:
             if os.path.split(_to)[0] == '':
-                _to = os.path.abspath(sys.argv[-1])
+                _to = os.path.abspath(_to)
                 if os.path.isdir(_to) == False:
                     try:
                         os.mkdir(_to)
@@ -207,7 +207,7 @@ class process:
                     print "\n"
                     print __help__
 
-    def start_moved(self, pattern, _to=sys.argv[-1]):
+    def start_moved(self, pattern, _to, excepts = None):
         """pattern must have "*", exp: *data*, data*, *data"""
         LISTDIR = True
         if os.path.isdir(_to) == False:
@@ -225,97 +225,153 @@ class process:
         except:
             pre_data1 = os.popen('DIR /b "' + pattern + '"').readlines()
             LISTDIR = False
-        
+
         for i in pre_data1:
             if os.path.abspath(str(i).split("\n")[0]) != os.path.abspath(str(_to).split("\n")[0]):
                 if not LISTDIR:
                     x = os.path.abspath(i[:-1])
                 else:
                     x = os.path.abspath(i)
-                if sys.argv[-2] == '-e':
-                    self.__moved(x,_to,sys.argv[-1])
-                else:	
-                    self.__moved(x,os.path.abspath(_to))
+                #self.__moved(x,os.path.abspath(_to), excepts)
+                self.moved(x, _to, excepts)
             else:
                 pass
 
         return self.result_error
 
+    def run(self, fr_, to_, excepts = None, test = False):
+        if os.path.isfile(fr_) == True:
+            try:
+                shutil.move(fr_, to_)
+                print make_colors(" MOVED FILE: ", 'white', 'yellow', ['bold']) + make_colors("\"", 'cyan') + make_colors(fr_, 'lightyellow', color_type= 'colorama') + make_colors('"', 'cyan') + make_colors(" --> ", 'white', attrs= ['bold']) + make_colors("\"", 'cyan') + make_colors(os.path.abspath(to_), 'lightgreen', color_type= 'colorama') + make_colors("\"", 'cyan')
+                self.logs("MOVED FILE: \"" + fr_ + "\" --> " + os.path.abspath(to_))
+            except:
+                #return __error__
+                print make_colors(" MOVED FILE [ERROR]: ", 'white', 'red', ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors(fr_, 'yellow', attrs= ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors("-->", 'white', attrs= ['bold']) + make_colors(os.path.abspath(to_), 'green', attrs= ['bold']) + make_colors('" ', 'cyan', attrs= ['bold']) + make_colors("[ERROR]", 'white', 'red', ['bold', 'blink'])
+                self.logs("MOVED FILE [ERROR]: \"" + fr_ + "\" --> " + os.path.abspath(to_ + " [ERROR]"))
+                self.result_error.append(os.path.abspath(fr_))
 
-    def moved(self,to_=sys.argv[-1]):
+        elif os.path.isdir(fr_) == True:
+            try:
+                shutil.move(fr_, to_)
+                #print " MOVED DIRECTORY: \"" + i + "\" --> " + os.path.abspath(to_)
+                print make_colors(" MOVED DIRECTORY: ", 'white', 'cyan', ['bold']) + make_colors('"', 'cyan') + make_colors(str(fr_), 'lightyellow', color_type= 'colorama') + make_colors('"', 'cyan') + make_colors(" --> ", 'white', attrs= ['bold']) + make_colors('"', 'cyan') + make_colors(os.path.abspath(to_), 'lightgreen', color_type= 'colorama') + make_colors('"', 'cyan')
+                self.logs("MOVED DIRECTORY: \"" + fr_ + "\" --> " + os.path.abspath(to_))
+            except:
+                #return __error__
+                traceback.format_exc()
+                print make_colors(" MOVED DIRECTORY [ERROR]: ", 'white', 'magenta', ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors(i, 'yellow', attrs= ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors("-->", 'white', attrs= ['bold']) + make_colors(os.path.abspath(to_), 'green', attrs= ['bold']) + make_colors('" ', 'cyan', attrs= ['bold']) + make_colors("[ERROR]", 'white', 'red', ['bold', 'blink'])
+                self.logs("MOVED DIRECTORY [ERROR]: \"" + fr_ + "\" --> " + os.path.abspath(to_ + " [ERROR]"))
+                self.result_error.append(os.path.abspath(fr_))
+        elif "*" in i:
+            self.start_moved(fr_,to_)
+            if len(self.result_overwrite) != '':
+                #print "self.result_overwrite = ", self.result_overwrite
+                self.existConfr()        
+
+    def moved(self, fr_, to_, excepts = None, test = False):
         #print "to =", to_
-        if sys.argv[-2] == "-e":
-            to_=sys.argv[-3]
-            len_arg = len(sys.argv) - 2
-        else:
-            len_arg = len(sys.argv)
-        #print "sys.argv =", sys.argv
-        for i in  range (1,int(len_arg) - 1):
-            if os.path.isfile(sys.argv[i]) == True:
-                try:
-                    shutil.move(sys.argv[i], to_)
-                    print make_colors(" MOVED FILE: ", 'white', 'yellow', ['bold']) + make_colors("\"", 'cyan') + make_colors(sys.argv[i], 'lightyellow', color_type= 'colorama') + make_colors('"', 'cyan') + make_colors(" --> ", 'white', attrs= ['bold']) + make_colors("\"", 'cyan') + make_colors(os.path.abspath(sys.argv[-1]), 'lightgreen', color_type= 'colorama') + make_colors("\"", 'cyan')
-                    self.logs("MOVED FILE: \"" + sys.argv[i] + "\" --> " + os.path.abspath(sys.argv[-1]))
-                except:
-                    #return __error__
-                    print make_colors(" MOVED FILE [ERROR]: ", 'white', 'red', ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors(sys.argv[i], 'yellow', attrs= ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors("-->", 'white', attrs= ['bold']) + make_colors(os.path.abspath(sys.argv[-1]), 'green', attrs= ['bold']) + make_colors('" ', 'cyan', attrs= ['bold']) + make_colors("[ERROR]", 'white', 'red', ['bold', 'blink'])
-                    self.logs("MOVED FILE [ERROR]: \"" + sys.argv[i] + "\" --> " + os.path.abspath(sys.argv[-1] + " [ERROR]"))
-                    self.result_error.append(os.path.abspath(sys.argv[i]))
+        #if sys.argv[-2] == "-e":
+            #to_=sys.argv[-3]
+            #len_arg = len(sys.argv) - 2
+        #else:
+            #len_arg = len(sys.argv)
+        ##print "sys.argv =", sys.argv
+        if isinstance(fr, list):
+            for i in fr:
+                if os.path.isfile(i) == True:
+                    try:
+                        shutil.move(i, to_)
+                        print make_colors(" MOVED FILE: ", 'white', 'yellow', ['bold']) + make_colors("\"", 'cyan') + make_colors(i, 'lightyellow', color_type= 'colorama') + make_colors('"', 'cyan') + make_colors(" --> ", 'white', attrs= ['bold']) + make_colors("\"", 'cyan') + make_colors(os.path.abspath(to_), 'lightgreen', color_type= 'colorama') + make_colors("\"", 'cyan')
+                        self.logs("MOVED FILE: \"" + i + "\" --> " + os.path.abspath(to_))
+                    except:
+                        #return __error__
+                        print make_colors(" MOVED FILE [ERROR]: ", 'white', 'red', ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors(i, 'yellow', attrs= ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors("-->", 'white', attrs= ['bold']) + make_colors(os.path.abspath(to_), 'green', attrs= ['bold']) + make_colors('" ', 'cyan', attrs= ['bold']) + make_colors("[ERROR]", 'white', 'red', ['bold', 'blink'])
+                        self.logs("MOVED FILE [ERROR]: \"" + i + "\" --> " + os.path.abspath(to_ + " [ERROR]"))
+                        self.result_error.append(os.path.abspath(i))
 
-            elif os.path.isdir(sys.argv[i]) == True:
-                try:
-                    shutil.move(sys.argv[i], to_)
-                    #print " MOVED DIRECTORY: \"" + sys.argv[i] + "\" --> " + os.path.abspath(sys.argv[-1])
-                    print make_colors(" MOVED DIRECTORY: ", 'white', 'cyan', ['bold']) + make_colors('"', 'cyan') + make_colors(str(sys.argv[i]), 'lightyellow', color_type= 'colorama') + make_colors('"', 'cyan') + make_colors(" --> ", 'white', attrs= ['bold']) + make_colors('"', 'cyan') + make_colors(os.path.abspath(to_), 'lightgreen', color_type= 'colorama') + make_colors('"', 'cyan')
-                    self.logs("MOVED DIRECTORY: \"" + sys.argv[i] + "\" --> " + os.path.abspath(sys.argv[-1]))
-                except:
-                    #return __error__
-                    traceback.format_exc()
-                    print make_colors(" MOVED DIRECTORY [ERROR]: ", 'white', 'magenta', ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors(sys.argv[i], 'yellow', attrs= ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors("-->", 'white', attrs= ['bold']) + make_colors(os.path.abspath(sys.argv[-1]), 'green', attrs= ['bold']) + make_colors('" ', 'cyan', attrs= ['bold']) + make_colors("[ERROR]", 'white', 'red', ['bold', 'blink'])
-                    self.logs("MOVED DIRECTORY [ERROR]: \"" + sys.argv[i] + "\" --> " + os.path.abspath(sys.argv[-1] + " [ERROR]"))
-                    self.result_error.append(os.path.abspath(sys.argv[i]))
-            elif "*" in sys.argv[i]:
-                self.start_moved(sys.argv[i],to_)
-                if len(self.result_overwrite) != '':
-                    #print "self.result_overwrite = ", self.result_overwrite
-                    self.existConfr()
+                elif os.path.isdir(i) == True:
+                    try:
+                        shutil.move(i, to_)
+                        #print " MOVED DIRECTORY: \"" + i + "\" --> " + os.path.abspath(to_)
+                        print make_colors(" MOVED DIRECTORY: ", 'white', 'cyan', ['bold']) + make_colors('"', 'cyan') + make_colors(str(i), 'lightyellow', color_type= 'colorama') + make_colors('"', 'cyan') + make_colors(" --> ", 'white', attrs= ['bold']) + make_colors('"', 'cyan') + make_colors(os.path.abspath(to_), 'lightgreen', color_type= 'colorama') + make_colors('"', 'cyan')
+                        self.logs("MOVED DIRECTORY: \"" + i + "\" --> " + os.path.abspath(to_))
+                    except:
+                        #return __error__
+                        traceback.format_exc()
+                        print make_colors(" MOVED DIRECTORY [ERROR]: ", 'white', 'magenta', ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors(i, 'yellow', attrs= ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors("-->", 'white', attrs= ['bold']) + make_colors(os.path.abspath(to_), 'green', attrs= ['bold']) + make_colors('" ', 'cyan', attrs= ['bold']) + make_colors("[ERROR]", 'white', 'red', ['bold', 'blink'])
+                        self.logs("MOVED DIRECTORY [ERROR]: \"" + i + "\" --> " + os.path.abspath(to_ + " [ERROR]"))
+                        self.result_error.append(os.path.abspath(i))
+                elif "*" in i:
+                    self.start_moved(i,to_)
+                    if len(self.result_overwrite) != '':
+                        #print "self.result_overwrite = ", self.result_overwrite
+                        self.existConfr()
+        else:
+            self.run(fr_, to_, excepts, test)
+            
         return self.result_error
 
-    def main(self):
-        if os.path.isdir(sys.argv[-1]):
-            print "\n"
-            moved()
-        elif sys.argv[-1] == ".":
-            print "\n"
-            moved(os.getcwd())
-        elif sys.argv[-1] == "~":
-            print "\n"
-            moved(os.getcwd())
+    #def main(self):
+        #if os.path.isdir(sys.argv[-1]):
+            #print "\n"
+            #moved()
+        #elif sys.argv[-1] == ".":
+            #print "\n"
+            #moved(os.getcwd())
+        #elif sys.argv[-1] == "~":
+            #print "\n"
+            #moved(os.getcwd())
+        #else:
+            #print "\n"
+            #print __help__
+            #raise SyntaxError (make_colors("Check Your Syntax !", 'white', 'red'))
+
+    def usage(self):
+        import argparse
+        parser = argparse.ArgumentParser(formatter_class= argparse.RawTextHelpFormatter)
+        parser.add_argument('PATH', help = 'Files or Directorys move to', action = 'store', nargs = '*')
+        parser.add_argument('-d', '--destination', help = 'Destination Folder move to', action = 'store')
+        parser.add_argument('-e', '--except', help = 'Exception', action = 'store', dest = 'excepts', nargs = '*')
+        parser.add_argument('-t', '--test', help = 'Test move, not actualy move, test running only', action = 'store_true')
+
+        if len(sys.argv) == 1:
+            parser.print_help()
         else:
-            print "\n"
-            print __help__
-            raise SyntaxError (make_colors("Check Your Syntax !", 'white', 'red'))
+            args = parser.parse_args()
+            print "args =", args
+            if args.destination:
+                fr = args.PATH
+                to = args.destination
+            else:
+                to = args.PATH[-1]
+                fr = args.PATH[0:-1]
+            #self.moved(fr, to, args.excepts, args.test)
+
 
 if __name__ == '__main__':
-    if len(sys.argv) > 1:
-        move_class = process()
-        move_class.moved()
-        if len(move_class.moved()) >= 1:
-            print "\n\n"
-            if len(move_class.moved()) == 1:
-                print make_colors(" RESULT:", 'white', 'yellow', attrs= ['bold']) + make_colors(" ERROR", 'white', 'red'), make_colors(str(len(move_class.moved())), 'white', attrs= ['bold']), make_colors(" Item: ", 'lightyellow', color_type= 'colorama')
-                print "\t [ERROR] --> ", move_class.moved()[0]
-            else:
-                print "REA = ", make_colors(move_class.moved(), 'lightyellow', color_type= 'colorama')
-                sys.exit(0)
-                #os.system("PAUSE")
-                #for x in move_class.moved():
-                    #print " RESULT: ERROR", len(move_class.moved()), " Items: "
-                    #print "\t [ERROR] --> ", x
-        else:
-            print "\n\n"
-            print make_colors(" RESULT:", 'white', 'yellow') + make_colors(" ALL OK", 'lightcyan', color_type= 'colorama')
+    move_class = process()
+    #move_class.moved()
+    move_class.usage()
+    #if len(sys.argv) > 1:
+        #move_class = process()
+        #move_class.moved()
+        #if len(move_class.moved()) >= 1:
+            #print "\n\n"
+            #if len(move_class.moved()) == 1:
+                #print make_colors(" RESULT:", 'white', 'yellow', attrs= ['bold']) + make_colors(" ERROR", 'white', 'red'), make_colors(str(len(move_class.moved())), 'white', attrs= ['bold']), make_colors(" Item: ", 'lightyellow', color_type= 'colorama')
+                #print "\t [ERROR] --> ", move_class.moved()[0]
+            #else:
+                #print "REA = ", make_colors(move_class.moved(), 'lightyellow', color_type= 'colorama')
+                #sys.exit(0)
+                ##os.system("PAUSE")
+                ##for x in move_class.moved():
+                    ##print " RESULT: ERROR", len(move_class.moved()), " Items: "
+                    ##print "\t [ERROR] --> ", x
+        #else:
+            #print "\n\n"
+            #print make_colors(" RESULT:", 'white', 'yellow') + make_colors(" ALL OK", 'lightcyan', color_type= 'colorama')
 
-    else:
-        print "\n"
-        print __help__
+    #else:
+        #print "\n"
+        #print __help__

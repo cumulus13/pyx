@@ -1,2 +1,2 @@
 @echo off
-"c:\Program Files\Nmap\nmap.exe" %*
+"c:\Program Files (x86)\Nmap\nmap.exe" %*

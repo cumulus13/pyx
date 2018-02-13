@@ -32,14 +32,14 @@ def handleSms(sms):
     #sms.reply(u'SMS received: "{0}{1}"'.format(sms.text[:20], '...' if len(sms.text) > 20 else ''))
     #print('SMS sent.\n')
 
-def main(com=None, number=None):
+def main(com=None, number=None, DEBUG = False):
     if com:
         PORT=com
     if number:
         USSD_STRING=number
     if DEBUG:
         print('Initializing modem...')
-    #logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.DEBUG)
+        logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.DEBUG)
     #modem = GsmModem(PORT, BAUDRATE)
     modem = GsmModem(PORT, BAUDRATE, smsReceivedCallbackFunc=handleSms)
     #a = modem.listStoredSms()
@@ -92,7 +92,7 @@ def usage():
         args = parse.parse_args()
         if args.debug:
             DEBUG = True
-        main(args.COM, args.NUMBER)
+        main(args.COM, args.NUMBER, DEBUG)
 
 if __name__ == '__main__':
     #~ main()

@@ -3,11 +3,15 @@
 #encoding: UTF-8
 
 import psutil
+import sys
 from texttable import Texttable
 import cmdw
 MAX_LENGTH = cmdw.getWidth()
-import sys
+if not sys.platform == 'win32':
+    MAX_LENGTH = MAX_LENGTH - 4
 from make_colors import make_colors
+import colorama
+colorama.init()
 import time
 import os
 import math
@@ -104,14 +108,24 @@ def makeTable(data_search, data_filter = None, sorted = False, tail = None):
         table = Texttable()
         table.set_cols_align(["l", "l", "l", "l", "c", "c"])
         table.set_cols_valign(["t", "m", "m", "m", "m", "b"])
-        table.set_cols_width([
-                int(MAX_LENGTH * 0.01),
-                        int(MAX_LENGTH * 0.1),
-                        int(MAX_LENGTH * 0.03),
-                        int(MAX_LENGTH * 0.28),
-                        int(MAX_LENGTH * 0.05),
-                        int(MAX_LENGTH * 0.45),
-            ])
+        if sys.platform == 'win32':
+            table.set_cols_width([
+                    int(MAX_LENGTH * 0.01),
+                            int(MAX_LENGTH * 0.1),
+                            int(MAX_LENGTH * 0.03),
+                            int(MAX_LENGTH * 0.28),
+                            int(MAX_LENGTH * 0.05),
+                            int(MAX_LENGTH * 0.45),
+                ])
+        else:
+            table.set_cols_width([
+                    int(MAX_LENGTH * 0.03),
+                            int(MAX_LENGTH * 0.1),
+                            int(MAX_LENGTH * 0.04),
+                            int(MAX_LENGTH * 0.28),
+                            int(MAX_LENGTH * 0.05),
+                            int(MAX_LENGTH * 0.42),
+                ])
         table.header(['No','Name','PID','EXE', 'Mem', 'CMD'])
         sys.dont_write_bytecode = True
         number = 1
@@ -271,19 +285,30 @@ def get_memory_full_info(pid, separted = True, process_instance = None, tab = 1)
     for i in mem._fields:
         lens.append(len(i))
     MAX = max(lens)
+    
     print "\t" * (tab - 1) + make_colors("MEMORY DETAILS:", 'yellow', ['bold'])
     print "\t" * tab + "RSS" + " " * (MAX - len("RSS")) + " = " + make_colors(convert_size(mem.rss), "yellow")
     print "\t" * tab + "VMS" + " " * (MAX - len("VMS")) + " = " + make_colors(convert_size(mem.vms), "green")
-    print "\t" * tab + "NUM PAGE FAULTS" + " " * (MAX - len("NUM PAGE FAULTS")) + " = " + make_colors(convert_size(mem.num_page_faults), "magenta")
-    print "\t" * tab + "WSET" + " " * (MAX - len("WSET")) + " = " + make_colors(convert_size(mem.wset), "cyan")
-    print "\t" * tab + "PEAK WSET" + " " * (MAX - len("PEAK WSET")) + " = " + make_colors(convert_size(mem.peak_wset), "red")
-    print "\t" * tab + "PAGED POOL" + " " * (MAX - len("PAGED POOL")) + " = " + make_colors(convert_size(mem.paged_pool), "blue")
-    print "\t" * tab + "PEAK PAGED POOL" + " " * (MAX - len("PEAK PAGED POOL")) + " = " + make_colors(convert_size(mem.peak_paged_pool), "red")
-    print "\t" * tab + "NONPAGED POOL" + " " * (MAX - len("NONPAGED POOL")) + " = " + make_colors(convert_size(mem.nonpaged_pool), "green")
-    print "\t" * tab + "PEAK NONPAGED POOL" + " " * (MAX - len("PEAK NONPAGED POOL")) + " = " + make_colors(convert_size(mem.peak_nonpaged_pool), "red")
-    print "\t" * tab + "PAGEFILE" + " " * (MAX - len("PAGEFILE")) + " = " + make_colors(convert_size(mem.pagefile), "yellow")
-    print "\t" * tab + "PEAK PAGEFILE" + " " * (MAX - len("PEAK PAGEFILE")) + " = " + make_colors(convert_size(mem.peak_pagefile), "red")
-    print "\t" * tab + "PRIVATE" + " " * (MAX - len("PRIVATE")) + " = " + make_colors(convert_size(mem.private), "white")
+    if sys.platform == 'win32':
+        print "\t" * tab + "NUM PAGE FAULTS" + " " * (MAX - len("NUM PAGE FAULTS")) + " = " + make_colors(convert_size(mem.num_page_faults), "magenta")
+        print "\t" * tab + "WSET" + " " * (MAX - len("WSET")) + " = " + make_colors(convert_size(mem.wset), "cyan")
+        print "\t" * tab + "PEAK WSET" + " " * (MAX - len("PEAK WSET")) + " = " + make_colors(convert_size(mem.peak_wset), "red")
+        print "\t" * tab + "PAGED POOL" + " " * (MAX - len("PAGED POOL")) + " = " + make_colors(convert_size(mem.paged_pool), "blue")
+        print "\t" * tab + "PEAK PAGED POOL" + " " * (MAX - len("PEAK PAGED POOL")) + " = " + make_colors(convert_size(mem.peak_paged_pool), "red")
+        print "\t" * tab + "NONPAGED POOL" + " " * (MAX - len("NONPAGED POOL")) + " = " + make_colors(convert_size(mem.nonpaged_pool), "green")
+        print "\t" * tab + "PEAK NONPAGED POOL" + " " * (MAX - len("PEAK NONPAGED POOL")) + " = " + make_colors(convert_size(mem.peak_nonpaged_pool), "red")
+        print "\t" * tab + "PAGEFILE" + " " * (MAX - len("PAGEFILE")) + " = " + make_colors(convert_size(mem.pagefile), "yellow")
+        print "\t" * tab + "PEAK PAGEFILE" + " " * (MAX - len("PEAK PAGEFILE")) + " = " + make_colors(convert_size(mem.peak_pagefile), "red")
+        print "\t" * tab + "PRIVATE" + " " * (MAX - len("PRIVATE")) + " = " + make_colors(convert_size(mem.private), "white")
+    else:
+        print "\t" * tab + "PSS" + " " * (MAX - len("PSS")) + " = " + make_colors(convert_size(mem.pss), "white")
+        print "\t" * tab + "SHARED" + " " * (MAX - len("SHARED")) + " = " + make_colors(convert_size(mem.shared), "white")
+        print "\t" * tab + "SWAP" + " " * (MAX - len("SHARED")) + " = " + make_colors(convert_size(mem.swap), "white")
+        print "\t" * tab + "TEXT" + " " * (MAX - len("TEXT")) + " = " + make_colors(convert_size(mem.text), "white")
+        print "\t" * tab + "LIB" + " " * (MAX - len("LIB")) + " = " + make_colors(convert_size(mem.lib), "white")
+        print "\t" * tab + "DATA" + " " * (MAX - len("DATA")) + " = " + make_colors(convert_size(mem.data), "white")
+        print "\t" * tab + "DIRTY" + " " * (MAX - len("DIRTY")) + " = " + make_colors(convert_size(mem.dirty), "white")
+        print "\t" * tab + "DIRTY" + " " * (MAX - len("DIRTY")) + " = " + make_colors(convert_size(mem.dirty), "white")
     print "\t" * tab + "USS" + " " * (MAX - len("USS")) + " = " + make_colors(convert_size(mem.uss), "magenta")
     if separted:
         print "-" * (MAX + 15)
@@ -297,7 +322,7 @@ def get_child(pid, separated = True, process_instance = None, memory_detail = Fa
             print "\t" * tab + "Name   :", make_colors(str(i.name()), 'yellow')
             print "\t" * tab + "PID    :", make_colors(str(i.pid), 'white', 'red')
             print "\t" * tab + "EXE    :", make_colors(str(i.exe()), 'white', 'green')
-            print "\t" * tab + "MEM    :", make_colors(convert_size(i.memory_info().private), 'white', 'blue')
+            print "\t" * tab + "MEM    :", make_colors(convert_size(i.memory_info().vms), 'white', 'blue')
             if str(i.name()) == str(" ".join(i.cmdline())):
                 print "\t" * tab + "CMD    :"
             else:
@@ -324,7 +349,7 @@ def get_child(pid, separated = True, process_instance = None, memory_detail = Fa
             print "\t" * tab + "Name   :", make_colors(str(i.name()), 'yellow')
             print "\t" * tab + "PID    :", make_colors(str(i.pid), 'white', 'red')
             print "\t" * tab + "EXE    :", make_colors(str(i.exe()), 'white', 'green')
-            print "\t" * tab + "MEM    :", make_colors(convert_size(i.memory_info().private), 'white', 'blue')
+            print "\t" * tab + "MEM    :", make_colors(convert_size(i.memory_info().vms), 'white', 'blue')
             if str(i.name()) == str(" ".join(i.cmdline())):
                 print "\t" * tab + "CMD    :"
             else:
@@ -357,7 +382,7 @@ def ps(pfilter = None, sort = None, reverse = False, show_all = False):
             exe = process.exe()
             pid = process.pid
             cpu = process.cpu_percent()
-            mem = process.memory_full_info().private
+            mem = process.memory_full_info().vms
             time = process._create_time
             if pfilter and isinstance(pfilter, list):
                 for i in pfilter:
@@ -679,7 +704,12 @@ def search(query, kill = False, fast = False, memory_detail = False, child_detai
                                 traceback.format_exc()
                 if ver == 0:
                     for n in list_process:
-                        if str(i) == list_process.get(n).get('exe')[0].lower():
+                        if not sys.platform == 'win32':
+                            n_check = list_process.get(n).get('exe')
+                        else:
+                            n_check = list_process.get(n).get('exe')[0]
+                        if str(i) == n_check.lower():
+                            #print "XXX =", list_process.get(n).get('exe')[0].lower()
                             ver += 1
                             p = psutil.Process(list_process.get(n).get('pid'))
                             if kill:
@@ -693,11 +723,11 @@ def search(query, kill = False, fast = False, memory_detail = False, child_detai
                             print "EXE    :", make_colors(str(list_process.get(n).get('exe')), 'white', 'green')
                             print "MEM    :", make_colors(convert_size(list_process.get(n).get('mem')), 'white', 'blue')
                             if str(list_process.get(n).get('name')) == str(" ".join(list_process.get(n).get('cmd'))):
-                                print "CMD      :"
+                                print "CMD    :"
                             elif str(list_process.get(n).get('exe')) == str(" ".join(list_process.get(n).get('cmd'))):
-                                print "CMD      :"
+                                print "CMD    :"
                             else:
-                                print "CMD      :", make_colors(str(" ".join(list_process.get(n).get('cmd'))), 'white', 'blue')                    
+                                print "CMD    :", make_colors(str(" ".join(list_process.get(n).get('cmd'))), 'white', 'blue')                    
                             print "STATUS :", make_colors(STATUS.upper(), 'white', 'red', ['bold', 'blink'])
                             if memory_detail:
                                 get_memory_full_info(list_process.get(n).get('pid'), False)
@@ -719,11 +749,11 @@ def search(query, kill = False, fast = False, memory_detail = False, child_detai
                                 print "EXE    :", make_colors(str(list_process.get(n).get('exe')), 'white', 'green')
                                 print "MEM    :", make_colors(convert_size(list_process.get(n).get('mem')), 'white', 'blue')
                                 if str(list_process.get(n).get('name')) == str(" ".join(list_process.get(n).get('cmd'))):
-                                    print "CMD      :"
+                                    print "CMD    :"
                                 elif str(list_process.get(n).get('exe')) == str(" ".join(list_process.get(n).get('cmd'))):
-                                    print "CMD      :"
+                                    print "CMD    :"
                                 else:
-                                    print "CMD      :", make_colors(str(" ".join(list_process.get(n).get('cmd'))), 'white', 'blue')                    
+                                    print "CMD    :", make_colors(str(" ".join(list_process.get(n).get('cmd'))), 'white', 'blue')                    
                                 print "STATUS :", make_colors(STATUS.upper(), 'white', 'red', ['bold', 'blink'])
                                 if memory_detail:
                                     get_memory_full_info(list_process.get(n).get('pid'), False)
@@ -769,7 +799,7 @@ def restart(query):
                             print "Name   :", make_colors(str(list_process.get(n).get('name')), 'yellow')
                             print "PID    :", make_colors(str(a.pid), 'white', 'red')
                             print "EXE    :", make_colors(str(list_process.get(n).get('exe')), 'white', 'green')
-                            print "MEM    :", make_colors(convert_size(p1.memory_full_info().private), 'white', 'blue')
+                            print "MEM    :", make_colors(convert_size(p1.memory_full_info().vms), 'white', 'blue')
                             print "CMD    :", " ".join(cmd)
                             print "STATUS :", make_colors("STARTED", 'white', 'red', ['bold', 'blink'])
                             try:
@@ -821,7 +851,7 @@ def restart(query):
                             print "Name   :", make_colors(str(list_process.get(n).get('name')), 'yellow')
                             print "PID    :", make_colors(str(a.pid), 'white', 'red')
                             print "EXE    :", make_colors(str(list_process.get(n).get('exe')), 'white', 'green')
-                            print "MEM    :", make_colors(convert_size(p1.memory_full_info().private), 'white', 'blue')
+                            print "MEM    :", make_colors(convert_size(p1.memory_full_info().vms), 'white', 'blue')
                             print "CMD    :", " ".join(cmd)
                             print "STATUS :", make_colors("STARTED", 'white', 'red', ['bold', 'blink'])
                             try:
@@ -872,7 +902,7 @@ def restart(query):
                                 print "Name   :", make_colors(str(list_process.get(n).get('name')), 'yellow')
                                 print "PID    :", make_colors(str(a.pid), 'white', 'red')
                                 print "EXE    :", make_colors(str(list_process.get(n).get('exe')), 'white', 'green')
-                                print "MEM    :", make_colors(convert_size(p1.memory_full_info().private), 'white', 'blue')
+                                print "MEM    :", make_colors(convert_size(p1.memory_full_info().vms), 'white', 'blue')
                                 print "CMD    :", " ".join(cmd)
                                 print "STATUS :", make_colors("STARTED", 'white', 'red', ['bold', 'blink'])
                                 try:
@@ -908,13 +938,13 @@ def restart(query):
                         print "EXE    :", make_colors(str(list_process.get(n).get('exe')), 'white', 'green')
                         print "MEM    :", make_colors(convert_size(list_process.get(n).get('mem')), 'white', 'blue')
                         if str(list_process.get(n).get('name')) == str(" ".join(list_process.get(n).get('cmd'))):
-                            print "CMD      :"
+                            print "CMD    :"
                         elif str(list_process.get(n).get('exe')) == str(" ".join(list_process.get(n).get('cmd'))):
-                            print "CMD      :"
+                            print "CMD    :"
                         elif str(list_process.get(n).get('exe')) in str(" ".join(list_process.get(n).get('cmd'))):
-                            print "CMD      :"
+                            print "CMD    :"
                         else:
-                            print "CMD      :", make_colors(str(" ".join(list_process.get(n).get('cmd'))), 'white', 'blue')                    
+                            print "CMD    :", make_colors(str(" ".join(list_process.get(n).get('cmd'))), 'white', 'blue')                    
                             cmd = list_process.get(n).get('cmd')
                         print "STATUS :", make_colors(STATUS.upper(), 'white', 'red', ['bold', 'blink'])
                         print "+" * 100
@@ -927,7 +957,7 @@ def restart(query):
                                 print "Name   :", make_colors(str(list_process.get(n).get('name')), 'yellow')
                                 print "PID    :", make_colors(str(a.pid), 'white', 'red')
                                 print "EXE    :", make_colors(str(list_process.get(n).get('exe')), 'white', 'green')
-                                print "MEM    :", make_colors(convert_size(p1.memory_full_info().private), 'white', 'blue')
+                                print "MEM    :", make_colors(convert_size(p1.memory_full_info().vms), 'white', 'blue')
                                 print "CMD    :", " ".join(cmd)
                                 print "STATUS :", make_colors("STARTED", 'white', 'red', ['bold', 'blink'])
                                 try:
@@ -962,13 +992,13 @@ def restart(query):
                             print "EXE    :", make_colors(str(list_process.get(n).get('exe')), 'white', 'green')
                             print "MEM    :", make_colors(convert_size(list_process.get(n).get('mem')), 'white', 'blue')
                             if str(list_process.get(n).get('name')) == str(" ".join(list_process.get(n).get('cmd'))):
-                                print "CMD      :"
+                                print "CMD    :"
                             elif str(list_process.get(n).get('exe')) == str(" ".join(list_process.get(n).get('cmd'))):
-                                print "CMD      :"
+                                print "CMD    :"
                             elif str(list_process.get(n).get('exe')) in str(" ".join(list_process.get(n).get('cmd'))):
-                                print "CMD      :"
+                                print "CMD    :"
                             else:
-                                print "CMD      :", make_colors(str(" ".join(list_process.get(n).get('cmd'))), 'white', 'blue')                    
+                                print "CMD    :", make_colors(str(" ".join(list_process.get(n).get('cmd'))), 'white', 'blue')                    
                                 cmd = list_process.get(n).get('cmd')
                             print "STATUS :", make_colors(STATUS.upper(), 'white', 'red', ['bold', 'blink'])
                             print "+" * 100
@@ -981,7 +1011,7 @@ def restart(query):
                                     print "Name   :", make_colors(str(list_process.get(n).get('name')), 'yellow')
                                     print "PID    :", make_colors(str(a.pid), 'white', 'red')
                                     print "EXE    :", make_colors(str(list_process.get(n).get('exe')), 'white', 'green')
-                                    print "MEM    :", make_colors(convert_size(p1.memory_full_info().private), 'white', 'blue')
+                                    print "MEM    :", make_colors(convert_size(p1.memory_full_info().vms), 'white', 'blue')
                                     print "CMD    :", " ".join(cmd)
                                     print "STATUS :", make_colors("STARTED", 'white', 'red', ['bold', 'blink'])
                                     try:

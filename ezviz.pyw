@@ -1,5 +1,4 @@
 
 import module002a,os
-os.chdir(r"c:\Program Files\Ezviz Studio\EzvizStudio.exe")
-data = [r"c:\Program Files\Ezviz Studio\EzvizStudio.exe"]
+data = [r"C:\Program Files (x86)\Ezviz Studio\EzvizProtect.exe"]
 module002a.main(data)

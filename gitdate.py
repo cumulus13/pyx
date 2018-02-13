@@ -1,10 +1,13 @@
 import os
 pid = os.getpid()
-print "PID =", pid
 import sys
 from make_colors import make_colors
 import subprocess
 import time
+import vping
+import tracert
+import colorama
+colorama.init(True)
 
 GIT_BIN = r''
 if GIT_BIN == r'':
@@ -53,6 +56,10 @@ def checkRemote():
 					break
 				else:
 					sys.stdout.write(".")
+			if not os.path.isdir(q):
+				if not vping.vping('8.8.8.8'):
+					print make_colors("Can't PUSH to %s, NO INTERNET CONNECTION" % (make_colors(str(q), 'yellow')), 'white', 'red')
+					sys.exit(0)
 			print make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(q), 'yellow', '', ['blink'], 'termcolor')
 			push = subprocess.Popen([GIT_BIN, "push", "origin", "master"], stdout = subprocess.PIPE, shell= True)
 			(push_out, push_err) = push.communicate()
@@ -69,7 +76,10 @@ def checkRemote():
 		#print make_colors("PUSH to: ", 'white', 'red', ['blink'], 'termcolor') + make_colors("%s" % str(b), 'red', 'yellow', ['bold'], 'termcolor')
 		#os.system(GIT_BIN + " push origin master")
 		#notify('Push to remote origin: %s' % str(b), 'PUSH', host = ['192.168.1.2:23053'])
-		
+		if not os.path.isdir(b):
+			if not vping.vping('8.8.8.8'):
+				print make_colors("Can't PUSH to %s, NO INTERNET CONNECTION" % (make_colors(str(b), 'yellow')), 'white', 'red')
+				sys.exit(0)		
 		print make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(b), 'yellow', '', ['blink'], 'termcolor')
 		push = subprocess.Popen([GIT_BIN, "push", "origin", "master"], stdout = subprocess.PIPE, shell= True)
 		(push_out, push_err) = push.communicate()
@@ -133,6 +143,7 @@ def commit(no_push = False):
 		return
 
 if __name__ == '__main__':
+	print "PID =", pid
 	if len(sys.argv) > 1:
 		if sys.argv[1] == '--no-push':
 			commit(no_push = True)

@@ -1,8 +1,14 @@
 #!/usr/bin/python
 
 # Simple Service Monitor
-import subprocess
+
 import os
+os.environ.update({'TRACEBACK_DEBUG_SERVER': '1',})
+os.environ.update({'TRACEBACK_DEBUGGER_SERVER': '192.168.1.2:50000',})
+os.environ.update({'DEBUG_SERVER': '1',})
+os.environ.update({'DEBUGGER_SERVER': '192.168.1.2:50001',})
+import tracert
+import subprocess
 import sys
 import argparse
 import re

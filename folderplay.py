@@ -3,6 +3,7 @@
 __version__ = '2.0'
 DEBUG = False
 import glob
+import tracert
 import os
 pid = os.getpid()
 print "PID =", pid

@@ -623,3 +623,31 @@
 01-12-2017 22:07:16 COPY FILE: "j:\temp5\downloadFIX\SPIonic.sit" --> l:\Windows\Fonts
 01-12-2017 22:07:16 COPY FILE: "j:\temp6\apps\PROJECT\noVNC\include\Orbitron700.ttf" --> l:\Windows\Fonts
 01-12-2017 22:07:16 COPY FILE: "j:\temp6\PROJECT_EDIT\FeedNotifier\themes\simons_quest\pixelette.eot" --> l:\Windows\Fonts
+11-12-2017 07:15:38 COPY DIRECTORY: "c:\DOWNLOAD\.elinks" --> c:\Apps\Elinks-0.11.6
+11-12-2017 18:40:55 COPY FILE: "Cover.jpg" --> j:\160G Msc\MUSIC\WEST\ROCK\Saigon Kick - DISCOGRAPHY\1991 - Saigon Kick
+11-12-2017 18:40:55 COPY FILE: "Back.jpg" --> j:\160G Msc\MUSIC\WEST\ROCK\Saigon Kick - DISCOGRAPHY\1991 - Saigon Kick
+11-12-2017 18:40:55 COPY FILE: "Disc.jpg" --> j:\160G Msc\MUSIC\WEST\ROCK\Saigon Kick - DISCOGRAPHY\1991 - Saigon Kick
+11-12-2017 18:40:56 COPY FILE: "Cover.jpg" --> j:\160G Msc\MUSIC\WEST\ROCK\Saigon Kick - DISCOGRAPHY\1991 - Saigon Kick
+11-12-2017 18:40:56 COPY FILE: "Back.jpg" --> j:\160G Msc\MUSIC\WEST\ROCK\Saigon Kick - DISCOGRAPHY\1991 - Saigon Kick
+11-12-2017 18:40:56 COPY FILE: "Disc.jpg" --> j:\160G Msc\MUSIC\WEST\ROCK\Saigon Kick - DISCOGRAPHY\1991 - Saigon Kick
+14-12-2017 11:09:06 COPY DIRECTORY: "f:\PROJECTS\REPOSITORY\mp3link_django_static\STATICS\bootstrap" --> c:\DOWNLOAD\TEMPLATES\Form_input\001
+17-12-2017 12:07:12 COPY DIRECTORY: "c:\PYENV\sphinx\app\Pillow-4.3.0\docs\_themes" --> c:\TEMP\INSTALL\python-gsmmodem-new\docs
+23-12-2017 20:56:42 COPY FILE: "c:\SDK\Anaconda2\Lib\make_colors.py" --> L:\
+23-12-2017 20:56:45 COPY FILE: "debug.py" --> L:\
+23-12-2017 20:56:46 COPY FILE: "c:\SDK\Anaconda2\Lib\traceback.ini" --> L:\
+23-12-2017 20:56:47 COPY FILE: "C:\SDK\Anaconda2\lib\traceback.py" --> L:\
+23-12-2017 20:56:47 COPY FILE: "c:\SDK\Anaconda2\Lib\make_colors.py" --> L:\
+23-12-2017 20:56:47 COPY FILE: "debug.py" --> L:\
+23-12-2017 20:56:49 COPY FILE: "c:\SDK\Anaconda2\Lib\traceback.ini" --> L:\
+23-12-2017 20:56:50 COPY FILE: "C:\SDK\Anaconda2\lib\traceback.py" --> L:\
+01-01-2018 10:17:35 COPY DIRECTORY: "..\9.0\etc" --> c:\Apps\bind\9.12.0rc1_x64
+07-01-2018 17:07:09 COPY FILE: "c:\SDK\Anaconda2\Lib\traceback.py" --> l:\
+07-01-2018 17:07:09 COPY FILE: "c:\SDK\Anaconda2\Lib\site-packages\debug.py" --> l:\
+07-01-2018 17:07:09 COPY FILE: "c:\SDK\Anaconda2\Lib\traceback.py" --> l:\
+07-01-2018 17:07:09 COPY FILE: "c:\SDK\Anaconda2\Lib\traceback.py" --> l:\
+07-01-2018 17:07:10 COPY FILE: "c:\SDK\Anaconda2\Lib\site-packages\debug.py" --> l:\
+07-01-2018 17:07:10 COPY FILE: "c:\SDK\Anaconda2\Lib\traceback.py" --> l:\
+07-01-2018 17:08:48 COPY FILE: "c:\SDK\Anaconda2\Lib\syslog.py" --> l:\
+07-01-2018 17:08:48 COPY FILE: "c:\SDK\Anaconda2\Lib\sendgrowl.py" --> l:\
+07-01-2018 17:08:48 COPY FILE: "c:\SDK\Anaconda2\Lib\syslog.py" --> l:\
+07-01-2018 17:08:48 COPY FILE: "c:\SDK\Anaconda2\Lib\sendgrowl.py" --> l:\

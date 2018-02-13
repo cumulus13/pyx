@@ -1,2 +1,3 @@
 @echo off
-nircmd rashangup
+REM  nircmd rashangup "TSEL-BROADBAND (Volume Based-Unlimited)"
+nircmd rashangup "TSEL-TIMEBASED"

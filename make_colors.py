@@ -82,6 +82,11 @@ def make_colors(string, foreground = '', background = '', attrs = '', color_type
     def set_termcolor(foreground = foreground, background = background, attrs = attrs):        
         try:
             import termcolor
+            try:
+                import colorama
+                colorama.init(True, wrap= True)
+            except:
+                pass
             #termcolor.RESET = True
             colors_fore = {
                     'white': 'white',

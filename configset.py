@@ -44,7 +44,7 @@ def get_config_file(filename='', verbosity=None):
     global configname
     if not filename and configname:
         filename = configname
-    debug(filename = filename)
+    #debug(filename = filename)
     if os.path.isfile(os.path.join(os.getcwd(), filename)):
         #print "FILENAME ZZZ=", f
         configname = os.path.join(os.getcwd(), filename)
@@ -81,7 +81,7 @@ def get_config_file(filename='', verbosity=None):
 def write_config(section, option, filename='', value=None, cfg = None, verbosity=None):
     filename = get_config_file(filename, verbosity)
     #cfg = ConfigParser.RawConfigParser(allow_no_value=True, dict_type=MultiOrderedDict)
-    debug(filename = filename)
+    #debug(filename = filename)
     debug(value = value)
     if cfg:
         debug(cfg_not_none = True)
@@ -192,7 +192,7 @@ def read_config4(section, option, filename='', verbosity=None): #format result: 
         
     """
     filename = get_config_file(filename, verbosity)
-    debug(filename = filename)
+    #debug(filename = filename)
     data = []
     cfg = ConfigParser.RawConfigParser(allow_no_value=True, dict_type=MultiOrderedDict) 
     cfg.read(filename)

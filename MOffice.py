@@ -10,12 +10,12 @@ import OneNote
 import MOffice_tools
 
 ket = """
-            1. Microsoft Office Word 2007
-            2. Microsoft Office Access 2007
-	    3. Microsoft Office Excel 2007
-	    4. Microsoft Office PowerPoint 2007
-	    5. Microsoft Office Visio 2007
-	    6. Microsoft Office OneNote 2007
+            1. Microsoft Office Word2016
+            2. Microsoft Office Access2016
+	    3. Microsoft Office Excel2016
+	    4. Microsoft Office PowerPoint2016
+	    5. Microsoft Office Visio2016
+	    6. Microsoft Office OneNote2016
 	    7. Microsoft Office Tools
             0. Main Menu
             00.Exit

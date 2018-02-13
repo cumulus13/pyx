@@ -96,7 +96,13 @@ def sender(logger, severity, facility, message, host, port, tag, timestamp, pid,
 	import netsyslog
 	if isinstance(port, list) and len(port) > 0:
 		if len(port) == 1:
-			logger.PORT = int(port)
+			logger.PORT = int(port[0])
+			logger.add_host(host)
+			pri = netsyslog.PriPart(int(facility), int(severity))
+			header = netsyslog.HeaderPart(timestamp, host)
+			message = netsyslog.MsgPart(str(tag), str(message), pid)
+			packet = netsyslog.Packet(pri, header, message)
+			logger.send_packet(packet)			
 		else:
 			for p in port:
 				logger.PORT = int(p)
