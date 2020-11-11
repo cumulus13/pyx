@@ -1,3 +1,4 @@
+from __future__ import print_function
 import os
 import sys
 import module002
@@ -9,7 +10,7 @@ import array
 #import #dplay2
 import e_console
 import traceback
-import tracert
+#import tracert
 import  subprocess
 
 filename = os.path.split(sys.argv[0])
@@ -21,7 +22,7 @@ def errorA(data,info=None):
     if os.path.splitext(__file__)[1] == ".pyw":
         e_console.main(info, data)
     else:
-        print "\t Error:", data
+        print ("\t Error:", data)
 
 def main(data):
     if not isinstance(data, list):
@@ -29,7 +30,7 @@ def main(data):
     else:
         try:
             if(data[-1] == 'kill' or data[-1] == 'stop'):
-                print "len(sys.argv) =",len(sys.argv)
+                print ("len(sys.argv) =",len(sys.argv))
                 if len(data) > 1:
                     for i in range(0, len(data)):
                         data_app2 = os.path.split(data[i])
@@ -39,7 +40,7 @@ def main(data):
                     os.system("taskkill /f /im " + data_app[1])
 
             elif(data[0] == 'help'):
-                print "\n"
+                print ("\n")
                 errorA(usage,'error')
                 #print "\t", usage
             else:
@@ -81,10 +82,10 @@ def main(data):
                                         zz = "\\".join(z0)
                                         i = zz
                                         break
-                                    
+
                     a.append(i)
                     #print i
-                    
+
                     for x in range(1, len(sys.argv)):
                         if os.path.isfile(os.path.abspath(sys.argv[x])):
                             a.append(os.path.abspath(sys.argv[x]))
@@ -93,34 +94,34 @@ def main(data):
                         else:
                             a.append(sys.argv[x])
                         #print "a =", a
-                    
+
                     if 'elinks' in str(data[0]):
                         if len(sys.argv) > 1:
                             argv_1 = os.path.basename(sys.argv[1])
                             a.remove(a[-1])
                             a.insert(1, argv_1)
-                    print "a =", a        
+                    #print ("a =", a)
                     if "\\links.exe" in str(data[0][-10:]):
-                        os.chdir("F:\\")
+                        os.chdir("D:\\DOWNLOADS")
                     # else:
                     #     os.chdir(os.path.dirname(data[0]))
                     try:
                         #print os.getcwd()
-                        print __file__
+                        #print (__file__)
                         subprocess.Popen(a)
-                    except IndexError, e:
+                    except IndexError:
                         er = traceback.format_exc()
-                        print "\n"
+                        print ("\n")
                         #print "\t", usage
                         errorA(str(er) + "\n" + usage,'error')
                     except:
                         os.chdir(os.path.dirname(__file__))
-                        subprocess.Popen(a)                            
+                        subprocess.Popen(a)
         except:
-            print "\n"
+            print ("\n")
             er =  traceback.format_exc()
             #print "\t", usage
-            print "er =", er
+            print ("er =", er)
             errorA(er + "\n\n" + usage,'error')
             #else:
             #    for i in range(0, len(data)):
@@ -133,50 +134,50 @@ def services(data):
                 for i in range (0,10):
                     try:
                         Cservice.WService(data[i]).stop()
-                        print "\n"
+                        print ("\n")
                         data_status = Cservice.WService(data[i]).status()
                         #dplay2.play(data[i], data_status)
-                        print "\t Service " + data[i] + " is " + data_status
-                    except pywintypes.error, e:
+                        print ("\t Service " + data[i] + " is " + data_status)
+                    except pywintypes.error:
                         er = traceback.format_exc()
                         errorA(str(er),'error')
             elif(sys.argv[1] == "start"):
                 for i in range (0, 10):
                     try:
                         Cservice.WService(data[i]).start()
-                        print "\n"
+                        print ("\n")
                         data_status = Cservice.WService(data[i]).status()
                         #dplay2.play(data[i], data_status)
-                        print "\t Service " + data[i] + " is " + data_status
-                    except pywintypes.error, e:
+                        print ("\t Service " + data[i] + " is " + data_status)
+                    except pywintypes.error:
                         er = traceback.format_exc()
                         errorA(str(er),'error')
             elif(sys.argv[1] == "restart"):
                 for i in range (0, 10):
                     try:
                         Cservice.WService(data[i]).restart
-                        print "\n"
+                        print ("\n")
                         data_status = Cservice.WService(data[i]).status()
                         #dplay2.play(data[i], data_status)
-                        print "\t Service " + data[i] + " is " + data_status
-                    except pywintypes.error, e:
+                        print ("\t Service " + data[i] + " is " + data_status)
+                    except pywintypes.error:
                         er = traceback.format_exc()
                         errorA(str(er),'error')
             elif(sys.argv[1] == "status"):
                 for i in range (0, 10):
-                    print "\n"
+                    print ("\n")
                     data_status = Cservice.WService(data[i]).status()
                     #dplay2.play(data[i], data_status)
-                    print "\t Service " + data[i] + " is " + data_status
+                    print ("\t Service " + data[i] + " is " + data_status)
             else:
-                print "\n"
-                print "\t" + usage2
+                print ("\n")
+                print ("\t" + usage2)
         else:
-            print "\n"
-            print "\t" + usage2
+            print ("\n")
+            print ("\t" + usage2)
 
-    except IndexError, e:
-        print "\n\n"
+    except IndexError:
+        print ("\n\n")
         er = traceback.format_exc()
         errorA(str(er),'error')
 
@@ -187,75 +188,75 @@ def services2(data, svc): #data = list of application[] svc = list of services[]
                 for i in range (0, len(svc)):
                     try:
                         Cservice.WService(svc[i]).stop()
-                        print "\n"
+                        print ("\n")
                         data_status = Cservice.WService(svc[i]).status()
                         #dplay2.play(svc[i], data_status)
-                        print "\t Service " + svc[i] + " is " + data_status
-                    except pywintypes.error, e:
+                        print ("\t Service " + svc[i] + " is " + data_status)
+                    except pywintypes.error:
                         for x in range (0, len(svc)):
                             try:
                                 Cservice.WService(svc[x]).stop()
-                            except pywintypes.error, e:
+                            except pywintypes.error:
                                 er = traceback.format_exc()
                                 errorA(str(er),'error')
-                                print "\n"
+                                print ("\n")
 
                 data_status = Cservice.WService(svc[i]).status()
                 #dplay2.play(svc[x], data_status)
-                print "\t Service " + svc[x] + " is " + data_status
-                print "\n"
+                print ("\t Service " + svc[x] + " is " + data_status)
+                print ("\n")
                 appname = os.path.split(data[i])[1]
                 os.system("taskkill /f /im " + str(appname))
                 #dplay2.#dplay2(appname, " is killed !")
-                print "\n"
-                print "\t Program " + appname.split(".exe")[0] + " is killed !"
+                print ("\n")
+                print ("\t Program " + appname.split(".exe")[0] + " is killed !")
 
             elif(sys.argv[1] == "start"):
                 for i in range (0, len(svc)):
                     try:
                         Cservice.WService(svc[i]).start()
-                        print "\n"
+                        print ("\n")
                         data_status = Cservice.WService(svc[i]).status()
                         #dplay2.play(data[i], data_status)
-                        print "\t Service " + data[i] + " is " + data_status
+                        print ("\t Service " + data[i] + " is " + data_status)
                         appname = os.path.split(data[i])[1]
                         os.system(data[x])
                         #dplay2.#dplay2(data[i], " has been started !")
-                        print "\n"
-                        print "\t Program " + data[i] + " has been started ! \n"
-                    except pywintypes.error, e:
+                        print ("\n")
+                        print ("\t Program " + data[i] + " has been started ! \n")
+                    except pywintypes.error:
                         er = traceback.format_exc()
                         errorA(str(er),'error')
             elif(sys.argv[1] == "status"):
                 for i in range (0, len(svc)):
-                    print "\n"
+                    print ("\n")
                     data_status = Cservice.WService(svc[i]).status()
                     #dplay2.play(svc[i], data_status)
-                    print "\t Service " + svc[i] + " is " + data_status
+                    print ("\t Service " + svc[i] + " is " + data_status)
                     appname = os.path.split(data[i])[1]
                     cekrun.cek2(appname.split(".exe")[0])
             else:
-                print "\n"
-                print "\t" + usage2
+                print ("\n")
+                print ("\t" + usage2)
         else:
-            print "\n"
-            print "\t" + usage2
+            print ("\n")
+            print ("\t" + usage2)
 
-    except IndexError, e:
-        print "\n\n"
+    except IndexError:
+        print ("\n\n")
         er = traceback.format_exc()
         errorA(str(er),'error')
         #print "\t ERROR = ", str(e)
-    except pywintypes.error, e:
+    except pywintypes.error:
         er = traceback.format_exc()
         errorA(str(er),'error')
-        print "\n"
-        print "\t ERROR = ", str(e)
+        print ("\n")
+        print ("\t ERROR = ", str(e))
         for i in range (0, len(svc)):
-            print "\n"
+            print ("\n")
             data_status = Cservice.WService(svc[i]).status()
             #dplay2.play(svc[i], data_status)
-            print "\t Service " + svc[i] + " has been " + data_status
+            print ("\t Service " + svc[i] + " has been " + data_status)
 
 def services3(data):
     try:
@@ -264,47 +265,47 @@ def services3(data):
                 for i in range (0,10):
                     try:
                         os.system("sc stop " + data[i])
-                        print "\n"
+                        print ("\n")
                         data_status = os.system("sc query " + data[i])
                         #dplay2.play(data[i], data_status)
-                        print "\t Service " + data[i] + " is " + data_status
-                    except pywintypes.error, e:
+                        print ("\t Service " + data[i] + " is " + data_status)
+                    except pywintypes.error:
                         pass
             elif(sys.argv[1] == "start"):
                 for i in range (0, 10):
                     try:
                         os.system("sc start " + data[i])
-                        print "\n"
+                        print ("\n")
                         data_status = os.system("sc query " + data[i])
                         #dplay2.play(data[i], data_status)
-                        print "\t Service " + data[i] + " is " + data_status
-                    except pywintypes.error, e:
+                        print ("\t Service " + data[i] + " is " + data_status)
+                    except pywintypes.error:
                         pass
             elif(sys.argv[1] == "restart"):
                 for i in range (0, 10):
                     try:
                         Cservice.WService(data[i]).restart
-                        print "\n"
+                        print ("\n")
                         data_status = Cservice.WService(data[i]).status()
                         #dplay2.play(data[i], data_status)
-                        print "\t Service " + data[i] + " is " + data_status
-                    except pywintypes.error, e:
+                        print ("\t Service " + data[i] + " is " + data_status)
+                    except pywintypes.error:
                         pass
             elif(sys.argv[1] == "status"):
                 for i in range (0, 10):
-                    print "\n"
+                    print ("\n")
                     data_status = os.system("sc query " + data[i])
                     #dplay2.play(data[i], data_status)
-                    print "\t Service " + data[i] + " is " + data_status
+                    print ("\t Service " + data[i] + " is " + data_status)
             else:
-                print "\n"
-                print "\t" + usage2
+                print ("\n")
+                print ("\t" + usage2)
         else:
-            print "\n"
-            print "\t" + usage2
+            print ("\n")
+            print ("\t" + usage2)
 
-    except IndexError, e:
-        print "\n\n"
+    except IndexError:
+        print ("\n\n")
         er = traceback.format_exc()
         errorA(str(er),'error')
         #print "\t ERROR = ", str(e)
@@ -317,72 +318,72 @@ def services4(data, svc):
                     try:
                         os.system("sc stop " + svc[i])
 
-                        print "\n"
+                        print ("\n")
                         data_status = os.system("sc query " + svc[i])
                         #dplay2.play(svc[i], data_status)
-                        print "\t Service " + svc[i] + " is " + data_status
-                    except pywintypes.error, e:
+                        print ("\t Service " + svc[i] + " is " + data_status)
+                    except pywintypes.error:
                         for x in range (0, len(svc)):
                             try:
                                 os.system("sc stop " + svc[x])
-                            except pywintypes.error, e:
+                            except pywintypes.error:
                                 pass
-                    print "\n"
+                    print ("\n")
                     data_status = os.system("sc query " + svc[x])
                     #dplay2.play(svc[x], data_status)
-                    print "\t Service " + svc[x] + " is " + data_status
-                    print "\n"
+                    print ("\t Service " + svc[x] + " is " + data_status)
+                    print ("\n")
                     appname = os.path.split(data[i])[1]
                     os.system("taskkill /f /im " + str(appname))
                     #dplay2.#dplay2(appname, " is killed !")
-                    print "\n"
-                    print "\t Program " + appname.split(".exe")[0] + " is killed !"
+                    print ("\n")
+                    print ("\t Program " + appname.split(".exe")[0] + " is killed !")
 
             elif(sys.argv[1] == "start"):
                 for i in range (0, len(svc)):
                     try:
                         os.system("sc start " + svc[i])
-                        print "\n"
+                        print ("\n")
                         data_status = os.system("sc query " + svc[i])
                         #dplay2.play(svc[i], data_status)
-                        print "\t Service " + svc[i] + " is " + data_status
+                        print ("\t Service " + svc[i] + " is " + data_status)
                         appname = os.path.split(data[i])[1]
                         os.system(data[x])
                         #dplay2.#dplay2(data[i], " has been started !")
-                        print "\n"
-                        print "\t Program " + data[i] + " has been started ! \n"
-                    except pywintypes.error, e:
+                        print ("\n")
+                        print ("\t Program " + data[i] + " has been started ! \n")
+                    except pywintypes.error:
                         pass
 
             elif(sys.argv[1] == "status"):
 
                 for i in range (0, len(svc)):
-                    print "\n"
+                    print ("\n")
                     data_status = os.system("sc query " + svc[i])
                     #dplay2.play(svc[i], data_status)
-                    print "\t Service " + svc[i] + " is " + data_status
+                    print ("\t Service " + svc[i] + " is " + data_status)
                     appname = os.path.split(data[i])[1]
                     cekrun.cek2(appname.split(".exe")[0])
 
             else:
-                print "\n"
-                print "\t" + usage2
+                print ("\n")
+                print ("\t" + usage2)
         else:
-            print "\n"
-            print "\t" + usage2 
+            print ("\n")
+            print ("\t" + usage2)
 
-    except IndexError, e:
-        print "\n\n"
+    except IndexError:
+        print ("\n\n")
         er = traceback.format_exc()
         errorA(str(er),'error')
-    except pywintypes.error, e:
-        print "\n"
-        print "\t ERROR = ", str(e)
+    except pywintypes.error:
+        print ("\n")
+        print ("\t ERROR = ", str(e))
         for i in range (0, len(svc)):
-            print "\n"
+            print ("\n")
             data_status = os.system("sc query " + svc[i])
             #dplay2.play(svc[i], data_status)
-            print "\t Service " + svc[i] + " has been " + data_status
+            print ("\t Service " + svc[i] + " has been " + data_status)
 
 
 def main2(data,service):
@@ -393,8 +394,8 @@ def main2(data,service):
                 os.system("taskkill /f /im " + data_app[1])
                 module003.stop(service)
             elif(sys.argv[1] == 'help'):
-                print "\n"
-                print "\t", usage2
+                print ("\n")
+                print ("\t", usage2)
             elif(sys.argv[1] == "start" or "stop" or "restart" or "status"):
                 if(sys.argv[1] == "restart"):
                     os.system("taskkill /f /im " + data_app[1])
@@ -411,13 +412,13 @@ def main2(data,service):
                 else:
                     pass
             else:
-                print "\n"
-                print "\t", usage2
+                print ("\n")
+                print ("\t", usage2)
         else:
             module003.start(service)
             module002.main(data)
-    except IndexError, e:
-        print "\n"
+    except IndexError:
+        print ("\n")
         er = traceback.format_exc()
         errorA(str(er) + "\n" + usage2,'error')
 """

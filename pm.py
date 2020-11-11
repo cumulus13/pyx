@@ -10,9 +10,8 @@ import send2trash
 import thread
 from make_colors import make_colors
 import easygui
-import debugger
-debugger.DEBUG = os.getenv('DEBUG')
-debug = debugger.debug
+from debug import debug
+# debug = debugger.debug
 
 class pm(object):
     def __init__(self, MASTER_PATH = None):

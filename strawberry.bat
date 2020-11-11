@@ -1,0 +1,1 @@
+SET PATH=%PATH%;C:\SDK\Strawberry\c\bin;C:\SDK\Strawberry\perl\site\bin;C:\SDK\Strawberry\perl\bin

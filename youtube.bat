@@ -1,2 +1,2 @@
 @echo off
-c:\SDK\Anaconda2\python.exe "f:\PROJECTS\REPOSITORY\pyyoutube\youtube.py" %*
+c:\SDK\Anaconda3\python.exe "D:\PROJECTS2\pyyoutube\youtube.py" %*

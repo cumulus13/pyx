@@ -1,4 +1,4 @@
-#!/user/bin/python
+#!c:/SDK/Anaconda2/python.exe
 # -*- encoding: iso-8859-1 -*-
 
 import sys
@@ -169,7 +169,7 @@ def main(severity, facility, message, host, port = [], tag = 'TEST', timestamp =
 					sender(logger, severity, facility, message, host, port, tag, timestamp, pid, debug)
 				else:
 					for i in host:
-						logger.remove_host('*')
+						# logger.remove_host('*')
 						sender(logger, severity, facility, message, i, port, tag, timestamp, pid, debug)
 						
 		else:
@@ -221,7 +221,7 @@ def main(severity, facility, message, host, port = [], tag = 'TEST', timestamp =
 				for p in port:
 					syslog.syslog(str(message), int(severity), int(facility), str(host[0]), int(p))
 			else:
-				syslog.syslog(str(message), int(severity), int(facility), str(host[0]), int(port))
+				syslog.syslog(str(message), int(severity), int(facility), str(host[0]), int(port[0]))
 	try:
 		use_netsyslog(severity, facility, message, host, port, tag, timestamp, pid, debug)
 	except:

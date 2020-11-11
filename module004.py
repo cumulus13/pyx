@@ -1,5 +1,6 @@
 import os
 import sys, errno
+import traceback
 #import dplay2
 #import pyttsx
 #import time
@@ -41,7 +42,7 @@ def status(service):
             #dplay2.play(datan02[0], "RUNNING")
             pass
         elif(data005[2] == "START_PENDING"):
-			pass
+            pass
             #sound(datan02[0], "START PENDING")
             #dsound = r"d:\SOUND\Apache Pending.wav"
             #dplay2.play(datan02[0], "START PENDING")
@@ -56,19 +57,19 @@ def status(service):
             #dplay2.play(datan02[0], "UNKNOW")
             pass
 
-        print "\n"
-        print "\t Service " + datan02[0] + " is : ", data005[2]
+        print ("\n")
+        print ("\t Service " + datan02[0] + " is : ", data005[2])
 
         return data005[2]
 
 
     #except IndexError, e:
     #	os.system('cls')
-    #	print "\n"
+    #	print ("\n")
     #	print "ERROR With Status : ", "1.", e, "\n"
     #	print "                     2. Service Not Found !" 
-    #	print "\n"
+    #	print ("\n")
     #	#print "\t Service " + datan02[0] + "is : ", data005[2]
 
-    except IOError, e:
-        print e
+    except IOError:
+        print (traceback.format_exc())

@@ -1,4 +1,4 @@
 
 import module002a,os
-data = [r"c:\Program Files\Opera Developer\20.0.1380.1\opera.exe"]
+data = [r"c:\Program Files\Opera developer\launcher.exe"]
 module002a.main(data)

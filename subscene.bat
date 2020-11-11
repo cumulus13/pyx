@@ -1,4 +1,6 @@
 @echo off
-rem set me=%CD%
-rem cd /d "f:\PROJECTS\REPOSITORY\subscene"
-c:\SDK\Anaconda2\python.exe "f:\PROJECTS\REPOSITORY\subscene\subscene.py" %*
+SET me1=%CD%
+CD /d "d:\PROJECTSx\subscene"
+"c:\sdk\Anaconda2\python.exe" "d:\PROJECTSx\subscene\subscene.py" %*
+CD /d "%me1%"
+SET me1=

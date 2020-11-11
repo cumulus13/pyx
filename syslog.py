@@ -18,7 +18,8 @@ the network.
 """
 
 import socket
-
+import sys
+PYVER = sys.version_info.major
 # I'm a python novice, so I don't know of better ways to define enums
 
 FACILITY = {
@@ -43,6 +44,11 @@ def syslog(message, level=LEVEL['notice'], facility=FACILITY['daemon'],
 
 	sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 	data = '<%d>%s' % (level + facility*8, message)
-	sock.sendto(data, (host, port))
+	if PYVER == 3:
+		data = bytes(data.encode('utf-8'))
+	try:
+		sock.sendto(data, (host, port))
+	except:
+		pass
 	sock.close()
 

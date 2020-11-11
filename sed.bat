@@ -1,2 +1,2 @@
 @echo off
-c:\Tools\DevKit32\bin\sed.exe %*
+C:\PentestBox\base\ruby_devkit\bin\sed.exe %*

@@ -1,9 +1,12 @@
 #!/usr/bin/python
+#!encoding: utf-8
 
 import os
 import sys
 import optparse
 import re
+from debug import debug
+from make_colors import make_colors
 
 class gem(object):
     def __init__(self, url=None, path=None):
@@ -11,46 +14,32 @@ class gem(object):
         self.url = url
         self.path = path
 
-    def download(self, gems, url="http://127.0.0.1:50000", path=None, source='https://rubygems.org/', version=None):
-        if url==None:
-            url="http://127.0.0.1:50000"
-        print "downloading gem:", gems, "..."
-        # if path == None:
-        # 	if self.path != None:
-        # 		path = self.path
-        # 	else:
-        # 		return SyntaxError('Path Not Definition !')
-        # if self.url != None:
-        # 	url = self.url
+    # def download(self, gems, url="http://127.0.0.1:50000", path=None, source='https://rubygems.org/', version=None):
+    def download(self, gems_name, source='https://rubygems.org/', upload_to_geminbox=False, geminabox_server='127.0.0.1', geminabox_port='5000', version=None):
+    	debug(print_function_parameters=True)
+        print "downloading gem:", gems_name, "..."
+        
         if version:
-            g = os.popen("gem fetch %s -v '%s'--source %s" %(gems, version, source)).readlines()
+            g = os.popen("gem fetch %s -v '%s'--source %s" %(gems_name, version, source)).readlines()
         else:
-            g = os.popen('gem fetch %s --source %s' %(gems, source)).readlines()
-        # print "G =", g
-        # d = ['Downloaded ruby-growl-4.1\n']
-        # print g[0]
+            g = os.popen('gem fetch %s --source %s' %(gems_name, source)).readlines()
+        debug(g=g)
         if len(g) > 0:
             d1 = re.split(" |\n", g[0])
-            # print "d1 =", d1[1]
-            if d1:
-                # print "PASS geminabox"
-                h = os.popen('gem inabox %s' %(str(d1) + ".gem -o")).readlines()
-                # print "H =", h
-                print h[0]
+          	debug(d1=d1)
+          	if upload_to_geminbox:
+	            if d1:
+	                # print "PASS geminabox"
+	                h = os.popen('gem inabox %s' %(str(d1) + ".gem -o")).readlines()
+	                # print "H =", h
+	                print h[0]
         else:
             print "No Gem name: %s" %(gems)
 
-    def multidownload(self, gems, path, source, repo = None, version=None):
+    def multidownload(self, gems_names, source='https://rubygems.org/', upload_to_geminbox=False, geminabox_server='127.0.0.1', geminabox_port='5000', version=None):
         if isinstance(gems, list):
-            for i in gems:
-                if repo:
-                    if isinstance(repo, list):
-                        for r in repo:
-                            self.download(i, r, path, source, version)
-                    else:
-                        self.download(i, repo, path, source, version)                    
-                else:
-                    self.download(i, path=path, source=source, version=version)
+            for i in gems_names:
+                self.download(i, source, upload_to_geminbox, geminabox_server, geminabox_port, version)
 
     def cb(self, option, opt_str, value, parser):
         args=[]

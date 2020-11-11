@@ -3,7 +3,7 @@
 REM Command file for Sphinx documentation
 
 if "%SPHINXBUILD%" == "" (
-	set SPHINXBUILD=sphinx-build
+	set SPHINXBUILD=c:\SDK\Anaconda3\Scripts\sphinx-build.exe
 )
 set BUILDDIR=_build
 set ALLSPHINXOPTS=-n -d %BUILDDIR%/doctrees %SPHINXOPTS% .

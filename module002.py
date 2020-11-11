@@ -1,3 +1,4 @@
+from __future__ import print_function
 import sys,os
 import errno
 import traceback
@@ -39,40 +40,40 @@ def main(data):
         #else:
         #    os.spawnv(os.P_NOWAIT, datax[0], data[1], '')
         """
-    except OSError, e:
+    except OSError:
         data_e = traceback.format_exc()
         if e.errno == errno.ENOEXEC:
             #os.system("cls")
-            print "\n";
-            print "\t\t Program Tidak Dapat Di Eksekusi !"
-            print "\n"
-            print "\t\t Programming development : "
-            print "\n"
-            print "\t\t " + str(data_e)
+            print ("\n")
+            print ("\t\t Program Tidak Dapat Di Eksekusi !")
+            print ("\n")
+            print ("\t\t Programming development : ")
+            print ("\n")
+            print ("\t\t " + str(data_e))
         elif e.errno == errno.ENOENT:
             #os.system("cls")
-            print "\n";
-            print "\t\t Program Tidak Dapat Ditemukan !"
-            print "\n"
-            print "\t\t Programming development : "
-            print "\n"
-            print "\t\t " + str(data_e)
+            print ("\n")
+            print ("\t\t Program Tidak Dapat Ditemukan !")
+            print ("\n")
+            print ("\t\t Programming development : ")
+            print ("\n")
+            print ("\t\t " + str(data_e))
         else:
             #os.system("cls")
-            print "\n";
-            print "\t\t Program Tidak Dapat Berjalan Pada Mode System Operasi Win32 !"
-            print "\n"
-            print "\t\t Programming development : "
-            print "\n"
-            print "\t\t " + str(data_e)
+            print ("\n")
+            print ("\t\t Program Tidak Dapat Berjalan Pada Mode System Operasi Win32 !")
+            print ("\n")
+            print ("\t\t Programming development : ")
+            print ("\n")
+            print ("\t\t " + str(data_e))
             
-    except IndexError, e:
+    except IndexError:
         os.system('cls')
         data_e = traceback.format_exc()
-        print "\n"
-        print "\t\t Programming development : "
-        print "\n"
-        print "\t\t " + str(data_e)
+        print ("\n")
+        print ("\t\t Programming development : ")
+        print ("\n")
+        print ("\t\t " + str(data_e))
 
 def kill(data):
     
@@ -84,22 +85,22 @@ def kill(data):
         #os.execlp(data).joint(sys.argv[1])
         os.system("processx -k " + data2)
         
-    except OSError, e:
+    except OSError:
         
         if e.errno == errno.ENOEXEC:
             #os.system("cls")
-            print "\n";
-            print "\t\t Program Tidak Dapat Di Eksekusi !"
+            print ("\n")
+            print ("\t\t Program Tidak Dapat Di Eksekusi !")
         elif e.errno == errno.ENOENT:
             #os.system("cls")
-            print "\n";
-            print "\t\t Program Tidak Dapat Ditemukan !"
+            print ("\n")
+            print ("\t\t Program Tidak Dapat Ditemukan !")
         else:
             #os.system("cls")
-            print "\n";
-            print "\t\t Program Tidak Dapat Berjalan Pada Mode System Operasi Win32 !"
+            print ("\n")
+            print ("\t\t Program Tidak Dapat Berjalan Pada Mode System Operasi Win32 !")
             
-    except IndexError, e:
+    except IndexError:
         os.system('cls')
-        print "\n"
-        print "\t Error With Status : ", e
+        print ("\n")
+        print ("\t Error With Status : ", e)

@@ -1,2 +1,2 @@
 @echo off
-c:\TOOLS\psql\psql.exe %*
+"c:\sdk\PostgreSQL\13\bin\psql.exe" %*

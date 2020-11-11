@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!c:/SDK/Anaconda2/python.exe
 
 import platform
 

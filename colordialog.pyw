@@ -10,17 +10,35 @@
 """
 
 import sys
-from PyQt4 import QtGui
-from PyQt4 import QtCore
+try:
+    from PyQt4 import QtGui
+    from PyQt4 import QtCore
+    obj = QtGui.QDialog
+    APP = QtGui.QApplication
+    version = '4'
+except ImportError:
+    from PyQt5 import QtGui
+    from PyQt5 import QtWidgets
+    from PyQt5 import QtCore
+    obj = QtWidgets.QWidget
+    APP = QtWidgets.QApplication
+    version = 5
+    # from PyQt5.Qt import PYQT_VERSION_STR as version
 import clipboard
 import time
 import warnings
 
-class ColorDialog(QtGui.QDialog):
+class ColorDialog(obj):
     def __init__(self, parent=None):
+        if version == 4:
+            QtGui.QWidget.__init__(self, parent)
+        if version == 5:
+            QtWidgets.QWidget.__init__(self, parent)
+        if version == 4:
+            self.widget = QtGui.QWidget(self)
+        if version == 5:
+            self.widget = QtWidgets.QWidget(self)
 
-        QtGui.QWidget.__init__(self, parent)
-        self.widget = QtGui.QWidget(self)
         color = QtGui.QColor(0, 0, 0)
     
         #self.setGeometry(300, 300, 250, 180)
@@ -28,15 +46,24 @@ class ColorDialog(QtGui.QDialog):
         self.setWindowTitle('ColorDialog')
         self.setWindowIcon(QtGui.QIcon(r'F:\IMAGES\programming\pyqt4.png'))
 
-        self.button = QtGui.QPushButton('Dialog', self)
+        if version == 4:
+            self.button = QtGui.QPushButton('Dialog', self)
+            self.button1 = QtGui.QPushButton('Translate', self)
+            self.lineedit = QtGui.QLineEdit(self)
+        if version == 5:
+            self.button = QtWidgets.QPushButton('Dialog', self)
+            self.button1 = QtWidgets.QPushButton('Translate', self)
+            self.lineedit = QtWidgets.QLineEdit(self)
+
         self.button.setFocusPolicy(QtCore.Qt.NoFocus)
         self.button.move(20, 20)
         
-        self.button1 = QtGui.QPushButton('Translate', self)
+
+        
         self.button1.setFocusPolicy(QtCore.Qt.NoFocus)
         self.button1.move(20, 138)
 
-        self.lineedit = QtGui.QLineEdit(self)
+        
         #self.lineedit.setFocusPolicy(QtCore.Qt.NoFocus)
         self.lineedit.setGeometry(0,0, 100,21)
         self.lineedit.move(130, 139)
@@ -102,7 +129,7 @@ class ColorDialog(QtGui.QDialog):
                 % col.name())
             self.lineedit.setText(col.name())
 
-app = QtGui.QApplication(sys.argv)
+app = APP(sys.argv)
 cd = ColorDialog()
 cd.show()
 app.exec_()

@@ -1,14 +1,14 @@
 import os
 import sys
-import configset
+from configset import configset
 import argparse
 import make_colors
 
-class mp3val(configset.usage):
+class mp3val(configset):
 	def __init__(self):
 		super(mp3val, self)
-		self.conf = configset.get_config_file('conf.ini')
-		self.exe = configset.read_config('MP3VAL', 'EXE_PATH')
+		self.configname = os.path.join(os.path.dirname(__file__), 'conf.ini')
+		self.exe = self.read_config('MP3VAL', 'EXE_PATH')
 
 	def mp3(self, path=None):
 		if path == None:

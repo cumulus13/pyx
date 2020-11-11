@@ -1,233 +1,66 @@
-import win32clipboard as w 
-import win32con
-import sys
+import shutil
 import os
-import pywintypes
-import traceback
-import tracert  
-import sendgrow
-import winsound
+import sys
+from make_colors import make_colors
+import argparse
+import re
 
-__version__ = "2.0"
-__test__ = "0.3"
-__author__ = "licface"
-__url__ = "licface@yahoo.com"
-__target__ = "all"
-__build__ = "2.7"
-__error__ = traceback.format_exc(print_msg= False)
-__filename__ = os.path.basename(sys.argv[0])
-__usage__ = """\n\n
-	 Please insert a Word want to be Copy ! \n
-	 Default data is this path = "data_argv" """
+class CPX(object):
+    def __init__(self):
+        super(CPX, self)
 
-CLIP_APP = 'c:\TOOLS\EXE\cpath.exe'
-
-def play(sound_file):
-    winsound.PlaySound(sound_file, winsound.SND_ALIAS)    
-
-def sendnotify(dcopy, title="CPM - Copy Clipboard", msg="now clipboard fill with = "):
-    try:
-        mclass = sendgrow.growl()
-        icon = r'f:\ICONS\FatCow_Icons32x32\clipboard_empty.png'
-        event = 'CPM - Copy Clipboard'
-        text =  msg + "\"" + str(dcopy) +  "\""
-        appname = 'cpm'
-        mclass.publish(appname, event, title, text, iconpath=icon)
-    except:
-        #traceback.format_exc()
-        pass
-
-def getText():
-    try:
-        import clipboard
-        return clipboard.paste()
-    except:
-        #traceback.format_exc()
-        w.OpenClipboard() 
-        d=w.GetClipboardData(win32con.CF_TEXT) 
-        w.CloseClipboard() 
-        return d 
-
-def setText(aType,aString):
-    if os.path.isfile(CLIP_APP):
-        os.system(CLIP_APP + " " + aString)
-    else:
-        try:
-            import clipboard
-            clipboard.copy(aString)
-        except:
-            w.OpenClipboard()
-            w.EmptyClipboard()
-            w.SetClipboardData(aType,aString)
-            sound_file = r'f:\SOUNDS\OTHER\sent.wav'
-            play(sound_file)
-            w.CloseClipboard()
-
-def linuxpath():
-    data_ex = os.getcwd().replace('\\','/')
-    data_argv = data_ex + "/" + sys.argv[2]
-    data_clip_set = setText(w.CF_TEXT, data_argv)
-    data_clip = getText()
-    sendnotify(data_clip)
-    print "\n"
-    print "\t Sucessfully set clipboard ! \n"
-    print "\t now clipboard fill with = \"" + data_clip
-
-def linuxpath2():
-    data_ex = os.getcwd().replace('\\','/')
-    data_argv = data_ex + "/" + sys.argv[2] + '/'
-    data_clip_set = setText(w.CF_TEXT, data_argv)
-    data_clip = getText()
-    sendnotify(data_clip)
-    print "\n"
-    print "\t Sucessfully set clipboard ! \n"
-    print "\t now clipboard fill with = \"" + data_clip 
-
-def winpath(session=None):
-    if session == None:
-        data_ex = sys.argv[1].replace('/','\\')
-        #print "data_ex = ", data_ex
-        data_argv = data_ex + "\\" + sys.argv[2] + '\\'
-        data_clip_set = setText(w.CF_TEXT, data_argv)
-        add_slash = ''
-    elif session == 1:
-        data_ex = os.getcwd().replace('\\','/')
-        data_clip_set = setText(w.CF_TEXT, data_ex)
-        add_slash = '/'
-    elif session == 0:
-        data_ex = os.getcwd().replace('\\','/')
-        data_clip_set = setText(w.CF_TEXT, data_ex)
-        add_slash = ''
-    elif session == 2:
-        data_ex = os.path.join(os.getcwd(),sys.argv[2].replace('/','\\'))
-        #print "data_ex = ", data_ex
-        data_argv = data_ex + '\\'
-        data_clip_set = setText(w.CF_TEXT, data_argv)
-        add_slash = ''
-    else:
-        print __usage__
-    data_clip = getText()
-    sendnotify(data_clip)
-    print "\n"
-    print "\t Sucessfully set clipboard ! \n"
-    print "\t now clipboard fill with = \"" + str(data_clip) + add_slash
-
-def winpath2():
-    data_ex = os.getcwd()
-    #data_argv = data_ex + "\\" + sys.argv[2]
-    data_argv = os.path.join(data_ex, os.path.abspath('\\'.join(sys.argv[2:])))
-    print "data_argv =", data_argv
-    data_clip_set = setText(w.CF_TEXT, data_argv)
-    data_clip = getText()
-    sendnotify(str(data_argv))
-    print "\n"
-    print "\t Sucessfully set clipboard ! \n"
-    print "\t now clipboard fill with = \"" + str(data_argv) + "\""
-
-try:
-    if (len(sys.argv) > 1):
-        if (sys.argv[1] == '+'):
-            if (sys.argv[-1] == 'linux'):
-                linuxpath()
-            elif (sys.argv[-1] == '/'):
-                linuxpath2()
-            elif (sys.argv[-1] == '\\'):
-                winpath(2)
-            else:
-                #print "AAA"
-                winpath2()
-        elif (sys.argv[1] == '/'):
-            try:
-                if (sys.argv[2] == '/'):
-                    winpath(1)
-            except IndexError, e:
-                winpath(1)
-        elif (sys.argv[1] == 'linux'):
-            try:
-                if (sys.argv[2] == '/'):
-                    winpath(1)
-            except IndexError, e:
-                winpath(0)
-        elif (sys.argv[1] == '\\'):
-            try:
-                if (sys.argv[2] == '\\'):
-                    data_ex = os.getcwd().replace('/','\\')
-                    data_clip_set = setText(w.CF_TEXT, data_ex)
-                    data_clip = getText()
-                    sendnotify(data_clip)
-                    print "\n"
-                    print "\t Sucessfully set clipboard ! \n"
-                    #messages = (("Info", "Sucessfully set clipboard ! \n now clipboard fill with = \"" + data_clip))
-                    #img = images_path + images['info']
-                    print "\t now clipboard fill with = \"" + data_clip + '\\'
-            except IndexError, e:
-                data_ex = os.getcwd().replace('/','\\')
-                data_clip_set = setText(w.CF_TEXT, data_ex)
-                data_clip = getText()
-                sendnotify(data_clip)
-                print "\n"
-                print "\t Sucessfully set clipboard ! \n"
-                #messages = (("Info", "Sucessfully set clipboard ! \n now clipboard fill with = \"" + data_clip))
-                #img = images_path + images['info']
-                print "\t now clipboard fill with = \"" + data_clip 
+    def copy(self, src, dst, overwrite=False, colors=True):
+        if not overwrite:
+            status_overwrite = ''
         else:
-            if (sys.argv[-1] == 'linux'):
-                data_argv = sys.argv[1].replace('\\','/') 
-                data_clip_set = setText(w.CF_TEXT, data_argv)
-                data_clip = getText()
-                sendnotify(data_clip)
-                print "\n"
-                print "\t Sucessfully set clipboard ! \n"
-                #messages = (("Info", "Sucessfully set clipboard ! \n now clipboard fill with = \"" + data_clip))
-                #img = images_path + images['info']
-                print "\t now clipboard fill with = \"" + data_clip
-            elif (sys.argv[-1] == '/'):
-                data_argv = sys.argv[1].replace('\\','/') + '/'
-                data_clip_set = setText(w.CF_TEXT, data_argv)
-                data_clip = getText()
-                sendnotify(data_clip)
-                print "\n"
-                print "\t Sucessfully set clipboard ! \n"
-                #messages = (("Info", "Sucessfully set clipboard ! \n now clipboard fill with = \"" + data_clip))
-                #img = images_path + images['info']
-                print "\t now clipboard fill with = \"" + data_clip 
-            elif (sys.argv[-1] == '\\'):
-                data_argv = sys.argv[1].replace('/','\\') + '\\'
-                data_clip_set = setText(w.CF_TEXT, data_argv)
-                data_clip = getText()
-                sendnotify(data_clip)
-                print "\n"
-                print "\t Sucessfully set clipboard ! \n"
-                #messages = (("Info", "Sucessfully set clipboard ! \n now clipboard fill with = \"" + data_clip))
-                #img = images_path + images['info']
-                print "\t now clipboard fill with = \"" + data_clip 
-            else:   
-                data_argv = sys.argv[1]
-                data_clip_set = setText(w.CF_TEXT, data_argv)
-                data_clip = getText()
-                sendnotify(data_argv)
-                print "\n"
-                print "\t Sucessfully set clipboard ! \n"
-                #messages = (("Info", "Sucessfully set clipboard ! \n now clipboard fill with = \"" + data_clip))
-                #img = images_path + images['info']
-                print "\t now clipboard fill with = \"" + data_clip + "\""
-    else:
-        data_ex = os.getcwd()
-        data_argv = data_ex + "\\" 
-        data_clip_set = setText(w.CF_TEXT, data_argv)
-        data_clip = getText()
-        sendnotify(data_clip)
+            status_overwrite = "[OVERWRITE]"
+        if overwrite:
+            if os.path.isfile(os.path.join(dst, src)):
+                os.remove(os.path.join(dst, src))
+            shutil.copy2(src, dst)
+        else:
+            if os.path.isfile(os.path.join(dst, src)):
+                pass
+            else:
+                shutil.copy2(src, dst)
 
-        print "\n\n"
-        print "\t Please insert a Word want to be Copy ! \n"
-        print "\t Default data is this path = ", data_argv
-except IndexError as e:
-    traceback.format_exc()
-    print "\n\n"
-    print "\t ERROR : ", e
-    sendnotify("ERROR: " + str(e), title="ERROR (cpm)", msg="")
+        if colors:
+            print make_colors(" COPY FILE: ", 'lightgreen', color_type= 'colorama') + make_colors("\"", 'cyan') + make_colors(str(src), 'lightyellow', color_type= 'colorama') + make_colors('"', 'cyan') + make_colors(" --> ", 'white', attrs= ['bold']) + make_colors("\"", 'cyan') + make_colors(os.path.abspath(dst), 'lightgreen', color_type= 'colorama') + make_colors("\"", 'cyan') + make_colors(status_overwrite, 'white', 'red', color_type= 'colorama', attrs=['bold'])
+        else:
+            print ' COPY FILE: "{0}" -> "{1}" {2}'.format(src, os.path.abspath(dst), status_overwrite)
 
-except pywintypes.error as e:
-    print "\n\n"
-    print "\t ERROR : ", e
-    sendnotify("ERROR: " + str(e), title="ERROR (cpm)", msg="")
+    def copy_start(self, pattern, dst, overwrite=False, recursive=False, colors=True):
+        if recursive:
+            list_files = os.popen('dir /b /s %s'%(pattern))
+        else:
+            list_files = os.popen('dir /b %s'%(pattern))
+        # print "LIST FILES:"
+        # print list_files.readlines()
+        src_dir = os.path.dirname(pattern)
+
+        if not src_dir:
+            src_dir = os.getcwd()
+        for i in list_files.readlines():
+            src = os.path.join(src_dir, str(i).split("\n")[0])
+            self.copy(src, dst, overwrite, colors)
+
+    def usage(self):
+        parser = argparse.ArgumentParser(formatter_class= argparse.RawTextHelpFormatter)
+        parser.add_argument('SRC', action='store', help='Source File, Pattern')
+        parser.add_argument('DST', action='store', help='Destination Directory')
+        parser.add_argument('-o', '--overwrite', action='store_true', help='Overwrite action')
+        parser.add_argument('-r', '--recursive', action='store_true', help='copy with pattern recursive/with sub Directory')
+        parser.add_argument('-c', '--colors', action='store_true', help='show log int color')
+        if len(sys.argv) == 1:
+            parser.print_help()
+        else:
+            args = parser.parse_args()
+            if "*" in args.SRC:
+                self.copy_start(args.SRC, args.DST, args.overwrite, args.recursive, args.colors)
+            else:
+                self.copy_start(args.SRC, args.DST, args.overwrite, args.colors)
+
+
+if __name__ == '__main__':
+    c = CPX()
+    c.usage()

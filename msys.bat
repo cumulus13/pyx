@@ -1,10 +1,10 @@
 @echo off
 set me=%CD%
-cd /D "C:\msys\1.0\bin"
+cd /D "c:\Ruby244\msys64\usr\bin"
+bash.exe -l
+rem set MSYSTEM=MINGW32
 
-set MSYSTEM=MINGW32
+rem set MSYSCON=sh.exe
 
-set MSYSCON=sh.exe
-
-start %COMSPEC% /C sh.exe --login -i
+rem start %COMSPEC% /C sh.exe --login -i
 cd /D %me%

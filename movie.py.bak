@@ -1,0 +1,67 @@
+import argparse
+import sys
+import re
+import os
+from make_colors import make_colors
+from pydebugger.debug import debug
+
+def rename(name, test = False, debugx = False):
+    debug(name = name, debug = debugx)
+    ext = ''
+    dirname = os.path.dirname(name)
+    debug(dirname = dirname, debug = debugx)
+    basename = os.path.basename(name)
+    if not basename:
+        basename = dirname
+    debug(basename = basename, debug = debugx)
+    if os.path.isfile(name):
+        name, ext = os.path.splitext(basename)
+    
+    
+    new_name_1 = re.sub("\.", " ", basename)
+    print make_colors("NEW NAME 1", 'lc') + ":" + make_colors(new_name_1, 'lw', 'lr')
+    year = re.findall('\d{4}', basename)
+    
+    if len(year) > 0:
+        year = "(%s)" % (str(year[0]))
+    else:
+        year = ''
+    debug(year = year, debug = debugx)
+    new_name_2 = re.sub("\d{4}", year, new_name_1, 1)
+    debug(new_name_2 = new_name_2, debug = debugx)
+    
+    data_test_01 = re.findall("\d{3}p.+", new_name_2)
+    debug(data_test_01 = data_test_01, debug = debugx)
+    
+    new_name_2 = re.sub("\d{3}p.+", '', new_name_2)
+    new_name_2 = re.sub("iTALiAN.+|080p.+|HDRip.+|XviD.+", '', new_name_2, re.I).strip() + ext
+    debug(new_name_2 = new_name_2, debug = debugx)
+    new_name_2 = new_name_2.strip()
+    debug(new_name_2 = new_name_2, debug = debugx)
+    print make_colors("NEW NAME 2", 'lb') + ":" + make_colors(new_name_2, 'b', 'ly')
+    if not test:
+        if not basename == dirname:
+            print make_colors("RENAME    :") + " " + make_colors(basename, 'lg') + " --> " + make_colors(os.path.join(dirname, new_name_2), 'ly')
+        else:
+            print make_colors("RENAME    :") + " " + make_colors(basename, 'lg') + " --> " + make_colors(new_name_2, 'ly')
+        os.rename(name, os.path.join(dirname, new_name_2))
+    else:
+        if not basename == dirname:
+            print make_colors("[TEST]", 'lw', 'lr', ['blink']) + " " + make_colors("RENAME    :") + " " + make_colors(basename, 'lg') + " --> " + make_colors(os.path.join(dirname, new_name_2), 'ly')
+        else:
+            print make_colors("[TEST]", 'lw', 'lr', ['blink']) + " " + make_colors("RENAME    :") + " " + make_colors(basename, 'lg') + " --> " + make_colors(new_name_2, 'ly')
+
+def usage():
+    parser = argparse.ArgumentParser(formatter_class= argparse.RawTextHelpFormatter)
+    parser.add_argument('MOVIE', action = 'store', help = 'Movie name')
+    parser.add_argument('-t', '--test', action = 'store_true', help = 'Just Test, not really rename')
+    parser.add_argument('-d', '--debug', action = 'store_true', help = 'Debug process')
+    if len(sys.argv) == 1:
+        parser.print_help()
+    else:
+        args = parser.parse_args()
+        rename(args.MOVIE, args.test, args.debug)
+        
+if __name__ == '__main__':
+    usage()
+    

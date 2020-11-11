@@ -1,5 +1,7 @@
+from __future__ import print_function
 import os
 import sys, errno
+import traceback
 
 def status(service):
         try:
@@ -37,5 +39,5 @@ def status(service):
         #	print "\n"
         #	#print "\t Service " + datan02[0] + "is : ", data005[2]
 
-        except IOError, e:
-                print e
+        except IOError:
+                print (traceback.format_exc())

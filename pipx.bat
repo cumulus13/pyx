@@ -1,21 +1,13 @@
 @echo off
-if %1==-i goto install
-if %1==--install goto install
-rem c:\SDK\Anaconda2\Scripts\pip.exe install -d F:\PYTHON_MODULES --no-use-wheel %*
-rem c:\SDK\Anaconda2\Scripts\pip.exe install -d F:\PYTHON_MODULES --use-wheel %*
-c:\SDK\Anaconda2\Scripts\pip.exe download -d F:\PYTHON_MODULES --no-binary all %*
-c:\SDK\Anaconda2\Scripts\pip.exe download -d F:\PYTHON_MODULES --only-binary all %*
-c:\SDK\Anaconda2\Scripts\pip.exe download -d F:\PYTHON_MODULES %*
-c:\SDK\Anaconda2\Scripts\pip.exe install -d F:\PYTHON_MODULES --use-wheel %*
+pip install %1
+echo ERROR LEVEL %errorlevel%
+if %errorlevel% == 1 goto reinstall
 goto end
 
-:install
-c:\SDK\Anaconda2\Scripts\pip.exe download -d F:\PYTHON_MODULES --no-binary all  %2
-c:\SDK\Anaconda2\Scripts\pip.exe download -d F:\PYTHON_MODULES --only-binary all  %2
-c:\SDK\Anaconda2\Scripts\pip.exe download -d F:\PYTHON_MODULES  %2
-c:\SDK\Anaconda2\Scripts\pip.exe install -d F:\PYTHON_MODULES --use-wheel %2
-c:\SDK\Anaconda2\Scripts\pip.exe install %2
+:reinstall
+"c:\Program Files (x86)\Growl for Windows\growlnotify.exe" /r:PIPX "ERROR LEVEL: %errorlevel%" /t:pip /n:PIPX /a:PIPX /i:c:\TOOLS\pyx\Bug.png
+pip install %1
 goto end
-
 
 :end
+if %errorlevel% == 1 goto reinstall

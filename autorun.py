@@ -1,12 +1,17 @@
-from _winreg import *
+#!c:/SDK/Anaconda2/python.exe
+from __future__ import print_function
 import sys
 import os
+if sys.version_info.major == 2:
+    from _winreg import *
+else:    
+    from winreg import *
 import argparse
 import win32con
 import string
 import errno
 import win32com.client 
-print "\n"
+print("\n")
 
 __version__ = "2.4"
 __filename__ = os.path.basename(sys.argv[0])
@@ -44,8 +49,10 @@ def getusername():
 PATH_FILELNK =  [r"c:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup", r"c:\Users" + "\\" + str(getusername()) + "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"]
     
 def readlnk(target):
+    print("target =", target)
     shell = win32com.client.Dispatch("WScript.Shell")
     shortcut = shell.CreateShortcut(target)
+    print("shortcut =", shortcut)
     name =  os.path.splitext((os.path.split(target)[1]))[0]
     path =  shortcut.TargetPath
     type =  "LINK (.lnk)"
@@ -64,23 +71,23 @@ def readlnk_todel(target):
     return [name, path]
     
 def prinlist(dataenum):
-    print " NAME :",dataenum[0]
-    print " PATH :",dataenum[1]
-    print " TYPE :",typeReg.get(dataenum[2])
-    print "\n"
+    print(" NAME :",dataenum[0])
+    print(" PATH :",dataenum[1])
+    print(" TYPE :",typeReg.get(dataenum[2]))
+    print("\n")
     
 def prinlistlnk(dataenum):
-    print " NAME :",dataenum[0]
-    print " PATH :",dataenum[1]
-    print " TYPE :",dataenum[2]
-    print "\n"
+    print(" NAME :",dataenum[0])
+    print(" PATH :",dataenum[1])
+    print(" TYPE :",dataenum[2])
+    print("\n")
 
 
 def listautoruns(keyval=None,root_key=None,numlist=100):
     if keyval == None:
         keyval = [r"SOFTWARE\Microsoft\Windows\CurrentVersion\Run",r"System\CurrentControlSet\Control\Terminal Server\Wds\rdpwd\StartupPrograms",r"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Userinit",r"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon",r"Software\Microsoft\Windows\CurrentVersion\Run"]
     if root_key == None:
-        print "\n"
+        print("\n")
         for i in range(0,3):
             try:
                 root_key = OpenKey(HKEY_LOCAL_MACHINE, keyval[i],0,KEY_READ)
@@ -122,7 +129,7 @@ def listreg_todel(keyval=None,root_key=None,numlist=100):
     if keyval == None:
         keyval = [r"SOFTWARE\Microsoft\Windows\CurrentVersion\Run",r"System\CurrentControlSet\Control\Terminal Server\Wds\rdpwd\StartupPrograms",r"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Userinit",r"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon",r"Software\Microsoft\Windows\CurrentVersion\Run"]
     if root_key == None:
-        print "\n"
+        print("\n")
         for i in range(0,3):
             try:
                 root_key = OpenKey(HKEY_LOCAL_MACHINE, keyval[i],0,KEY_READ)
@@ -173,8 +180,8 @@ def writereg(name, value):
     RegKey = OpenKey(HKEY_LOCAL_MACHINE,keyval,0,KEY_WRITE)
     SetValueEx(RegKey,name,0,REG_SZ, value)
     CloseKey(RegKey)
-    print "\n"
-    print str("   Add Succesfull").upper()
+    print("\n")
+    print((str("   Add Succesfull").upper()))
 
 def readreg(name):
     try:
@@ -185,12 +192,12 @@ def readreg(name):
         if ("" == path):
             raise WindowsError
         else:
-            print "NAME :", name
-            print "PATH :", path
-            print "RegType :", regtype
+            print(("NAME :", name))
+            print(("PATH :", path))
+            print(("RegType :", regtype))
     except WindowsError:
-        print "\n"
-        print "\tNOT FOUND: Key Value or Subkey !"
+        print("\n")
+        print("\tNOT FOUND: Key Value or Subkey !")
         return [""]
     except:
         return False
@@ -220,29 +227,29 @@ def _delreg(name):
 
 def delreg(name):
     if _delreg(name) == True:
-        print "\n"
-        print "   DELETE SUCCESFULL"
+        print("\n")
+        print("   DELETE SUCCESFULL")
     elif _delreg(name)[0] == False:
-        print "\n"
-        print "   DELETE FAILED"
-        print "   ERROR:",(_delreg(name))[1]
+        print("\n")
+        print("   DELETE FAILED")
+        print(("   ERROR:",(_delreg(name))[1]))
     else:
-        print "\n"
-        print "   SYNTAX ERROR, PLEASE CHECK SYNTAX !"
+        print("\n")
+        print("   SYNTAX ERROR, PLEASE CHECK SYNTAX !")
         
 def dellnk(path):
     try:
         os.remove(path)
-        print "\n"
-        print "   DELETE SUCCESFULL"
-        print "\n"
+        print("\n")
+        print("   DELETE SUCCESFULL")
+        print("\n")
     except:
         import  traceback
         er =  traceback.format_exc()
-        print "\n"
-        print "   DELETE FAILED"
-        print "   ERROR:", str(er)
-        print "\n"
+        print("\n")
+        print("   DELETE FAILED")
+        print(("   ERROR:", str(er)))
+        print("\n")
     
 def writelink(path, user, name=None):
     listuser_n =  os.popen("dir /b \"" + r"c:\Users").readlines()
@@ -251,7 +258,7 @@ def writelink(path, user, name=None):
         listuser.append(str(i).split("\n")[0])
     for x in listuser:
         if x == user:
-            print "x =", x
+            print(("x =", x))
             masterpath =  r"c:\Users" + "\\" + user + "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
             shell = win32com.client.Dispatch("WScript.Shell")
             if name == None or name == '':
@@ -270,22 +277,22 @@ def readall(name):
     listreg_todel()
     listlnk_todel()
     
-    for x in BANK_REG.keys():
+    for x in list(BANK_REG.keys()):
         if x == name:
-            print " NAME :", name
-            print " PATH :",BANK_REG.get(name)
-            print " TYPE :",BANK_REG_TYPE.get(name)
-            print "\n"
+            print((" NAME :", name))
+            print((" PATH :",BANK_REG.get(name)))
+            print((" TYPE :",BANK_REG_TYPE.get(name)))
+            print("\n")
             #break;
         else:
             pass
         
-    for z in  NAMELISTLNKTODEL.keys():
+    for z in  list(NAMELISTLNKTODEL.keys()):
         if z == name:
-            print " NAME :", name
-            print " PATH :", NAMELISTLNKTODEL.get(name)
-            print " TYPE :", NAMELISTLNKTODEL_TYPE.get(name)
-            print "\n"
+            print((" NAME :", name))
+            print((" PATH :", NAMELISTLNKTODEL.get(name)))
+            print((" TYPE :", NAMELISTLNKTODEL_TYPE.get(name)))
+            print("\n")
             #break;
         else:
             pass            
@@ -311,53 +318,53 @@ def main():
     parser.add_argument('-v',"--verbosity", help="Show process running", action="store_true")
     args = parser.parse_args()
     if args.verbosity:
-        print "this is test verbosity !"
+        print("this is test verbosity !")
     if args.add:
         if args.type:
             if args.type == 'reg':
                 if args.data:
                     writereg(args.add,args.data)
                 else:
-                    print "\n"
-                    print "\t Please Insert Path Of Link File/Program ! \n"
+                    print("\n")
+                    print("\t Please Insert Path Of Link File/Program ! \n")
                     parser.print_help()
             elif args.type == 'link' or  args.type == 'lnk':
                 if args.user:
-                    if os.path.isdir("c:\Users" + "\\" + str(args.user) + "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"):
+                    if os.path.isdir("c:\\Users" + "\\" + str(args.user) + "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"):
                         if args.data:
                             if writelink(args.data, args.user, args.add) == True:
-                                print "\n"
-                                print "\t Autorun Link File Type:", args.add, "Successfull Create\n"
+                                print("\n")
+                                print(("\t Autorun Link File Type:", args.add, "Successfull Create\n"))
                             else:
                                 if os.path.isfile(args.data) or  os.path.isdir(args.data):
-                                    print "\n"
-                                    print "\t There are not '" +  str(args.user) +  "' USER Association With Username, Please Correct USER with lowercase or Uppercase !"
-                                    print "\n"
+                                    print("\n")
+                                    print(("\t There are not '" +  str(args.user) +  "' USER Association With Username, Please Correct USER with lowercase or Uppercase !"))
+                                    print("\n")
                                     parser.print_help()
                                 else:
-                                    print "\n"
-                                    print "\t Please Insert Corect DATA !\n"
+                                    print("\n")
+                                    print("\t Please Insert Corect DATA !\n")
                                     parser.print_help()
                         else:
-                            print "\n"
-                            print "\t Please Insert Path Of Link File/Program ! \n"
+                            print("\n")
+                            print("\t Please Insert Path Of Link File/Program ! \n")
                             parser.print_help()
                     else:
-                        print "\n"
-                        print "\t ERROR: There are not '" +  str(args.user) +  "' USER Association With Username, Please Correct USER with lowercase or Uppercase !"
-                        print "\n"
+                        print("\n")
+                        print(("\t ERROR: There are not '" +  str(args.user) +  "' USER Association With Username, Please Correct USER with lowercase or Uppercase !"))
+                        print("\n")
                         parser.print_help()
                 else:
-                    print "\n"
-                    print "\t Plase Insert Your USER ! \n"
+                    print("\n")
+                    print("\t Plase Insert Your USER ! \n")
                     parser.print_help()
             else:
-                print "\n"
-                print "\t Please Definition Type Of Autorun ! \n"
+                print("\n")
+                print("\t Please Definition Type Of Autorun ! \n")
                 parser.print_help()
         else:
-            print "\n"
-            print "\t Please Definition Type Of Autorun ! \n"
+            print("\n")
+            print("\t Please Definition Type Of Autorun ! \n")
             parser.print_help()
     elif args.read:
         readall(args.read)
@@ -366,12 +373,12 @@ def main():
     elif args.remove:
         listlnk_todel()
         listreg_todel()
-        for i in  NAMELISTLNKTODEL.keys():
+        for i in  list(NAMELISTLNKTODEL.keys()):
             if args.remove == i:
                 dellnk(NAMELISTLNKTODEL.get(i))
             else:
                 pass
-        for y in BANK_REG.keys():
+        for y in list(BANK_REG.keys()):
             if args.remove == y:
                 delreg(args.remove)
             else:

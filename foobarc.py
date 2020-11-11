@@ -1,11 +1,11 @@
-#!/usr/bin/python
+#!python2
 import configset
 import os, sys
 
 MODULE_PATH = configset.read_config('MODULE', 'path')
 
 if sys.platform == 'win32':
-    if os.path.isdir(r'c:/pyx'):
+    if os.path.isdir(r'd:/TOOLS/pyx'):
         sys.path.insert(0, r'c:\\pyx')    
     import module002a
 if not os.path.isdir(MODULE_PATH):

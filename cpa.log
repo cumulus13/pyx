@@ -651,3 +651,29 @@
 07-01-2018 17:08:48 COPY FILE: "c:\SDK\Anaconda2\Lib\sendgrowl.py" --> l:\
 07-01-2018 17:08:48 COPY FILE: "c:\SDK\Anaconda2\Lib\syslog.py" --> l:\
 07-01-2018 17:08:48 COPY FILE: "c:\SDK\Anaconda2\Lib\sendgrowl.py" --> l:\
+17-09-2018 12:23:36 COPY FILE [ERROR]: "libeay32.dll" --> c:\SDK\Anaconda2\lib\site-packages\dtls [ERROR]
+17-09-2018 12:23:36 COPY FILE [ERROR]: "ssleay32.dll" --> c:\SDK\Anaconda2\lib\site-packages\dtls [ERROR]
+17-09-2018 12:23:36 COPY FILE [ERROR]: "libeay32.dll" --> c:\SDK\Anaconda2\lib\site-packages\dtls [ERROR]
+17-09-2018 12:23:36 COPY FILE [ERROR]: "ssleay32.dll" --> c:\SDK\Anaconda2\lib\site-packages\dtls [ERROR]
+17-09-2018 12:23:36 COPY FILE [ERROR]: "libeay32.dll" --> c:\SDK\Anaconda2\lib\site-packages\dtls [ERROR]
+17-09-2018 12:23:36 COPY FILE [ERROR]: "ssleay32.dll" --> c:\SDK\Anaconda2\lib\site-packages\dtls [ERROR]
+17-09-2018 12:23:36 COPY FILE [ERROR]: "libeay32.dll" --> c:\SDK\Anaconda2\lib\site-packages\dtls [ERROR]
+17-09-2018 12:23:37 COPY FILE [ERROR]: "ssleay32.dll" --> c:\SDK\Anaconda2\lib\site-packages\dtls [ERROR]
+06-12-2018 17:22:27 COPY FILE: "openssl.exe" --> c:\TOOLS\EXE
+19-03-2019 16:30:17 COPY DIRECTORY: "proxy_tester" --> c:\SDK\Anaconda2\Lib\site-packages
+18-04-2019 13:04:40 COPY FILE: "setup.py" --> d:\PROJECTS\pydebugger
+18-04-2019 13:04:40 COPY FILE: "setup.cfg" --> d:\PROJECTS\pydebugger
+03-05-2020 14:19:11 COPY FILE: "root.hints" --> c:\Apps\Bind\etc
+03-05-2020 14:19:11 COPY FILE: "named.pid" --> c:\Apps\Bind\etc
+03-05-2020 14:19:11 COPY FILE: "named.conf.keys" --> c:\Apps\Bind\etc
+03-05-2020 14:19:11 COPY FILE: "root.hints" --> c:\Apps\Bind\etc
+03-05-2020 14:19:11 COPY FILE: "named.pid" --> c:\Apps\Bind\etc
+03-05-2020 14:19:11 COPY FILE: "named.conf.keys" --> c:\Apps\Bind\etc
+09-11-2020 06:46:14 COPY FILE: "01 FOREVER AND FOR ALWAYS.mp3" --> c:\Shania Twain - Best Love
+09-11-2020 06:46:20 COPY FILE: "06 MAN I FEEL LIKE A WOMAN.mp3" --> c:\Shania Twain - Best Love
+09-11-2020 06:46:24 COPY FILE: "08 FROM THIS MOMENT ON.mp3" --> c:\Shania Twain - Best Love
+09-11-2020 06:46:28 COPY FILE: "20 DON´T.mp3" --> c:\Shania Twain - Best Love
+09-11-2020 06:46:28 COPY FILE: "01 FOREVER AND FOR ALWAYS.mp3" --> c:\Shania Twain - Best Love
+09-11-2020 06:46:28 COPY FILE: "06 MAN I FEEL LIKE A WOMAN.mp3" --> c:\Shania Twain - Best Love
+09-11-2020 06:46:28 COPY FILE: "08 FROM THIS MOMENT ON.mp3" --> c:\Shania Twain - Best Love
+09-11-2020 06:46:28 COPY FILE: "20 DON´T.mp3" --> c:\Shania Twain - Best Love

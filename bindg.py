@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!c:/SDK/Anaconda2/python.exe
 
 __version__ = "0.1"
 __test__ = "0.2"
@@ -13,11 +13,12 @@ import argparse
 import os
 import sys
 import re
-import configset 
+import configset as config_set 
 import requests
 THIS_PATH = os.path.dirname(__file__)
 configname = os.path.join(THIS_PATH, 'bindg.ini')
-EXT = configset.read_config4('DB', 'EXT', configname)[0]
+configset = config_set.configset(configname)
+EXT = configset.read_config('DB', 'EXT')
 if EXT == None:
 	EXT = "dns"
 
@@ -64,7 +65,7 @@ www		CNAME	{12}
 		# print '-'*94
 		# print "DB-PATH =", os.path.join(os.path.join(configset.read_config4('DB', 'PATH', configname))[0], str(host) + '.' + EXT)
 		# print '-'*94
-		fi = open(os.path.join(configset.read_config4('DB', 'PATH', configname)[0], str(host) + '.' + EXT), 'w')
+		fi = open(os.path.join(configset.read_config('DB', 'PATH', configname), str(host) + '.' + EXT), 'w')
 		fi.write("\n")
 		fi.write(template)
 		fi.close()
@@ -124,13 +125,13 @@ www		CNAME	{12}
 		return None
 	
 	def checkdomain(self, host, host_replace = None, data_overwrite = None):
-		fi = open(configset.read_config4('DB', 'CONFIG_PATH', configname)[0], 'r').readlines()
-		fi2 = open(configset.read_config4('DB', 'CONFIG_PATH', configname)[0], 'r').read()
+		fi = open(configset.read_config('DB', 'CONFIG_PATH', configname), 'r').readlines()
+		fi2 = open(configset.read_config('DB', 'CONFIG_PATH', configname), 'r').read()
 		#fi3 = open(os.path.join(os.getenv('TEMP'), "bindg_config.temp"), 'w') 
 		#file "c:/Apps/bind9/etc/zones/docs.modpythonxxxxxxxxxx.net.dns";
-		files_replace = os.path.join(configset.read_config4('DB', 'PATH', configname)[0], (str(host) + ".dns"))
+		files_replace = os.path.join(configset.read_config('DB', 'PATH', configname), (str(host) + ".dns"))
 		files_replace = str(files_replace).replace("\\", "/")
-		cfg = configset.read_config4('DB', 'CONFIG_PATH', configname)[0]
+		cfg = configset.read_config('DB', 'CONFIG_PATH', configname)
 		for i in fi:
 			if "zone " in i:
 				if host in i:
@@ -184,7 +185,7 @@ www		CNAME	{12}
 	def insertdomain(self, host, typehost='master', dbpath=None, configpath=None, overwrite = None):
 		if self.checkdomain(host)[0]:
 			if dbpath == None:
-				dbpath = os.path.join(configset.read_config4('DB', 'PATH', configname)[0], str(host) + "." + EXT)
+				dbpath = os.path.join(configset.read_config('DB', 'PATH', configname), str(host) + "." + EXT)
 			else:
 				dbpath = os.path.join(dbpath, str(host) + "." + EXT)
 		
@@ -194,7 +195,7 @@ www		CNAME	{12}
 	};"""%(host, typehost, dbpath)
 			
 			if configpath == None:
-				fi = open(configset.read_config4('DB', 'CONFIG_PATH', configname)[0], 'a')
+				fi = open(configset.read_config('DB', 'CONFIG_PATH', configname), 'a')
 			else:
 				fi = open(configpath, 'a')
 			fi.write("\n")

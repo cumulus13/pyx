@@ -7,6 +7,7 @@ import sys
 # import win32com.client
 import termcolor
 import random
+from make_colors import make_colors
 
 data_random = ['red', 'yellow', 'green', 'blue', 'cyan', 'magenta', 'grey']
 
@@ -342,13 +343,17 @@ if __name__ == '__main__':
                 #print "value =", value
                 os.system('REG ADD {0} /v {1} /t {2} /d {3} /f'.format(keyval, name, reg_type, value))
             sys.exit(0)
-        elif len(sys.argv) == 2:
-            parameter = setParameter(sys.argv[1])
-            for i in parameter:
-                name = parameter.get(i).get('name')
-                parent = parameter.get(i).get('parent')
-                keyval = parameter.get(i).get('path')
-                reg_type = parameter.get(i).get('type')
-                value = parameter.get(i).get('value')
-                writereg(name, parent, keyval, reg_type, value)
+        else:
+            print "USAGE: {0} {1} [fast]".format(os.path.basename(__file__), "IP_ADDRESS")
+    elif len(sys.argv) == 2:
+        parameter = setParameter(sys.argv[1])
+        for i in parameter:
+            name = parameter.get(i).get('name')
+            parent = parameter.get(i).get('parent')
+            keyval = parameter.get(i).get('path')
+            reg_type = parameter.get(i).get('type')
+            value = parameter.get(i).get('value')
+            writereg(name, parent, keyval, reg_type, value)
+    else:
+        print "USAGE: {0} {1} [fast]".format(make_colors(os.path.basename(__file__), 'black', 'lightgreen'), make_colors("IP_ADDRESS", 'black', 'lightyellow'))
     sys.exit(0)

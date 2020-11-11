@@ -1,2 +1,2 @@
 @echo off
-c:\exe\nircmd.exe hibernate force
+%windir%\System32\rundll32.exe powrprof.dll,SetSuspendState

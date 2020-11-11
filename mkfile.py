@@ -1,3 +1,5 @@
+#!c:/SDK/Anaconda2/python.exe
+
 #this script only create a blank file on Windows encode system support
 #not tested on linux
 #licface (licface@yahoo.com)
@@ -23,6 +25,10 @@ def usage():
 		args = parser.parse_args()
 		#print "args.FILE =", args.FILE
 		for i in args.FILE:
+			if os.path.isfile(i):
+				q = raw_input("Overwrite it ! [y/n]:")
+				if not q == 'y':
+					return False
 			f = open(i,"w")
 			clipboard.copy(os.path.abspath(i))
 			f.close()

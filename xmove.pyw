@@ -1,9 +1,11 @@
+from __future__ import print_function
 import os.path
 from win32com.shell import shell, shellcon
 import sys
 import traceback
-import tracert
+#import tracert
 import datetime
+from pydebugger.debug import debug
 
 LOGS_PATH = r''
 
@@ -46,16 +48,16 @@ def win32_shellcopy(src, dest):
         src = os.path.abspath(src)
     else:  # iterable
         src = '\0'.join(os.path.abspath(path) for path in src)
-    
+
         result, aborted = shell.SHFileOperation((
-                                   0,
+            0,
                                    shellcon.FO_MOVE,
                                    src,
                                    os.path.abspath(dest),
                                    shellcon.FOF_NOCONFIRMMKDIR,  # flags
-                                       None,
+                                   None,
                                        None))
-                               
+
     if not aborted and result != 0:
         # Note: raising a WindowsError with correct error code is quite
         # difficult due to SHFileOperation historical idiosyncrasies.
@@ -65,12 +67,14 @@ def win32_shellcopy(src, dest):
     return not aborted
 
 def start_move(path = None, dest = None, recursive = False):
+    debug(path = path)
     if not path:
         path = os.getcwd()
     if not dest:
         dest = sys.argv[-1]
     if not recursive:
         list_dir = os.listdir(path)
+        debug(list_dir = list_dir)
         data = 'MOVE: "{0}" --> "{1}"'.format("; ".join(list_dir), str(dest))
         logs(data)
         try:
@@ -84,15 +88,15 @@ def start_move(path = None, dest = None, recursive = False):
             if files:
                 for i in files:
                     list_dir.append(os.path.join(root, i))
-                    
+
         data = 'MOVE: "{0}" --> "{1}"'.format("; ".join(list_dir), str(dest))
         logs(data)
         try:
             win32_shellcopy(list_dir, dest)
         except:
             data = traceback.format_exc()
-            logs(data)        
-        
+            logs(data)
+
 
 def usage():
     helper = "USAGE: %s FILE0 FILE1 DIR1 DIR2 FILEX DIRX DESTINATION" % os.path.basename(
@@ -101,16 +105,44 @@ def usage():
 
 if __name__ == '__main__':
     list_argv = sys.argv[1:len(sys.argv)-1]
+    debug(list_argv=list_argv)
     
     if len(sys.argv) > 2:
+        
         for i in list_argv:
+            debug("star mode")
+            debug(i = i)
             if i == '*':
+                debug("star mode all")
                 start_move()
                 list_argv.remove(i)
-            if len(i) > 1 and i[-1] == '*':
-                start_move(i[0:-1])
-                list_argv.remove(i)
-        if list_argv > 2:
+            elif len(i) > 1 and i[-1] == '*':
+                debug("star mode on end")
+                list_data_pre = os.popen('dir /b "%s"'% (str(i))).readlines()
+                debug(list_data_pre = list_data_pre)
+                list_data = []
+                for x in list_data_pre:
+                    x1 = x.split("\n")[0]
+                    if x1 == sys.argv[-1]:
+                        debug(check = "x1 == sys.argv[-1]")
+                        pass
+                    else:
+                        list_data.append(os.path.join(os.getcwd(), x1))
+            else:
+                list_data = sys.argv[1:-1]
+            debug(list_data = list_data)
+            data = 'MOVE: "{0}" --> "{1}"'.format("; ".join(list_argv), str(sys.argv[-1]))
+            logs(data)
+            try:
+                win32_shellcopy(list_data, sys.argv[-1])
+            except:
+                data = traceback.format_exc()
+                logs(data)                
+            #debug(data_args = i[0:-1])
+            #start_move(i[0:-1])
+            list_argv.remove(i)
+        #print("list_argv =", list_argv)
+        if len(list_argv) > 2:
             #print "SRC =", sys.argv[1:len(sys.argv)-1]
             #print "DST =", sys.argv[-1]
             data = 'MOVE: "{0}" --> "{1}"'.format("; ".join(list_argv), str(sys.argv[-1]))
@@ -122,9 +154,17 @@ if __name__ == '__main__':
                 logs(data)
     else:
         if len(sys.argv) == 1:
-            print usage()
+            debug("star mode else")
+            if '*' in sys.argv[1]:
+                start_move()
+                list_argv.remove(i)
+            if len(sys.argv[1]) > 1 and sys.argv[1][-1] == '*':
+                start_move(i[0:-1])
+                list_argv.remove(i)            
+            print (usage())
         else:
             data = 'MOVE: "{0}" --> "{1}"'.format("; ".join(sys.argv[1]), str(sys.argv[2]))
+            debug(data = data)
             logs(data)
             try:
                 win32_shellcopy(sys.argv[1], sys.argv[2])

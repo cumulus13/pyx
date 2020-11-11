@@ -1,0 +1,331 @@
+2019:12:11 17:36:28:394000 ~ Traceback (most recent call last):
+  File "E:\TOOLS\pyx\module002a.py", line 118, in main
+    subprocess.Popen(a)
+  File "c:\SDK\Anaconda2\lib\subprocess.py", line 394, in __init__
+    errread, errwrite)
+  File "c:\SDK\Anaconda2\lib\subprocess.py", line 644, in _execute_child
+    startupinfo)
+WindowsError: [Error 2] The system cannot find the file specified
+
+2019:12:17 19:03:15:772000 ~ Traceback (most recent call last):
+  File "E:\TOOLS\pyx\module002a.py", line 118, in main
+    subprocess.Popen(a)
+  File "c:\SDK\Anaconda2\lib\subprocess.py", line 394, in __init__
+    errread, errwrite)
+  File "c:\SDK\Anaconda2\lib\subprocess.py", line 644, in _execute_child
+    startupinfo)
+WindowsError: [Error 2] The system cannot find the file specified
+
+2020:02:05 22:49:36:795000 ~ Traceback (most recent call last):
+  File "D:\PROJECTS\servicelist\sl.py", line 294, in makeTableAdd
+    table.add_row([str(number), name, displayname, str(pid), status, str(descriptions), start_config])
+  File "D:\PROJECTS\servicelist\texttable.py", line 330, in add_row
+    cells.append(self._str(i, make_colors.make_colors(x, foreground, background, attrs)))
+  File "c:\SDK\Anaconda2\lib\make_colors\make_colors.py", line 187, in make_colors
+    if "-" in foreground or "_" in foreground:
+TypeError: argument of type 'NoneType' is not iterable
+
+2020:02:05 22:49:37:380000 ~ Traceback (most recent call last):
+  File "D:\PROJECTS\servicelist\sl.py", line 486, in usage
+    self.makeTable(service_dict, pfilter, sorting, args.tail, args.reverse, list_details, args.fast_list_details, args.sort_status_only, args.sort_start_config_only)
+  File "D:\PROJECTS\servicelist\sl.py", line 284, in makeTable
+    table = self.makeTableAdd(table, number, name, displayname, pid, status, descriptions, start_config)
+  File "D:\PROJECTS\servicelist\sl.py", line 304, in makeTableAdd
+    str(start_config).encode(sys.stdout.encoding, errors='replace'),
+  File "D:\PROJECTS\servicelist\texttable.py", line 330, in add_row
+    cells.append(self._str(i, make_colors.make_colors(x, foreground, background, attrs)))
+  File "c:\SDK\Anaconda2\lib\make_colors\make_colors.py", line 187, in make_colors
+    if "-" in foreground or "_" in foreground:
+TypeError: argument of type 'NoneType' is not iterable
+
+2020:02:05 22:49:57:139000 ~ Traceback (most recent call last):
+  File "D:\PROJECTS\servicelist\sl.py", line 294, in makeTableAdd
+    table.add_row([str(number), name, displayname, str(pid), status, str(descriptions), start_config])
+  File "D:\PROJECTS\servicelist\texttable.py", line 330, in add_row
+    cells.append(self._str(i, make_colors.make_colors(x, foreground, background, attrs)))
+  File "c:\SDK\Anaconda2\lib\make_colors\make_colors.py", line 187, in make_colors
+    if "-" in foreground or "_" in foreground:
+TypeError: argument of type 'NoneType' is not iterable
+
+2020:02:05 22:49:57:346000 ~ Traceback (most recent call last):
+  File "D:\PROJECTS\servicelist\sl.py", line 486, in usage
+    self.makeTable(service_dict, pfilter, sorting, args.tail, args.reverse, list_details, args.fast_list_details, args.sort_status_only, args.sort_start_config_only)
+  File "D:\PROJECTS\servicelist\sl.py", line 284, in makeTable
+    table = self.makeTableAdd(table, number, name, displayname, pid, status, descriptions, start_config)
+  File "D:\PROJECTS\servicelist\sl.py", line 304, in makeTableAdd
+    str(start_config).encode(sys.stdout.encoding, errors='replace'),
+  File "D:\PROJECTS\servicelist\texttable.py", line 330, in add_row
+    cells.append(self._str(i, make_colors.make_colors(x, foreground, background, attrs)))
+  File "c:\SDK\Anaconda2\lib\make_colors\make_colors.py", line 187, in make_colors
+    if "-" in foreground or "_" in foreground:
+TypeError: argument of type 'NoneType' is not iterable
+
+2020:02:05 22:51:32:319000 ~ Traceback (most recent call last):
+  File "D:\PROJECTS\servicelist\sl.py", line 294, in makeTableAdd
+    table.add_row([str(number), name, displayname, str(pid), status, str(descriptions), start_config])
+  File "D:\PROJECTS\servicelist\texttable.py", line 331, in add_row
+    cells.append(self._str(i, make_colors.make_colors(x, foreground, background, attrs)))
+  File "c:\SDK\Anaconda2\lib\make_colors\make_colors.py", line 187, in make_colors
+    if "-" in foreground or "_" in foreground:
+TypeError: argument of type 'NoneType' is not iterable
+
+2020:02:05 22:51:32:499000 ~ Traceback (most recent call last):
+  File "D:\PROJECTS\servicelist\sl.py", line 486, in usage
+    self.makeTable(service_dict, pfilter, sorting, args.tail, args.reverse, list_details, args.fast_list_details, args.sort_status_only, args.sort_start_config_only)
+  File "D:\PROJECTS\servicelist\sl.py", line 284, in makeTable
+    table = self.makeTableAdd(table, number, name, displayname, pid, status, descriptions, start_config)
+  File "D:\PROJECTS\servicelist\sl.py", line 304, in makeTableAdd
+    str(start_config).encode(sys.stdout.encoding, errors='replace'),
+  File "D:\PROJECTS\servicelist\texttable.py", line 331, in add_row
+    cells.append(self._str(i, make_colors.make_colors(x, foreground, background, attrs)))
+  File "c:\SDK\Anaconda2\lib\make_colors\make_colors.py", line 187, in make_colors
+    if "-" in foreground or "_" in foreground:
+TypeError: argument of type 'NoneType' is not iterable
+
+2020:04:23 14:19:08:157610 ~ Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 111, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 119, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+2020:04:26 12:43:07:014627 ~ Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 111, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 119, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+2020:04:30 18:40:33:815167 ~ Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 111, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 119, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+2020:06:11 14:49:13:667436 ~ Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 111, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 119, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+2020:06:14 08:05:55:414734 ~ Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 111, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 119, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+2020:06:14 08:06:12:742879 ~ Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 111, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 119, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+2020:06:25 11:01:15:657366 ~ Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 111, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 119, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+2020:07:27 17:03:15:939448 ~ Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 111, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 119, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+2020:09:19 14:32:09:283547 ~ Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 111, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 119, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+2020:09:19 14:33:15:015211 ~ Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 111, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 119, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+2020:10:31 20:03:47:645000 ~ Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 119, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda2\lib\subprocess.py", line 390, in __init__
+    errread, errwrite)
+  File "C:\SDK\Anaconda2\lib\subprocess.py", line 640, in _execute_child
+    startupinfo)
+WindowsError: [Error 2] The system cannot find the file specified
+
+2020:10:31 20:04:27:576000 ~ Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 119, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda2\lib\subprocess.py", line 390, in __init__
+    errread, errwrite)
+  File "C:\SDK\Anaconda2\lib\subprocess.py", line 640, in _execute_child
+    startupinfo)
+WindowsError: [Error 2] The system cannot find the file specified
+
+2020:10:31 20:04:50:058683 ~ Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 111, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 119, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+2020:10:31 20:05:10:497000 ~ Traceback (most recent call last):
+  File "D:\TOOLS\pyx\module002a.py", line 119, in main
+    subprocess.Popen(a)
+  File "C:\SDK\Anaconda2\lib\subprocess.py", line 390, in __init__
+    errread, errwrite)
+  File "C:\SDK\Anaconda2\lib\subprocess.py", line 640, in _execute_child
+    startupinfo)
+WindowsError: [Error 2] The system cannot find the file specified
+

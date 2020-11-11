@@ -1,15 +1,36 @@
+from __future__ import print_function
 import os
 import sys
+import time
 
-def getStatus(interface):
-    a = os.system("netsh wlan show interface {0}".format(str(interface)))
-    print 'aaa'
+def getStatus(interface=None, verbose=False):
+    # print "XXX"
+    if verbose:
+        a = os.system("netsh wlan show interface {0}".format(str(interface)))
+    else:
+        a = os.system('netsh wlan show interface | grep -iE "state|name|ssid"'.format(str(interface)))
+    # print 'aaa'
     if a == 1:
-        print "bbb"
-        a = os.system("netsh interface ip show interface {0}".format(str(interface)))
+        # print "bbb"
+        if verbose:
+            a = os.system("netsh interface ip show interface {0}".format(str(interface)))
+        else:
+            a = os.system('netsh wlan show interface {0} | grep -iE "state|name|ssid"'.format(str(interface)))
+
+def setLife(life, dev):
+    if life == 'up':
+        os.system('netsh interface set interface %s enable' %(dev))
+    elif life == 'down':
+        os.system('netsh interface set interface %s disabled' %(dev))
+    elif life == 'restart':
+        os.system('netsh interface set interface %s disabled' %(dev))
+        time.sleep(1)
+        os.system('netsh interface set interface %s enable' %(dev))
+    else:
+        print ("No Valid Input")
 
 def setip(ip=None, mask=None, gateway=None, dns=None, dev=None, index_dns=2):
-    #print "DNS =", dns
+    # print "DNS =", dns
     #print "type(dns) 1 =", type(dns)
     # try:
     #     if ip.lower() == 'none' or ip == '' or ip == '#':
@@ -47,25 +68,25 @@ def setip(ip=None, mask=None, gateway=None, dns=None, dev=None, index_dns=2):
             #print "XXX"
             os.system("netsh interface ip show config {0}".format(dev))
         else:
-            #print "YYY"
+            # print "YYY"
             if ip:
-                # #print "PLEASE INSERT IP ADDRESS !"
+                # print "PLEASE INSERT IP ADDRESS !"
                 # return 0
                 if mask:
                     if gateway:
                         os.system("netsh interface ip set address {0} static {1} {2} {3}".format(
                     dev, ip, mask, gateway))        
-                    else:
+                    # else:
                         #print "PLEASE INSERT GATEWAY !"
-                        return 0    
-                else:
+                        # return 0    
+                # else:
                     #print "PLEASE INSERT NETMASK !"
-                    return 0
+                    # return 0
             # else:
             #     os.system("netsh interface ip set address {0} static {1} {2} {3}".format(
             #         dev, ip, mask, gateway))
-            elif dns != []:
-                #print "ZZZ"
+            if dns:
+                # print "ZZZ"
                 #print "type(dns) =", type(dns)
                 if isinstance(dns, list):
                     if len(dns) == 1:
@@ -78,11 +99,11 @@ def setip(ip=None, mask=None, gateway=None, dns=None, dev=None, index_dns=2):
                             "netsh interface ip add dnsservers {0} {1} index=".format(dev, str(index_dns)))
                     elif len(dns) > 1:
                         #print "SSS 3"
-                        if dns[0] != 'none' or dns[0] != '' or dns[0] != '#':
+                        if dns[0] != '#':
                             #print "SSS 4"
                             os.system(
                                 "netsh interface ip set dnsservers {0} static {1} primary".format(dev, dns[0]))
-                            a = 2
+                        a = 2
                         # #print "index =", a
                         for i in dns[1:]:
                             # #print "i     =", i
@@ -122,6 +143,7 @@ def deldns(DNSIP, dev, all=None):
 
 def getInterfaceList():
     strData = os.popen('netsh interface ip show interfaces').readlines()
+    # print "strData =", strData
     interface_list = []
     # #print "strData =", strData
     for i in strData:
@@ -152,6 +174,7 @@ def usage():
     parser.add_argument('-i', '--interface', help='Interface/DEVICE NAME', action='store')
     parser.add_argument('-x', '--index', help='Index DNS Server', action='store', type=int)
     parser.add_argument('-s', '--status', help = 'Get Status info Interface', action = 'store_true')
+    parser.add_argument('-v', '--verbosity', help = 'Show more result', action = 'store_true')
     list_public_args = ['-I', '-m', '-g', '-d', '-i', '-x']
     
     # sub = parser.add_subparsers(
@@ -160,91 +183,93 @@ def usage():
     # # args = parser.parse_args()
     # # #print "args =", args
 
-    def main_usage():
-        parser.add_argument('DEV', help='Interface/Device Name', action='store')
+    def main_usage(no_dev=False):
+        if not no_dev:
+            parser.add_argument('DEV', help='Interface/Device Name', action='store')
+            args = parser.parse_args()
+            setip(args.ip, args.netmask, args.gateway, args.dns, args.DEV)
         args = parser.parse_args()
         if args.status:
-            getStatus(args.DEV)
+            getStatus(None, args.verbosity)
         #print "args main_usage:", args
-        setip(args.ip, args.netmask, args.gateway, args.dns, args.DEV)
+        
 
     if len(sys.argv) == 1:
         # setip()
         parser.print_help()
         setip()
     else:
+        # print "WWW"
+        # print "len(sys.argv) =",len(sys.argv)
+        LIFE = None
         list_interface = getInterfaceList()
         if sys.argv[1].lower() in list_interface:
-            # args_01 = []
-            # #print "args_01 1 =", args_01
-            # #print "sys.argv[1:] =", sys.argv[1:]
-            # #print "-"*200
-            # for x in sys.argv:
-            #     if x in list_public_args:
-            #         args_01.append(x)
-            #         sys.argv.remove(x)
-            # #print "args_01 1 =", args_01
-            # #print "sys.argv[1:] =", sys.argv[1:]
-            # sys.exit(0)
             check_argv = False
-            # if len(sys.argv) == 2:
-            #     for i in sys.argv:
-            #         if i in list_public_args:
-            #             check_argv = True
-            #     if not check_argv:
-            #         parser.add_argument('DEV', help='Interface/Device Name', action='store')
-            #         args = parser.parse_args()
-            #         setip(args.ip, args.netmask, args.gateway, args.dns, args.DEV)
             if len(sys.argv) == 3:
                 #print "AAA"
+                if args[2] == 'up' or args[2] == 'down' or args[2] == 'restart':
+                    # setLife(args[2], args[1])
+                    LIFE = args[2]
+                
                 for i in sys.argv:
                     if i in list_public_args:
                         check_argv = True
                 if not check_argv:
                     parser.add_argument('DEV', help='Interface/Device Name', action='store')
-                    #parser.add_argument('IP', help='IP ADDRESS', action='store')
+                    if LIFE:
+                        parser.add_argument('LIFE', help='Set Up/Down/Restart', action='store', default='None')    
+                    parser.add_argument('IP', help='IP ADDRESS', action='store')
                     args = parser.parse_args()
-                    if args.status:
-                        getStatus(args.DEV)
-                    else:
-                        parser.add_argument('IP', help='IP ADDRESS', action='store')
-                        args = parser.parse_args()                        
-                        setip(args.IP, args.netmask, args.gateway, args.dns, args.DEV)
+                    setLife(args.LIFE, args.DEV)
+                    if not args.LIFE == 'down':
+                        setip(args.IP, dev=args.DEV)
                 else:
                     main_usage()
+
             elif len(sys.argv) == 4:
-                #print "BBB"
+                if args[2] == 'up' or args[2] == 'down' or args[2] == 'restart':
+                    LIFE = args[2]
+                
                 for i in sys.argv:
                     if i in list_public_args:
                         check_argv = True
                 if not check_argv:
                     parser.add_argument('DEV', help='Interface/Device Name', action='store')
+                    if LIFE:
+                        parser.add_argument('LIFE', help='Set Up/Down/Restart', action='store', default='None')    
                     parser.add_argument('IP', help='IP ADDRESS', action='store', default='None')
                     parser.add_argument('NETMASK', help='NETMASK ADDRESS', action='store', default='None')
                     args = parser.parse_args()
-                    if args.status:
-                        getStatus(args.DEV)                    
-                    setip(args.IP, args.NETMASK, args.gateway, args.dns, args.DEV)
+                    setLife(args.LIFE, args.DEV)
+                    if not args.LIFE == 'down':
+                        setip(args.IP, args.NETMASK, dev=args.DEV)
                 else:
                     main_usage()
             elif len(sys.argv) == 5:
-                #print "CCC"
+                # print "CCC"
+                if args[2] == 'up' or args[2] == 'down' or args[2] == 'restart':
+                    LIFE = args[2]
                 for i in sys.argv:
                     if i in list_public_args:
                         check_argv = True
                 if not check_argv:
                     parser.add_argument('DEV', help='Interface/Device Name', action='store')
+                    if LIFE:
+                        parser.add_argument('LIFE', help='Set Up/Down/Restart', action='store', default='None')    
                     parser.add_argument('IP', help='IP ADDRESS', action='store', default='None')
                     parser.add_argument('NETMASK', help='NETMASK ADDRESS', action='store', default='None')
-                    parser.add_argument('GATEWAY', help='DNS ADDRESS', action='store', default='None')
-                    if args.status:
-                        getStatus(args.DEV)                    
+                    parser.add_argument('GATEWAY', help='GATEWAY', action='store', default='None')
+                    # if args.status:
+                    #     getStatus(args.DEV)                    
                     args = parser.parse_args()
-                    setip(args.IP, args.NETMASK, args.GATEWAY, args.dns, args.DEV)
+                    setLife(args.LIFE, args.DEV)
+                    setip(args.IP, args.NETMASK, args.GATEWAY, dev=args.DEV)
                 else:
                     main_usage()
-            elif len(sys.argv) == 6:
-                #print "DDD"
+            elif len(sys.argv) > 5:
+                # print "DDD"
+                if args[2] == 'up' or args[2] == 'down' or args[2] == 'restart':
+                    LIFE = args[2]
                 for i in sys.argv:
                     if i in list_public_args:
                         check_argv = True
@@ -255,8 +280,11 @@ def usage():
                     parser.add_argument('GATEWAY', help='GATEWAY ADDRESS', action='store', default='None')
                     parser.add_argument('DNS', help='DNS ADDRESS', action='store', nargs='*', default='None')
                     args = parser.parse_args()
-                    if args.status:
-                        getStatus(args.DEV)                    
+                    # print "args =", args
+                    # if args.status:
+                    #     getStatus(args.DEV)   
+                    setLife(args.LIFE, args.DEV)                 
+                    setip(args.IP, args.NETMASK, args.GATEWAY, args.DNS, args.DEV)
                 else:
                     main_usage()
                 # if args.dns:
@@ -271,9 +299,13 @@ def usage():
                 # setip(args.ip, args.netmask, args.gateway, args.dns, args.DEV)
         else:
             args = parser.parse_args()
-            if args.status:
-                getStatus(args.DEV)            
-            setip(args.ip, args.netmask, args.gateway, args.dns, args.interface)
+            if len(sys.argv) == 2:
+                # print "ZZZ"
+                main_usage(True)                
+            else:
+                # if args.status:
+                #     getStatus(args.DEV)            
+                setip(args.ip, args.netmask, args.gateway, args.dns, args.interface)
 
 
 if __name__ == '__main__':

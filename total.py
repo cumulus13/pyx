@@ -1,4 +1,5 @@
 
+from __future__ import print_function
 """
 #linux only
 import os
@@ -54,7 +55,7 @@ import os
 import win32file
 import pywintypes
 import argparse
-
+PYTHON_VER = sys.version_info.major
 
 def TotalSize(drive, show_in_bites=None, verbose=None):
     """ Return the TotalSize of a shared drive [GB]"""
@@ -70,7 +71,7 @@ def TotalSize(drive, show_in_bites=None, verbose=None):
         if verbose == None:
             return 0
         else:
-            print "Error: ", traceback.format_exc()
+            print ("Error: ", traceback.format_exc())
 
 
 def FreeSpace(drive, show_in_bites=None, verbose=None):
@@ -86,7 +87,7 @@ def FreeSpace(drive, show_in_bites=None, verbose=None):
         if verbose == None:
             return 0
         else:
-            print "Error: ", traceback.format_exc()
+            print ("Error: ", traceback.format_exc())
 
 
 def sizeof_fmt(num):
@@ -146,6 +147,7 @@ def sizeof_fmt3(num):
 
 def sizeof_fmt4(num):
     """Human friendly file size"""
+    from math import log
     if num > 1:
         exponent = int(log(num, 1024))
         quotient = num / 1024**exponent
@@ -206,6 +208,7 @@ def human_readable_data_quantity(quantity, multiple=1024):
 def human_readable_bytes(x):
     # hybrid of http://stackoverflow.com/a/10171475/2595465
     #      with http://stackoverflow.com/a/5414105/2595465
+    from math import log
     if x == 0:
         return '0'
     magnitude = int(log(abs(x), 10.24))
@@ -277,6 +280,9 @@ def getMaxLengthPath(listdata):
 
 def get_folder_size(folderPath, exc=None, show_in_bites=None, detail=None):
     import win32com.client as com
+    fd1= ''
+    fd0 = ''
+    fd = ''
     fso = com.Dispatch("Scripting.FileSystemObject")
     MB = 1024 * 1024.0
     GB = 1024 * 1024.0 * 1024.0
@@ -294,7 +300,7 @@ def get_folder_size(folderPath, exc=None, show_in_bites=None, detail=None):
                 elif os.path.isdir(i):
                     f_sep_exc = fso.GetFolder(i)
                 else:
-                    print "NOT DIR OR FILE !"
+                    print ("NOT DIR OR FILE !")
                     return None
                 folder_exc = folder_exc + f_sep_exc.Size
                 # print "folder_exc 1 =", folder_exc
@@ -326,7 +332,7 @@ def get_folder_size(folderPath, exc=None, show_in_bites=None, detail=None):
                 # print "len(listbasepath[folderPath.index(i)]) =", len(listbasepath[folderPath.index(i)])
                 # print "listbasepath[folderPath.index(i)]      =",
                 # listbasepath[folderPath.index(i)]
-                print "Size Of Folder:", str(listbasepath[folderPath.index(i)]) + ((n - len(listbasepath[folderPath.index(i)])) + 2) * " " + " = ", fd
+                print ("Size Of Folder:", str(listbasepath[folderPath.index(i)]) + ((n - len(listbasepath[folderPath.index(i)])) + 2) * " " + " = ", fd)
                 # print "-"*220
             try:
                 folder += folder_sep.Size
@@ -339,16 +345,17 @@ def get_folder_size(folderPath, exc=None, show_in_bites=None, detail=None):
             fd = "%.2f MB" % (folder / MB)
             folder_str = " + ".join(folderPath)
             #print "TOTAL         : \"%s\" = " % (folder_str), fd
-            print "TOTAL         :", fd
+            print ("TOTAL         :", fd)
             return fd
         else:
             n, listbasepath = getMaxLengthPath(folderPath)
             fd = "%.2f MB" % (folder / MB)
             fd1 = "%.2f GB" % (folder / GB)
-            print "-" * (n + 35) + " + "
-            print " " * (n + 18) + " = " + fd + " / " + fd1
+            print ("-" * (n + 35) + " + ")
+            print (" " * (n + 18) + " = " + fd + " / " + fd1)
             return fd
     else:
+        #print("folderPath =", folderPath)
         # fso = com.Dispatch("Scripting.FileSystemObject")
         if detail:
             pass
@@ -369,8 +376,8 @@ def get_folder_size(folderPath, exc=None, show_in_bites=None, detail=None):
             # get_folder_size(folderPath)
 
         # print "FOLDER                            =", folderPath
-
-        if ":" in folderPath[-1] or "\\" in folderPath[-1]:
+        #print("folderPath =", folderPath)
+        if ":" in str(folderPath[-1]) or "\\" in str(folderPath[-1]):
             # print "TotalSize(folderPath) 1           =", TotalSize(folderPath)
             # print "TotalSize(folderPath) 2           =", TotalSize(folderPath, True)
             # print "FreeSpace(folderPath)             =", FreeSpace(folderPath), "=", sizeof_fmt3(FreeSpace(folderPath))
@@ -382,30 +389,40 @@ def get_folder_size(folderPath, exc=None, show_in_bites=None, detail=None):
         else:
             #print "folderPath:", folderPath
             if os.path.isdir(folderPath):
-                folder = fso.GetFolder(folderPath).Size
+                try:
+                    folder = fso.GetFolder(folderPath).Size
+                except:
+                    folder = 'error'
+                    #  print(folderPath + ":\    ERROR Get Info !")
             else:
-                folder = fso.GetFile(folderPath).Size
+                #folderPath = os.path.realpath(folderPath)
+                #print("folderPath =", folderPath)
+                #folder = fso.GetFile(folderPath).Size
+                folder = get_folder_size2(str(folderPath))
             # print "FOLDER SIZE 1                     =", folder
 
         if not exc == None:
             fd = "%.2f MB" % ((folder - folder_exc) / MB)
             fd1 = "%.2f GB" % ((folder - folder_exc) / GB)
         else:
-            fd = "%.2f MB" % (folder / MB)
-            fd1 = "%.2f GB" % (folder / GB)
+            if not folder == 'error':
+                fd = "%.2f MB" % (folder / MB)
+                fd1 = "%.2f GB" % (folder / GB)
         # print "type(fd1) =", type(fd1.split(" ")[0])
         # print "fd1       =", fd1.split(" ")[0]
         # print "fd1 >     =", float(fd1.split(" ")[0].strip()) > 1
+        #folderPath = str(folderPath)
         if exc:
             if float(fd1.split(" ")[0].strip()) > 1:
-                print "Size Of Folder: \"%s\" - (%s) = " % (folderPath, str(" + ").join(exc)), fd, "/", fd1
+                print ("Size Of Folder: \"%s\" - (%s) = " % (folderPath, str(" + ").join(exc)), fd, "/", fd1)
             else:
-                print "Size Of Folder: \"%s\" - (%s)path = " % (folderPath, str(" + ").join(exc)), fd
+                print ("Size Of Folder: \"%s\" - (%s)path = " % (folderPath, str(" + ").join(exc)), fd)
         else:
-            if float(fd1.split(" ")[0].strip()) > 1:
-                print "Size Of Folder: \"%s\" = " % (folderPath), fd, "/", fd1
-            else:
-                print "Size Of Folder: \"%s\" = " % (folderPath), fd
+            if fd1:
+                if float(fd1.split(" ")[0].strip()) > 1:
+                    print ("Size Of Folder: \"%s\" = " % (folderPath), fd, "/", fd1)
+                else:
+                    print ("Size Of Folder: \"%s\" = " % (folderPath), fd)
         return fd
 
 
@@ -420,7 +437,7 @@ def get_folder_size2(path):
     total_size = 0
     try:
         items = FindFilesW(path + r'\*')
-    except pywintypes.error, ex:
+    except pywintypes.error:
         return total_size
 
     for item in items:
@@ -438,7 +455,7 @@ def get_folder_size3(root):
     for path, dirs, files in os.walk(root):
         for f in files:
             size += os.path.getsize(os.path.join(path, f))
-    print "Size Of Folder: \"%s\" = %0.1f MB" % (root, size)
+    print ("Size Of Folder: \"%s\" = %0.1f MB" % (root, size))
     return size
 
 
@@ -450,8 +467,8 @@ def get_folder_size4(folder):
             filename = os.path.join(path, file)
             folder_size += os.path.getsize(filename)
             fd = folder_size / (1024 * 1024.0)
-    print "\n"
-    print "Size Of Folder: \"%s\" = %0.1f MB" % (folder, fd)
+    print ("\n")
+    print ("Size Of Folder: \"%s\" = %0.1f MB" % (folder, fd))
     return fd
 
 
@@ -479,41 +496,46 @@ def get_drive_type3(drive):
     return DRIVE_TYPES.get(0)
 
 
-def main(skip_network_drive=True, exception=[]):
+def main(skip_network_drive=True, exception=[], show_network_drive_only=False):
     try:
         import total_conf
         exception = total_conf.exception
     except:
-        print "ERROR: import module total_conf"
-        print "exc =", exception
+        print ("ERROR: import module total_conf")
+        print ("exc =", exception)
     drive_name = str(string.ascii_lowercase).upper()
-    print "\n"
-    print "-" * 52
-    print "Drive |", "TotalUsed |", "FreeSpace | ", ("Type              | ").rjust(15)
-    print "-" * 52
+    print ("\n")
+    print ("-" * 52)
+    print ("Drive |", "TotalUsed |", "FreeSpace | ", ("Type              | ").rjust(15))
+    print ("-" * 52)
     for i in drive_name:
         if isinstance(exception, list) and str(i).lower() in exception:
-            print "I =", str(i)	
+            print ("I =", str(i))	
         else:
             if skip_network_drive:
                 if get_drive_type3(str(i) + ":") == 'Network Drive':
                     pass
                 else:
                     if TotalSize(str(i) + ":") != 0:
-                        print (i + ":\\").ljust(4), (sizeof_fmt3(TotalSize(str(i) + ":"))).rjust(12), (sizeof_fmt3(
-                            FreeSpace(str(i) + ":"))).rjust(10), (get_drive_type3(str(i) + ":")).rjust(14)
+                        print ((i + ":\\").ljust(4), (sizeof_fmt2(TotalSize(str(i) + ":"))).rjust(12), (sizeof_fmt2(
+                                                    FreeSpace(str(i) + ":"))).rjust(10), (get_drive_type3(str(i) + ":")).rjust(14))
                     elif get_drive_type3(str(i) + ":") == 'CD/DVD Room Drive':
-                        print (i + ":\\").ljust(4), (sizeof_fmt3(TotalSize(str(i) + ":"))).rjust(12), (sizeof_fmt3(
-                            FreeSpace(str(i) + ":"))).rjust(10), (get_drive_type3(str(i) + ":")).rjust(21)
+                        print ((i + ":\\").ljust(4), (sizeof_fmt2(TotalSize(str(i) + ":"))).rjust(12), (sizeof_fmt2(
+                                                    FreeSpace(str(i) + ":"))).rjust(10), (get_drive_type3(str(i) + ":")).rjust(21))
                     # else:
                     #     pass
+            elif show_network_drive_only:
+                if get_drive_type3(str(i) + ":") == 'Network Drive':
+                    if TotalSize(str(i) + ":") != 0:
+                        print ((i + ":\\").ljust(4), (sizeof_fmt2(TotalSize(str(i) + ":"))).rjust(12), (sizeof_fmt2(
+                                                    FreeSpace(str(i) + ":"))).rjust(10), (get_drive_type3(str(i) + ":")).rjust(14))
             else:
                 if TotalSize(str(i) + ":") != 0:
-                    print (i + ":\\").ljust(4), (sizeof_fmt3(TotalSize(str(i) + ":"))).rjust(12), (sizeof_fmt3(
-                        FreeSpace(str(i) + ":"))).rjust(10), (get_drive_type3(str(i) + ":")).rjust(14)
+                    print ((i + ":\\").ljust(4), (sizeof_fmt2(TotalSize(str(i) + ":"))).rjust(12), (sizeof_fmt2(
+                                            FreeSpace(str(i) + ":"))).rjust(10), (get_drive_type3(str(i) + ":")).rjust(14))
                 elif get_drive_type3(str(i) + ":") == 'CD/DVD Room Drive':
-                    print (i + ":\\").ljust(4), (sizeof_fmt3(TotalSize(str(i) + ":"))).rjust(12), (sizeof_fmt3(
-                        FreeSpace(str(i) + ":"))).rjust(10), (get_drive_type3(str(i) + ":")).rjust(21)
+                    print ((i + ":\\").ljust(4), (sizeof_fmt2(TotalSize(str(i) + ":"))).rjust(12), (sizeof_fmt2(
+                                            FreeSpace(str(i) + ":"))).rjust(10), (get_drive_type3(str(i) + ":")).rjust(21))
 
 
 def usage():
@@ -525,19 +547,23 @@ def usage():
     parser.add_argument(
         '-n', '--ndrive', help='Network Drive', action='store_false')
     parser.add_argument(
+        '-N', '--ndrive-only', help='Show Network Drive Only', action='store_true')
+    parser.add_argument(
         '-d', '--detail', help='List detail each of folder', action='store_true')
     parser.add_argument('-F', '--folder', help = 'Folder for Detail Only', action = 'store_true')
     if len(sys.argv) == 1:
-        print "Use: -h for help"
+        print ("Use: -h for help")
         main()
     else:
         if sys.argv[1] == '-n':
             main(False)
+        if sys.argv[1] == '-N':
+            main(False,show_network_drive_only=True)
         elif sys.argv[1] == '-e':
             if '-e' in sys.argv:
                 index_e = sys.argv.index('-e')
                 exception = sys.argv[index_e + 1:]
-                print "exception =", exception
+                print ("exception =", exception)
                 if '-n' in sys.argv:
                     main(False, exception)
                 else:
@@ -561,19 +587,23 @@ def usage():
                                     try:
                                         get_folder_size(unicode(a).encode('utf-8'), args.excepts)
                                     except:
-                                        print "[ERROR] for FOLDER:", str(a)
+                                        print ("[ERROR] for FOLDER:", str(a))
                         else:
                             listdir = os.listdir(i)
                             for a in listdir:
                                 try:
-                                    get_folder_size(unicode(a).encode('utf-8'), args.excepts)
-                                except:
-                                    if os.path.isfile(a):
-                                        print "[ERROR] for FILE:", str(a)
-                                    elif os.path.isfolder(a):
-                                        print "[ERROR] for FOLDER:", str(a)
+                                    if PYTHON_VER == 3:
+                                        get_folder_size(a.encode('utf-8'), args.excepts)
                                     else:
-                                        print "[ERROR] for FILE/FOLDER:", str(a)
+                                        get_folder_size(unicode(a).encode('utf-8'), args.excepts)
+                                except:
+                                    print("ERROR =", traceback.format_exc() )
+                                    if os.path.isfile(a):
+                                        print ("[ERROR] for FILE:", str(a))
+                                    elif os.path.isdir(a):
+                                        print ("[ERROR] for FOLDER:", str(a))
+                                    else:
+                                        print ("[ERROR] for FILE/FOLDER:", str(a))
                 else:
                     get_folder_size(args.PATH[0], args.excepts)
             else:

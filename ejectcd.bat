@@ -1,4 +1,4 @@
 @echo off
 title %CD%
 
-start C:\exe\Tooler.exe wysuntackecdromu H
+start D:\TOOLS\exe\Tooler.exe wysuntackecdromu H

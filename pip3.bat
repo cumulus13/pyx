@@ -1,2 +1,2 @@
 @echo off
-c:\SDK\Python352\Scripts\pip.exe %*
+C:\SDK\Anaconda3\Scripts\pip.exe %*

@@ -1,3 +1,4 @@
+#!c:\SDK\Anaconda2\python.exe
 import os
 import sys
 from make_colors import make_colors

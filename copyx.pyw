@@ -1,8 +1,10 @@
+#!python3  
+from __future__ import print_function
 import os.path
 from win32com.shell import shell, shellcon
 import sys
 import traceback
-import tracert
+#import tracert
 import datetime
 
 LOGS_PATH = r''
@@ -82,7 +84,7 @@ if __name__ == '__main__':
             logs(data)
     else:
         if len(sys.argv) == 1:
-            print usage()
+            print (usage())
         else:
             data = 'COPY: "{0}" --> "{1}"'.format("; ".join(sys.argv[1]), str(sys.argv[2]))
             logs(data)

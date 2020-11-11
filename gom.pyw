@@ -1,4 +1,4 @@
 
 import module002a,os
-data = [r"c:\Program Files (x86)\GRETECH\GOMPlayer\GOM.EXE"]
+data = [r"C:\Program Files\GRETECH\GOMPlayerPlus\GOM64.EXE"]
 module002a.main(data)

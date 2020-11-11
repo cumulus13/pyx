@@ -63,7 +63,7 @@ class process:
                 if i != self.result_overwrite[-1]:
                     _from = i
                     _to = self.publicTo
-                    q = raw_input(make_colors(" FILE EXISTS: ", 'white', 'red') + '"' + make_colors(os.path.basename(_from), 'lightyellow', color_type= 'colorama') + "\"; Overwrite ? (y[[Y]es]/n[[N]o][ALL/all]; Default: n[N][o[O]]: ")
+                    q = input(make_colors(" FILE EXISTS: ", 'white', 'red') + '"' + make_colors(os.path.basename(_from), 'lightyellow') + "\"; Overwrite ? (y[[Y]es]/n[[N]o][ALL/all]; Default: n[N][o[O]]: ")
                     if q == "y" or q == "Y" or q == "Yes" or q == "yes" :
                         try:
                             os.system("copy /Y \"" + _from + "\"" + " \"" + _to + "\"")
@@ -74,22 +74,22 @@ class process:
                     elif q == "ALL" or q == "all":
                         try:
                             self.copyAll(listTo=_to)
-                            print "\n"
+                            print("\n")
                             #print " RESULT: ALL OK"
-                            print make_colors(" RESULT:", 'white', 'yellow') + make_colors(" ALL OK", 'lightcyan', color_type= 'colorama')
+                            print(make_colors(" RESULT:", 'white', 'yellow') + make_colors(" ALL OK", 'lightcyan'))
                             sys.exit()
                         except:
-                            print "\n"
-                            print __error__
+                            print("\n")
+                            print(__error__)
                     #else:
                     #	pass
                 else:
-                    print "\n"
-                    print __help__
+                    print("\n")
+                    print(__help__)
                     sys.exit()
 
         else:
-            q = raw_input(" FILE EXISTS: \"" + os.path.basename(_from) + "\"; Overwrite ? (y[[Y]es]/n[[N]o][ALL/all]; Default: n[N][o[O]]: ")
+            q = input(" FILE EXISTS: \"" + os.path.basename(_from) + "\"; Overwrite ? (y[[Y]es]/n[[N]o][ALL/all]; Default: n[N][o[O]]: ")
             if q == "y" or q == "Y" or q == "Yes" or q == "yes" :
                 try:
                     os.system("copy /Y \"" + _from + "\"" + " \"" + _to + "\"")
@@ -138,12 +138,12 @@ class process:
                 try:
                     shutil.copy(x, _to)
                     #print " COPY FILE: \"" + str(x) + "\" --> \"" + os.path.abspath(sys.argv[-1]) + "\""
-                    print make_colors(" COPY FILE: ", 'lightgreen', color_type= 'colorama') + make_colors("\"", 'cyan') + make_colors(str(x), 'lightyellow', color_type= 'colorama') + make_colors('"', 'cyan') + make_colors(" --> ", 'white', attrs= ['bold']) + make_colors("\"", 'cyan') + make_colors(os.path.abspath(sys.argv[-1]), 'lightgreen', color_type= 'colorama') + make_colors("\"", 'cyan')
+                    print(make_colors(" COPY FILE: ", 'lightgreen') + make_colors("\"", 'cyan') + make_colors(str(x), 'lightyellow') + make_colors('"', 'cyan') + make_colors(" --> ", 'white', attrs= ['bold']) + make_colors("\"", 'cyan') + make_colors(os.path.abspath(sys.argv[-1]), 'lightgreen') + make_colors("\"", 'cyan'))
                     self.logs("COPY FILE: \"" + str(x) + "\" --> \"" + os.path.abspath(sys.argv[-1]) + "\"")
                 except:
                     #return __error__
                     #print " COPY FILE [ERROR]: \"" + str(x) + "\" --> " + os.path.abspath(_to) + " [ERROR]"
-                    print make_colors(" COPY FILE [ERROR]: ", 'white', 'red', ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors(str(x), 'yellow', attrs= ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors("-->", 'white', attrs= ['bold']) + make_colors(os.path.abspath(_to), 'green', attrs= ['bold']) + make_colors('" ', 'cyan', attrs= ['bold']) + make_colors("[ERROR]", 'white', 'red', ['bold', 'blink'])
+                    print(make_colors(" COPY FILE [ERROR]: ", 'white', 'red', ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors(str(x), 'yellow', attrs= ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors("-->", 'white', attrs= ['bold']) + make_colors(os.path.abspath(_to), 'green', attrs= ['bold']) + make_colors('" ', 'cyan', attrs= ['bold']) + make_colors("[ERROR]", 'white', 'red', ['bold', 'blink']))
                     self.logs("COPY FILE [ERROR]: \"" + str(x) + "\" --> " + os.path.abspath(_to) + " [ERROR]")
                     self.result_error.append(os.path.abspath(str(x)))
 
@@ -151,18 +151,18 @@ class process:
                 try:
                     #print "BBB"
                     shutil.copy2(x, _to)
-                    print make_colors(" COPY DIRECTORY: ", 'lightblue', color_type= 'colorama') + make_colors("\"", 'cyan') + make_colors(str(x), 'lightyellow', color_type= 'colorama') + make_colors('"', 'cyan') + make_colors(" --> ", 'white', attrs= ['bold']) + make_colors("\"", 'cyan') + make_colors(os.path.abspath(sys.argv[-1]), 'lightgreen', color_type= 'colorama') + make_colors("\"", 'cyan')
+                    print(make_colors(" COPY DIRECTORY: ", 'lightblue') + make_colors("\"", 'cyan') + make_colors(str(x), 'lightyellow') + make_colors('"', 'cyan') + make_colors(" --> ", 'white', attrs= ['bold']) + make_colors("\"", 'cyan') + make_colors(os.path.abspath(sys.argv[-1]), 'lightgreen') + make_colors("\"", 'cyan'))
                     self.logs("COPY DIRECTORY: \"" + str(x) + "\" --> " + os.path.abspath(sys.argv[-1]))
                 except:
-                    print traceback.format_exc()
+                    print(traceback.format_exc())
                     #return __error__
                     #print " COPY DIRECTORY [ERROR]: \"" + str(x) + "\" --> \"" + os.path.abspath(_to) + "\" [ERROR]"
-                    print make_colors(" COPY DIRECTORY [ERROR]: ", 'white', 'magenta', ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors(str(x), 'yellow', attrs= ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors("-->", 'white', attrs= ['bold']) + make_colors(os.path.abspath(_to), 'green', attrs= ['bold']) + make_colors('" ', 'cyan', attrs= ['bold']) + make_colors("[ERROR]", 'white', 'red', ['bold', 'blink'])
+                    print(make_colors(" COPY DIRECTORY [ERROR]: ", 'white', 'magenta', ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors(str(x), 'yellow', attrs= ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors("-->", 'white', attrs= ['bold']) + make_colors(os.path.abspath(_to), 'green', attrs= ['bold']) + make_colors('" ', 'cyan', attrs= ['bold']) + make_colors("[ERROR]", 'white', 'red', ['bold', 'blink']))
                     self.logs("COPY DIRECTORY [ERROR]: \"" + str(x) + "\" --> \"" + os.path.abspath(_to) + "\" [ERROR]")
                     self.result_error.append(os.path.abspath(str(x)))
             else:
-                print "\n"
-                print __help__
+                print("\n")
+                print(__help__)
         else:
             if excp == x:
                 pass
@@ -172,7 +172,7 @@ class process:
                         if not shutil.Error:
                             shutil.copy(x, _to)
                             #print " COPY FILE: \"" + str(x) + "\" --> \"" + os.path.abspath(_to) + "\""
-                            print make_colors(" COPY FILE: ", 'white', 'green', ['bold']) + make_colors("\"", 'cyan') + make_colors(str(x), 'lightyellow', color_type= 'colorama') + make_colors('"', 'cyan') + make_colors(" --> ", 'white', attrs= ['bold']) + make_colors("\"", 'cyan') + make_colors(os.path.abspath(_to), 'lightgreen', color_type= 'colorama') + make_colors("\"", 'cyan')
+                            print(make_colors(" COPY FILE: ", 'white', 'green', ['bold']) + make_colors("\"", 'cyan') + make_colors(str(x), 'lightyellow') + make_colors('"', 'cyan') + make_colors(" --> ", 'white', attrs= ['bold']) + make_colors("\"", 'cyan') + make_colors(os.path.abspath(_to), 'lightgreen') + make_colors("\"", 'cyan'))
                             self.logs("COPY FILE: \"" + str(x) + "\" --> \"" + os.path.abspath(_to) + "\"")
                         else:
                             if x != os.path.abspath(excp):
@@ -189,7 +189,7 @@ class process:
                         if not shutil.Error:
                             shutil.copy2(x, _to)
                             #print " COPY DIRECTORY: \"" + str(x) + "\" --> \"" + os.path.abspath(_to) + "\""
-                            print make_colors(" COPY DIRECTORY: ", 'white', 'blue', ['bold']) + make_colors("\"", 'cyan') + make_colors(str(x), 'lightyellow', color_type= 'colorama') + make_colors('"', 'cyan') + make_colors(" --> ", 'white', attrs= ['bold']) + make_colors("\"", 'cyan') + make_colors(os.path.abspath(_to), 'lightgreen', color_type= 'colorama') + make_colors("\"", 'cyan')
+                            print(make_colors(" COPY DIRECTORY: ", 'white', 'blue', ['bold']) + make_colors("\"", 'cyan') + make_colors(str(x), 'lightyellow') + make_colors('"', 'cyan') + make_colors(" --> ", 'white', attrs= ['bold']) + make_colors("\"", 'cyan') + make_colors(os.path.abspath(_to), 'lightgreen') + make_colors("\"", 'cyan'))
                             self.logs("COPY DIRECTORY: \"" + str(x) + "\" --> \"" + os.path.abspath(_to) + "\"")
                         else:
                             if x != os.path.abspath(excp):
@@ -200,12 +200,12 @@ class process:
                     except:
                         #return __error__
                         #print " COPY DIRECTORY [ERROR]: \"" + str(x) + "\" --> \"" + os.path.abspath(_to) + "\" [ERROR]"
-                        print make_colors(" COPY DIRECTORY [ERROR]: ", 'white', 'magenta', ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors(str(x), 'lightyellow', color_type= 'colorama') + make_colors('"', 'cyan', attrs= ['bold']) + make_colors("-->", 'white', attrs= ['bold']) + make_colors(os.path.abspath(_to), 'green', attrs= ['bold']) + make_colors('" ', 'cyan', attrs= ['bold']) + make_colors("[ERROR]", 'white', 'red', ['bold', 'blink'])
+                        print(make_colors(" COPY DIRECTORY [ERROR]: ", 'white', 'magenta', ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors(str(x), 'lightyellow') + make_colors('"', 'cyan', attrs= ['bold']) + make_colors("-->", 'white', attrs= ['bold']) + make_colors(os.path.abspath(_to), 'green', attrs= ['bold']) + make_colors('" ', 'cyan', attrs= ['bold']) + make_colors("[ERROR]", 'white', 'red', ['bold', 'blink']))
                         self.logs("COPY DIRECTORY [ERROR]: \"" + str(x) + "\" --> \"" + os.path.abspath(_to) + "\" [ERROR]")
                         self.result_error.append(os.path.abspath(str(x)))
                 else:
-                    print "\n"
-                    print __help__
+                    print("\n")
+                    print(__help__)
 
     def start_copyed(self, pattern, _to=sys.argv[-1]):
         """pattern must have "*", exp: *data*, data*, *data"""
@@ -246,11 +246,11 @@ class process:
             if os.path.isfile(sys.argv[i]) == True:
                 try:
                     shutil.copy(sys.argv[i], to_)
-                    print make_colors(" COPY FILE: ", 'white', 'yellow', ['bold']) + make_colors("\"", 'cyan') + make_colors(sys.argv[i], 'lightyellow', color_type= 'colorama') + make_colors('"', 'cyan') + make_colors(" --> ", 'white', attrs= ['bold']) + make_colors("\"", 'cyan') + make_colors(os.path.abspath(sys.argv[-1]), 'lightgreen', color_type= 'colorama') + make_colors("\"", 'cyan')
+                    print(make_colors(" COPY FILE: ", 'white', 'yellow', ['bold']) + make_colors("\"", 'cyan') + make_colors(sys.argv[i], 'lightyellow') + make_colors('"', 'cyan') + make_colors(" --> ", 'white', attrs= ['bold']) + make_colors("\"", 'cyan') + make_colors(os.path.abspath(sys.argv[-1]), 'lightgreen') + make_colors("\"", 'cyan'))
                     self.logs("COPY FILE: \"" + sys.argv[i] + "\" --> " + os.path.abspath(sys.argv[-1]))
                 except:
                     #return __error__
-                    print make_colors(" COPY FILE [ERROR]: ", 'white', 'red', ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors(sys.argv[i], 'yellow', attrs= ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors("-->", 'white', attrs= ['bold']) + make_colors(os.path.abspath(sys.argv[-1]), 'green', attrs= ['bold']) + make_colors('" ', 'cyan', attrs= ['bold']) + make_colors("[ERROR]", 'white', 'red', ['bold', 'blink'])
+                    print(make_colors(" COPY FILE [ERROR]: ", 'white', 'red', ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors(sys.argv[i], 'yellow', attrs= ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors("-->", 'white', attrs= ['bold']) + make_colors(os.path.abspath(sys.argv[-1]), 'green', attrs= ['bold']) + make_colors('" ', 'cyan', attrs= ['bold']) + make_colors("[ERROR]", 'white', 'red', ['bold', 'blink']))
                     self.logs("COPY FILE [ERROR]: \"" + sys.argv[i] + "\" --> " + os.path.abspath(sys.argv[-1] + " [ERROR]"))
                     self.result_error.append(os.path.abspath(sys.argv[i]))
 
@@ -259,14 +259,14 @@ class process:
                     #print "AAA"
                     shutil.copytree(sys.argv[i], os.path.join(to_, os.path.basename(sys.argv[i])))
                     #print " COPY DIRECTORY: \"" + sys.argv[i] + "\" --> " + os.path.abspath(sys.argv[-1])
-                    print make_colors(" COPY DIRECTORY: ", 'white', 'cyan', ['bold']) + make_colors('"', 'cyan') + make_colors(str(sys.argv[i]), 'lightyellow', color_type= 'colorama') + make_colors('"', 'cyan') + make_colors(" --> ", 'white', attrs= ['bold']) + make_colors('"', 'cyan') + make_colors(os.path.abspath(to_), 'lightgreen', color_type= 'colorama') + make_colors('"', 'cyan')
+                    print(make_colors(" COPY DIRECTORY: ", 'white', 'cyan', ['bold']) + make_colors('"', 'cyan') + make_colors(str(sys.argv[i]), 'lightyellow') + make_colors('"', 'cyan') + make_colors(" --> ", 'white', attrs= ['bold']) + make_colors('"', 'cyan') + make_colors(os.path.abspath(to_), 'lightgreen') + make_colors('"', 'cyan'))
                     self.logs("COPY DIRECTORY: \"" + sys.argv[i] + "\" --> " + os.path.abspath(sys.argv[-1]))
                 except WindowsError:
                     pass
                 except:
                     #return __error__
                     traceback.format_exc()
-                    print make_colors(" COPY DIRECTORY [ERROR]: ", 'white', 'magenta', ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors(sys.argv[i], 'yellow', attrs= ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors("-->", 'white', attrs= ['bold']) + make_colors(os.path.abspath(sys.argv[-1]), 'green', attrs= ['bold']) + make_colors('" ', 'cyan', attrs= ['bold']) + make_colors("[ERROR]", 'white', 'red', ['bold', 'blink'])
+                    print(make_colors(" COPY DIRECTORY [ERROR]: ", 'white', 'magenta', ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors(sys.argv[i], 'yellow', attrs= ['bold']) + make_colors('"', 'cyan', attrs= ['bold']) + make_colors("-->", 'white', attrs= ['bold']) + make_colors(os.path.abspath(sys.argv[-1]), 'green', attrs= ['bold']) + make_colors('" ', 'cyan', attrs= ['bold']) + make_colors("[ERROR]", 'white', 'red', ['bold', 'blink']))
                     self.logs("COPY DIRECTORY [ERROR]: \"" + sys.argv[i] + "\" --> " + os.path.abspath(sys.argv[-1] + " [ERROR]"))
                     self.result_error.append(os.path.abspath(sys.argv[i]))
             elif "*" in sys.argv[i]:
@@ -278,17 +278,17 @@ class process:
 
     def main(self):
         if os.path.isdir(sys.argv[-1]):
-            print "\n"
+            print("\n")
             copyed()
         elif sys.argv[-1] == ".":
-            print "\n"
+            print("\n")
             copyed(os.getcwd())
         elif sys.argv[-1] == "~":
-            print "\n"
+            print("\n")
             copyed(os.getcwd())
         else:
-            print "\n"
-            print __help__
+            print("\n")
+            print(__help__)
             raise SyntaxError (make_colors("Check Your Syntax !", 'white', 'red'))
 
 if __name__ == '__main__':
@@ -296,20 +296,20 @@ if __name__ == '__main__':
         copy_class = process()
         copy_class.copyed()
         if len(copy_class.copyed()) >= 1:
-            print "\n\n"
+            print("\n\n")
             if len(copy_class.copyed()) == 1:
-                print make_colors(" RESULT:", 'white', 'yellow', attrs= ['bold']) + make_colors(" ERROR", 'white', 'red'), make_colors(str(len(copy_class.copyed())), 'white', attrs= ['bold']), make_colors(" Item: ", 'lightyellow', color_type= 'colorama')
-                print "\t [ERROR] --> ", copy_class.copyed()[0]
+                print(make_colors(" RESULT:", 'white', 'yellow', attrs= ['bold']) + make_colors(" ERROR", 'white', 'red'), make_colors(str(len(copy_class.copyed())), 'white', attrs= ['bold']), make_colors(" Item: ", 'lightyellow'))
+                print("\t [ERROR] --> ", copy_class.copyed()[0])
             else:
-                print "REA = ", make_colors(copy_class.copyed(), 'lightyellow', color_type= 'colorama')
+                print("REA = ", make_colors(copy_class.copyed(), 'lightyellow'))
                 sys.exit(0)
             #os.system("PAUSE")
             #for x in copy_class.copyed():
                 #print " RESULT: ERROR", len(copy_class.copyed()), " Items: "
                 #print "\t [ERROR] --> ", x
         else:
-            print "\n\n"
-            print make_colors(" RESULT:", 'white', 'yellow') + make_colors(" ALL OK", 'lightcyan', color_type= 'colorama')
+            print("\n\n")
+            print(make_colors(" RESULT:", 'white', 'yellow') + make_colors(" ALL OK", 'lightcyan'))
     else:
-        print "\n"
-        print __help__
+        print("\n")
+        print(__help__)

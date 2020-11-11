@@ -5,7 +5,7 @@ cls
 title %cd%
 echo.
 echo.
-"c:\TOOLS\DevKit32\bin\ls.exe" -X -p %*
+"c:\TOOLS\msys64\usr\bin\ls.exe" -X -p %*
 echo.
 echo                    		Parent Directory : %cd%
 echo.

@@ -1,0 +1,119 @@
+import os
+import sys
+import ConfigParser
+import sendgrowl 
+
+cfg = ConfigParser.RawConfigParser(allow_no_value=True)
+cfg.optionxform = str
+hgrc = os.path.join(os.getcwd(), '.hg', 'hgrc')
+
+HG_BIN = 'hg'
+if HG_BIN == r'':
+	HG_BIN = 'hg.exe'
+
+def notify(app='HGDate', event='Commit', title='HgDate', message='Commit', host='127.0.0.1', port=23053, icon='hgdate.png', timeout=10):
+	if icon:
+		icon = os.path.join(os.path.dirname(__file__), icon)
+	if not os.path.isfile(icon):
+		icon = None
+	growl = sendgrowl.growl()
+	if os.getenv('GROWL_SERVER'):
+		growl_server = os.getenv('GROWL_SERVER').split(";")
+		for i in growl_server:
+			if ":" in i:
+				host, port = str(i).split(":")
+				host = host.strip()
+				port = int(port).strip()
+				growl.publish(app, event, title, message, host, port, timeout, icon)
+			else:
+				host = str(i).strip()
+				growl.publish(app, event, title, message, host, port, timeout, icon)
+	else:
+		if isinstance(host, list):
+			for i in growl_server:
+				if ":" in i:
+					host, port = str(i).split(":")
+					host = host.strip()
+					port = int(port).strip()
+					growl.publish(app, event, title, message, host, port, timeout, icon)
+				else:
+					host = str(i).strip()
+					growl.publish(app, event, title, message, host, port, timeout, icon)
+		elif ";" in host:
+			growl_server = str(host).split(";")
+			for i in growl_server:
+				if ":" in i:
+					host, port = str(i).split(":")
+					host = host.strip()
+					port = int(port).strip()
+					growl.publish(app, event, title, message, host, port, timeout, icon)
+				else:
+					host = str(i).strip()
+					growl.publish(app, event, title, message, host, port, timeout, icon)
+		else:
+			growl.publish(app, event, title, message, host, port, timeout, icon)
+
+def checkRemote():
+	if os.path.isfile(hgrc):
+		cfg.read(hgrc)
+		try:
+			data = cfg.get('paths', 'default-push')
+		except ConfigParser.NoOptionError:
+			try:
+				data = cfg.get('paths', 'default')
+				notify(event='push', message='PUSH repo to %s'%(data))
+			except ConfigParser.NoOptionError:
+				q = raw_input('add hg remote origin (URL): ')
+				if len(q) == 0:
+					print "Please Add remote git url (origin) first !"
+					sys.exit(0)
+				else:
+					#f = open(hgrc)
+					try:
+						cfg.set('paths', 'default-push', str(q))
+						notify(event='push', message='PUSH repo to %s'%(q))
+					except ConfigParser.NoSectionError:
+						cfg.add_section('paths')
+						cfg.set('paths', 'default-push', str(q))
+					cfg_data = open(hgrc, 'wb')
+					cfg.write(cfg_data)
+					notify(event='push', message='PUSH repo to %s'%(q))
+		os.system(HG_BIN + " push")			
+	else:
+		try:
+			data = cfg.get('paths', 'default-push')
+			notify(event='push', message='PUSH repo to %s'%(q))
+		except:
+			notify(event='push', message='PUSH CANCEL, NO DEFAULT REMOTE')
+		os.system(HG_BIN + " push")
+
+def commit():
+	import datetime
+	comment = datetime.datetime.strftime(datetime.datetime.now(), '%Y-%m-%d %H:%M:%S:%f')
+	tag = datetime.datetime.strftime(datetime.datetime.now(), '%Y%m%d_%H%M%S_%f')
+	if os.path.isfile(os.path.join(os.getcwd(), '.hgignore')):
+		notify(event='hgignore', message='.hgignore EXISTS')
+		os.system(HG_BIN + " add .")
+		notify(event='add_file', message='Add all of file in this repo')
+		os.system(HG_BIN + " tag \"" + str(tag) + '"')
+		notify(event='tag', message='make tag "%s"'%(str(tag)))
+		os.system(HG_BIN + " commit -m \"" + str(comment) + '"')
+		notify(event='commit', message='Commit Action')
+		checkRemote()
+	else:
+		notify(event='hgignore', message='.hgignore NOT EXISTS !')
+		f = open(os.path.join(os.getcwd(), '.hgignore'), 'w')
+		f.write(".pyc\n.zip\n.rar\n.7z\n.mp3\n.wav\n")
+		f.close()
+		os.system(HG_BIN + " add .")
+		notify(event='add_file', message='Add all of file in this repo')
+		os.system(HG_BIN + " tag \"" + str(tag) + '"')
+		notify(event='tag', message='make tag "%s"'%(str(tag)))
+		os.system(HG_BIN + " commit -m \"" + str(comment) + '"')
+		notify(event='commit', message='Commit Action')
+		checkRemote()
+
+
+if __name__ == '__main__':
+	commit()
+	#checkRemote()

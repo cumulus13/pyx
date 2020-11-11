@@ -224,10 +224,10 @@
 ##else:
     ##print "NOT SUPPORT 2"
 
-print "FILENAME on test.py =",__file__
-print "__name__ on test.py =",__name__
-print "__package__ on test.py =",__package__
-print "dir =",dir()
+#print "FILENAME on test.py =",__file__
+#print "__name__ on test.py =",__name__
+#print "__package__ on test.py =",__package__
+#print "dir =",dir()
 
 #import sys
 #import traceback
@@ -247,3 +247,5 @@ print "dir =",dir()
 #traceback.format_exc(etype = etype, value = value, tb = tb)
 
 #print sys.argv[1]
+data = b"BLACKID"
+print ("data =", data.decode('utf-8'))

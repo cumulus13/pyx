@@ -1,13 +1,13 @@
 import os
 import sys
-import configset
+from configset import configset
 import argparse
 
-class mp3diag(configset.usage):
+class mp3diag(configset):
 	def __init__(self):
 		super(mp3diag, self)
-		self.conf = configset.get_config_file('conf.ini')
-		self.exe = configset.read_config('MP3DIAG', 'EXE_PATH')
+		self.configname = os.path.join(os.path.dirname(__file__), 'conf.ini')
+		self.exe = self.read_config('MP3DIAG', 'EXE_PATH')
 
 	def diag(self, path=None):
 		os.chdir(os.path.dirname(self.exe))

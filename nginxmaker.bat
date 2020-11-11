@@ -1,5 +1,6 @@
 @echo off
-set path_me=%cd%
-cd /d f:\PROJECTS\REPOSITORY\nginxmaker
-c:\SDK\Anaconda2\python.exe f:\PROJECTS\REPOSITORY\nginxmaker\nginxmaker.py %*
-cd /d %path_me%
+SET me1=%CD%
+CD /d "D:\PROJECTS2\nginxmaker"
+"c:\SDK\Anaconda2\python.exe" "D:\PROJECTS2\nginxmaker\nginxmaker.py" %*
+CD /d "%me1%"
+SET me1=

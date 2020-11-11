@@ -1,3 +1,4 @@
+from __future__ import print_function
 import sys
 import os
 try:
@@ -12,8 +13,8 @@ class econsole():
         pass
         
     def getError(self, data):
-        print "\n"
-        print "\t" + data
+        print ("\n")
+        print ("\t" + data)
         
 class Dialog(inherit):
     def __init__(self, info, data, parent=None):

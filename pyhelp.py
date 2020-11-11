@@ -91,7 +91,7 @@ def print_helper(data,intp = "python -c"):
         return help() & dir() if True
         return None if Error or False or data/module no Found
     """
-    print "\n\n"
+    print("\n\n")
     if "." in data:
         data_s = str(data).split(".")
         data_c = "import " + str(data_s[0]) + "; " + "help(" + str(data) + ");print \'All Attribute = \', dir(" + str(data) + ")"
@@ -102,7 +102,7 @@ def print_helper(data,intp = "python -c"):
             return data_p
         except:
             import traceback
-            print "Error: ", traceback.format_exc()
+            print("Error: ", traceback.format_exc())
     else:
         try:
             excp = ['dict']
@@ -121,12 +121,12 @@ def print_helper(data,intp = "python -c"):
                     return data_p
         except:
             import traceback
-            print "Error: ", traceback.format_exc()
+            print("Error: ", traceback.format_exc())
     
 def print_helper_process_2():
     """ check if PYTHONHOME, PYTHON_HOME or a directory where "python.exe" not found, this will process check a common/famous directory where "python.exe" if exist  """
     if check_python_path == None:
-        print "pythonhome = None"
+        print("pythonhome = None")
         if os.getenv("PYTHONHOME") == None or os.getenv("PYTHONHOME") == "":
             if os.getenv("PYTHON_HOME") == None or os.getenv("PYTHON_HOME") == "":    
                 e = os.popen("dir /b \"c:\\\"").readlines()
@@ -145,9 +145,9 @@ def print_helper_process_2():
                         if py_interp != None:
                             print_helper(sys.argv[1],py_interp)
                     else:
-                        print "\n\n"
-                        print "\t Python Interpreter Not Detection/Installer On Your System/PATH !\n"
-                        print "\t Please Set\Install Your Python Version !\n"
+                        print("\n\n")
+                        print("\t Python Interpreter Not Detection/Installer On Your System/PATH !\n")
+                        print("\t Please Set\Install Your Python Version !\n")
             else:
                 PYTHONHOME = os.getenv("PYTHON_HOME")
                 py_interp = extract_python(PYTHONHOME)
@@ -171,28 +171,28 @@ def print_helper_process(data):
                 import importlib
                 try:
                     importlib.import_module(data_a[0])
-                    print help(data)
-                    print "\n\n"
-                    print "All Attribute: ", dir(data2)
+                    print(help(data))
+                    print("\n\n")
+                    print("All Attribute: ", dir(data2))
                 except:
-                    print "\n"
-                    print __usage__
+                    print("\n")
+                    print(__usage__)
             else:
                 try:
                     __import__(data_a[0])
-                    print help(data)
-                    print "\n\n"
-                    print "All Attribute: ", dir(data2)
+                    print(help(data))
+                    print("\n\n")
+                    print("All Attribute: ", dir(data2))
                 except:
-                    print "\n"
-                    print __usage__
+                    print("\n")
+                    print(__usage__)
         except:
-            print "\n"
-            print __usage__
+            print("\n")
+            print(__usage__)
     else:
-        print help(data)
-        print "\n\n"
-        print "All Attribute: ", dir(data2)
+        print(help(data))
+        print("\n\n")
+        print("All Attribute: ", dir(data2))
             
 if __name__ == "__main__":
     if len(sys.argv) > 1:
@@ -201,5 +201,5 @@ if __name__ == "__main__":
         #print check_python_path(os.getenv("PATH")) #test
 
     else:
-        print "\n"
-        print __usage__
+        print("\n")
+        print(__usage__)

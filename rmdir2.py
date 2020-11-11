@@ -1,3 +1,4 @@
+#!C:/SDK/Anaconda2/python.exe
 import os
 import sys
 import shutil

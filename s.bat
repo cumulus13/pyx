@@ -5,20 +5,20 @@ if %1==-t goto total
 if %1==-s goto size
 if %1==-d goto detail
 
-c:\TOOLS\DevKit32\bin\du.exe -s -h %1
+c:\TOOLS\msys64\usr\bin\du.exe -s -h %1
 goto end
 
 :size
-c:\TOOLS\DevKit32\bin\du.exe -h --max-depth=1 %2
+c:\TOOLS\msys64\usr\bin\du.exe -h --max-depth=1 %2
 goto end
 
 :detail
-c:\TOOLS\DevKit32\bin\du.exe -h -a --max-depth=1 %2
+c:\TOOLS\msys64\usr\bin\du.exe -h -a --max-depth=1 %2
 goto end
 
 
 :total
-c:\TOOLS\DevKit32\bin\du.exe -s -h %2
+c:\TOOLS\msys64\usr\bin\du.exe -s -h %2
 goto end
 
 :usage
@@ -33,7 +33,7 @@ echo.
 echo.
 echo  please wait ..............
 echo.
-c:\TOOLS\DevKit32\bin\du.exe -s -h %CD%
+c:\TOOLS\msys64\usr\bin\du.exe -s -h %CD%
 goto end
 
 :end

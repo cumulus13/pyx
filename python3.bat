@@ -1,2 +1,2 @@
 @echo off
-"c:\SDK\Python352\python.exe" %*
+"c:\SDK\Anaconda3\python.exe" %*

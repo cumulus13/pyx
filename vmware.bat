@@ -2,14 +2,18 @@
 title %CD%
 if %1*==* goto usage
 if %1==start goto start
-if %1==start goto enable
+if %1==enable goto enable
 if %1==stop goto stopx
 if %1==auto goto auto
 if %1==run goto run
 goto end
 
 :run
-"c:\Program Files\VMware\VMware Workstation\vmware.exe"
+if EXIST "c:\Program Files\VMware\VMware Workstation\vmware.exe" (
+	"c:\Program Files\VMware\VMware Workstation\vmware.exe"
+) else (
+	"c:\Program Files (x86)\VMware\VMware Workstation\vmware.exe"
+)
 goto end
 
 :auto
@@ -35,9 +39,14 @@ rem sc config  VMAuthdService start= demand
 rem sc config  VMnetDHCP start= demand
 rem sc config  "VMware NAT Service" start= demand
 
+sc config VMAuthdService start= demand
+sc config VMnetDHCP start= demand
+sc config "VMware NAT Service" start= demand
+
 net start VMAuthdService
 net start VMnetDHCP
 net start  "VMware NAT Service"
+start /B /D "c:\Program Files (x86)\VMware\VMware Workstation" vmware.exe
 echo.
 echo.
 echo      VMAuthdService          =  Start
@@ -101,11 +110,26 @@ goto end
 echo.
 echo.
 echo			Usage : %0 Start [ to Start service and Vmware]
-echo		                %0 Stop  [ to Stop service and Vmware]
-echo		                %0 Run   [ to Stop service and Vmware]
+echo		                %0 Stop   [ to Stop service and Vmware]
+echo		                %0 Run    [ Run Vmware only]
+echo		                %0 Enable [ Enable Vmware]
 echo.
 echo.
 goto end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 :end

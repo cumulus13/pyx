@@ -1,3 +1,4 @@
+from __future__ import print_function
 import module006
 import module004
 import os
@@ -14,11 +15,11 @@ def cekstate(data):
 
         if datacek001 == module006.status(data):
             os.system("cls")
-            print "\n"
+            print ("\n")
 
             try:
-                print "\n"
-                print "\t\t Please wait . " + str(waitme) 
+                print ("\n")
+                print ("\t\t Please wait . " + str(waitme) )
             except:
                 pass
 
@@ -30,8 +31,8 @@ def cekstate(data):
     time.sleep(9)	
     #os.system("sysloggen -q -t:192.168.128.1 -p:516 -f:1 -s:1 -m:\"Now Service " + str(data) +   " is RUNNING\"")
     os.system("cls")
-    print "\n"
-    print "\t\t Now Service " + data + " is " + module006.status(data)
+    print ("\n")
+    print ("\t\t Now Service " + data + " is " + module006.status(data))
     """if(module006.status(data) == "RUNNING"):
         dsound = r"d:\SOUND\Apache Start.wav"
         dplay.play(dsound)
@@ -54,12 +55,12 @@ def cekstate2(data):
 
         if datacek001 == module006.status(data):
             os.system("cls")
-            print "\n"
+            print ("\n")
 
             try:
                 os.system("sc query " + data)
-                print "\n"
-                print "\t\t Please wait . " + str(waitme) 
+                print ("\n")
+                print ("\t\t Please wait . " + str(waitme))
             except:
                 pass
 
@@ -67,13 +68,13 @@ def cekstate2(data):
         else:
             pass
             os.system("cls")
-            print "\n\n"
-            print "\t\t Now Service " + data + " is " + module006.status(data)
+            print ("\n\n")
+            print ("\t\t Now Service " + data + " is " + module006.status(data))
             sys.exit()
             #print "data = " , module006.status(data)
 
     time.sleep(9)	
     #os.system("sysloggen -q -t:192.168.128.1 -p:516 -f:1 -s:1 -m:\"Now Service " + str(data) +   " is RUNNING\"")
     os.system("cls")
-    print "\n"
-    print "\t\t Now Service " + data + " is " + module006.status(data)
+    print ("\n")
+    print ("\t\t Now Service " + data + " is " + module006.status(data))

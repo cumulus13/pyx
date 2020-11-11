@@ -1,11 +1,7 @@
-.hg/
-*.hg/**/*
-hg/
-/.hg/
 *.pyc
 *.zip
 *.rar
 *.7z
 *.mp3
 *.wav
-*.bak
+.hg/

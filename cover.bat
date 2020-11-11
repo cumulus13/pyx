@@ -21,30 +21,35 @@ copy /-Y %2 Folder.jpg
 copy /-Y %2 Folder1.jpg
 copy /-Y %2 Cover.jpg
 copy /-Y %2 Front.jpg
+copy /-Y %2 Poster.jpg
 goto end
 
 :notfront
 copy /-Y %2 Folder.jpg
 copy /-Y %2 Folder1.jpg
 copy /-Y %2 Cover.jpg
+copy /-Y %2 Poster.jpg
 goto end
 
 :notfolder
 copy /-Y %2 Folder1.jpg
 copy /-Y %2 Cover.jpg
 copy /-Y %2 Front.jpg
+copy /-Y %2 Poster.jpg
 goto end
 
 :notfolder1
 copy /-Y %2 Folder.jpg
 copy /-Y %2 Cover.jpg
 copy /-Y %2 Front.jpg
+copy /-Y %2 Poster.jpg
 goto end
 
 :notcover
 copy /-Y %2 Folder.jpg
 copy /-Y %2 Folder1.jpg
 copy /-Y %2 Front.jpg
+copy /-Y %2 Poster.jpg
 goto end
 
 :usage

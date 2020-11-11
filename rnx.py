@@ -1,3 +1,4 @@
+#!c:/SDK/Anaconda2/python.exe
 import os
 import optparse
 import sys
@@ -188,6 +189,7 @@ class rnx(object):
             '-o', '--overwrite', help='Overwrite if exists', action='store_true')
         parser.add_option(
             '-r', '--replace', help='Replace string format is [string from]:[strong to], example: -R data01:data02, this will change string "data01" to "data02"')
+        # parser.add_option('-m', '--multi')
 
         options, args = parser.parse_args()
         print "args =", args

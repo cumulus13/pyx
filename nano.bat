@@ -1,2 +1,2 @@
 @echo off
-c:\Apps\nano-2.4.2-win32\nano.exe %*
+c:\TOOLS\msys64\usr\bin\nano.exe %*

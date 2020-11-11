@@ -1,18 +1,14 @@
 import os, errno
 import sys
+import traceback
 
 def main():
 
 	try:
-		os.execlp("c:\Program Files\foobar2000\foobar2000.exe")
+		os.execlp("c:\Program Files\foobar2000\foobar2000.exe", " ")
 		
-	except OSError, e:
-		if e.errno == errno.ENOENT:
-			print "\n Program tidak ditemukan \n"
-		elif e.errno == errno.ENOEXEC:
-			print "\n Program bukan program excutable ! \n"
-		else:
-			print "\n Error, Program tidak dapat berjalan di Win32 atau Command Mode ! \n"
+	except:
+		print ("ERROR:", traceback.format_exc(print_msg=True))
 		
 			
 if __name__ == '__main__':

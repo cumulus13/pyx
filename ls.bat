@@ -217,7 +217,7 @@ dir /o:e /a:A | more
 goto end
 
 :timed
-dir /o:-d | more
+dir /w /o:-d
 goto end
 
 :hide

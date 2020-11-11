@@ -1,2 +1,2 @@
 @echo off
-c:\TOOLS\DevKit32\bin\tail.exe %*
+c:\SDK\Ruby26-x64\msys64\usr\bin\tail.exe %*

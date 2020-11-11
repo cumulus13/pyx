@@ -1,9 +1,9 @@
 @ECHO OFF
 
 REM Command file for Sphinx documentation
-
+SET SPHINXBUILD=
 if "%SPHINXBUILD%" == "" (
-	set SPHINXBUILD=c:\Python33\Scripts\sphinx-build.exe
+	set SPHINXBUILD=c:\SDK\Anaconda3\Scripts\sphinx-build.exe
 )
 set BUILDDIR=_build
 set ALLSPHINXOPTS=-n -d %BUILDDIR%/doctrees %SPHINXOPTS% .
@@ -44,7 +44,8 @@ if "%1" == "clean" (
 )
 
 if "%1" == "html" (
-	%SPHINXBUILD% -b djangohtml %ALLSPHINXOPTS% %BUILDDIR%/html
+	echo SPHINXBUILD = %SPHINXBUILD%
+	%SPHINXBUILD% -b html %ALLSPHINXOPTS% %BUILDDIR%/html
 	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished. The HTML pages are in %BUILDDIR%/html.
